@@ -1,0 +1,151 @@
+import { useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import Carousel from "react-bootstrap/Carousel";
+import useCheckInViewById from "../../components/hooks/useCheckInViewById";
+import CSSTransitionWrapper from "../../components/hooks/useCssTransition";
+import NotFound from "../../components/notfound";
+import { AnimationTypes } from "../../components/hooks/useCssTransition";
+import { BiCheckDouble } from "react-icons/bi";
+import { BsArrowRight } from "react-icons/bs";
+
+type Props = {
+  data: any;
+};
+const ExperienceList = (props: Props) => {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex: any) => {
+    setIndex(selectedIndex);
+  };
+  let ExperienceJSX: JSX.Element[] | JSX.Element = (
+    <NotFound text="No Experiences List Found" />
+  );
+  if (props.data.length > 0) {
+    ExperienceJSX = props.data.map((item: any, index: number) => {
+      return (
+        <Carousel.Item key={index}>
+          <Col xs={12} sm={{ span: 10, offset: 1 }} className={"mb-4 mb-md-5"}>
+            <div className="card overlay">
+              <div className="flex-center">
+                <Col sm={12} md={5} lg={4}>
+                  <img
+                    src={`../assets/images/${item.image}`}
+                    alt=""
+                    className="mr-15p"
+                    width={225}
+                    height={107}
+                  />
+                </Col>
+                <Col sm={12} md={7} lg={8}>
+                  <p className="color_1 company_info">{item.description}</p>
+                </Col>
+              </div>
+              <div>
+                <Row>
+                  <Col xs={12}>
+                    <h3 className="h6 mb-0 color_2">
+                      Company: <span className="h5 "> {item.company}</span>
+                    </h3>
+                    <h4 className="h6 mb-0 color_2">
+                      Position: <span className="h5"> {item.jobposition}</span>
+                    </h4>
+                    <h4 className="h6 color_2 mb-2">
+                      Tenureship:
+                      <span className="h5"> {item.tenureship}</span>
+                    </h4>
+                  </Col>
+                  <Col lg={6} md={6} sm={12}>
+                    {item.tasks && (
+                      <>
+                        <h5 className="h6 color_1 mb-0">Tasks:</h5>
+                        <ul className="mb-0">
+                          {item.tasks.map((e: any, i: any) => {
+                            return (
+                              <li className="color_1" key={i}>
+                                <BiCheckDouble /> {e}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </>
+                    )}
+                  </Col>
+                  <Col lg={6} md={6} sm={12}>
+                    {item.achievements && (
+                      <>
+                        <h4 className="h6 color_1 mb-0">
+                          Notable Achievements:
+                        </h4>
+                        <ul className="mb-0">
+                          {item.achievements.map((e: any, i: any) => {
+                            return (
+                              <li className="color_1" key={i}>
+                                <BiCheckDouble /> {e}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </>
+                    )}
+                  </Col>
+                </Row>
+              </div>{" "}
+              <a
+                href={item.workURL}
+                className="button__flat"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>
+                  <BsArrowRight size={"2em"} />
+                  {item.workURLText}
+                </span>
+              </a>
+            </div>
+          </Col>
+        </Carousel.Item>
+      );
+    });
+  }
+  const isExperienceInView = useCheckInViewById("works_heading");
+
+  return (
+    <section
+      id="WorksSection"
+      className="container-fluid pt-5 pb-5 z-3 bg-1 before"
+    >
+      <Container id="works_heading" style={{ minHeight: "20vh" }}>
+        <Row className="pt-5 z-2 pt-5">
+          <Col>
+            <CSSTransitionWrapper
+              in={isExperienceInView}
+              delay={200}
+              animation={AnimationTypes.FLIPINX}
+            >
+              <h2 className="color_filled text__center text__uppercase font__h1">
+                Work Experience
+              </h2>
+            </CSSTransitionWrapper>
+            <CSSTransitionWrapper
+              in={isExperienceInView}
+              delay={400}
+              animation={AnimationTypes.FADEINUP}
+            >
+              <h4 className="color_filled text-center">
+                Experiences That Made Me What I am Today
+              </h4>
+            </CSSTransitionWrapper>
+          </Col>
+        </Row>
+      </Container>
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        className="mt-5 mb-5 z-2"
+      >
+        {ExperienceJSX}
+      </Carousel>
+    </section>
+  );
+};
+export default ExperienceList;

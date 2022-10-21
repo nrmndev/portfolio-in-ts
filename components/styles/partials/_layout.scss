@@ -1,0 +1,27 @@
+.main {
+  position: static;
+  z-index: 15;
+  background: #f8f8f8;
+}
+
+// .elevate {
+//   z-index: 15;
+//   position: relative;
+// }
+// .elevated {
+//   z-index: 40;
+// }
+
+// .elevated .skills__link a {
+//   display: block !important;
+// }
+// .animated,
+// .animated .card {
+//   @include transition(
+//     background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
+//   );
+//   background-color: linear-gradient(to right bottom, #212428, #16181c);
+// }
+// .elevate .skills__container {
+//   background: #fff;
+// }

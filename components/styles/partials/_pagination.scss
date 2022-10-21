@@ -1,0 +1,29 @@
+body .page-item.active .page-link,
+body .page-link:focus,
+body .page-link:active {
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+  color: #525480;
+}
+
+body .navbar-light .navbar-nav .nav-link:hover {
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
+}
+
+body .nav-link:focus-visible,
+body .btn:focus-visible,
+body .button:focus-visible,
+body .accordion-button:focus-visible,
+body .page-link:focus-visible,
+body .page-item .page-link:focus-visible,
+body .page-item span:focus-visible,
+body .breadcrumb-gray .breadcrumb-item a:focus-visible {
+  background: #a91e2c !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  outline-color: #fff !important;
+}
+
+// body .page-item .page-link,
+// body .page-item span {
+//   color: inherit;
+// }

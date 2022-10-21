@@ -1,0 +1,65 @@
+#normonAI {
+  @include position(fixed, 0, 0, 100%, auto, false, true);
+  z-index: 52;
+  .innerDiv {
+    width: 100%;
+    background: $bg_gradient1;
+    display: table;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    &.show {
+      @media (max-width: 768px) {
+        min-height: 30px;
+      }
+      @include animation(fadeInLeft 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67));
+      min-height: 40px;
+    }
+    img {
+      @media (max-width: 768px) {
+        max-width: 70px;
+      }
+      max-width: 100px;
+      @include animation(
+        (MoveUpDown 2s cubic-bezier(0.17, 0.67, 0.83, 0.67) infinite)
+      );
+      position: absolute;
+      top: -25px;
+      left: 15px;
+    }
+    p {
+      padding-left: 95px;
+      position: relative;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      @media (max-width: 768px) {
+        font-size: 12px;
+        animation: none !important;
+        white-space: break-spaces;
+        overflow: visible;
+        padding-left: 85px;
+      }
+      &:after {
+        content: "|";
+        @include position(absolute, -1px, -5px, auto, 100%, true, false);
+        display: block;
+        color: #fff;
+        @include animation(blink 0.5s step-end infinite alternate);
+      }
+      span {
+        color: yellow;
+        margin-right: 10px;
+      }
+    }
+  }
+  .custom-switch {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 5px;
+    line-height: normal;
+  }
+}

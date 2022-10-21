@@ -1,0 +1,13 @@
+footer {
+  min-height: 58px;
+  text-align: center;
+  font-size: 0.8rem;
+  background: $bg_gradient1;
+  position: relative;
+  z-index: 2;
+  .copyright {
+    display: block;
+    width: 100%;
+    background: $white;
+  }
+}

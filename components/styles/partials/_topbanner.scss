@@ -1,0 +1,149 @@
+#AboutMeSection {
+  @include position(fixed, 0, 0, 100%, 100vh);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(
+      257deg,
+      rgb(255 255 255/ 90%) 0%,
+      rgb(255 255 255/ 50%)
+    ),
+    url("../../../assets/images/workbg_dark.jpg");
+  @include backgroundProp(fixed, no-repeat, right, cover);
+}
+
+#AboutMeSection:after {
+  content: "";
+  @include position(absolute, 0, 0, 100%, 100%);
+  @include backdropFilter(blur(5px));
+}
+body.theme-dark #AboutMeSection {
+  background: linear-gradient(0deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 70%)),
+    url("../../../assets/images/workbg_dark.jpg");
+}
+
+.topBanner {
+  min-height: 100vh;
+}
+
+// .gradient:before,
+// .gradient:after {
+//   content: "";
+//   position: absolute;
+//   display: block;
+//   z-index: -1;
+//   visibility: visible;
+//   height: 100%;
+//   width: 100%;
+// }
+// .gradient:before {
+//   pointer-events: auto;
+//   left: -40%;
+//   top: -30%;
+//   background: radial-gradient(
+//     at center center,
+//     rgba(67, 206, 162, 30%) 0%,
+//     rgba(241, 218, 254, 0) 70%,
+//     rgba(255, 255, 255, 0) 100%
+//   );
+// }
+// .gradient:after {
+//   right: -40%;
+//   bottom: -30%;
+//   background: radial-gradient(
+//     at center center,
+//     rgba(24, 90, 157, 0.4) 0%,
+//     rgba(124, 11, 101, 0) 56%,
+//     rgba(21, 20, 24, 0) 100%
+//   );
+//   transform: rotate(36deg);
+// }
+
+.navButton a {
+  border-radius: 20px;
+  background-color: rgba(230, 232, 248, 0.5);
+  color: var(--white);
+  transform-origin: 50% 50%;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  visibility: visible;
+  width: calc(48% - 2rem);
+  float: left;
+  margin: 1rem;
+  padding: 2rem;
+  @include transition(
+    background-position 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)
+  );
+
+  cursor: pointer;
+  background: linear-gradient(
+      257deg,
+      rgb(255 255 255/ 95%) 0%,
+      rgb(255 255 255/ 95%)
+    ),
+    url("../../../assets/images/normon.png");
+  @include backgroundProp(fixed, no-repeat, left);
+  box-shadow: 2px 2px 15px #a3a3a3;
+}
+
+.navButton a span {
+  display: inline-block;
+  color: #185a9d;
+}
+.navButton a:hover,
+.navButton a:focus-visible,
+.navButton a:active {
+  background: linear-gradient(
+      257deg,
+      rgb(255 255 255/ 0%) 0%,
+      rgb(255 255 255/ 80%)
+    ),
+    url("../../../assets/images/normon.png");
+  @include backgroundProp(fixed, no-repeat, right);
+}
+
+body.theme-dark .navButton a {
+  background: linear-gradient(
+      339deg,
+      rgba(50, 56, 61, 0.95) 0%,
+      rgba(28, 29, 33, 0.95) 50%
+    ),
+    url("../../../assets/images/normon.png");
+  @include backgroundProp(fixed, no-repeat, left);
+  border: 1px solid #242424;
+  box-shadow: 0px 20px 20px #1c1d21;
+}
+body.theme-dark .navButton a:hover {
+  background: linear-gradient(
+      339deg,
+      rgba(50, 56, 61, 0) 0%,
+      rgba(28, 29, 33, 0.4) 50%
+    ),
+    url("../../../assets/images/normon.png");
+  @include backgroundProp(fixed, no-repeat, right);
+}
+
+body.theme-dark .navButton a span {
+  color: yellow;
+}
+.fixed-overlay {
+  min-height: 100vh;
+  z-index: -1;
+  position: relative;
+}
+
+@media (max-width: 1199.98px) {
+}
+@media (max-width: 991.98px) {
+}
+@media (max-width: 767.98px) {
+  .topBanner {
+    position: relative !important;
+    height: auto !important;
+  }
+  .fixed-overlay {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+}

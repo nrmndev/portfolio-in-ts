@@ -1,0 +1,65 @@
+import { Col, Container, Row } from "react-bootstrap";
+import SVGIcon from "../../../components/svg-icons/svg-icons";
+import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
+import CSSTransitionWrapper, {
+  AnimationTypes,
+} from "../../../components/hooks/useCssTransition";
+import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
+
+type Props = {
+  id: string;
+  icon:
+    | "HTML"
+    | "JEST"
+    | "JS"
+    | "JQUERY"
+    | "MSSQL"
+    | "NODE"
+    | "CSS"
+    | "DOTNET"
+    | "GIT"
+    | "REACT"
+    | "REDUX"
+    | "TYPESCRIPT"
+    | "COMPONENT"
+    | "SASS"
+    | "MOBILE"
+    | "REUSE";
+  title: string;
+  content: string;
+  viewBox?: number;
+};
+const SkillListItem = (props: Props) => {
+  const propsPassedID = useCheckInViewById(props.id);
+  return (
+    <Col xs={12} sm={6} md={4} className="pv__gutter">
+      <Card variant={CARD_VARIANTS.WITHSHADOW}>
+        <span id={props.id}>
+          <CSSTransitionWrapper
+            in={propsPassedID}
+            delay={200}
+            animation={AnimationTypes.FADEINUP}
+          >
+            <SVGIcon icon={props.icon} viewBox={props.viewBox} />
+          </CSSTransitionWrapper>
+        </span>
+        <CSSTransitionWrapper
+          in={propsPassedID}
+          delay={400}
+          animation={AnimationTypes.FADEINUP}
+        >
+          <h3 className="mt-3 color_2">{props.title}</h3>
+        </CSSTransitionWrapper>
+        <CSSTransitionWrapper
+          in={propsPassedID}
+          delay={600}
+          animation={AnimationTypes.FADEINUP}
+        >
+          <p className="color_1">{props.content}</p>
+        </CSSTransitionWrapper>
+      </Card>
+    </Col>
+  );
+};
+
+export default SkillListItem;

@@ -1,0 +1,40 @@
+.timeline {
+  &__gutter {
+    padding-left: 50px;
+    // border-left: 5px solid #edebeb;
+    border-width: 0 0 0 5px;
+    border-style: solid;
+    border-color: #edebeb;
+  }
+  &__wrapper {
+    margin-top: 40px;
+    position: relative;
+    // background: linear-gradient(165deg, #fff 50%, #edebeb 80%);
+    // box-shadow: 5px 5px 15px #c8c8c8, -5px -5px 15px #999898;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 55px;
+      height: 5px;
+      right: 100%;
+      top: 63px;
+      transform: translateY(-7px);
+      background: #edebeb;
+      z-index: 0;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #edebeb;
+      border-radius: 100%;
+      left: -62px;
+      top: 55px;
+      transform: translateY(-7px);
+      background: #43cea2;
+    }
+  }
+}

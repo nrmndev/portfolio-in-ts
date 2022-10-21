@@ -1,0 +1,16 @@
+// .icon {
+// }
+.icon {
+  text-align: center;
+  @include flexCenter;
+  font-size: 2em;
+}
+.icon {
+  &__wrapper {
+    &:hover {
+      .icon {
+        @extend .animate__bounceIn;
+      }
+    }
+  }
+}

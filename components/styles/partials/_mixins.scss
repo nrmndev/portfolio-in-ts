@@ -1,0 +1,96 @@
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  animation: $value;
+}
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  transition: $value;
+}
+
+//ShortHand positioning
+@mixin position(
+  $pos,
+  $pos1val: 0,
+  $pos2val: 0,
+  $width: auto,
+  $height: auto,
+  $top: true,
+  $left: true
+) {
+  @if $top {
+    top: $pos1val;
+  } @else {
+    bottom: $pos1val;
+  }
+  @if $left {
+    left: $pos2val;
+  } @else {
+    right: $pos2val;
+  }
+  position: $pos;
+  width: $width;
+  height: $height;
+}
+// @mixin position($pos, $top: 0, $left: 0, $width: auto, $height: auto) {
+//   position: $pos;
+//   top: $top;
+//   left: $left;
+//   width: $width;
+//   height: $height;
+// }
+
+@mixin backdropFilter($value) {
+  -webkit-backdrop-filter: $value;
+  backdrop-filter: $value;
+}
+
+@mixin textClip($colorFallback: #333, $background: none) {
+  color: $colorFallback;
+  background: $background;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+// Shorthand background
+@mixin backgroundProp(
+  $attachment: fixed,
+  $repeat: no-repeat,
+  $position: center center,
+  $size: auto
+) {
+  background-attachment: $attachment !important;
+  background-repeat: $repeat !important;
+  background-position: $position !important;
+  background-size: $size !important;
+}
+//Mixin modifiers
+@mixin buttonRaw {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+//Centering content
+@mixin flexCenter {
+  display: inline-flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+//Transform
+@mixin transformOrigin($value) {
+}

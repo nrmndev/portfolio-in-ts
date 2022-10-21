@@ -1,0 +1,136 @@
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
+
+import "jest-styled-components";
+import Button, { BUTTON_VARIANTS } from "./button.component";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
+
+describe("Button Component", () => {
+  test("renders button children using props.children", () => {
+    render(
+      <Button data-testid="svg-element" href="http://somelink.com">
+        Some text
+      </Button>
+    );
+    const text = screen.getByText("Some text", { exact: false });
+    expect(text).toBeTruthy();
+  });
+
+  test("renders button with type 'Submit' using props.type", () => {
+    render(<Button type="submit">Some text</Button>);
+    const el = document.querySelector("button[type=submit]");
+    expect(el).toBeTruthy();
+  });
+
+  test("renders button with type 'Reset' using props.type ", () => {
+    render(<Button type="reset">Some text</Button>);
+    const el = document.querySelector("button[type=reset]");
+    expect(el).toBeTruthy();
+  });
+
+  test("renders button with type 'Button' using props.type", () => {
+    render(<Button type="button">Some text</Button>);
+    const el = document.querySelector("button[type=button]");
+    expect(el).toBeTruthy();
+  });
+
+  test("renders button as AnchorHTMLElement using props.href", () => {
+    render(
+      <Button data-testid="svg-element" href="http://somelink.com">
+        Some text
+      </Button>
+    );
+    const el = screen.getByText(
+      (content, element) => element!.tagName.toLowerCase() === "a"
+    );
+    expect(el).toBeTruthy();
+  });
+
+  test("renders button as Link Router using props.to", () => {
+    render(
+      <Button data-testid="svg-element" to="/someroute">
+        Some text
+      </Button>,
+      { wrapper: BrowserRouter }
+    );
+    const el = screen.getByText(
+      (content, element) => element!.tagName.toLowerCase() === "a"
+    );
+    expect(el).toBeTruthy();
+  });
+
+  test("renders button as base variant using props.variant", () => {
+    const tree = renderer
+      .create(<Button variant={BUTTON_VARIANTS.base}>Some text</Button>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(`letter-spacing: 0.5px;
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer;
+    text-decoration: none;`);
+  });
+
+  test("renders button as google variant using props.variant", () => {
+    const tree = renderer
+      .create(<Button variant={BUTTON_VARIANTS.google}>Some text</Button>)
+      .toJSON();
+    expect(tree).toHaveStyleRule("background-color: #4285f4;");
+  });
+
+  test("renders button as inverted variant using props.variant", () => {
+    const tree = renderer
+      .create(<Button variant={BUTTON_VARIANTS.inverted}>Some text</Button>)
+      .toJSON();
+    expect(tree).toHaveStyleRule("background-color: white;");
+  });
+
+  test("renders button as icon variant using props.variant", () => {
+    const tree = renderer
+      .create(<Button variant={BUTTON_VARIANTS.icon}>Some text</Button>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(`background-color: transparent;
+    border-color: transparent;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;`);
+  });
+
+  test("renders button as block using props.block", () => {
+    const tree = renderer
+      .create(
+        <Button variant={BUTTON_VARIANTS.icon} block>
+          Some text
+        </Button>
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`width: 100%`);
+  });
+
+  test("renders button as size SM props.size", () => {
+    const tree = renderer.create(<Button size="sm">Some text</Button>).toJSON();
+    expect(tree).toHaveStyleRule(`padding: .4rem .8rem`);
+  });
+
+  test("renders button as size MD `default` props.size", () => {
+    const tree = renderer.create(<Button size="md">Some text</Button>).toJSON();
+    expect(tree).toHaveStyleRule(`padding: .7rem 1.4rem`);
+  });
+
+  test("renders button as size LG using props.size", () => {
+    const tree = renderer.create(<Button size="lg">Some text</Button>).toJSON();
+    expect(tree).toHaveStyleRule(`padding: 1.2rem 2.4rem`);
+  });
+
+  test("renders button with color 'red' using props.color ", () => {
+    const tree = renderer
+      .create(<Button color="red">Some text</Button>)
+      .toJSON();
+    expect(tree).toHaveStyleRule("color:red");
+  });
+});

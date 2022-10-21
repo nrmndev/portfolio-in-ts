@@ -1,0 +1,43 @@
+import { ColProps } from "react-bootstrap";
+import { BaseCard, CardWithShadow } from "./cards.styles";
+
+export const CARD_TYPE_CLASSES = {
+  base: "base",
+  withShadow: "withShadow",
+};
+
+const getCard = (cardType = CARD_TYPE_CLASSES.base) =>
+  ({
+    [CARD_TYPE_CLASSES.base]: BaseCard,
+    [CARD_TYPE_CLASSES.withShadow]: CardWithShadow,
+  }[cardType]);
+
+type CardProps = {
+  title: string;
+  content: string;
+  cardType?: "base" | "withShadow";
+  children?: React.ReactNode;
+  beforeTitle?: JSX.Element | string | undefined;
+  textAlign?: "left" | "center" | "right";
+} & ColProps;
+
+const Cards = ({
+  title,
+  content,
+  beforeTitle = undefined,
+  cardType = "base",
+  textAlign = "left",
+  children,
+}: CardProps) => {
+  const CustomCard = getCard(cardType);
+  return (
+    <CustomCard textAlign={textAlign}>
+      {beforeTitle && beforeTitle}
+      <h2>{title}</h2>
+      <p>{content}</p>
+      {children}
+    </CustomCard>
+  );
+};
+
+export default Cards;

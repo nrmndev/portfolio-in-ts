@@ -1,0 +1,24 @@
+.text-danger {
+  color: red;
+}
+
+.primary {
+  color: #43cea2;
+}
+
+.underline {
+  text-decoration: underline;
+}
+div[data-theme="red"] {
+  background: red;
+  color: white;
+}
+
+#button {
+  background: black;
+  color: white;
+}
+/* button[attr=[data-theme="red"] {
+  background: red;
+  color: white;
+} */

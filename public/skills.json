@@ -1,0 +1,95 @@
+[
+  {
+    "skills": [
+      {
+        "id": "1",
+        "title": "React",
+        "image": "IMG_REACT_G.webp",
+        "message": "Ohh.. ReactJS! What an excellent tool to create interactive applications!",
+        "description": "Portals, Callbacks, UseEffects, UseContext, Custom Hook, SPAs and many more!",
+        "svgIcon": "reacticon"
+      },
+      {
+        "id": "2",
+        "title": "HTML",
+        "image": "IMG_HTML_G.webp",
+        "message": "Check it out! You might find something cool like the importance of Accessibility, SEO and how to make Semantic HTML!",
+        "description": "Semantic HTML, WCAG Accessibility, Cross Platform, Local Storage and many more!",
+        "svgIcon": "htmlicon"
+      },
+      {
+        "id": "3",
+        "title": "CSS",
+        "image": "IMG_CSS_G.webp",
+        "message": "Check it out! You might find something cool like how to use Flexboxes and modern vendor prefixes!",
+        "description": "Cross-browser, Media Queries, Vendor prefixes, Animations, SASS & LESS and many more!",
+        "svgIcon": "cssicon"
+      },
+      {
+        "id": "4",
+        "title": "JavaScript",
+        "image": "IMG_JS_G.webp",
+        "message": "Check it out! You might find something cool like what is modern javascript programming nowadays!",
+        "description": "Destructuring, Mapping, Arrow Functions, Promises, ES6/7 and many more!",
+        "svgIcon": "jsicon"
+      },
+      {
+        "id": "5",
+        "title": "Jest",
+        "image": "IMG_JEST_G.webp",
+        "message": "Let me tell you something about Jest",
+        "description": "Need to put something about JEST here and many more!",
+        "svgIcon": "jesticon"
+      },
+      {
+        "id": "6",
+        "title": "Redux",
+        "image": "IMG_REDUX_G.webp",
+        "message": "Let me tell you something about Redux",
+        "description": "Pure function, Thunks, Handling Side Effects and many more!",
+        "svgIcon": "reduxicon"
+      },
+      {
+        "id": "7",
+        "title": "Node JS",
+        "image": "IMG_NODE_G.webp",
+        "message": "Let me tell you something about Node JS",
+        "description": "Need to put something about Node JS Here and many more!",
+        "svgIcon": "nodejsicon"
+      },
+
+      {
+        "id": "9",
+        "title": "Git",
+        "image": "IMG_GIT_G.webp",
+        "message": "Let me tell you something about Git.",
+        "description": "Need to put something about GIT here and many more!",
+        "svgIcon": "giticon"
+      },
+      {
+        "id": "10",
+        "title": "jQuery",
+        "image": "IMG_JQUERY_G.webp",
+        "message": "Let me tell you something about jQuery.",
+        "description": "DOM Manipulation, Event handling, CSS Animations, Ajax and more!",
+        "svgIcon": "jqueryicon"
+      },
+      {
+        "id": "11",
+        "title": "Microsoft .NET",
+        "image": "IMG_NET_G.webp",
+        "message": "Let me tell you something about Microsoft .NET",
+        "description": "REST Api, Classes, Auth, MVC Framework and many more!",
+        "svgIcon": "dotneticon"
+      },
+      {
+        "id": "12",
+        "title": "MS SQL",
+        "image": "IMG_MSSQL_G.webp",
+        "message": "Let me tell you something about MS SQL.",
+        "description": "Queries, Scheduled Jobs, Role Assignment and many more!",
+        "svgIcon": "mssqlicon"
+      }
+    ]
+  }
+]

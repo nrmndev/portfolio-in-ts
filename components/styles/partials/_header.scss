@@ -1,0 +1,161 @@
+.ui-control {
+  @include position(fixed, calc(50vh - 10px), 0, auto, auto, true, false);
+  padding: 0;
+  z-index: 999;
+  @media (max-width: 768px) {
+  }
+}
+
+.custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+  cursor: pointer;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.custom-control-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom-switch {
+  background: $offwhite;
+  padding: 1px 1px 1px 35px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  line-height: 24px;
+  &_ai {
+    @extend .custom-switch;
+    .custom-control-label:after {
+      content: "AI" !important;
+    }
+  }
+  &_ui {
+    @extend .custom-switch;
+    .custom-control-label:after {
+      content: "UI" !important;
+    }
+  }
+}
+.custom-switch .custom-control-label:before {
+  content: "";
+  @include position(absolute, 2px, -31px, 32px, 20px);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px $offwhite;
+  display: block;
+  pointer-events: none;
+  background-color: #ecf0f3;
+}
+.custom-switch .custom-control-input:checked ~ .custom-control-label:after {
+  background-color: #31344b;
+  @include transform(translateX(9px));
+}
+.custom-switch .custom-control-label:after {
+  background-color: #b1bcce;
+  border-radius: 8px;
+  line-height: 14px;
+  @include transition(
+    (
+      transform 0.15s ease-in-out,
+      background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out
+    )
+  );
+}
+
+// .custom-control-label:after {
+//   @include position(
+//     absolute,
+//     calc(0.125rem + 2px),
+//     calc(-2rem + 4px),
+//     calc(1rem - 4px),
+//     calc(1rem - 4px)
+//   );
+//   display: block;
+//   content: "";
+//   background: no-repeat 50%/50% 50%;
+// }
+.custom-control-label:after {
+  @include position(absolute, 4px, -28px, 17px, 16px);
+  display: block;
+  content: "";
+  color: #fff;
+  background: no-repeat 50%/50% 50%;
+  padding: 0px 4px;
+  font-size: 10px;
+}
+
+.sideNav {
+  margin: 0;
+  padding: 0;
+  z-index: 20;
+  @include position(fixed, calc(50% - 50px));
+}
+
+.sideNav a {
+  list-style: none;
+  background-color: $offwhite;
+  text-decoration: none;
+  font-size: 12px;
+  text-align: right;
+  display: block;
+  color: #333 !important;
+  border-top-right-radius: 0.625rem;
+  padding: 3px 5px;
+  margin-top: 5px;
+  width: 70px;
+  position: relative;
+  border-left: 2px solid $offwhite;
+  @include transition(all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1));
+}
+.sideNav a:after {
+  z-index: -1;
+  content: "";
+  background-color: inherit;
+  @include position(absolute, 0, -10%, 22px, 100%, $top: true, $left: false);
+  @include transform(skewX(-30deg));
+}
+.sideNav a:focus-visible,
+.sideNav a:hover,
+.sideNav a.active {
+  width: 80px;
+  background: $bg_gradient2;
+  border-left: 2px solid #fff;
+  color: yellow !important;
+  cursor: pointer;
+  outline: none;
+}
+.sideNav a span {
+  position: relative;
+  display: block;
+}
+
+.sideNav a:focus-visible span:before,
+.sideNav a span:before,
+.sideNav a.active span:before {
+  content: "-";
+  @include position(absolute, 0, 0, 5px, 100%);
+}
+
+.sideNav a:focus-visible:after,
+.sideNav a.active:after,
+.sideNav a:hover:after {
+  background: $blue;
+}
+
+@media (max-width: 768px) {
+  .sideNav a {
+    width: 50px;
+  }
+  .sideNav a:hover,
+  .sideNav a.active {
+    width: 65px;
+  }
+  .sideNav a span:before,
+  .sideNav a.active span:before {
+    display: none;
+  }
+}

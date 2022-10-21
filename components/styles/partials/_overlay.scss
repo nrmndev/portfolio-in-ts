@@ -1,0 +1,15 @@
+.overlay-mask {
+  @include position(absolute, 0, 0, 100%, 100%);
+  &__front {
+    z-index: 3;
+  }
+  &__back {
+    z-index: -1;
+  }
+  a.button,
+  button {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 92px);
+  }
+}

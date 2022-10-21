@@ -1,0 +1,30 @@
+ul.nav {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.navbar {
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  background: #fafafa;
+  &-brand a {
+    color: $green;
+  }
+  &-nav {
+    a {
+      margin: 0 10px;
+      border-bottom: 2px solid transparent;
+      color: $dark;
+      &:active,
+      &:focus-visible,
+      &:hover {
+        color: $green;
+        border-bottom: 2px solid $green;
+      }
+    }
+  }
+}

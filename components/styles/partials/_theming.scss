@@ -1,0 +1,116 @@
+body.theme-dark {
+  background: #26282c;
+
+  //BUTTONS
+  // button,
+  // a.button {
+  //   // background: #32383d;
+  //   // border: none;
+  //   color: #fff;
+  //   // box-shadow: none;
+  //   &:focus-visible,
+  //   &:hover,
+  //   &:active {
+  //     background: linear-gradient(341deg, #43cea2 0%, #185a9d);
+  //   }
+  // }
+  img.theme-dark {
+    background: #212121;
+  }
+  //FONTS
+  .color_1 {
+    color: $gray;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .color_2 {
+    color: #ffffff;
+  }
+  a.color_3 {
+    color: #fff;
+    &:focus-visible,
+    &:hover {
+      color: yellow;
+    }
+  }
+  .color_3 {
+    color: #fff;
+  }
+
+  .color_highlighted {
+    color: yellow;
+  }
+
+  .animated .card {
+    background: linear-gradient(to right bottom, #212428, #16181c);
+    @include transition(background-color 0.3s ease-in);
+  }
+  //CARD
+  .card {
+    border: 1px solid #242424;
+    box-shadow: 0px 20px 20px #1c1d21;
+    // background: linear-gradient(339deg, #32383d 0%, #1c1d21 50%);
+    background: linear-gradient(145deg, #1e2024, #23272b);
+  }
+
+  //SECTION BORDERS
+  #SkillsSection {
+    border-top: 10px solid rgba(33, 33, 33, 0.7);
+    border-bottom: 10px solid #1c1d21;
+  }
+  #WorksSection {
+    border-top: 10px solid rgba(33, 33, 33, 0.7);
+    border-bottom: 10px solid rgba(33, 33, 33, 0.7);
+    background: linear-gradient(0deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 70%)),
+      url("../../../assets/images/workbg_dark.jpg");
+    @include backgroundProp(fixed, no-repeat, center center, cover);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+  }
+
+  #WorksSection:after {
+    @include backdropFilter(blur(8px));
+  }
+  #TrainingSection {
+    border-top: 10px solid #1c1d21;
+    border-bottom: 10px solid #1c1d21;
+  }
+  #HireMeSection {
+    border-top: 10px solid rgba(33, 33, 33, 0.7);
+    background: linear-gradient(0deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 70%)),
+      url("../../../assets/images/hirebg.jpeg");
+    @include backgroundProp(fixed, no-repeat, center center, cover);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+  }
+
+  //MODALS
+  .custom-modal-button {
+    color: #fff;
+  }
+  .custom-modal_content {
+    background: #1c1d21;
+    border: 1px solid #666;
+  }
+  .modal_backdrop {
+    background: rgb(222 224 245 / 50%);
+  }
+  .second-backdrop {
+    background: rgb(0 0 0 / 50%);
+  }
+
+  //MODAL CONTENT NAVS
+  .skill-topics-navigation-wrapper {
+    border-left: 1px dashed #525252;
+  }
+
+  .skill-topics-navigation li {
+    border-bottom: 1px dashed #525252;
+    button {
+      color: var(--white);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@mixin transition($s) {
+  transition: all $s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webit-transition: all $s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: all $s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#csstransition {
+  .my-appear {
+    @include transition(3s);
+    color: #fff;
+  }
+  .my-active-appear {
+    background-color: aqua;
+    @include transition(3s);
+    color: #222;
+  }
+  .my-done-appear {
+    background-color: teal;
+    @include transition(3s);
+    color: #fff;
+  }
+  .my-enter {
+    background-color: darkblue;
+    @include transition(3s);
+    color: #fff;
+  }
+  .my-active-enter {
+    background-color: cornflowerblue;
+    @include transition(3s);
+    color: #fff;
+  }
+  .my-done-enter {
+    background-color: darkmagenta;
+    @include transition(3s);
+    color: yellow;
+  }
+  .my-exit {
+    background-color: darkkhaki;
+    @include transition(3s);
+  }
+  .my-active-exit {
+    background-color: gold;
+    @include transition(3s);
+    color: #222;
+  }
+  .my-done-exit {
+    background-color: yellow;
+    @include transition(3s);
+    color: blue;
+  }
+}

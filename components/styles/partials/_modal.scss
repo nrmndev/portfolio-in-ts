@@ -1,0 +1,125 @@
+#modalOverlay {
+  z-index: 51;
+  position: relative;
+}
+.custom-modal {
+  // @include position(absolute, 0, 0, calc(100% - 60px), calc(100vh - 130px));
+  // z-index: 52;
+  margin: 30px;
+  max-height: 800px;
+  overflow: hidden;
+  @media (max-width: 767.98px) {
+    margin: 10px;
+    height: calc(100vh - 20px);
+    max-height: inherit;
+    width: calc(100% - 20px);
+  }
+}
+.custom-modal_content {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  height: calc(100vh - 130px);
+  background: #fff;
+  z-index: 52;
+  padding: 20px;
+  max-height: 800px;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  border-radius: 20px;
+  @media (max-width: 767.98px) {
+    height: calc(100vh - 20px);
+    max-height: inherit;
+    width: calc(100% - 20px);
+  }
+}
+.custom-modal-button {
+  @include position(absolute, 0, 5px, auto, auto, true, false);
+  border: none;
+  color: #219ebc;
+  background: #fff;
+}
+
+.modal_backdrop {
+  @include position(fixed, 0, 0, 100vw, 100vh);
+  z-index: 90;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  &__container {
+    // max-width: 500px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+    // animation: slide-down 300ms ease-out forwards;
+    margin: 0 auto;
+  }
+  &__content {
+    max-height: 70vh;
+    overflow: auto;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 22;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+
+.button {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+}
+.quantity {
+  padding: 5px 5px;
+  font-size: 1.2rem;
+}
+
+.img {
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+  display: block;
+}
+
+.footer {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.buttonContainer {
+  display: inline-block;
+  background: #fafafa;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+body.open #overlays {
+  display: flex;
+}
+
+#overlays {
+  position: fixed;
+  width: calc(100% - 80px);
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  margin-left: 40px;
+  margin-right: 40px;
+}

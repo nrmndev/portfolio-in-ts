@@ -1,0 +1,9 @@
+.scroll-y {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+aside {
+  max-width: 300px;
+  position: sticky;
+  top: 0;
+}

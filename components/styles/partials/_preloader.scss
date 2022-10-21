@@ -1,0 +1,80 @@
+.skeleton {
+  width: 100%;
+  height: 2rem;
+  &.skeleton {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.12);
+    cursor: wait;
+    -webkit-mask-image: radial-gradient(#fff, #000);
+    mask-image: radial-gradient(#fff, #000);
+    &__circle {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      &-center {
+        @extend .skeleton__circle;
+        margin: 0 auto;
+      }
+    }
+    &__line {
+      &-small {
+        @extend .skeleton__line;
+        width: 80%;
+        margin: 0 10%;
+      }
+      &-card {
+        @extend .skeleton__line;
+        height: 8rem;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(transparent),
+        color-stop(hsla(0, 0%, 100%, 0.4)),
+        to(transparent)
+      );
+      background: linear-gradient(
+        90deg,
+        transparent,
+        hsla(0, 0%, 100%, 0.4),
+        transparent
+      );
+      -webkit-animation: skeleton-wave 1.75s linear infinite;
+      animation: skeleton-wave 1.75s linear infinite;
+    }
+  }
+}
+
+@-webkit-keyframes skeleton-wave {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+@keyframes skeleton-wave {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}

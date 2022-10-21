@@ -1,0 +1,115 @@
+/***** POSITIONING *****/
+.left-reset {
+  left: 0 !important;
+}
+
+/***** COLORS *****/
+.color {
+  &_filled,
+  &_gradient {
+    @include textClip(
+      #023047,
+      linear-gradient(30deg, rgb(67 206 162 / 100%) 0%, rgb(24 90 157 / 100%))
+    );
+  }
+  &__yellow {
+    color: yellow !important;
+  }
+  &__white {
+    color: $white !important;
+  }
+  &__primary {
+    color: $green;
+  }
+}
+
+/***** FONT PROPS ****/
+.text {
+  &__center {
+    text-align: center;
+  }
+  &__uppercase {
+    text-transform: uppercase;
+  }
+  &__underline {
+    text-decoration: underline;
+  }
+}
+
+/***** PADDING *****/
+.pv {
+  &__gutter {
+    padding-top: calc(var(--bs-gutter-x) * 0.5);
+    padding-bottom: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+/***** MARGINS *****/
+.mh {
+  &__sm-auto {
+    @media (max-width: 768px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+.mb {
+  &__sm-10 {
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+}
+.ml-2 {
+  margin-left: 0.8rem;
+}
+.mh-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/***** Z INDEXES *****/
+.z-30 {
+  z-index: 30;
+  position: relative;
+}
+
+/***** OVERFLOWS *****/
+.o-hidden {
+  overflow: hidden;
+}
+.oy-hidden {
+  overflow-y: hidden;
+}
+.ox-hidden {
+  overflow-x: hidden;
+}
+
+/***** DISPLAYS *****/
+.display {
+  &__flex-center {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+  }
+  &__sm-block {
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  &__table {
+    display: table;
+  }
+}
+
+/***** SHADOWS *****/
+.shadow {
+  &__thin {
+    box-shadow: 2px 2px 15px #d8d5d5;
+  }
+}

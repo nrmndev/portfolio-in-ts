@@ -1,0 +1,14 @@
+.backdrop {
+  @include position(fixed, 0, 0, 100%, 100vh);
+  background: #f8f8f8;
+  z-index: -1;
+  @include animation(gradient 1.5s ease infinite);
+  @include backgroundProp(inherit, no-repeat, 0 100%, 100%);
+}
+
+// .second-backdrop {
+//   z-index: 25;
+//   @include position(fixed, 0, 0, 100%, 100vh);
+//   background: rgb(222 224 245 / 50%);
+//   @include backdropFilter(blur(10px));
+// }

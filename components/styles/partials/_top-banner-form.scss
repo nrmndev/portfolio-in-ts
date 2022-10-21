@@ -1,0 +1,155 @@
+body.theme-dark {
+  .banner-select,
+  .banner-subtitle {
+    color: #c4cfde;
+  }
+}
+.banner-select {
+  width: 100%;
+  padding: 3px;
+  background: none;
+  color: #4a4752;
+  font-size: 1.5rem;
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid #40bfa1;
+  &:focus-visible,
+  &:hover,
+  &:active {
+    outline: none;
+  }
+  option {
+    background: lightgrey;
+  }
+}
+
+.banner-button {
+  font-size: 1.5rem;
+  padding: 0;
+
+  background: none;
+  border: none;
+  color: #fff;
+  box-shadow: none;
+  border-width: 2px;
+  border-style: solid;
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+  // background: linear-gradient(341deg, #43cea2 0%, #185a9d) !important;
+  @include animation(colorswap 3s infinite);
+  // @extend .animate__colorSwap;
+  &:hover {
+    border-color: #fff;
+    color: #fff !important;
+  }
+}
+
+.banner-title {
+  font-family: "MontserratBold";
+  color: #4a4752;
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(30deg, rgb(67, 206, 162) 0%, rgb(24, 90, 157));
+  // @include animation(gradientcolorswap 3s infinite);
+  // text-shadow: 0 0 200px #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  @media (min-width: 1200px) {
+    font-size: 5rem;
+  }
+}
+
+body.theme-dark {
+  .subtitle {
+    color: #c4cfde;
+  }
+}
+
+.banner-subtitle {
+  font-family: "MontserratBold";
+  color: #4a4752;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.fadeUpDown {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  overflow: hidden;
+  @extend .fadeUpDown;
+  @extend .animate__fadeInUp;
+  &-enter {
+    @extend .fadeUpDown;
+    @extend .animate__fadeInUp;
+  }
+  &-exit {
+    @extend .fadeUpDown;
+    @extend .animate__fadeOutDown;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+.animate__fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}

@@ -1,0 +1,58 @@
+.skill-topics-navigation {
+  padding: 10px 0;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.skill-topics-navigation li {
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px dashed #dedede;
+}
+
+.skill-topics-navigation li button {
+  @include buttonRaw;
+}
+.skill-topics-navigation li button:focus,
+.skill-topics-navigation li button:active {
+  color: green;
+}
+
+.skill-topics-navigation-wrapper {
+  border-left: 1px dashed #dedede;
+  &.active {
+    display: block;
+  }
+}
+
+.skillBackdrop {
+  background: rgba(222, 224, 245, 0.5);
+  z-index: 35;
+  @include position(absolute, 0, 0, 100%, 100%);
+  @include backdropFilter(blur(10px));
+}
+
+.topic_toggler {
+  border: none;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  padding: 10px;
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .skill-topics-navigation-wrapper {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    display: none;
+  }
+  .topic_toggler {
+    display: block;
+  }
+}

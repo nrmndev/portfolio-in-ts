@@ -1,0 +1,139 @@
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
+import Image, { IMAGE_ALIGN, IMAGE_VARIANTS } from "./image.component";
+
+describe("Image Component", () => {
+  test("renders img src", () => {
+    render(
+      <Image
+        data-testid="img-element"
+        src={"http://somelink/someimg.jpg"}
+        width={200}
+        height={200}
+        alt="Some Image Alt"
+      />
+    );
+    const img = document.querySelector("img") as HTMLImageElement;
+    expect(img.src).toContain("http://somelink/someimg.jpg");
+  });
+
+  test("renders img alt", () => {
+    render(
+      <Image
+        data-testid="img-element"
+        src={"http://somelink/someimg.jpg"}
+        width={200}
+        height={200}
+        alt="Some Image Alt"
+      />
+    );
+    const img = document.querySelector("img") as HTMLImageElement;
+    expect(img.alt).toContain("Some Image Alt");
+  });
+
+  test("renders img with width=200 height=200 from styled component", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule("max-width: 200px, max-height: 200px;");
+  });
+
+  test("renders img with 'Base' variant passed via props.variant", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+          variant={IMAGE_VARIANTS.BASE}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`width: 100%;
+    display: table;`);
+  });
+
+  test("renders img with props.variant 'Bordered' to have a border-radius 10px", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+          variant={IMAGE_VARIANTS.BORDERED}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`border-radius: 10px`);
+  });
+
+  test("renders img with props.variant 'Rounded' to have a border-radius 50%", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+          variant={IMAGE_VARIANTS.ROUNDED}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`border-radius: 50%`);
+  });
+
+  test("renders img with props.align 'Left'", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+          align={IMAGE_ALIGN.LEFT}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`margin: 0 auto 0 0`);
+  });
+
+  test("renders img with props.align 'Center'", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+          align={IMAGE_ALIGN.CENTER}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`margin: 0 auto`);
+  });
+
+  test("renders img with props.align 'Right'", () => {
+    const tree = renderer
+      .create(
+        <Image
+          data-testid="img-element"
+          src={"http://somelink/someimg.jpg"}
+          width={200}
+          height={200}
+          align={IMAGE_ALIGN.RIGHT}
+        />
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule(`margin: 0 auto 0 0`);
+  });
+});

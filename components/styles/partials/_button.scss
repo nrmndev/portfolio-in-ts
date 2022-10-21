@@ -1,0 +1,62 @@
+body a,
+body button {
+  text-decoration: none;
+  color: $gray;
+  cursor: pointer;
+  &.active,
+  &:focus-visible,
+  &:active,
+  &:hover {
+    color: $green;
+  }
+  &.button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    box-shadow: 2px 2px 15px #d8d5d5;
+    background: linear-gradient(165deg, #fff 50%, #edebeb 80%);
+    border: 1px solid #edebeb;
+    text-align: center;
+    transition: background-color 0.3s ease-in;
+    line-height: 1rem;
+    &__rounded {
+      border-radius: 10px;
+    }
+    &__lg {
+      padding: 1.4rem;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
+    &__unstyled {
+      border: none;
+      background: transparent;
+    }
+    span {
+      &:after {
+        content: "";
+        width: 0;
+        height: 2px;
+        background: $green;
+        display: block;
+        transition: width 0.3s ease-in;
+      }
+      display: inline-block;
+    }
+
+    &:hover {
+      span {
+        transform: translateY(-2px);
+        transition: transform 0.3s ease-in;
+        &:after {
+          content: "";
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.button__flat {
+    border: none;
+    background: none;
+    color: $green;
+  }
+}

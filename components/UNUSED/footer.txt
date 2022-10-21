@@ -1,0 +1,35 @@
+import { useDispatch } from "react-redux";
+import { uiActions } from "../store/ui-slice";
+import { MouseEventType } from "../utils/interfaces/interfaces";
+import HireMe from "./hireme";
+
+const Footer = (): JSX.Element => {
+  const dispatch = useDispatch();
+  const onMouseEventHandler = (
+    item: string,
+    e: React.MouseEvent<HTMLElement>
+  ) => {
+    switch (e.type) {
+      case MouseEventType.MOUSE_ENTER:
+        dispatch(uiActions.setMessage(item));
+        dispatch(uiActions.setCardBackdrop(true));
+        break;
+      case MouseEventType.MOUSE_LEAVE:
+        dispatch(uiActions.setCardBackdrop(false));
+        dispatch(uiActions.setMessage(""));
+        break;
+      default:
+        break;
+    }
+  };
+  return (
+    <>
+      <HireMe />
+      <footer>
+        <span className="copyright">&copy; NGSilvestre.com 2022</span>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;
