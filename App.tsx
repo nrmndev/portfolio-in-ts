@@ -20,7 +20,7 @@ import Revamp from "./pages/revamp/revamp";
 import HireSection from "./components/hire-section/hire-section.component";
 ///import "./assets/neomorphism/scss/neumorphism.css";
 //let isInitial = true;
-
+//let sample
 function App() {
   const dispatch = useAppDispatch();
   const isActive = useAppSelector(
