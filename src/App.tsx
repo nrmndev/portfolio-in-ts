@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { uiActions } from "./store/ui-slice";
+import { uiActions } from "./store/ui/ui-slice";
 import { getFromLS } from "./utils/localstorage";
 import { useAppDispatch, useAppSelector } from "./store/hooks/typedhooks";
 import { ThemeType } from "./utils/interfaces/theme";

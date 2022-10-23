@@ -24,7 +24,7 @@ const ExperienceList = ({ data }: ExperienceProps) => {
   let ExperienceJSX: JSX.Element[] | JSX.Element = (
     <NotFound text="No Experiences List Found" />
   );
-  if (data.length > 0) {
+  if (data.length > 1) {
     ExperienceJSX = data.map((experience: ExperienceType) => {
       const { achievements, description, tasks, workURL, workURLText, id } =
         experience;

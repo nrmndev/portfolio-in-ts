@@ -1,21 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-// export enum ThemeType {
-//   DARK = "dark",
-//   LIGHT = "light",
-//   CUSTOM = "custom",
-// }
+import { UiInitialValueType } from "./ui-types";
 export const uiSlice = createSlice({
   name: "ui",
-  initialState: {
-    message: "Hello, I'm Normon! How's your day?",
-    theme: "dark",
-    isView: false,
-    isMobile: false,
-    isMessageActive: true,
-    cardBackdrop: false,
-    isModalActive: false,
-  },
+  initialState: UiInitialValueType,
   reducers: {
     setMessage(state, action: PayloadAction<string>) {
       state.message = action.payload;
@@ -26,7 +13,7 @@ export const uiSlice = createSlice({
     setView(state, action: PayloadAction<boolean>) {
       state.isView = action.payload;
     },
-    toggleMessage(state, action: PayloadAction<boolean>) {
+    setToggleMessage(state, action: PayloadAction<boolean>) {
       state.isMessageActive = action.payload;
     },
     setMobileView(state, action: PayloadAction<boolean>) {

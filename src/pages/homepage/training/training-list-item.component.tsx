@@ -9,7 +9,7 @@ import Badge from "../../../components/badge/badge.component";
 import Text, {
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";
-import { TrainingType } from "../../../store/data-slice";
+import { TrainingType } from "../../../store/data/data-types";
 
 type Props = {
   data: TrainingType;

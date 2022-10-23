@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { useAppDispatch } from "../../../store/hooks/typedhooks";
-import { uiActions } from "../../../store/ui-slice";
+import { uiActions } from "../../../store/ui/ui-slice";
 import { TrainingType } from "../../../store/data/data-types";
 
 import { Col, Row } from "react-bootstrap";
@@ -61,11 +61,11 @@ const TrainingList = (props: Props) => {
   let TrainingJSX: JSX.Element[] | JSX.Element = (
     <NotFound text="No Trainings List Found" />
   );
-  if (props.data.length > 0) {
-    TrainingJSX = props.data.map((training: any, index: number) => {
+  if (props.data.length > 1) {
+    TrainingJSX = props.data.map((training: TrainingType) => {
       return (
         <TrainingListItem
-          key={index}
+          key={training.id}
           data={training}
           onMouseEventHandler={onMouseEventHandler}
           onClick={showCourseModal}

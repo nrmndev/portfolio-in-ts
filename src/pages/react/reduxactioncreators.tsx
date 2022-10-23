@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { dataActions } from "../../store/data-slice";
-import WithLineNumbers from "../../utils/code-highlighter";
+// import React, { useEffect } from "react";
+// import { useDispatch } from "react-redux";
+// import { dataActions } from "../../store/data/data-slice";
+// import WithLineNumbers from "../../utils/code-highlighter";
 
 // const exampleCode = `
 // interface bankType {

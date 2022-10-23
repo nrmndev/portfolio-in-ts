@@ -1,24 +1,25 @@
 import { useDispatch } from "react-redux";
 
 import { useAppSelector } from "../../store/hooks/typedhooks";
-import { uiActions } from "../../store/ui-slice";
 import { setToLS } from "../../utils/localstorage";
 import { useCallback } from "react";
 import { uiIsMobile, uiTheme } from "../../store/ui/ui-selector";
+import { uiSetTheme, uiSetToggleMessage } from "../../store/ui/ui-actions";
+
 const HeaderTopSettings = () => {
   const isMobileView = useAppSelector(uiIsMobile);
   const currentTheme = useAppSelector(uiTheme);
   const dispatch = useDispatch();
   const onClickHandler = useCallback(
     (e: React.MouseEvent<HTMLInputElement>) => {
-      dispatch(uiActions.toggleMessage(e.currentTarget.checked));
+      dispatch(uiSetToggleMessage(e.currentTarget.checked));
     },
     [dispatch]
   );
 
   const onClickSetTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
     setToLS("theme", event.target.checked ? "dark" : "light");
-    dispatch(uiActions.setTheme(event.target.checked ? "dark" : "light"));
+    dispatch(uiSetTheme(event.target.checked ? "dark" : "light"));
   };
 
   return (

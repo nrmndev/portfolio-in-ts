@@ -11,6 +11,7 @@ type requestConfig = {
   headers?: { "Content-Type": string };
   body?: { text: string };
 };
+
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -34,7 +35,7 @@ const useHttp = () => {
         }
 
         const data = await response.json();
-        console.log(data);
+
         applyData(data);
       } catch (err) {
         if (err instanceof Error) {

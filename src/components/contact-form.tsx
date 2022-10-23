@@ -148,9 +148,8 @@ const ContactUs = () => {
     };
   }, []);
 
-  const sendEmail = (e: any) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formval = form.current;
 
     if (isFormValid) {
       setShowSuccess(true);
@@ -161,7 +160,7 @@ const ContactUs = () => {
         .sendForm(
           "service_00n4mma",
           "template_um8bcq9",
-          formval!,
+          e.currentTarget,
           "y-A5oTBqJYSORbCyA"
         )
         .then(

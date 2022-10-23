@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { scroller } from "react-scroll";
-import { uiActions } from "../../store/ui-slice";
+import { uiSetCardBackdrop, uiSetMessage } from "../../store/ui/ui-actions";
 import { MouseEventType } from "../../utils/interfaces/interfaces";
 import { StyledNavLink, StyledNavListItem } from "./side-nav-list-item.styles";
 
@@ -18,12 +18,12 @@ const NavListItem = (props: Props) => {
   ) => {
     switch (e.type) {
       case MouseEventType.MOUSE_ENTER:
-        dispatch(uiActions.setMessage(item));
-        dispatch(uiActions.setCardBackdrop(true));
+        dispatch(uiSetMessage(item));
+        dispatch(uiSetCardBackdrop(true));
         break;
       case MouseEventType.MOUSE_LEAVE:
-        dispatch(uiActions.setCardBackdrop(false));
-        dispatch(uiActions.setMessage(""));
+        dispatch(uiSetCardBackdrop(false));
+        dispatch(uiSetMessage(""));
         break;
       default:
         break;
@@ -31,16 +31,16 @@ const NavListItem = (props: Props) => {
   };
 
   const handleSetInactive = () => {
-    dispatch(uiActions.setMessage(""));
+    dispatch(uiSetMessage(""));
   };
   const handleSetActive = (message: string) => {
     setTimeout(() => {
-      dispatch(uiActions.setMessage(message));
+      dispatch(uiSetMessage(message));
     }, 150);
   };
 
   const handleKeyUp = (
-    item: any,
+    item: string,
     event: React.KeyboardEvent<HTMLButtonElement>
   ) => {
     if (event.code === "Enter") {

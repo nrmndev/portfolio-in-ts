@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../store/hooks/typedhooks";
-import { uiActions } from "../../store/ui-slice";
+import { uiActions } from "../../store/ui/ui-slice";
 
 import {
   BsFillEnvelopeOpenFill,

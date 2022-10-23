@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 
-import { DataType, InitialValueType } from "../../store/data/data-types";
+import { DataType, DataInitialValueType } from "../../store/data/data-types";
 import { uiSetCardBackdrop, uiSetMessage } from "../../store/ui/ui-actions";
 import { useAppDispatch } from "../../store/hooks/typedhooks";
 
@@ -12,7 +12,11 @@ import ExperienceList from "./experience/experience-list";
 import Preloader from "../../components/preloader/loading";
 import FetchError from "../../components/error/fetch-error";
 import { MouseEventType } from "../../utils/interfaces/interfaces";
+//import { fetchSkillsData } from "../../store/state-actions";
 
+type Generic<T> = {
+  data: T[];
+};
 const HomePage = () => {
   const {
     isLoading,
@@ -21,9 +25,9 @@ const HomePage = () => {
     responseStatus,
   } = useHttp();
   //const [skillState, setSkillState] = useState<IDataType>();
-  const [skillState, setSkillState] = useState<DataType>(InitialValueType);
-  console.log("data", skillState);
-  const setSkillCallback = (data: any) => {
+  const [skillState, setSkillState] = useState<DataType>(DataInitialValueType);
+
+  const setSkillCallback = (data: DataType) => {
     setSkillState(data);
   };
 
@@ -39,11 +43,13 @@ const HomePage = () => {
     };
     sendTaskRequest(requestConfig, setSkillCallback);
   }, [sendTaskRequest]);
-  useEffect(() => {
-    enterTaskHandler();
-  }, [enterTaskHandler]);
 
   const dispatch = useAppDispatch();
+  useEffect(() => {
+    //dispatch(fetchSkillsData());
+    enterTaskHandler();
+  }, [enterTaskHandler, dispatch]);
+
   // const onClickHandler = (
   //   id: number,
   //   e: React.MouseEvent<HTMLButtonElement>

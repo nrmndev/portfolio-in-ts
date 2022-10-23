@@ -20,8 +20,9 @@ const SkillsList = ({ data }: SkillsListProps) => {
   let SkillListItemJSX: JSX.Element[] | JSX.Element = (
     <NotFound text="No Skills List Found" />
   );
-  if (data.length > 0) {
+  if (data.length > 1) {
     SkillListItemJSX = data.map((skill: SkillsType) => {
+      // console.log(skill.id);
       return <SkillListItem data={skill} key={skill.id} />;
     });
   }

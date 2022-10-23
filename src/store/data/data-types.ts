@@ -4,7 +4,7 @@ export type DataType = {
   trainings: TrainingType[];
   skillTopics: SkillTopicsType[];
 };
-export const InitialValueType = {
+export const DataInitialValueType = {
   skills: [{} as SkillsType],
   experiences: [{} as ExperienceType],
   trainings: [{} as TrainingType],
