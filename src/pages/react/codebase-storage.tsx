@@ -49,7 +49,7 @@ const setToSessionStorage = ({ key, value, ttl = 3 }: Storage) => {
   window.sessionStorage.setItem(key, JSON.stringify(item));
 };
 const getFromLocalStorage = (key: string) => {
-  const itemStr: any = window.localStorage.getItem(key);
+  const itemStr = window.localStorage.getItem(key);
   if (!itemStr) return null;
 
   const item = JSON.parse(itemStr);
@@ -65,7 +65,7 @@ const getFromLocalStorage = (key: string) => {
 };
 
 const getFromSessionStorage = (key: string) => {
-  const itemStr: any = window.sessionStorage.getItem(key);
+  const itemStr = window.sessionStorage.getItem(key);
   if (!itemStr) return null;
 
   const item = JSON.parse(itemStr);

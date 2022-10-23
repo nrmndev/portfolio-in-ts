@@ -1,5 +1,5 @@
 import WithLineNumbers from "../../utils/code-highlighter";
-import useSortList from "./usememo-sample";
+//import useSortList from "./usememo-sample";
 const exampleCode = `
 import { useMemo } from "react";
 
@@ -27,7 +27,7 @@ return (
 
 const UseEffectSample = () => {
   const sampleData = [100, 500, 5, 11, 25];
-  const sortedSampleData = useSortList(sampleData);
+  //const sortedSampleData = useSortList(sampleData);
   return (
     <>
       <p>
@@ -40,7 +40,7 @@ const UseEffectSample = () => {
 
       <WithLineNumbers code={exampleCode2} language="jsx" />
       <p>Result</p>
-      {sortedSampleData && <p>{sortedSampleData}</p>}
+      {sampleData && <p>{sampleData}</p>}
     </>
   );
 };

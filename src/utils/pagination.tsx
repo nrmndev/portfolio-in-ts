@@ -5,7 +5,7 @@ type Props = {
   itemsPerPage: number;
   onClick: (currentPage: number) => void;
 };
-const Paginations = (props: Props) => {
+const Paginations = (props: Props): JSX.Element => {
   const pageNumbers = []; //Initialize array of number
   for (let i = 1; i <= Math.ceil(props.length / props.itemsPerPage); i++) {
     pageNumbers.push(i); //Assign how many paginations

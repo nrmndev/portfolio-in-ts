@@ -2,9 +2,10 @@ import { Col } from "react-bootstrap";
 import SVGIcon from "../../../components/svg-icons/svg-icons";
 
 import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
-import { SkillDataType } from "./skills-list";
+//import { SkillDataType } from "./skills-list";
+import { SkillsType } from "../../../store/data-slice";
 type SkillListItem = {
-  data: SkillDataType;
+  data: SkillsType;
 };
 const SkillListItem = (props: SkillListItem) => {
   //const propsPassedID = useCheckInViewById(props.id);

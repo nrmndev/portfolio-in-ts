@@ -9,20 +9,10 @@ import Badge from "../../../components/badge/badge.component";
 import Text, {
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";
-//import Cards from "../../../components/cards/cards.component";
-
-export type TrainingData = {
-  id: string;
-  title: string;
-  description: string;
-  message: string;
-  status: string;
-  courseHighlights: string[];
-  linkToCertificate: string;
-};
+import { TrainingType } from "../../../store/data-slice";
 
 type Props = {
-  data: TrainingData;
+  data: TrainingType;
   onMouseEventHandler: (
     item: string,
     e: React.MouseEvent<HTMLDivElement>
@@ -90,9 +80,7 @@ export default TrainingListItem;
 //   </Button>
 // </Cards>
 // console.log(id);
-// const isActive = useAppSelector(
-//   (state: RootState) => state.ui.isMessageActive
-// );
+// const isActive = useAppSelector(uiIsMessageActive);
 //const propsPassedID = useCheckInViewById(props.id);
 //<div className="card2">
 //   <div className="card2__content">

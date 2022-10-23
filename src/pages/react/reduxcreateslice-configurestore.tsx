@@ -1,3 +1,4 @@
+import React from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 
 const exampleCode = `

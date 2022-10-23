@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FormGroup, FormLabel } from "react-bootstrap";
 import { FormInput } from "./input.components";
-import { isNotEmpty, isEmail } from "./validation-helper";
+import { isEmail } from "./validation-helper";
 
 type UseInputProps = {
   type: string;

@@ -1,8 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import usePasswordHelperHTML, {
-  checkPasswordStrength,
-} from "../../components/hooks/usePasswordHelper";
+import usePasswordHelperHTML from //checkPasswordStrength,
+"../../components/hooks/usePasswordHelper";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import { useState } from "react";
@@ -324,57 +323,46 @@ type State = {
       hasNumbers: boolean;
     };
   };
+  valid: boolean;
 };
 
-const InitialValue = {
-  valid: false,
-  email: {
-    value: "",
-    valid: false,
-  },
-  password: {
-    value: "",
-    valid: false,
-    validCriteria: {
-      hasLowerCase: false,
-      hasUpperCase: false,
-      hasNonAlphaNumeric: false,
-      hasLengthValid: false,
-      hasNumbers: false,
-    },
-  },
-};
+const InitialValue = {} as State;
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case ActionType.USER_INPUT_EMAIL:
-      return {
-        ...state,
-        email: {
-          value: action.email.value,
-          valid:
-            action.email.value.match(
-              /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-            ) != null
-              ? true
-              : false,
-        },
-      };
+      return state;
+    // return {
+    //   ...state,
+    //   email: {
+    //     value: action.email.value,
+    //     valid:
+    //       action.email.value.match(
+    //         /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+    //       ) != null
+    //         ? true
+    //         : false,
+    //   },
+    // };
 
     case ActionType.USER_INPUT_PASSWORD:
-      const { validCriteria, valid } = checkPasswordStrength(
-        action.password.value
-      );
-      return {
-        ...state,
-        password: {
-          value: action.password.value,
-          validCriteria,
-          valid,
-        },
-      };
+      // if (action.password.value) {
+      //   const { validCriteria, valid } = checkPasswordStrength(
+      //     action.password.value
+      //   );
+      //   return {
+      //     ...state,
+      //     password: {
+      //       value: action.password.value,
+      //       validCriteria,
+      //       valid,
+      //     },
+      //   };
+      // }
+      // break;
+      return state;
     default:
-      return InitialValue;
+      return state;
   }
 };
 const InputValidateWithInterfaceV4 = () => {
@@ -400,7 +388,7 @@ const InputValidateWithInterfaceV4 = () => {
     setIsFormValid(isEmailValid && isPasswordValid);
   }, [isEmailValid, isPasswordValid]);
 
-  let passwordHelperHTML = usePasswordHelperHTML({
+  const passwordHelperHTML = usePasswordHelperHTML({
     ...state.password.validCriteria,
     valid: state.password.valid,
   });

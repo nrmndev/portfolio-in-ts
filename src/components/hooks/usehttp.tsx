@@ -58,7 +58,7 @@ export default useHttp;
 type Resp = {
   response: {
     body?: ReadableStream<Uint8Array> | null;
-    headers?: {};
+    headers?: any;
     ok?: boolean;
     redirected?: boolean;
     status?: number;

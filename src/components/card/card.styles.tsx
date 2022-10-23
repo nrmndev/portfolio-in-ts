@@ -1,12 +1,10 @@
 import styled from "styled-components";
-interface StyledBaseCardProps {
-  //readonly textAlign: string;
-}
+
 export const StyledCardContent = styled.div`
   transition: transform 0.3s ease-in;
   transform: translateY(10px);
 `;
-export const StyledCardBase = styled.div<StyledBaseCardProps>`
+export const StyledCardBase = styled.div`
   border-radius: 10px;
   padding: 35px 50px 35px 50px;
   background: linear-gradient(165deg, #fff 50%, #edebeb 80%);

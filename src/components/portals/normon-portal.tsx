@@ -1,12 +1,9 @@
 import ReactDOM from "react-dom";
-import type { RootState } from "../../store";
 import { useAppSelector } from "../../store/hooks/typedhooks";
+import { uiMessage } from "../../store/ui/ui-selector";
 
-type Props = {
-  children?: React.ReactNode;
-};
-const NormonPortal = (props: Props) => {
-  const currentMessage = useAppSelector((state: RootState) => state.ui.message);
+const NormonHTML = (): React.ReactPortal => {
+  const currentMessage = useAppSelector(uiMessage);
 
   let normonJSX: JSX.Element[] | JSX.Element = <></>;
 
@@ -30,12 +27,8 @@ const NormonPortal = (props: Props) => {
       </>
     );
   }
-  return normonJSX;
-};
-
-const NormonHTML = (props: Props): React.ReactPortal => {
   return ReactDOM.createPortal(
-    <NormonPortal>{props.children} </NormonPortal>,
+    normonJSX,
     document.getElementById("normonAI") as HTMLElement
   );
 };

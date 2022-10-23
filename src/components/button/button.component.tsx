@@ -50,7 +50,13 @@ const Button = (
 ) => {
   const CustomButton = getButton(props.variant);
   if (props.to) {
-    let { to, size = "md", block = false, color = "#43cea2", ...rest } = props;
+    const {
+      to,
+      size = "md",
+      block = false,
+      color = "#43cea2",
+      ...rest
+    } = props;
     return (
       <CustomButton
         as={Link}
@@ -65,7 +71,7 @@ const Button = (
     );
   }
   if (props.href) {
-    let {
+    const {
       href,
       size = "md",
       block = false,
@@ -75,7 +81,7 @@ const Button = (
     return (
       <CustomButton
         as="a"
-        href={props.href}
+        href={href}
         block={block ? block : undefined}
         size={size}
         color={color}
@@ -85,9 +91,9 @@ const Button = (
       </CustomButton>
     );
   }
-  let {
-    href = [],
-    to = [],
+  const {
+    // href = [],
+    // to = [],
     block = false,
     size = "md",
     color = "#43cea2",

@@ -2,14 +2,15 @@ import Button, {
   BUTTON_VARIANTS,
 } from "../../../components/button/button.component";
 import List from "../../../components/list/list.component";
-import { TrainingData } from "./training-list-item.component";
+import { TrainingType } from "../../../store/data/data-types";
+//import { TrainingData } from "./training-list-item.component";
 
 interface TrainingListItemModalProps {
-  data: TrainingData;
+  data: TrainingType;
 }
-const TrainingListItemModal = (props: TrainingListItemModalProps) => {
+const TrainingListItemModal = ({ data }: TrainingListItemModalProps) => {
   const { title, description, status, linkToCertificate, courseHighlights } =
-    props.data;
+    data;
   return (
     <>
       <h3 className="color__primary">{title}</h3>

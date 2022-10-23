@@ -1,4 +1,4 @@
-//import React from "react";
+import React from "react";
 import { useState } from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 
@@ -98,8 +98,8 @@ const UseEffectSample = () => {
   }>({ firstname: "", lastname: "" });
 
   const onChangeHandler = (e: React.FormEvent<HTMLInputElement>): void => {
-    if (e.currentTarget.value.trim().length <= 5) {
-    }
+    // if (e.currentTarget.value.trim().length <= 5) {
+    // }
     const currInput = { [e.currentTarget.name]: e.currentTarget.value };
 
     setFullName((prev) => {
@@ -128,7 +128,7 @@ const UseEffectSample = () => {
     } else {
       setValidationText(`Input Validated! Welcome ${firstname} ${lastname}`);
       // const currInput = { firstname: "", lastname: "" };
-      setFullName((prev) => (prev = { firstname: "", lastname: "" }));
+      setFullName({ firstname: "", lastname: "" });
     }
   };
   return (

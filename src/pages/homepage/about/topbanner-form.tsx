@@ -60,11 +60,13 @@ const TopBannerForm = () => {
   useEffect(() => {
     let i = 1;
     const changeSelectValue = setInterval(function () {
-      dropDownForm.current!.selectedIndex = i;
-      cb(i);
-      i++;
-      if (i === 4) {
-        i = 0;
+      if (dropDownForm.current) {
+        dropDownForm.current.selectedIndex = i;
+        cb(i);
+        i++;
+        if (i === 4) {
+          i = 0;
+        }
       }
     }, 3000);
     return () => {

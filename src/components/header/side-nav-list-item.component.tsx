@@ -1,5 +1,6 @@
+import React from "react";
 import { useDispatch } from "react-redux";
-import { Link, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import { uiActions } from "../../store/ui-slice";
 import { MouseEventType } from "../../utils/interfaces/interfaces";
 import { StyledNavLink, StyledNavListItem } from "./side-nav-list-item.styles";
@@ -29,7 +30,7 @@ const NavListItem = (props: Props) => {
     }
   };
 
-  const handleSetInactive = (to: any) => {
+  const handleSetInactive = () => {
     dispatch(uiActions.setMessage(""));
   };
   const handleSetActive = (message: string) => {
@@ -38,7 +39,10 @@ const NavListItem = (props: Props) => {
     }, 150);
   };
 
-  const handleKeyUp = (item: any, event: any) => {
+  const handleKeyUp = (
+    item: any,
+    event: React.KeyboardEvent<HTMLButtonElement>
+  ) => {
     if (event.code === "Enter") {
       scroller.scrollTo(item, null);
     }

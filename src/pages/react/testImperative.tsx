@@ -1,7 +1,7 @@
 import React, { useRef, useImperativeHandle } from "react";
 type Props = {
   placeholder: string;
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
 };
 const TestImperative = React.forwardRef(
   (props: Props, ref: React.ForwardedRef<unknown>) => {
@@ -21,5 +21,5 @@ const TestImperative = React.forwardRef(
     );
   }
 );
-
+TestImperative.displayName = "TestImperative";
 export default TestImperative;

@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux";
-import { uiActions } from "../../store/ui-slice";
-import { MouseEventType } from "../../utils/interfaces/interfaces";
+// import { useDispatch } from "react-redux";
+// import { uiActions } from "../../store/ui-slice";
+// import { MouseEventType } from "../../utils/interfaces/interfaces";
 import StyledFooter from "./footer.styles";
 const Footer = () => {
   return (

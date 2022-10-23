@@ -24,14 +24,16 @@ const Sample = () => {
   if (printJSONData) {
     newArray = printJSONData.slice(firstIndex, lastIndex);
   }
-  requestConfig!.current = {
-    url: `https://random-data-api.com/api/bank/random_bank?size=20`,
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    // body: { text: e.currentTarget.value },
-  };
+  if (requestConfig) {
+    requestConfig.current = {
+      url: `https://random-data-api.com/api/bank/random_bank?size=20`,
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: { text: e.currentTarget.value },
+    };
+  }
 
   // const requestConfig = {
   //   url: `https://random-data-api.com/api/bank/random_bank?size=20`,

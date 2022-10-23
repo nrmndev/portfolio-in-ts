@@ -1,4 +1,3 @@
-import React from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 import "./theming.scss";
 
@@ -74,17 +73,19 @@ const UseEffectSample = () => {
   return (
     <>
       <p className="color_1">
-        Mixin Approach for multiple theming. We create a "function-like" mixin
-        that accepts parameters as variables for your styles
+        Mixin Approach for multiple theming. We create a
+        &lsquo;function-like&rsquo; mixin that accepts parameters as variables
+        for your styles
       </p>
-      <p>In this example, body has a class of "theme-dark":</p>
+      <p>In this example, body has a class of &quot;theme-dark&quot;:</p>
       <WithLineNumbers code={exampleCode} language="jsx" />
       <p>Sample SCSS mixin:</p>
       <WithLineNumbers code={exampleCode3} language="jsx" />
       <p>
-        The mixin 'themable' accepts 6 parameters, ( $theme-name, $container-bg,
-        $left-bg, $right-bg, $innertext, $button-bg) then assign it as value to
-        properties. Then you include the themable to your main css.
+        The mixin &quot;themable&quot; accepts 6 parameters, ( $theme-name,
+        $container-bg, $left-bg, $right-bg, $innertext, $button-bg) then assign
+        it as value to properties. Then you include the themable to your main
+        css.
       </p>
       <p>
         This approach will save a lot of time and eliminate errors and css

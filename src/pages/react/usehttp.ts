@@ -21,7 +21,6 @@ const useHttp = () => {
           body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
         });
 
-        debugger;
         if (!response.ok) {
           throw new Error("Request failed!");
         }

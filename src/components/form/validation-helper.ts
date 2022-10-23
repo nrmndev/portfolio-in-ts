@@ -19,8 +19,14 @@ export const isLengthGreaterThan = (value: string, length: number) =>
  * 5) It's length has to be greater than 8 characters.
  */
 
-const paragraph = "the quick brown fox jumps over the lazy dog. it barked.";
-
+//const paragraph = "the quick brown fox jumps over the lazy dog. it barked.";
+type GetConditionsType = {
+  hasLowercase: boolean;
+  hasUppercase: boolean;
+  hasNumbers: boolean;
+  hasNonAlphaNumeric: boolean;
+  hasLengthValid: boolean;
+};
 export const isPasswordStrong = (value: string, getConditions: any) => {
   const reg = {
     lowercase: /[a-z]/g,

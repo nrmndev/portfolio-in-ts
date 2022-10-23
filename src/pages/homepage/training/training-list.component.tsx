@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { useAppDispatch } from "../../../store/hooks/typedhooks";
 import { uiActions } from "../../../store/ui-slice";
+import { TrainingType } from "../../../store/data/data-types";
 
 import { Col, Row } from "react-bootstrap";
 import Modal from "../../../components/modal/modal.component";
 import NotFound from "../../../components/error/notfound.component";
-import TrainingListItem, { TrainingData } from "./training-list-item.component";
+import TrainingListItem from "./training-list-item.component";
 import TrainingListItemModal from "./training-list-item-modal.component";
 import SectionTitle from "../../../components/section-titles/section-titles.components";
 import Container from "../../../components/containers/container.component";
@@ -14,18 +15,22 @@ import Container from "../../../components/containers/container.component";
 
 type Props = {
   onMouseEventHandler: (item: string, e: React.MouseEvent<HTMLElement>) => void;
-  data: TrainingData[];
+  data: TrainingType[];
 };
+
 const TrainingList = (props: Props) => {
   const dispatch = useAppDispatch();
   const [modalShow, setModalShow] = useState<boolean>(false);
-  const [dataInModal, setDataInModal] = useState<TrainingData>(
-    {} as TrainingData
+  const [dataInModal, setDataInModal] = useState<TrainingType>(
+    {} as TrainingType
   );
   const hideItemHandler = () => {
     dispatch(uiActions.setModalActive(false));
     setModalShow(false);
-    document.querySelector("body")!.classList.remove("open");
+    const body = document.querySelector("body");
+    if (body) {
+      body.classList.remove("open");
+    }
   };
 
   /****** EVENT HANDLING ******/
@@ -38,12 +43,15 @@ const TrainingList = (props: Props) => {
   };
 
   const showCourseModal = (id: string) => {
-    const currentData = props.data.find((item: TrainingData) => item.id === id);
+    const currentData = props.data.find((item: TrainingType) => item.id === id);
     if (currentData) {
       setDataInModal(currentData);
     }
     setModalShow(true);
-    document.querySelector("body")!.classList.add("open");
+    const body = document.querySelector("body");
+    if (body) {
+      body.classList.add("open");
+    }
     //dispatch(uiActions.setModalActive(true));
   };
 

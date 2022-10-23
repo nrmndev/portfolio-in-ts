@@ -6,7 +6,7 @@ import { scroller } from "react-scroll";
 import { Link, useNavigate } from "react-router-dom";
 const HeaderTopNav = () => {
   const navigate = useNavigate();
-  const onClickSetHistory = (scroll: string, e: any) => {
+  const onClickSetHistory = (scroll: string) => {
     navigate("/");
     setTimeout(() => {
       scroller.scrollTo(scroll, {});

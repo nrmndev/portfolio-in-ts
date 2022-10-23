@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useReducer, useState } from "react";
+import { useEffect, useRef, useReducer, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import emailjs from "@emailjs/browser";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 
 enum ActionType {
   USER_INPUT_EMAIL = "USER_INPUT_EMAIL",
@@ -134,12 +134,14 @@ const ContactUs = () => {
     setIsFormValid(isEmailValid && isNameValid && isMessageValid);
   }, [isEmailValid, isNameValid, isMessageValid]);
 
-  const form = useRef<any>();
+  const form = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      inputRef.current?.focus();
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
     }, 200);
     return () => {
       clearTimeout(timeout);
@@ -148,6 +150,8 @@ const ContactUs = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
+    const formval = form.current;
+
     if (isFormValid) {
       setShowSuccess(true);
       dispatch({
@@ -157,14 +161,14 @@ const ContactUs = () => {
         .sendForm(
           "service_00n4mma",
           "template_um8bcq9",
-          form.current,
+          formval!,
           "y-A5oTBqJYSORbCyA"
         )
         .then(
-          (result: any) => {
+          (result: EmailJSResponseStatus) => {
             console.log(result.text);
           },
-          (error: any) => {
+          (error: EmailJSResponseStatus) => {
             console.log(error.text);
           }
         );
@@ -204,7 +208,7 @@ const ContactUs = () => {
             onChange={onChangeEmailHandler}
           />
           <Form.Text className="text-muted">
-            I'll never share your email with anyone else.
+            I&apos;ll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3">
@@ -222,7 +226,7 @@ const ContactUs = () => {
         </div>
         {showSuccess && (
           <h3 className="color__primary mb-3 mt-3">
-            Thank you, I'll get back to you the soonest!
+            Thank you, I&apos;ll get back to you the soonest!
           </h3>
         )}
       </Form>

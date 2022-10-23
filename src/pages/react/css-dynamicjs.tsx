@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 
 const exampleCode = `
@@ -25,14 +25,16 @@ const UseEffectSample = () => {
       <p className="color_1">
         Dynamic CSS can be achieved by using JavaScript, in this example you can
         see that the styles and className is conditionally applied based on the
-        value of 'error' state
+        value of &apos;error&apos; state
       </p>
       <WithLineNumbers code={exampleCode} language="jsx" />
       <p style={{ color: error ? "red" : "black" }}>
-        The style of this paragraph is dynamic to the value of state 'error'
+        The style of this paragraph is dynamic to the value of state
+        &apos;error&apos;
       </p>
       <p className={error ? "text-danger text-underline" : "text-primary"}>
-        The class of this paragraph is dynamic to the value of state 'error'
+        The class of this paragraph is dynamic to the value of state
+        &apos;error&apos;
       </p>
     </>
   );

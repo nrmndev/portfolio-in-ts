@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { uiActions } from "./store/ui-slice";
 import { getFromLS } from "./utils/localstorage";
-import type { RootState } from "./store";
 import { useAppDispatch, useAppSelector } from "./store/hooks/typedhooks";
 import { ThemeType } from "./utils/interfaces/theme";
 import { Routes, Route } from "react-router-dom";
@@ -13,30 +12,30 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage";
 import "./components/styles/main.scss";
-import TransitionFadeInUpDown from "./components/transition-wrappers/transitionfade-in-out";
 import Modal from "./components/modal/modal.component";
 import ContactUs from "./components/contact-form";
 import Revamp from "./pages/revamp/revamp";
 import HireSection from "./components/hire-section/hire-section.component";
+import {
+  uiIsMessageActive,
+  uiIsModalActive,
+  uiTheme,
+} from "./store/ui/ui-selector";
 ///import "./assets/neomorphism/scss/neumorphism.css";
 
 function App() {
   const dispatch = useAppDispatch();
-  const isActive = useAppSelector(
-    (state: RootState) => state.ui.isMessageActive
-  );
-  const isModalActive = useAppSelector(
-    (state: RootState) => state.ui.isModalActive
-  );
+  const isActive = useAppSelector(uiIsMessageActive);
+  const isModalActive = useAppSelector(uiIsModalActive);
+  const currentTheme = useAppSelector(uiTheme);
 
-  const currentTheme = useAppSelector((state: RootState) => state.ui.theme);
-  // const isMobile = useAppSelector((state: RootState) => state.ui.isMobile);
-  //const isTheme = useSelector((state) => state.ui.isTheme);
+  //const isMobile = useAppSelector(uiIsMobile);
+  //const isTheme = useSelector(uiIsTheme);
 
   useEffect(() => {
-    let themeFromLS = getFromLS("theme");
+    const themeFromLS = getFromLS("theme");
     dispatch(uiActions.setTheme(themeFromLS));
-
+    const body = document.getElementById("body");
     const vw = Math.max(
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
@@ -47,17 +46,17 @@ function App() {
     // dispatch(fetchSkillsData());
 
     if (isModalActive) {
-      document.getElementById("body")?.classList.add("open");
+      body && body.classList.add("open");
     } else {
-      document.getElementById("body")?.classList.remove("open");
+      body && body.classList.remove("open");
     }
 
     switch (currentTheme as ThemeType) {
       case ThemeType.DARK:
-        document.getElementById("body")?.classList.add("theme-dark");
+        body && body.classList.add("theme-dark");
         break;
       case ThemeType.LIGHT:
-        document.getElementById("body")?.classList.remove("theme-dark");
+        body && body.classList.remove("theme-dark");
         break;
       default:
         break;
@@ -72,7 +71,8 @@ function App() {
     // setShowForm(false);
     // setshowMenuItem(false);
     // setModalShow(false);
-    document.querySelector("body")!.classList.remove("open");
+    const body = document.querySelector("body");
+    body && body.classList.remove("open");
     // overlay!.classList.remove("modal-open");
   };
   return (

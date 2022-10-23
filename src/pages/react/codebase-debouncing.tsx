@@ -37,16 +37,16 @@ const Debouncing = () => {
         keystroke and it means that it will send a lot of request.
       </p>
       <p>
-        But with a technique called 'Debouncing', we want to make sure that were
-        not doing something on every keystroke but once the user made a pause
-        during or after typing. Here, the validation string fires after
+        But with a technique called &apos;Debouncing&apos;, we want to make sure
+        that were not doing something on every keystroke but once the user made
+        a pause during or after typing. Here, the validation string fires after
         .5seconds pause.
       </p>
       <p>
         The timeout will continue to reset as long as the user is not done
         typing. So if a user is constantly typing within .5s frame for example
-        50characters, you're not checking the validity 50times but 1time only
-        after the user pause typing or done typing
+        50characters, you&apos;re not checking the validity 50times but 1time
+        only after the user pause typing or done typing
       </p>
 
       <Container>

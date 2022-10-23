@@ -35,7 +35,9 @@ const Example = () => {
 `.trim();
 
 const UseEffectSample = () => {
-  const myFuncRef = useRef(() => {});
+  const myFuncRef = useRef(() => {
+    console.log("I am logged");
+  });
 
   myFuncRef.current = () => {
     console.log("I am logged");

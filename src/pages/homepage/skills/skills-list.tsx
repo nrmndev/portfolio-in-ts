@@ -8,20 +8,12 @@ import Button, {
   BUTTON_VARIANTS,
 } from "../../../components/button/button.component";
 import NotFound from "../../../components/error/notfound.component";
-
-export type SkillDataType = {
-  id: string;
-  title: string;
-  message: string;
-  description: string;
-  svgIcon: string;
-};
+import { SkillsType } from "../../../store/data/data-types";
 
 type SkillsListProps = {
-  // onClickHandler: (id: number, e: React.MouseEvent<HTMLButtonElement>) => void;
-  //onMouseEventHandler: (item: string, e: React.MouseEvent<HTMLElement>) => void;
-  data: SkillDataType[];
+  data: SkillsType[];
 };
+
 const SkillsList = ({ data }: SkillsListProps) => {
   //const isSkillHeadingInView = useCheckInViewById("skill_heading");
   //const isReactInView = useCheckInViewById("skill_react");
@@ -29,7 +21,7 @@ const SkillsList = ({ data }: SkillsListProps) => {
     <NotFound text="No Skills List Found" />
   );
   if (data.length > 0) {
-    SkillListItemJSX = data.map((skill: SkillDataType) => {
+    SkillListItemJSX = data.map((skill: SkillsType) => {
       return <SkillListItem data={skill} key={skill.id} />;
     });
   }

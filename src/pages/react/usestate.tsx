@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 
 const exampleCode = `
@@ -24,7 +24,7 @@ const Example = () => {
 const UseStateSample = () => {
   const [count, setCount] = useState<number>(0);
 
-  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const onClickHandler = (): void => {
     setCount(count + 1);
   };
   return (
@@ -40,29 +40,30 @@ const UseStateSample = () => {
         in array format (like tuples).
       </p>
       <p>
-        Behind the scenes, React is listening to every changes of every 'state
-        value', and everytime there is a change, react will evaluate the changes
-        and rerender it to the ReactDOM
+        Behind the scenes, React is listening to every changes of every
+        &rsquo;state value&rsquo;, and everytime there is a change, react will
+        evaluate the changes and rerender it to the ReactDOM
       </p>
       <p>
         Given example: const [count, setCount] = useState&lt;number&gt;(0)
         <br />
-        <strong>count</strong>: is the 'variable' that holds the 'state value'.
+        <strong>count</strong>: is the &rsquo;variable&rsquo; that holds the
+        &rsquo;state value&rsquo;.
         <br />
         <strong>setCount</strong>: is the function to update the value.
         <br />
         <strong>&lt;number&gt;</strong>: tells typeScript that the value for
-        count should only be of type 'numbers'
+        count should only be of type &rsquo;numbers&rsquo;
         <br />
         <strong>(0)</strong>: default value of state
       </p>
       <WithLineNumbers code={exampleCode} language="jsx" />
       <p>
-        On the example above, the button's onClick event is calling 'setCount'
-        and adds 1 to the current value. When the event is fired, React will
-        re-evaluate behind the scenes and if there any changes, (in this case
-        the value changed) it will tell ReactDOM to re-render that particular
-        change in memory.
+        On the example above, the button&rsquo;s onClick event is calling
+        &rsquo;setCount&rsquo; and adds 1 to the current value. When the event
+        is fired, React will re-evaluate behind the scenes and if there any
+        changes, (in this case the value changed) it will tell ReactDOM to
+        re-render that particular change in memory.
       </p>
       <h4>Try it!</h4>
       <hr />

@@ -23,10 +23,10 @@ const SocialIconSet = () => {
     switch (e.type) {
       case MouseEventType.MOUSE_ENTER:
         dispatch(uiActions.setMessage(item));
-        dispatch(uiActions.setCardBackdrop(true));
+        //dispatch(uiActions.setCardBackdrop(true));
         break;
       case MouseEventType.MOUSE_LEAVE:
-        dispatch(uiActions.setCardBackdrop(false));
+        //dispatch(uiActions.setCardBackdrop(false));
         dispatch(uiActions.setMessage(""));
         break;
       default:

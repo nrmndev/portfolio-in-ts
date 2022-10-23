@@ -162,8 +162,8 @@ const UseEffectSample = () => {
       <ul>
         <li>
           Sample custom hook implementation for fetchAPI, accepts props: Url
-          (required), Methods with 'GET' as the default value, Headers, and Body
-          props if not supplied.
+          (required), Methods with &lsquo;GET&lsquo; as the default value,
+          Headers, and Body props if not supplied.
         </li>
         <li>
           Returns three objects (tuples) , loading, error and callback function

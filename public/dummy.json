@@ -1,742 +1,738 @@
-[
-  {
-    "skills": [
-      {
-        "id": "S1",
-        "title": "React JS",
-        "message": "Ohh.. ReactJS! What an excellent tool to create interactive applications!",
-        "description": "A JavaScript library for building user interfaces, incredibly fast, and promotes declarative javascript coding and buildencapsulated components.",
-        "svgIcon": "REACT"
-      },
-      {
-        "id": "S2",
-        "title": "Typescript",
-        "message": "Check it out! You might find something cool like the importance of Accessibility, SEO and how to make Semantic HTML!",
-        "description": "Eliminate potential bugs in development by precisely defining type annotations, securing strongly type action guards or defining a strict event handlers.",
-        "svgIcon": "TYPESCRIPT"
-      },
-      {
-        "id": "S3",
-        "title": "Modern JS",
-        "message": "Check it out! You might find something cool like how to use Flexboxes and modern vendor prefixes!",
-        "description": "Technology is constantly evolving, so thus JavaScript. New standardized version of JavaScript introduces us a lot of features that are a response to best practices and ease of use.",
-        "svgIcon": "JS"
-      },
-      {
-        "id": "S4",
-        "title": "Redux",
-        "message": "Let me tell you something about Redux",
-        "description": "It is very difficult to reuse the components in React because it is tightly coupled with the root component. Redux reduces this complexity and provides global accessibility that helps to build applications that work frequently.",
-        "svgIcon": "REDUX"
-      },
-      {
-        "id": "S5",
-        "title": "CSS, CSS in JS",
-        "message": "Check it out! You might find something cool like how to use Flexboxes and modern vendor prefixes!",
-        "description": "We facilitate ourselves to write clean, easy and less CSS in a programming construct and gives us the capability to extend complex styles without writing heavy line of codes.",
-        "svgIcon": "STYLEDCOMPONENT"
-      },
-      {
-        "id": "S6",
-        "title": "Mobile Firest Design",
-        "message": "Check it out! You might find something cool like what is modern javascript programming nowadays!",
-        "description": "Mobile-first design is a key ingredient to successful product design, it promotes accessibility on any platforms our customers use and bringing in more conversions.",
-        "svgIcon": "MOBILE"
-      },
-      {
-        "id": "S7",
-        "title": "Reusable Components",
-        "message": "Let me tell you something about Jest",
-        "description": "We promote consistency across the ecosystem and we make sure that user-experience will be same across all the products. Easy to maintain, can be used multiple times within the application.",
-        "svgIcon": "REUSE"
-      },
+{
+  "skills": [
+    {
+      "id": "S1",
+      "title": "React JS",
+      "message": "Ohh.. ReactJS! What an excellent tool to create interactive applications!",
+      "description": "A JavaScript library for building user interfaces, incredibly fast, and promotes declarative javascript coding and buildencapsulated components.",
+      "svgIcon": "REACT"
+    },
+    {
+      "id": "S2",
+      "title": "Typescript",
+      "message": "Check it out! You might find something cool like the importance of Accessibility, SEO and how to make Semantic HTML!",
+      "description": "Eliminate potential bugs in development by precisely defining type annotations, securing strongly type action guards or defining a strict event handlers.",
+      "svgIcon": "TYPESCRIPT"
+    },
+    {
+      "id": "S3",
+      "title": "Modern JS",
+      "message": "Check it out! You might find something cool like how to use Flexboxes and modern vendor prefixes!",
+      "description": "Technology is constantly evolving, so thus JavaScript. New standardized version of JavaScript introduces us a lot of features that are a response to best practices and ease of use.",
+      "svgIcon": "JS"
+    },
+    {
+      "id": "S4",
+      "title": "Redux",
+      "message": "Let me tell you something about Redux",
+      "description": "It is very difficult to reuse the components in React because it is tightly coupled with the root component. Redux reduces this complexity and provides global accessibility that helps to build applications that work frequently.",
+      "svgIcon": "REDUX"
+    },
+    {
+      "id": "S5",
+      "title": "CSS, CSS in JS",
+      "message": "Check it out! You might find something cool like how to use Flexboxes and modern vendor prefixes!",
+      "description": "We facilitate ourselves to write clean, easy and less CSS in a programming construct and gives us the capability to extend complex styles without writing heavy line of codes.",
+      "svgIcon": "STYLEDCOMPONENT"
+    },
+    {
+      "id": "S6",
+      "title": "Mobile Firest Design",
+      "message": "Check it out! You might find something cool like what is modern javascript programming nowadays!",
+      "description": "Mobile-first design is a key ingredient to successful product design, it promotes accessibility on any platforms our customers use and bringing in more conversions.",
+      "svgIcon": "MOBILE"
+    },
+    {
+      "id": "S7",
+      "title": "Reusable Components",
+      "message": "Let me tell you something about Jest",
+      "description": "We promote consistency across the ecosystem and we make sure that user-experience will be same across all the products. Easy to maintain, can be used multiple times within the application.",
+      "svgIcon": "REUSE"
+    },
 
-      {
-        "id": "S8",
-        "title": "Component Documentation",
-        "message": "Let me tell you something about Git.",
-        "description": "Documentation helps you organize and deliver thoughts to stakeholders and your colleagues, which in turn helps them understand how our design decisions will satisfy the user needs and their own business objectives.",
-        "svgIcon": "GIT"
-      },
-      {
-        "id": "S9",
-        "title": "CI / CD",
-        "message": "Let me tell you something about Git.",
-        "description": "Using CI tools, developers continually commit code in small increments, sometimes multiple times a day, which is then automatically built and tested before it is merged with the shared repository.",
-        "svgIcon": "GIT"
-      }
-    ],
-    "experiences": [
-      {
-        "id": "E1",
-        "company": "AECOM",
-        "jobposition": "Web Developer",
-        "tenureship": "Nov 2021 - Mar 2022",
-        "description": "AECOM is an American multinational infrastructure consulting firm. AECOM has approximately 51,000 employees, and is number 157 on the 2019 Fortune 500 list. The company's official name from 1990 to 2015 was AECOM Technology Corporation, and is now AECOM.",
-        "image": "IMG_AECOM.webp",
-        "achievements": [
-          "Developed AECOMViz Website",
-          "Developed 360° Virtual Rooms for clients"
-        ],
-        "workURL": "https://aecomviz.com/",
-        "workURLText": "Visit AECOM Visualization Studio",
-        "tasks": [
-          "Develop 360° Virtual Rooms HTML5 websites.",
-          "Develop WordPress Websites.",
-          "Deliver a WCAG Accessibility standard websites."
-        ],
-        "message": "Even though I stayed quite a short period, (due to Country relocation) it's been fun to work with the AECOM team!"
-      },
-      {
-        "id": "E2",
-        "company": "EMERSON Electric (Asia) Ltd. - Philippines",
-        "jobposition": "Software Developer II",
-        "tenureship": "Sep 2018 - Nov 2021",
-        "description": "Emerson Electric Co. is an American multinational corporation headquartered in Ferguson, Missouri. The Fortune 500 company manufactures products and provides engineering services for industrial, commercial, and consumer markets. Emerson's core values are Integrity, Safety & Quality, Support Our People, Customer Focus, Continuos Improvement, Collaboration & Innovation.",
-        "image": "IMG_EMERSON.webp",
-        "achievements": ["Customer Focus Award", "Collaboraton Award"],
-        "workURL": "https://www.emerson.com/en-ph",
-        "workURLText": "Visit Emerson",
-        "tasks": [
-          "Deliver across the software development life cycle - analysis, design, build, test and deploy.",
-          "Develop .Net, ReactJS websites for Emerson",
-          "Work with the front-end development team to build the interface with focus on usability features."
-        ],
-        "message": "Working with Emerson had me glued with their motto: Consider It Solved!"
-      },
-      {
-        "id": "E3",
-        "company": "SLI Consulting Inc.",
-        "jobposition": "Software Developer I",
-        "tenureship": "Mar 2017 - Sep 2018",
-        "description": "The SLI Consulting Management came together in 1987 to answer the demand for IT solutions in rise of the internet information age. We started the Philippine-based clients and eventually grew to include other clients from the Asia-Pacific Region and the United States. Through time we have been a trail blazer in innovation of I.T. training program such as TAP (Train Assist Program) that has been adopted in some of our client sites.",
-        "image": "IMG_SLI.webp",
-        "message": "SLI is the first company to hire me as a Web Developer. I am very grateful to work with them.",
-        "workURL": "http://sliconsulting.com.ph/",
-        "workURLText": "Visit SLI Consulting",
-        "achievements": [
-          "Deployed as a contractual agent for Emerson Electric"
-        ],
-        "tasks": [
-          "Deliver across the software development life cycle - analysis, design, build, test and deploy.",
-          "Develop WordPress websites for Emerson Electric",
-          "Develop .Net websites for Emerson Electric (Monitoring technician tools)"
-        ]
-      },
-      {
-        "id": "E4",
-        "company": "Upwork (formerly oDesk) - Freelancing Platform",
-        "jobposition": "Web Developer",
-        "tenureship": "Jan 2011 - Mar 2017",
-        "description": "Upwork Global Inc., formerly Elance-oDesk, is an American freelancing platform headquartered in Santa Clara and San Francisco, California. The company was formed in 2013 as Elance-oDesk, after the merger of Elance Inc. and oDesk Corp.",
-        "image": "IMG_UPWORK.webp",
-        "message": "Freelancing is my starting point being a web developer! Work with a lot of different people and served them well!",
-        "workURL": "https://www.upwork.com/freelancers/~01e2113d42404ef420",
-        "workURLText": "Check me on upwork",
-        "achievements": [
-          "Here is where all my web development experience started and opened up to a lot of opportunity for me as a web developer",
-          "4.99 / 5 Star Rating out of 24 Completed Jobs"
-        ],
-        "tasks": [
-          "Develop project-based HTML5 & WordPress websites for many people",
-          "Develer projects on time"
-        ]
-      }
-    ],
-    "trainings": [
-      {
-        "id": "T1",
-        "title": "React - The Complete Guide (incl Hooks, React Router, Redux)",
-        "message": "Udemy Course - Instructor: Maximilian Schwarzmuller (Academind)",
-        "status": "Completed",
-        "description": "Udemy Course - Complete course focused on React Functional Components",
-        "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
-        "courseHighlights": [
-          "React Hooks, a modern approach : In depth knowledge and principles about modern React Hooks",
-          "Build Single Page Applications : Browser Route and NextJS Method",
-          "ATOMIC design principle for building reusable components",
-          "State/Store Management : ContextAPI and Redux/React-Redux toolkit Method",
-          "CSS Styling Methods: Dynamic Inline, Module Pattern, Styled Component, Native CSS",
-          "React Transition Groups",
-          "Introduction to JEST / React Testing Library",
-          "Form Handling : Validations using Reducers",
-          "Custom Hooks for Http/Fetch async Reducer implmentation",
-          "Introduction to React+TypeScript",
-          "Lazy Loading for Routing",
-          "and many more!"
-        ]
-      },
-      {
-        "id": "T2",
-        "title": "React and Typescript: Build a Portfolio Project",
-        "message": "Udemy Course - Building strongly typed React.js apps",
-        "description": "Udemy Course - Implement TypeScript across functional ReactJS components",
-        "status": "Ongoing",
-        "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
-        "courseHighlights": [
-          "React and Typescript : Typescript implementation across React Environment",
-          "Types around Props and State",
-          "Types around Events and Refs",
-          "Typescript with Redux",
-          "Design patterns for Redux store with Typescript",
-          "Techniques for Error Handling in React",
-          "Simplify State updates with Immer",
-          "Build a Documentation App for future projects documentation",
-          "and many more!"
-        ]
-      },
-      {
-        "id": "T3",
-        "title": "React, NodeJS, Express & MongoDB - The MERN Fullstack Guide",
-        "message": "Udemy Course - Instructor: Maximilian Schwarzmuller (Academind)",
-        "status": "Ongoing",
-        "description": "Udemy Course - Build fullstack React.js apps with Node.js, Express.js & MongoDB",
-        "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
-        "courseHighlights": [
-          "The MERN Stack Theory - End-to-End JavaScript Full Stack",
-          "Connecting Node (Backend) and React (Frontend)",
-          "Building REST API Endpoints using Express",
-          "MongoDB & Moongoose Database Provider",
-          "File Upload Implementation",
-          "Authentication and Authorization",
-          "Using and Attaching JSON Web Tokens",
-          "Using Environment Variables in React Apps using NodeJS",
-          "and many more!"
-        ]
-      },
-      {
-        "id": "T4",
-        "title": "Ultimate AWS Certified Solutions Architect Associate SAA-C03",
-        "message": "Udemy Course - Full practice exam  for 'AWS Certified Solutions Architect Associate SAA-C03' with explanations",
-        "status": "Scheduled",
-        "description": "Udemy Course - Full practice exam  for 'AWS Certified Solutions Architect Associate SAA-C03' with explanations",
-        "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
-        "courseHighlights": [
-          "The AWS Fundamentals",
-          "The AWS CLI",
-          "In-Depth Database comparison: RDS, Aurora, DynamoDB, ElastiCache, DocumentDB, Neptune, Keyspaces, QLDB, Timestream",
-          "Analytics Services",
-          "Machine Learning Services",
-          "Monitoring, Troubleshooting & Audit: CloudWatch, CloudTrail, EventBridge, Config",
-          "AWS Integration & Messaging",
-          "AWS Serverless: AWS Lambda, DynamoDB, API Gateway, Step Functions",
-          "and many more!"
-        ]
-      }
-    ],
-    "skillTopics": [
-      {
-        "id": "ST1",
-        "overview": "react",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "useState hook",
-            "file": "react/react-2.js",
-            "message": "UseState is like a variable declaration in javaScript but in a stateful manner"
-          },
-          {
-            "topicID": "2",
-            "title": "useRef hook",
-            "file": "react/react-3.js",
-            "message": "UseRef is like the query selector of JavaScript/jQuery but in a stateful manner in ReactDOM!"
-          },
-          {
-            "topicID": "3",
-            "title": "useEffect hook",
-            "file": "react/react-1.js",
-            "message": "UseEffect is useful in implementing side effects within ReactDOM"
-          },
+    {
+      "id": "S8",
+      "title": "Component Documentation",
+      "message": "Let me tell you something about Git.",
+      "description": "Documentation helps you organize and deliver thoughts to stakeholders and your colleagues, which in turn helps them understand how our design decisions will satisfy the user needs and their own business objectives.",
+      "svgIcon": "GIT"
+    },
+    {
+      "id": "S9",
+      "title": "CI / CD",
+      "message": "Let me tell you something about Git.",
+      "description": "Using CI tools, developers continually commit code in small increments, sometimes multiple times a day, which is then automatically built and tested before it is merged with the shared repository.",
+      "svgIcon": "GIT"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "E1",
+      "company": "AECOM",
+      "jobposition": "Web Developer",
+      "tenureship": "Nov 2021 - Mar 2022",
+      "description": "AECOM is an American multinational infrastructure consulting firm. AECOM has approximately 51,000 employees, and is number 157 on the 2019 Fortune 500 list. The company's official name from 1990 to 2015 was AECOM Technology Corporation, and is now AECOM.",
+      "image": "IMG_AECOM.webp",
+      "achievements": [
+        "Developed AECOMViz Website",
+        "Developed 360° Virtual Rooms for clients"
+      ],
+      "workURL": "https://aecomviz.com/",
+      "workURLText": "Visit AECOM Visualization Studio",
+      "tasks": [
+        "Develop 360° Virtual Rooms HTML5 websites.",
+        "Develop WordPress Websites.",
+        "Deliver a WCAG Accessibility standard websites."
+      ],
+      "message": "Even though I stayed quite a short period, (due to Country relocation) it's been fun to work with the AECOM team!"
+    },
+    {
+      "id": "E2",
+      "company": "EMERSON Electric (Asia) Ltd. - Philippines",
+      "jobposition": "Software Developer II",
+      "tenureship": "Sep 2018 - Nov 2021",
+      "description": "Emerson Electric Co. is an American multinational corporation headquartered in Ferguson, Missouri. The Fortune 500 company manufactures products and provides engineering services for industrial, commercial, and consumer markets. Emerson's core values are Integrity, Safety & Quality, Support Our People, Customer Focus, Continuos Improvement, Collaboration & Innovation.",
+      "image": "IMG_EMERSON.webp",
+      "achievements": ["Customer Focus Award", "Collaboraton Award"],
+      "workURL": "https://www.emerson.com/en-ph",
+      "workURLText": "Visit Emerson",
+      "tasks": [
+        "Deliver across the software development life cycle - analysis, design, build, test and deploy.",
+        "Develop .Net, ReactJS websites for Emerson",
+        "Work with the front-end development team to build the interface with focus on usability features."
+      ],
+      "message": "Working with Emerson had me glued with their motto: Consider It Solved!"
+    },
+    {
+      "id": "E3",
+      "company": "SLI Consulting Inc.",
+      "jobposition": "Software Developer I",
+      "tenureship": "Mar 2017 - Sep 2018",
+      "description": "The SLI Consulting Management came together in 1987 to answer the demand for IT solutions in rise of the internet information age. We started the Philippine-based clients and eventually grew to include other clients from the Asia-Pacific Region and the United States. Through time we have been a trail blazer in innovation of I.T. training program such as TAP (Train Assist Program) that has been adopted in some of our client sites.",
+      "image": "IMG_SLI.webp",
+      "message": "SLI is the first company to hire me as a Web Developer. I am very grateful to work with them.",
+      "workURL": "http://sliconsulting.com.ph/",
+      "workURLText": "Visit SLI Consulting",
+      "achievements": ["Deployed as a contractual agent for Emerson Electric"],
+      "tasks": [
+        "Deliver across the software development life cycle - analysis, design, build, test and deploy.",
+        "Develop WordPress websites for Emerson Electric",
+        "Develop .Net websites for Emerson Electric (Monitoring technician tools)"
+      ]
+    },
+    {
+      "id": "E4",
+      "company": "Upwork (formerly oDesk) - Freelancing Platform",
+      "jobposition": "Web Developer",
+      "tenureship": "Jan 2011 - Mar 2017",
+      "description": "Upwork Global Inc., formerly Elance-oDesk, is an American freelancing platform headquartered in Santa Clara and San Francisco, California. The company was formed in 2013 as Elance-oDesk, after the merger of Elance Inc. and oDesk Corp.",
+      "image": "IMG_UPWORK.webp",
+      "message": "Freelancing is my starting point being a web developer! Work with a lot of different people and served them well!",
+      "workURL": "https://www.upwork.com/freelancers/~01e2113d42404ef420",
+      "workURLText": "Check me on upwork",
+      "achievements": [
+        "Here is where all my web development experience started and opened up to a lot of opportunity for me as a web developer",
+        "4.99 / 5 Star Rating out of 24 Completed Jobs"
+      ],
+      "tasks": [
+        "Develop project-based HTML5 & WordPress websites for many people",
+        "Develer projects on time"
+      ]
+    }
+  ],
+  "trainings": [
+    {
+      "id": "T1",
+      "title": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+      "message": "Udemy Course - Instructor: Maximilian Schwarzmuller (Academind)",
+      "status": "Completed",
+      "description": "Udemy Course - Complete course focused on React Functional Components",
+      "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
+      "courseHighlights": [
+        "React Hooks, a modern approach : In depth knowledge and principles about modern React Hooks",
+        "Build Single Page Applications : Browser Route and NextJS Method",
+        "ATOMIC design principle for building reusable components",
+        "State/Store Management : ContextAPI and Redux/React-Redux toolkit Method",
+        "CSS Styling Methods: Dynamic Inline, Module Pattern, Styled Component, Native CSS",
+        "React Transition Groups",
+        "Introduction to JEST / React Testing Library",
+        "Form Handling : Validations using Reducers",
+        "Custom Hooks for Http/Fetch async Reducer implmentation",
+        "Introduction to React+TypeScript",
+        "Lazy Loading for Routing",
+        "and many more!"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "React and Typescript: Build a Portfolio Project",
+      "message": "Udemy Course - Building strongly typed React.js apps",
+      "description": "Udemy Course - Implement TypeScript across functional ReactJS components",
+      "status": "Ongoing",
+      "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
+      "courseHighlights": [
+        "React and Typescript : Typescript implementation across React Environment",
+        "Types around Props and State",
+        "Types around Events and Refs",
+        "Typescript with Redux",
+        "Design patterns for Redux store with Typescript",
+        "Techniques for Error Handling in React",
+        "Simplify State updates with Immer",
+        "Build a Documentation App for future projects documentation",
+        "and many more!"
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "React, NodeJS, Express & MongoDB - The MERN Fullstack Guide",
+      "message": "Udemy Course - Instructor: Maximilian Schwarzmuller (Academind)",
+      "status": "Ongoing",
+      "description": "Udemy Course - Build fullstack React.js apps with Node.js, Express.js & MongoDB",
+      "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
+      "courseHighlights": [
+        "The MERN Stack Theory - End-to-End JavaScript Full Stack",
+        "Connecting Node (Backend) and React (Frontend)",
+        "Building REST API Endpoints using Express",
+        "MongoDB & Moongoose Database Provider",
+        "File Upload Implementation",
+        "Authentication and Authorization",
+        "Using and Attaching JSON Web Tokens",
+        "Using Environment Variables in React Apps using NodeJS",
+        "and many more!"
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "Ultimate AWS Certified Solutions Architect Associate SAA-C03",
+      "message": "Udemy Course - Full practice exam  for 'AWS Certified Solutions Architect Associate SAA-C03' with explanations",
+      "status": "Scheduled",
+      "description": "Udemy Course - Full practice exam  for 'AWS Certified Solutions Architect Associate SAA-C03' with explanations",
+      "linkToCertificate": "https://www.udemy.com/certificate/UC-73c0860b-cbbe-4b86-832e-081fc8b350ca",
+      "courseHighlights": [
+        "The AWS Fundamentals",
+        "The AWS CLI",
+        "In-Depth Database comparison: RDS, Aurora, DynamoDB, ElastiCache, DocumentDB, Neptune, Keyspaces, QLDB, Timestream",
+        "Analytics Services",
+        "Machine Learning Services",
+        "Monitoring, Troubleshooting & Audit: CloudWatch, CloudTrail, EventBridge, Config",
+        "AWS Integration & Messaging",
+        "AWS Serverless: AWS Lambda, DynamoDB, API Gateway, Step Functions",
+        "and many more!"
+      ]
+    }
+  ],
+  "skillTopics": [
+    {
+      "id": "ST1",
+      "overview": "react",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "useState hook",
+          "file": "react/react-2.js",
+          "message": "UseState is like a variable declaration in javaScript but in a stateful manner"
+        },
+        {
+          "topicID": "2",
+          "title": "useRef hook",
+          "file": "react/react-3.js",
+          "message": "UseRef is like the query selector of JavaScript/jQuery but in a stateful manner in ReactDOM!"
+        },
+        {
+          "topicID": "3",
+          "title": "useEffect hook",
+          "file": "react/react-1.js",
+          "message": "UseEffect is useful in implementing side effects within ReactDOM"
+        },
 
-          {
-            "topicID": "4",
-            "title": "useContext hook",
-            "file": "default.js",
-            "message": "useContext hook blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "ReactDOM Portals",
-            "file": "default.js",
-            "message": "ReactDOM Portal blurb here"
-          },
+        {
+          "topicID": "4",
+          "title": "useContext hook",
+          "file": "default.js",
+          "message": "useContext hook blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "ReactDOM Portals",
+          "file": "default.js",
+          "message": "ReactDOM Portal blurb here"
+        },
 
-          {
-            "topicID": "6",
-            "title": "useCallback hook",
-            "file": "default.js",
-            "message": "useCallback blurb here"
-          },
-          {
-            "topicID": "7",
-            "title": "useMemo hook",
-            "file": "default.js",
-            "message": "useMemo blurb here"
-          },
-          {
-            "topicID": "10",
-            "title": "Custom hook",
-            "file": "default.js",
-            "message": "useCallback blurb here"
-          },
-          {
-            "topicID": "11",
-            "title": "Lazy and Suspense Hook",
-            "file": "default.js",
-            "message": "Lazy and suspense blurb here"
-          },
-          {
-            "topicID": "10",
-            "title": "Singe Page Applications",
-            "file": "default.js",
-            "message": "React Router blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST2",
-        "overview": "html",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "Modern semantic HTML",
-            "file": "default.js",
-            "message": "Modern, semantic HTML blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "WCAG Accessibility Best Practices",
-            "file": "default.js",
-            "message": "WCAG blurb Here"
-          },
-          {
-            "topicID": "3",
-            "title": "ARIA Labels and its uses",
-            "file": "default.js",
-            "message": "ARIA Labels Blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "HTML data attributes",
-            "file": "default.js",
-            "message": "HTML data attributes Blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "Serving Images per viewports",
-            "file": "default.js",
-            "message": "Image per viewports Blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "Useful HTML5 extensions",
-            "file": "default.js",
-            "message": "Local Storage Blurb here"
-          },
-          {
-            "topicID": "6",
-            "title": "HTML5 Best Practices",
-            "file": "default.js",
-            "message": "HTML5 best practices Blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST3",
-        "overview": "css",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "CSS Selectors",
-            "file": "default.js",
-            "message": "CSS Selectors blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "CSS Specificity",
-            "file": "default.js",
-            "message": "CSS Selectors blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "CSS Units",
-            "file": "default.js",
-            "message": "CSS Units blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "CSS Colors",
-            "file": "default.js",
-            "message": "CSS Units blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "Flexboxes",
-            "file": "default.js",
-            "message": "Flexboxes blurb here"
-          },
-          {
-            "topicID": "6",
-            "title": "Gradients",
-            "file": "default.js",
-            "message": "Gradients blurb here"
-          },
-          {
-            "topicID": "7",
-            "title": "SVGs",
-            "file": "default.js",
-            "message": "SVG blurb here"
-          },
-          {
-            "topicID": "8",
-            "title": "Grids",
-            "file": "default.js",
-            "message": "Grids blurb here"
-          },
-          {
-            "topicID": "9",
-            "title": "Animations & Transtitions",
-            "file": "default.js",
-            "message": "Animations blurb here"
-          },
-          {
-            "topicID": "10",
-            "title": "Block Element Modifier (BEM) pattern",
-            "file": "default.js",
-            "message": "BEM blurb here"
-          },
-          {
-            "topicID": "11",
-            "title": "Media Queries",
-            "file": "default.js",
-            "message": "Media Query blurb here"
-          },
-          {
-            "topicID": "12",
-            "title": "Variable CSS Values",
-            "file": "default.js",
-            "message": "Variable CSS Values blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST4",
-        "overview": "javascript",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "let, const and var",
-            "file": "default.js",
-            "message": "let, const and var blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Operators and its precedence",
-            "file": "default.js",
-            "message": "operators blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Template Literals",
-            "file": "default.js",
-            "message": "Template literals blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "Conditional (Ternary) Operator",
-            "file": "default.js",
-            "message": "Conditional Operator blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "Arrow Functions",
-            "file": "default.js",
-            "message": "Arrow functions blurb here"
-          },
-          {
-            "topicID": "6",
-            "title": "Loops",
-            "file": "default.js",
-            "message": "Loops blurb here"
-          },
-          {
-            "topicID": "7",
-            "title": "Array Prototypes (Methods)",
-            "file": "default.js",
-            "message": "Array Methods blurb here"
-          },
-          {
-            "topicID": "8",
-            "title": "Rest and Spread operators",
-            "file": "default.js",
-            "message": "Rest and Spread operator blurb here"
-          },
-          {
-            "topicID": "9",
-            "title": "Destructuring",
-            "file": "default.js",
-            "message": "Destructuring blurb here"
-          },
-          {
-            "topicID": "10",
-            "title": "Promises, Async & Await",
-            "file": "default.js",
-            "message": "Promises blurb here"
-          },
-          {
-            "topicID": "11",
-            "title": "Event Listeners",
-            "file": "default.js",
-            "message": "Event Listener blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST5",
-        "overview": "jest",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "Test Structure",
-            "file": "default.js",
-            "message": "Test Structure blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Kinds of Tests",
-            "file": "default.js",
-            "message": "Kinds of tests blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Testing User Interactions and State",
-            "file": "default.js",
-            "message": "Test Interactions blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "Testing Components",
-            "file": "default.js",
-            "message": "Test Components blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "Testing asynchronous codes",
-            "file": "default.js",
-            "message": "Test asynchronous blurb here"
-          },
-          {
-            "topicID": "6",
-            "title": "Working with Mocks and Shallows",
-            "file": "default.js",
-            "message": "Test Structure blurb here"
-          },
-          {
-            "topicID": "7",
-            "title": "Jest Snapshots",
-            "file": "default.js",
-            "message": "Jest Snapshots blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST6",
-        "overview": "redux",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "Rules of thumb",
-            "file": "default.js",
-            "message": "Rules of thumb blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Dispatch & useSelector",
-            "file": "default.js",
-            "message": "Dispatch and useSelector blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Using Thunks",
-            "file": "default.js",
-            "message": "Thunks blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Fetching Data",
-            "file": "default.js",
-            "message": "State Management blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "Redux Dev Tools",
-            "file": "default.js",
-            "message": "Redux Dev tools blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST7",
-        "overview": "nodejs",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "NPM Packages",
-            "file": "default.js",
-            "message": "NPM blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Cross ENV",
-            "file": "default.js",
-            "message": "Cross Env blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST8",
-        "overview": "git",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "Git basic commands",
-            "file": "default.js",
-            "message": "List of top component libraries blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Branching and Version Control",
-            "file": "default.js",
-            "message": "Branching and Version Control blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Markdown Notes",
-            "file": "default.js",
-            "message": "Markdown Notes blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "Git Ignore",
-            "file": "default.js",
-            "message": "Git Ignore blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST9",
-        "overview": "jquery",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "DOM Selectors",
-            "file": "default.js",
-            "message": "DOM Selectors blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Event Handling",
-            "file": "default.js",
-            "message": "Event Handling blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Working with (this)",
-            "file": "default.js",
-            "message": "Working with (this) blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "CSS Animations",
-            "file": "default.js",
-            "message": "CSS Animations blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "Ajax",
-            "file": "default.js",
-            "message": "Ajax blurb here"
-          },
-          {
-            "topicID": "6",
-            "title": "Modifying Variable CSS",
-            "file": "default.js",
-            "message": "Modifying Variable CSS blurb here"
-          },
-          {
-            "topicID": "7",
-            "title": "Advanced DOM Selectors",
-            "file": "default.js",
-            "message": "Advanced DOM Selectors blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST10",
-        "overview": "net",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "MVC Pattern",
-            "file": "default.js",
-            "message": "MVC Pattern blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Classes",
-            "file": "default.js",
-            "message": "Classes blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Connecting to database",
-            "file": "default.js",
-            "message": "MVC Pattern blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "Executing Stored Procedures",
-            "file": "default.js",
-            "message": "MVC Pattern blurb here"
-          },
-          {
-            "topicID": "5",
-            "title": "REST Api",
-            "file": "default.js",
-            "message": "REST Api blurb here"
-          }
-        ]
-      },
-      {
-        "id": "ST11",
-        "overview": "mssql",
-        "topics": [
-          {
-            "topicID": "1",
-            "title": "Relational Database Design",
-            "file": "default.js",
-            "message": "Database Design blurb here"
-          },
-          {
-            "topicID": "2",
-            "title": "Primary and Foreign Keys",
-            "file": "default.js",
-            "message": "Primary and Foreign Keys blurb here"
-          },
-          {
-            "topicID": "3",
-            "title": "Queries and Stored Procedures",
-            "file": "default.js",
-            "message": "Queries and Stored Procedures blurb here"
-          },
-          {
-            "topicID": "4",
-            "title": "Scheduled Jobs",
-            "file": "default.js",
-            "message": "Scheduled Jobs blurb here"
-          }
-        ]
-      }
-    ]
-  }
-]
+        {
+          "topicID": "6",
+          "title": "useCallback hook",
+          "file": "default.js",
+          "message": "useCallback blurb here"
+        },
+        {
+          "topicID": "7",
+          "title": "useMemo hook",
+          "file": "default.js",
+          "message": "useMemo blurb here"
+        },
+        {
+          "topicID": "10",
+          "title": "Custom hook",
+          "file": "default.js",
+          "message": "useCallback blurb here"
+        },
+        {
+          "topicID": "11",
+          "title": "Lazy and Suspense Hook",
+          "file": "default.js",
+          "message": "Lazy and suspense blurb here"
+        },
+        {
+          "topicID": "10",
+          "title": "Singe Page Applications",
+          "file": "default.js",
+          "message": "React Router blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST2",
+      "overview": "html",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "Modern semantic HTML",
+          "file": "default.js",
+          "message": "Modern, semantic HTML blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "WCAG Accessibility Best Practices",
+          "file": "default.js",
+          "message": "WCAG blurb Here"
+        },
+        {
+          "topicID": "3",
+          "title": "ARIA Labels and its uses",
+          "file": "default.js",
+          "message": "ARIA Labels Blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "HTML data attributes",
+          "file": "default.js",
+          "message": "HTML data attributes Blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "Serving Images per viewports",
+          "file": "default.js",
+          "message": "Image per viewports Blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "Useful HTML5 extensions",
+          "file": "default.js",
+          "message": "Local Storage Blurb here"
+        },
+        {
+          "topicID": "6",
+          "title": "HTML5 Best Practices",
+          "file": "default.js",
+          "message": "HTML5 best practices Blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST3",
+      "overview": "css",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "CSS Selectors",
+          "file": "default.js",
+          "message": "CSS Selectors blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "CSS Specificity",
+          "file": "default.js",
+          "message": "CSS Selectors blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "CSS Units",
+          "file": "default.js",
+          "message": "CSS Units blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "CSS Colors",
+          "file": "default.js",
+          "message": "CSS Units blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "Flexboxes",
+          "file": "default.js",
+          "message": "Flexboxes blurb here"
+        },
+        {
+          "topicID": "6",
+          "title": "Gradients",
+          "file": "default.js",
+          "message": "Gradients blurb here"
+        },
+        {
+          "topicID": "7",
+          "title": "SVGs",
+          "file": "default.js",
+          "message": "SVG blurb here"
+        },
+        {
+          "topicID": "8",
+          "title": "Grids",
+          "file": "default.js",
+          "message": "Grids blurb here"
+        },
+        {
+          "topicID": "9",
+          "title": "Animations & Transtitions",
+          "file": "default.js",
+          "message": "Animations blurb here"
+        },
+        {
+          "topicID": "10",
+          "title": "Block Element Modifier (BEM) pattern",
+          "file": "default.js",
+          "message": "BEM blurb here"
+        },
+        {
+          "topicID": "11",
+          "title": "Media Queries",
+          "file": "default.js",
+          "message": "Media Query blurb here"
+        },
+        {
+          "topicID": "12",
+          "title": "Variable CSS Values",
+          "file": "default.js",
+          "message": "Variable CSS Values blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST4",
+      "overview": "javascript",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "let, const and var",
+          "file": "default.js",
+          "message": "let, const and var blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Operators and its precedence",
+          "file": "default.js",
+          "message": "operators blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Template Literals",
+          "file": "default.js",
+          "message": "Template literals blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "Conditional (Ternary) Operator",
+          "file": "default.js",
+          "message": "Conditional Operator blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "Arrow Functions",
+          "file": "default.js",
+          "message": "Arrow functions blurb here"
+        },
+        {
+          "topicID": "6",
+          "title": "Loops",
+          "file": "default.js",
+          "message": "Loops blurb here"
+        },
+        {
+          "topicID": "7",
+          "title": "Array Prototypes (Methods)",
+          "file": "default.js",
+          "message": "Array Methods blurb here"
+        },
+        {
+          "topicID": "8",
+          "title": "Rest and Spread operators",
+          "file": "default.js",
+          "message": "Rest and Spread operator blurb here"
+        },
+        {
+          "topicID": "9",
+          "title": "Destructuring",
+          "file": "default.js",
+          "message": "Destructuring blurb here"
+        },
+        {
+          "topicID": "10",
+          "title": "Promises, Async & Await",
+          "file": "default.js",
+          "message": "Promises blurb here"
+        },
+        {
+          "topicID": "11",
+          "title": "Event Listeners",
+          "file": "default.js",
+          "message": "Event Listener blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST5",
+      "overview": "jest",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "Test Structure",
+          "file": "default.js",
+          "message": "Test Structure blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Kinds of Tests",
+          "file": "default.js",
+          "message": "Kinds of tests blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Testing User Interactions and State",
+          "file": "default.js",
+          "message": "Test Interactions blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "Testing Components",
+          "file": "default.js",
+          "message": "Test Components blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "Testing asynchronous codes",
+          "file": "default.js",
+          "message": "Test asynchronous blurb here"
+        },
+        {
+          "topicID": "6",
+          "title": "Working with Mocks and Shallows",
+          "file": "default.js",
+          "message": "Test Structure blurb here"
+        },
+        {
+          "topicID": "7",
+          "title": "Jest Snapshots",
+          "file": "default.js",
+          "message": "Jest Snapshots blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST6",
+      "overview": "redux",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "Rules of thumb",
+          "file": "default.js",
+          "message": "Rules of thumb blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Dispatch & useSelector",
+          "file": "default.js",
+          "message": "Dispatch and useSelector blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Using Thunks",
+          "file": "default.js",
+          "message": "Thunks blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Fetching Data",
+          "file": "default.js",
+          "message": "State Management blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "Redux Dev Tools",
+          "file": "default.js",
+          "message": "Redux Dev tools blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST7",
+      "overview": "nodejs",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "NPM Packages",
+          "file": "default.js",
+          "message": "NPM blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Cross ENV",
+          "file": "default.js",
+          "message": "Cross Env blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST8",
+      "overview": "git",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "Git basic commands",
+          "file": "default.js",
+          "message": "List of top component libraries blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Branching and Version Control",
+          "file": "default.js",
+          "message": "Branching and Version Control blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Markdown Notes",
+          "file": "default.js",
+          "message": "Markdown Notes blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "Git Ignore",
+          "file": "default.js",
+          "message": "Git Ignore blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST9",
+      "overview": "jquery",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "DOM Selectors",
+          "file": "default.js",
+          "message": "DOM Selectors blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Event Handling",
+          "file": "default.js",
+          "message": "Event Handling blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Working with (this)",
+          "file": "default.js",
+          "message": "Working with (this) blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "CSS Animations",
+          "file": "default.js",
+          "message": "CSS Animations blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "Ajax",
+          "file": "default.js",
+          "message": "Ajax blurb here"
+        },
+        {
+          "topicID": "6",
+          "title": "Modifying Variable CSS",
+          "file": "default.js",
+          "message": "Modifying Variable CSS blurb here"
+        },
+        {
+          "topicID": "7",
+          "title": "Advanced DOM Selectors",
+          "file": "default.js",
+          "message": "Advanced DOM Selectors blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST10",
+      "overview": "net",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "MVC Pattern",
+          "file": "default.js",
+          "message": "MVC Pattern blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Classes",
+          "file": "default.js",
+          "message": "Classes blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Connecting to database",
+          "file": "default.js",
+          "message": "MVC Pattern blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "Executing Stored Procedures",
+          "file": "default.js",
+          "message": "MVC Pattern blurb here"
+        },
+        {
+          "topicID": "5",
+          "title": "REST Api",
+          "file": "default.js",
+          "message": "REST Api blurb here"
+        }
+      ]
+    },
+    {
+      "id": "ST11",
+      "overview": "mssql",
+      "topics": [
+        {
+          "topicID": "1",
+          "title": "Relational Database Design",
+          "file": "default.js",
+          "message": "Database Design blurb here"
+        },
+        {
+          "topicID": "2",
+          "title": "Primary and Foreign Keys",
+          "file": "default.js",
+          "message": "Primary and Foreign Keys blurb here"
+        },
+        {
+          "topicID": "3",
+          "title": "Queries and Stored Procedures",
+          "file": "default.js",
+          "message": "Queries and Stored Procedures blurb here"
+        },
+        {
+          "topicID": "4",
+          "title": "Scheduled Jobs",
+          "file": "default.js",
+          "message": "Scheduled Jobs blurb here"
+        }
+      ]
+    }
+  ]
+}

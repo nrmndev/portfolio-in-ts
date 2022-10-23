@@ -1,32 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { DataType, InitialValueType } from "./data/data-types";
 
-export const dataType = [
-  {
-    skills: [{ skills: {} as skillsType }],
-    experiences: [{ experiences: {} as experienceType }],
-    trainings: [{ trainings: {} as trainingType }],
-    skillTopics: [{ skillTopics: {} as skillTopicsType }],
-  },
-];
-export interface skillsType {
-  id: number;
+export interface IDataType {
+  skills: SkillsType[];
+  experiences: ExperienceType[];
+  trainings: TrainingType[];
+  skillTopics: skillTopicsType[];
+}
+export interface SkillsType {
+  id: string;
   title: string;
-  image: string;
   message: string;
   description: string;
   svgIcon: string;
 }
 
-export interface experienceType {
+export interface ExperienceType {
+  id: string;
   company: string;
   jobposition: string;
+  tenureship: string;
   description: string;
   image: string;
-  achievements: string[];
+  message: string;
   workURL: string;
   workURLText: string;
+  achievements: string[];
   tasks: string[];
-  message: string;
 }
 
 export interface skillTopicsType {
@@ -35,48 +35,28 @@ export interface skillTopicsType {
   topics: [{ topicID: string; title: string; file: string; message: string }];
 }
 
-export interface trainingType {
+export interface TrainingType {
   id: string;
   title: string;
-  message: string;
   description: string;
+  message: string;
+  status: string;
+  courseHighlights: string[];
+  linkToCertificate: string;
 }
 export const dataSlice = createSlice({
   name: "data",
-  initialState: {
-    skills: [{ skills: {} as skillsType }],
-    experiences: [{ experiences: {} as experienceType }],
-    trainings: [{ trainings: {} as trainingType }],
-    skillTopics: [{ skillTopics: {} as skillTopicsType }],
-    skillContent: [{} as skillTopicsType],
-    data: [{} as any],
-  },
+  initialState: InitialValueType,
   reducers: {
-    addData(
-      state,
-      action: PayloadAction<{
-        skills: {
-          skills: skillsType;
-        }[];
-        experiences: {
-          experiences: experienceType;
-        }[];
-        trainings: {
-          trainings: trainingType;
-        }[];
-        skillTopics: {
-          skillTopics: skillTopicsType;
-        }[];
-      }>
-    ) {
-      state.skills = action.payload.skills;
-      state.experiences = action.payload.experiences;
-      state.trainings = action.payload.trainings;
-      state.skillTopics = action.payload.skillTopics;
+    addData(state, action: PayloadAction<DataType>) {
+      state = action.payload;
+      // state.experiences = action.payload.experiences;
+      // state.trainings = action.payload.trainings;
+      // state.skillTopics = action.payload.skillTopics;
     },
-    addDummy(state, action) {
-      state.data = action.payload;
-    },
+    // addDummy(state, action) {
+    //   state.data = action.payload;
+    // },
   },
 });
 

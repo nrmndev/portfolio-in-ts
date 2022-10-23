@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 import TestImperative from "./testImperative";
 
@@ -55,22 +55,17 @@ const ExampleParent = () => {
 `.trim();
 
 const UseEffectSample = () => {
-  const onChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {};
   const inputRef = useRef<HTMLInputElement>(null);
   inputRef.current?.focus();
   return (
     <>
-      <TestImperative
-        onChange={onChangeHandler}
-        placeholder="Enter your name"
-        ref={inputRef}
-      />
+      <TestImperative placeholder="Enter your name" ref={inputRef} />
       <p className="color_1">
-        Child Component that has imperative handle function "focus"
+        Child Component that has imperative handle function &quot;focus&quot;
       </p>
       <WithLineNumbers code={exampleCode} language="jsx" />
       <p className="color_1">
-        Parent Component can now call the ref function "focus"
+        Parent Component can now call the ref function &quot;focus&quot;
       </p>
       <WithLineNumbers code={exampleCode2} language="jsx" />
     </>

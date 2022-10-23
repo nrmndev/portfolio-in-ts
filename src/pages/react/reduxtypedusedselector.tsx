@@ -1,3 +1,4 @@
+import React from "react";
 import WithLineNumbers from "../../utils/code-highlighter";
 
 const exampleCode = `
@@ -23,9 +24,7 @@ import { useDispatch } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 
 const Sample = () => {
-  const isModalActive = useTypedSelector(
-    (state: RootState) => state.ui.isModalActive
-  );
+  const isModalActive = useTypedSelector(uiIsModalActive);
 }
 `.trim();
 

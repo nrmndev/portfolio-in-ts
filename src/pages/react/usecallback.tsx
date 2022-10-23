@@ -23,12 +23,9 @@ const Example = () => {
 const UseEffectSample = () => {
   const [showParagraph, setShowParagraph] = useState<boolean>(false);
 
-  const toggleParagraphHandler = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>): void => {
-      setShowParagraph((prevShowParagraph) => !prevShowParagraph);
-    },
-    []
-  );
+  const toggleParagraphHandler = useCallback(() => {
+    setShowParagraph((prevShowParagraph) => !prevShowParagraph);
+  }, []);
   return (
     <>
       <p className="color_1">useCallback</p>

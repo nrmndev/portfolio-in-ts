@@ -12,9 +12,8 @@ import { Col, Container, Row } from "react-bootstrap";
 // //   );
 // // };
 
-const Navigation = (props) => {
+const Navigation = (): JSX.Element => {
   const ctx = useContext(AuthContext);
-
   return (
     <Container>
       <Row className="pt-5 pb-5">

@@ -9,7 +9,7 @@ const PageProgressBar = ({ bg = "#000" }: PageProgressBarProps) => {
   const [progressBar, setProgressBar] = useState<number>(10);
 
   const handleScroll = useCallback(() => {
-    let position =
+    const position =
       ((window.scrollY + window.innerHeight) /
         document.documentElement.scrollHeight) *
       100;

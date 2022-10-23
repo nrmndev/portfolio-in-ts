@@ -1,16 +1,9 @@
-import { time } from "console";
-import { useRef } from "react";
 import Badge from "../../components/badge/badge.component";
 import Button from "../../components/button/button.component";
 import Container from "../../components/containers/container.component";
-import {
-  FormGroup,
-  FormInput,
-  FormLabel,
-  FormText,
-} from "../../components/form/input.components";
+
 import useInput from "../../components/form/useInput";
-import { isNotEmpty } from "../../components/form/validation-helper";
+//import { isNotEmpty } from "../../components/form/validation-helper";
 
 const Revamp = () => {
   const {

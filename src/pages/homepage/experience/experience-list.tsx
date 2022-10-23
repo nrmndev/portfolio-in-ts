@@ -1,5 +1,5 @@
 import { Col, Row } from "react-bootstrap";
-import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
+//import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
 import NotFound from "../../../components/error/notfound.component";
 import { BsArrowRight } from "react-icons/bs";
 import List from "../../../components/list/list.component";
@@ -13,31 +13,19 @@ import {
 import Button, {
   BUTTON_VARIANTS,
 } from "../../../components/button/button.component";
-import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
-
-type ExperienceData = {
-  id: string;
-  company: string;
-  jobposition: string;
-  tenureship: string;
-  description: string;
-  image: string;
-  message: string;
-  workURL: string;
-  workURLText: string;
-  achievements: string[];
-  tasks: string[];
-};
+import Card from "../../../components/card/card.component";
+import { ExperienceType } from "../../../store/data/data-types";
 
 type ExperienceProps = {
-  data: ExperienceData[];
+  data: ExperienceType[];
 };
+
 const ExperienceList = ({ data }: ExperienceProps) => {
   let ExperienceJSX: JSX.Element[] | JSX.Element = (
     <NotFound text="No Experiences List Found" />
   );
   if (data.length > 0) {
-    ExperienceJSX = data.map((experience: ExperienceData) => {
+    ExperienceJSX = data.map((experience: ExperienceType) => {
       const { achievements, description, tasks, workURL, workURLText, id } =
         experience;
       return (
@@ -69,7 +57,7 @@ const ExperienceList = ({ data }: ExperienceProps) => {
       );
     });
   }
-  const isExperienceInView = useCheckInViewById("works_heading");
+  //const isExperienceInView = useCheckInViewById("works_heading");
 
   return (
     <Container id="WorksSection" fluid as="section">

@@ -1,19 +1,22 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 
-const LoginForm = (props) => {
+type LoginFormProps = {
+  onSubmit: () => void;
+};
+const LoginForm = (props: LoginFormProps) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const onUserNameChangeHandler = (e) => {
-    setUserName(e.target.value);
+  const onUserNameChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserName(e.currentTarget.value);
   };
 
-  const onPasswordChangeHandler = (e) => {
-    setPassword(e.target.value);
+  const onPasswordChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.currentTarget.value);
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     props.onSubmit();
   };

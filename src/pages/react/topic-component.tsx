@@ -1,14 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
-import FetchError from "../../components/error/fetch-error";
+//import FetchError from "../../components/error/fetch-error";
 import Preloader from "../../components/preloader/loading";
 import { validImports } from "../validimports";
 
-type Props = {
-  children?: React.ReactNode;
-};
+// type Props = {
+//   children?: React.ReactNode;
+// };
 
-const TopicComponent = (props: Props) => {
+const TopicComponent = () => {
   const params = useParams();
   const valid = validImports.reacthooks.some((e) => e === params.filename);
   let HTMLRender;

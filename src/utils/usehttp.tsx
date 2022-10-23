@@ -16,7 +16,13 @@ type requestConfig = {
   headers?: { "Content-Type": string };
   body?: { text: string };
 };
-const useHttp = () => {
+
+type UseHTTPType = {
+  isLoading: boolean;
+  error: string | null;
+  sendRequest: (requestConfig: requestConfig, applyData: any) => Promise<void>;
+};
+const useHttp = (): UseHTTPType => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

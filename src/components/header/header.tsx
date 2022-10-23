@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import { RootState } from "../../store";
 import { useAppSelector } from "../../store/hooks/typedhooks";
+import { uiIsMobile } from "../../store/ui/ui-selector";
 import SideNavList from "./header-side-nav.component";
 import HeaderTopNav from "./header-top-nav.component";
 import HeaderTopSettings from "./header-top-settings";
 let isInitial = true;
 const Header = () => {
-  const isMobileView = useAppSelector((state: RootState) => state.ui.isMobile);
+  const isMobileView = useAppSelector(uiIsMobile);
   const [sideNavVisible, setsideNavVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const refRects = () => {
-      let curr = document.getElementById("SkillsSection");
-      let currIsView = curr?.getBoundingClientRect().top;
-      if (currIsView! <= 300) {
-        setsideNavVisible(true);
-      } else {
-        setsideNavVisible(false);
+      const curr = document.getElementById("SkillsSection");
+      if (curr) {
+        const currIsView = curr.getBoundingClientRect().top;
+        if (currIsView <= 300) {
+          setsideNavVisible(true);
+        } else {
+          setsideNavVisible(false);
+        }
       }
     };
     if (!isMobileView) {
@@ -28,7 +30,9 @@ const Header = () => {
       return;
     }
 
-    return () => {};
+    return () => {
+      window.removeEventListener("scroll", refRects);
+    };
   }, [isMobileView]);
 
   return (
