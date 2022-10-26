@@ -1,0 +1,256 @@
+[
+  {
+    "id": "1",
+    "title": "React Hooks",
+    "topics": [
+      {
+        "topic_id": "RH1",
+        "topicTitle": "useState",
+        "path": "react-hooks/usestate"
+      },
+      {
+        "topic_id": "RH2",
+        "topicTitle": "useEffect",
+        "path": "react-hooks/useeffect"
+      },
+      {
+        "topic_id": "RH3",
+        "topicTitle": "useRef",
+        "path": "react-hooks/useref"
+      },
+      {
+        "topic_id": "RH4",
+        "topicTitle": "useContext",
+        "path": "react-hooks/usecontext"
+      },
+      {
+        "topic_id": "RH5",
+        "topicTitle": "useCallback",
+        "path": "react-hooks/usecallback"
+      },
+      {
+        "topic_id": "RH6",
+        "topicTitle": "useMemo",
+        "path": "react-hooks/usememo"
+      },
+      {
+        "topic_id": "RH7",
+        "topicTitle": "useImperativeHandle",
+        "path": "react-hooks/useimperativehandle"
+      },
+      {
+        "topic_id": "RH8",
+        "topicTitle": "useReducer",
+        "path": "react-hooks/usereducer"
+      },
+      {
+        "topic_id": "RH9",
+        "topicTitle": "customhook",
+        "path": "react-hooks/customhook"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "React Router (react-router@v6)",
+    "topics": [
+      {
+        "topic_id": "R1",
+        "topicTitle": "Browser Router, Routes, Route",
+        "path": "react-router"
+      },
+      {
+        "topic_id": "R2",
+        "topicTitle": "Dynamic Routing (Params)",
+        "path": "react-router/dynamic-routing"
+      },
+      {
+        "topic_id": "R3",
+        "topicTitle": "Route Guards",
+        "path": "react-router/route-guard"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "React Redux",
+    "topics": [
+      {
+        "topic_id": "RR1",
+        "topicTitle": "Configure Store",
+        "path": "redux/configure-estore"
+      },
+      {
+        "topic_id": "RR2",
+        "topicTitle": "Slice",
+        "path": "redux/slice"
+      },
+
+      {
+        "topic_id": "RR3",
+        "topicTitle": "Typed Use Selectors",
+        "path": "redux/use-selector"
+      },
+      {
+        "topic_id": "RR4",
+        "topicTitle": "Typed Use Dispatch",
+        "path": "redux/use-dispatch"
+      },
+      {
+        "topic_id": "RR5",
+        "topicTitle": "Action Creators",
+        "path": "redux/action-creator"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Design Patterns",
+    "topics": [
+      {
+        "topic_id": "T15",
+        "topicTitle": "Higher Order Components",
+        "path": "design-pattern/hoc"
+      },
+      {
+        "topic_id": "T16",
+        "topicTitle": "Presentational vs Functional Component",
+        "path": "design-pattern/presentational"
+      },
+      {
+        "topic_id": "T17",
+        "topicTitle": "Provider Pattern",
+        "path": "design-pattern/provider"
+      },
+      {
+        "topic_id": "T18",
+        "topicTitle": "Conditional Rendering (Ternary Operator)",
+        "path": "design-pattern/conditional"
+      },
+      {
+        "topic_id": "T19",
+        "topicTitle": "Variant Components",
+        "path": "design-pattern/variant"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Testing",
+    "topics": [
+      {
+        "topic_id": "T1",
+        "topicTitle": "Unit Testing - Presentational Components",
+        "path": "testing/presentational-components"
+      },
+      {
+        "topic_id": "T2",
+        "topicTitle": "Unit Testing - Styled Components",
+        "path": "testing/styled-components"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Code Base / Custom Utilities",
+    "topics": [
+      {
+        "topic_id": "T23",
+        "topicTitle": "Data Fetching",
+        "path": "code-base/data-fetching"
+      },
+      {
+        "topic_id": "T24",
+        "topicTitle": "Data Pagination",
+        "path": "code-base/pagination"
+      },
+      {
+        "topic_id": "T25",
+        "topicTitle": "Debouncing",
+        "path": "code-base/debouncing"
+      },
+      {
+        "topic_id": "T26",
+        "topicTitle": "Authentication",
+        "path": "code-base/authentication"
+      },
+      {
+        "topic_id": "T27",
+        "topicTitle": "Authorization",
+        "path": "code-base/authorization"
+      },
+      {
+        "topic_id": "T28",
+        "topicTitle": "Form Validation",
+        "path": "code-base/form-validation"
+      },
+      {
+        "topic_id": "T29",
+        "topicTitle": "Create Portal",
+        "path": "code-base/create-portal"
+      },
+      {
+        "topic_id": "T30",
+        "topicTitle": "Local Storage and Session Storage",
+        "path": "code-base/storage"
+      },
+      {
+        "topic_id": "T31",
+        "topicTitle": "Viewport (Responsive) Conditional Rendering",
+        "path": "code-base/viewport-render"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "CSS Design Patterns",
+    "topics": [
+      {
+        "topic_id": "T32",
+        "topicTitle": "Module Based CSS",
+        "path": "css-pattern/module-css"
+      },
+      {
+        "topic_id": "T33",
+        "topicTitle": "Dynamic JS CSS",
+        "path": "css-pattern/dynamic-js"
+      },
+      {
+        "topic_id": "T34",
+        "topicTitle": "Styled Components",
+        "path": "css-pattern/styled-components"
+      },
+      {
+        "topic_id": "T35",
+        "topicTitle": "Theming SCSS/LESS",
+        "path": "css-pattern/theming-sass"
+      },
+      {
+        "topic_id": "T36",
+        "topicTitle": "Theming Styled Components",
+        "path": "css-pattern/theming-styled-components"
+      },
+      {
+        "topic_id": "T45",
+        "topicTitle": "React Transition Group",
+        "path": "css-pattern/rtg"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Event Handlers",
+    "topics": [
+      {
+        "topic_id": "T37",
+        "topicTitle": "HTML Form Events",
+        "path": "event-handlers/form"
+      },
+      {
+        "topic_id": "T38",
+        "topicTitle": "HTML Mouse Events",
+        "path": "event-handlers/mouse"
+      }
+    ]
+  }
+]

@@ -12,26 +12,17 @@ import ExperienceList from "./experience/experience-list";
 import Preloader from "../../components/preloader/loading";
 import FetchError from "../../components/error/fetch-error";
 import { MouseEventType } from "../../utils/interfaces/interfaces";
-//import { fetchSkillsData } from "../../store/state-actions";
+//import { fetchSkillsData } from "../../store/data/data-actions";
 
-type Generic<T> = {
-  data: T[];
-};
 const HomePage = () => {
-  const {
-    isLoading,
-    error,
-    sendRequest: sendTaskRequest,
-    responseStatus,
-  } = useHttp();
-  //const [skillState, setSkillState] = useState<IDataType>();
+  const { isLoading, error, sendRequest, responseStatus } = useHttp();
   const [skillState, setSkillState] = useState<DataType>(DataInitialValueType);
 
   const setSkillCallback = (data: DataType) => {
     setSkillState(data);
   };
 
-  const enterTaskHandler = useCallback(() => {
+  const sendRequestCallback = useCallback(() => {
     const requestConfig = {
       url: `./dummy.json`,
       //url: `https://reqres.in/api/users`,
@@ -39,23 +30,15 @@ const HomePage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      // body: { text: e.currentTarget.value },
     };
-    sendTaskRequest(requestConfig, setSkillCallback);
-  }, [sendTaskRequest]);
+    sendRequest(requestConfig, setSkillCallback);
+  }, [sendRequest]);
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    //dispatch(fetchSkillsData());
-    enterTaskHandler();
-  }, [enterTaskHandler, dispatch]);
-
-  // const onClickHandler = (
-  //   id: number,
-  //   e: React.MouseEvent<HTMLButtonElement>
-  // ): void => {
-  //   dispatch(uiActions.setModalActive(true));
-  // };
+    //dispatch(fetchSkillsData()); //Activate Redux, currently using ContextAPI
+    sendRequestCallback();
+  }, [sendRequestCallback, dispatch]);
 
   const onMouseEventHandler = (
     item: string,
@@ -75,11 +58,13 @@ const HomePage = () => {
     }
   };
   const skillJSX = skillState ? <SkillsList data={skillState.skills} /> : <></>;
+
   const experienceJSX = skillState ? (
     <ExperienceList data={skillState.experiences} />
   ) : (
     <></>
   );
+
   const trainingJSX = skillState ? (
     <TrainingList
       data={skillState.trainings}

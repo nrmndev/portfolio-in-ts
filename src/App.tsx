@@ -1,9 +1,19 @@
 import { useEffect } from "react";
-import { uiActions } from "./store/ui/ui-slice";
-import { getFromLS } from "./utils/localstorage";
 import { useAppDispatch, useAppSelector } from "./store/hooks/typedhooks";
 import { ThemeType } from "./utils/interfaces/theme";
 import { Routes, Route } from "react-router-dom";
+import {
+  uiIsMessageActive,
+  uiIsModalActive,
+  uiTheme,
+} from "./store/ui/ui-selector";
+import {
+  uiSetMobileView,
+  uiSetModalActive,
+  uiSetTheme,
+} from "./store/ui/ui-actions";
+
+import { getFromLS } from "./utils/localstorage";
 import ReactPage from "./pages/react";
 
 import PageProgressBar from "./components/progressbar/page-progressbar.component";
@@ -14,14 +24,8 @@ import HomePage from "./pages/homepage";
 import "./components/styles/main.scss";
 import Modal from "./components/modal/modal.component";
 import ContactUs from "./components/contact-form";
-import Revamp from "./pages/revamp/revamp";
+//import Playground from "./pages/component-playground-page/playground";
 import HireSection from "./components/hire-section/hire-section.component";
-import {
-  uiIsMessageActive,
-  uiIsModalActive,
-  uiTheme,
-} from "./store/ui/ui-selector";
-///import "./assets/neomorphism/scss/neumorphism.css";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -32,19 +36,20 @@ function App() {
   //const isMobile = useAppSelector(uiIsMobile);
   //const isTheme = useSelector(uiIsTheme);
 
+  //Check responsive viewport, apply setMobileView
   useEffect(() => {
     const themeFromLS = getFromLS("theme");
-    dispatch(uiActions.setTheme(themeFromLS));
-    const body = document.getElementById("body");
+    dispatch(uiSetTheme(themeFromLS));
+
     const vw = Math.max(
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
     );
     if (vw < 768) {
-      dispatch(uiActions.setMobileView(true));
+      dispatch(uiSetMobileView(true));
     }
-    // dispatch(fetchSkillsData());
 
+    const body = document.getElementById("body");
     if (isModalActive) {
       body && body.classList.add("open");
     } else {
@@ -61,19 +66,12 @@ function App() {
       default:
         break;
     }
-    return () => {
-      //dispatch(fetchSkillsData());
-    };
   }, [dispatch, isModalActive, isActive, currentTheme]);
 
   const hideItemHandler = () => {
-    dispatch(uiActions.setModalActive(false));
-    // setShowForm(false);
-    // setshowMenuItem(false);
-    // setModalShow(false);
+    dispatch(uiSetModalActive(false));
     const body = document.querySelector("body");
     body && body.classList.remove("open");
-    // overlay!.classList.remove("modal-open");
   };
   return (
     <>
@@ -83,8 +81,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="reactjs/*" element={<ReactPage />} />
-          <Route path="revamp" element={<Revamp />} />
-          <Route path="*" element={<ReactPage />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
         <HireSection />
         <Footer />

@@ -63,7 +63,7 @@ const SkillsList = ({ data }: SkillsListProps) => {
             </Button>
           </Col>
           <Col md={6} className="mt-3 mb-3">
-            <Button to="/reactjs/usestate" variant={BUTTON_VARIANTS.inverted}>
+            <Button to="/reactjs" variant={BUTTON_VARIANTS.inverted}>
               <span>
                 <BsArrowRight size={"2em"} /> View ReactJS Skills Processes
               </span>

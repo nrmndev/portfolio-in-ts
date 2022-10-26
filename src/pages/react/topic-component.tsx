@@ -2,18 +2,18 @@ import React, { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 //import FetchError from "../../components/error/fetch-error";
 import Preloader from "../../components/preloader/loading";
-import { validImports } from "../validimports";
 
-// type Props = {
-//   children?: React.ReactNode;
-// };
+type Props = {
+  links: string[] | undefined;
+};
 
-const TopicComponent = () => {
-  const params = useParams();
-  const valid = validImports.reacthooks.some((e) => e === params.filename);
+const TopicComponent = ({ links }: Props) => {
+  const { foldername, filename } = useParams();
+
+  const valid = links && links.some((e) => e === foldername + "/" + filename);
   let HTMLRender;
   valid
-    ? (HTMLRender = lazy(() => import(`./${params.filename}`)))
+    ? (HTMLRender = lazy(() => import(`./${foldername}/${filename}`)))
     : (HTMLRender = lazy(() => import(`../../components/error/fetch-error`)));
 
   // const HTMLRender = lazy(() => import(`./${params.filename}`));
