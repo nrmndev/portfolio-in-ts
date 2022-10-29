@@ -82,3 +82,26 @@ const GetResponse = ({ response }: Resp) => {
       return ``;
   }
 };
+
+/**Start
+   *  UseState version of fetching
+   //const { isLoading, error, sendRequest, responseStatus } = useHttp();
+  //const [dataState, setDataState] = useState<DataType>(DataInitialValueType);
+  // const setDataStateCallback = (data: DataType) => {
+  //   setDataState(data);
+  // };
+  // const sendRequestCallback = useCallback(() => {
+  //   const requestConfig = {
+  //     url: `./dummy.json`,
+  //     //url: `https://reqres.in/api/users`,
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   };
+  //   sendRequest(requestConfig, setDataStateCallback);
+  // }, [sendRequest]);
+  // useEffect(() => {
+  //   dispatch(fetchAllData()); 
+  // }, [sendRequestCallback, dispatch]);
+  End **/

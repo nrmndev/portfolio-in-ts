@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import {
+  themedGradientBackgroundColor,
+  themedBoxShadow,
+} from "../theme-provider/theme-provider.styles";
 
 export const StyledCardContent = styled.div`
   transition: transform 0.3s ease-in;
@@ -7,7 +11,8 @@ export const StyledCardContent = styled.div`
 export const StyledCardBase = styled.div`
   border-radius: 10px;
   padding: 35px 50px 35px 50px;
-  background: linear-gradient(165deg, #fff 50%, #edebeb 80%);
+  //background: linear-gradient(165deg, #fff 50%, #edebeb 80%);
+  background: ${({ color }) => (color ? color : themedGradientBackgroundColor)};
   position: relative;
   overflow: hidden;
   &:before {
@@ -29,5 +34,5 @@ export const StyledCardBase = styled.div`
 `;
 
 export const StyledCardWithShadow = styled(StyledCardBase)`
-  box-shadow: 2px 2px 15px #d8d5d5;
+  box-shadow: ${themedBoxShadow};
 `;

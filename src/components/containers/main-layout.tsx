@@ -5,6 +5,7 @@ import {
   //uiTheme,
 } from "../../store/ui/ui-selector";
 import NormonHTML from "../portals/normon-portal";
+import { StyledMain } from "./main-layout.styles";
 
 type Props = {
   children?: React.ReactNode;
@@ -15,10 +16,10 @@ const MainLayout = (props: Props): JSX.Element => {
   //const currentTheme = useAppSelector(uiTheme);
   const isMobile = useAppSelector(uiIsMobile);
   return (
-    <main className="main">
+    <StyledMain className="main">
       {props.children}
       {isActive && !isMobile && <NormonHTML />}
-    </main>
+    </StyledMain>
   );
 };
 

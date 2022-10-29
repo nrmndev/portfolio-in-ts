@@ -1,31 +1,19 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { UiInitialValueType } from "./ui-types";
+import { uiReducers } from "./ui-reducers";
+
 export const uiSlice = createSlice({
   name: "ui",
   initialState: UiInitialValueType,
-  reducers: {
-    setMessage(state, action: PayloadAction<string>) {
-      state.message = action.payload;
-    },
-    setTheme(state, action: PayloadAction<string>) {
-      state.theme = action.payload;
-    },
-    setView(state, action: PayloadAction<boolean>) {
-      state.isView = action.payload;
-    },
-    setToggleMessage(state, action: PayloadAction<boolean>) {
-      state.isMessageActive = action.payload;
-    },
-    setMobileView(state, action: PayloadAction<boolean>) {
-      state.isMobile = action.payload;
-    },
-    setCardBackdrop(state, action: PayloadAction<boolean>) {
-      state.cardBackdrop = action.payload;
-    },
-    setModalActive(state, action: PayloadAction<boolean>) {
-      state.isModalActive = action.payload;
-    },
-  },
+  reducers: uiReducers,
+  // extraReducers: (builder) => {
+  //   builder.addCase(setTheme(), (state, action: PayloadAction<string>) => {
+  //     console.log("Theme initialized");
+  //     state.theme = action.payload;
+  //     return state;
+  //   });
+  // },
 });
 
 export const uiActions = uiSlice.actions;
+export default uiSlice.reducer;

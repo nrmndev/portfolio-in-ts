@@ -28,13 +28,7 @@ const SkillsList = ({ data }: SkillsListProps) => {
   }
 
   return (
-    <Container
-      id="SkillsSection"
-      style={{ minHeight: "100vh" }}
-      bg="#FFF"
-      as="section"
-      fluid
-    >
+    <Container id="SkillsSection" as="section" fluid>
       <Container>
         <Row className="mb-5 z-2">
           <Col>
@@ -47,7 +41,9 @@ const SkillsList = ({ data }: SkillsListProps) => {
           </Col>
         </Row>
 
-        <Row>{SkillListItemJSX}</Row>
+        <Container flex childFlexBasis="31.33%" gap="3%">
+          {SkillListItemJSX}
+        </Container>
         <Row className="pt-5 pb-5 text-center">
           <Col md={6} className="mt-3 mb-3">
             <Button

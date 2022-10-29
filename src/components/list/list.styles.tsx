@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { themedParagraphColor } from "../theme-provider/theme-provider.styles";
 
 export const StyleListTitle = styled.h5`
   color: #43cea2;
@@ -13,6 +14,7 @@ export const StyledList = styled.ul`
     list-style: none;
     margin-bottom: 5px;
     position: relative;
+    color: ${themedParagraphColor};
   }
   svg {
     margin-right: 12px;

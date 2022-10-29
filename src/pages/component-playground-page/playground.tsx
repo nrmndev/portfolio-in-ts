@@ -3,9 +3,10 @@ import Button from "../../components/button/button.component";
 import Container from "../../components/containers/container.component";
 
 import useInput from "../../components/form/useInput";
+
 //import { isNotEmpty } from "../../components/form/validation-helper";
 
-const Revamp = () => {
+const PlayGround = () => {
   const {
     state: username,
     isValid: isUserNameValid,
@@ -49,4 +50,4 @@ const Revamp = () => {
   );
 };
 
-export default Revamp;
+export default PlayGround;

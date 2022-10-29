@@ -20,11 +20,11 @@ export enum TEXT_VARIANTS {
 }
 
 type LabeledTypoProps = {
-  value: string;
   label?: string;
   as: TEXT_VARIANTS;
-  color?: string;
+  color?: string | undefined;
   textAlign?: "center" | "left" | "right";
+  children: React.ReactNode;
 } & HTMLAttributes<HTMLHeadingElement | HTMLParagraphElement>;
 
 const getTextAs = (as = TEXT_VARIANTS.H3) =>
@@ -40,18 +40,18 @@ const getTextAs = (as = TEXT_VARIANTS.H3) =>
 
 const Text = (props: LabeledTypoProps) => {
   const {
-    value,
     label,
-    color = "#777",
+    color,
     as = TEXT_VARIANTS.H3,
     textAlign = "center",
+    children,
     ...rest
   } = props;
   const CustomText = getTextAs(as);
   return (
     <CustomText color={color} as={as} textAlign={textAlign} {...rest}>
-      {value}
       {label && <span>{label}</span>}
+      {children}
     </CustomText>
   );
 };

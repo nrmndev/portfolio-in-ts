@@ -1,15 +1,24 @@
-export type DataType = {
+// export type DataType = {
+//   skills: SkillsType[];
+//   experiences: ExperienceType[];
+//   trainings: TrainingType[];
+//   skillTopics: SkillTopicsType[];
+//   selectedSkill: SkillsType;
+// };
+export type DataType<T> = {
   skills: SkillsType[];
   experiences: ExperienceType[];
   trainings: TrainingType[];
   skillTopics: SkillTopicsType[];
+  editingState: T;
 };
+
 export const DataInitialValueType = {
-  skills: [{} as SkillsType],
   experiences: [{} as ExperienceType],
-  trainings: [{} as TrainingType],
+  skills: [{} as SkillsType],
   skillTopics: [{} as SkillTopicsType],
-  //data: [{} as any],
+  trainings: [{} as TrainingType],
+  editingState: {} as any,
 };
 
 export type SkillsType = {
@@ -43,6 +52,7 @@ export type TrainingType = {
   courseHighlights: string[];
   linkToCertificate: string;
 };
+
 export type SkillTopicsType = {
   id: string;
   overview: string;

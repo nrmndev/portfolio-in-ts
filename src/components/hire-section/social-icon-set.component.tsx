@@ -1,5 +1,4 @@
 import { useAppDispatch } from "../../store/hooks/typedhooks";
-import { uiActions } from "../../store/ui/ui-slice";
 
 import {
   BsFillEnvelopeOpenFill,
@@ -11,6 +10,11 @@ import Button, { BUTTON_VARIANTS } from "../button/button.component";
 import { MouseEventType } from "../../interface";
 
 import { StaticMessages } from "../../utils/interfaces/interfaces";
+import {
+  uiClearMessage,
+  uiSetModalActive,
+  uiUpdateMessage,
+} from "../../store/ui/ui-actions";
 
 const SocialIconSet = () => {
   const dispatch = useAppDispatch();
@@ -22,19 +26,19 @@ const SocialIconSet = () => {
   ) => {
     switch (e.type) {
       case MouseEventType.MOUSE_ENTER:
-        dispatch(uiActions.setMessage(item));
+        dispatch(uiUpdateMessage(item));
         //dispatch(uiActions.setCardBackdrop(true));
         break;
       case MouseEventType.MOUSE_LEAVE:
         //dispatch(uiActions.setCardBackdrop(false));
-        dispatch(uiActions.setMessage(""));
+        dispatch(uiClearMessage());
         break;
       default:
         break;
     }
   };
   const onClickShowEmailModal = () => {
-    dispatch(uiActions.setModalActive(true));
+    dispatch(uiSetModalActive(true));
   };
 
   return (

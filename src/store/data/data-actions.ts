@@ -1,32 +1,18 @@
 import { dataActions } from "./data-slice";
-import { DataInitialValueType } from "./data-types";
+import { DataType, SkillsType } from "./data-types";
 
-export const fetchSkillsData = () => {
-  return async (dispatch: any) => {
-    debugger;
-    const fetchData = async (): Promise<typeof DataInitialValueType> => {
-      const response = await fetch("./dummy.json");
-      console.log("response", response);
+//GLOBAL ACTIONS
+export const dataAddData = (data: DataType<void>) => dataActions.addData(data);
 
-      if (!response.ok) {
-        throw new Error("Could not fetch cart data!");
-      }
+//SKILL ACTIONS
+export const dataEnableSkillEditing = () => dataActions.enableSkillEditing();
+export const dataDeleteSkill = (id: string) => dataActions.deleteSkill(id);
+export const dataAddSkill = (skill: SkillsType) => dataActions.addSkill(skill);
+export const dataUpdateSkillById = (skillToUpdate: SkillsType) =>
+  dataActions.updateSkillById(skillToUpdate);
 
-      const data: typeof DataInitialValueType = await response.json();
-      console.log("storeData", data);
-      return data;
-    };
+export const dataSetSelectedSkillById = (skillId: string) =>
+  dataActions.setSelectedSkillByID(skillId);
 
-    try {
-      const skillData = await fetchData();
-      //const { skills, experiences, trainings, skillTopics } = skillData;
-      // const experiences = skillData[0].experiences;
-      // const trainings = skillData[0].trainings;
-      // const skillTopics = skillData[0].skillTopics;
-
-      dispatch(dataActions.addData(skillData));
-    } catch (error) {
-      alert(error);
-    }
-  };
-};
+export const dataClearSelectedSkillById = () =>
+  dataActions.clearSelectedSkillById();

@@ -3,6 +3,26 @@ type Props = {
   viewBox?: number;
   id?: string;
 };
+
+export const SupportedIcons = [
+  "HTML",
+  "JEST",
+  "JS",
+  "JQUERY",
+  "MSSQL",
+  "NODE",
+  "CSS",
+  "DOTNET",
+  "GIT",
+  "REACT",
+  "REDUX",
+  "TYPESCRIPT",
+  "COMPONENT",
+  "SASS",
+  "MOBILE",
+  "REUSE",
+  "STYLEDCOMPONENTS",
+];
 const SVGIcon = (props: Props) => {
   let SVGPathJSX = <></>;
 

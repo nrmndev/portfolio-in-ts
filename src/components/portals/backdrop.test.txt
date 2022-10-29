@@ -1,0 +1,29 @@
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
+import { BsFillStarFill } from "react-icons/bs";
+import "jest-styled-components";
+import NormonHTML from "./normon-portal";
+import { Provider } from "react-redux";
+import store from "../../store";
+import ReactDOM from "react-dom";
+describe("MyComponent", () => {
+  // beforeAll(() => {
+  //   ReactDOM.createPortal = jest.fn((element, node) => {
+  //     return element;
+  //   });
+  // });
+
+  // afterEach(() => {
+  //   ReactDOM.createPortal.mockClear();
+  // });
+
+  it("should render correctly", () => {
+    const component = renderer.create(
+      <Provider store={store}>
+        <NormonHTML data-testid="portal" />
+      </Provider>
+    );
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+});

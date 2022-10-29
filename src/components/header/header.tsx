@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppSelector } from "../../store/hooks/typedhooks";
 import { uiIsMobile } from "../../store/ui/ui-selector";
 import SideNavList from "./header-side-nav.component";
-import HeaderTopNav from "./header-top-nav.component";
+import MainNavigation from "../navigation/main-navigation.component";
 import HeaderTopSettings from "./header-top-settings";
 let isInitial = true;
 const Header = () => {
@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <>
       {sideNavVisible && !isMobileView && <SideNavList />}
-      <HeaderTopNav />
+      <MainNavigation />
       <HeaderTopSettings />
     </>
   );

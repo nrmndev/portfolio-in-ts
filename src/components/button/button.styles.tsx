@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { themedButtonTextColor } from "../theme-provider/theme-provider.styles";
 interface StyledButtonProps {
   readonly size: string;
   readonly block: boolean | undefined;
@@ -22,7 +23,7 @@ export const StyledBaseButton = styled.button<StyledButtonProps>`
   padding: ${({ size }) => handleButtonSize(size)};
   letter-spacing: 0.5px;
   font-size: 1rem;
-  color: #fff;
+  color: ${themedButtonTextColor};
   text-transform: uppercase;
   font-weight: bolder;
   border-width: 1px;
@@ -59,7 +60,8 @@ export const StyledGoogleSignInButton = styled(StyledBaseButton)`
 
 export const StyledInvertedButton = styled(StyledBaseButton)`
   background-color: white;
-  color: ${({ color }) => color};
+  //color: ${({ color }) => color};
+  color: ${themedButtonTextColor};
   border-color: ${({ color }) => color};
   &:hover {
     background-color: ${({ color }) => color};

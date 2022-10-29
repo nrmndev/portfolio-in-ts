@@ -10,7 +10,7 @@ const FetchError = ({ error = "Not Found" }: Props) => {
     <StyledFetchErrorContainer fluid>
       <Row>
         <Col className="flex__center">
-          <Text as={TEXT_VARIANTS.H3} value={error} />
+          <Text as={TEXT_VARIANTS.H3}>{error}</Text>
         </Col>
       </Row>
     </StyledFetchErrorContainer>

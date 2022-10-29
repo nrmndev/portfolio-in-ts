@@ -7,13 +7,8 @@ import {
   uiIsModalActive,
   uiTheme,
 } from "./store/ui/ui-selector";
-import {
-  uiSetMobileView,
-  uiSetModalActive,
-  uiSetTheme,
-} from "./store/ui/ui-actions";
+import { uiSetMobileView, uiSetModalActive } from "./store/ui/ui-actions";
 
-import { getFromLS } from "./utils/localstorage";
 import ReactPage from "./pages/react";
 
 import PageProgressBar from "./components/progressbar/page-progressbar.component";
@@ -26,6 +21,9 @@ import Modal from "./components/modal/modal.component";
 import ContactUs from "./components/contact-form";
 //import Playground from "./pages/component-playground-page/playground";
 import HireSection from "./components/hire-section/hire-section.component";
+import PlayGround from "./pages/component-playground-page/playground";
+import ReduxPlayground from "./pages/redux-playground/redux";
+import ContainerPlayground from "./pages/component-playground-page/container-playground";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -36,11 +34,35 @@ function App() {
   //const isMobile = useAppSelector(uiIsMobile);
   //const isTheme = useSelector(uiIsTheme);
 
+  // useEffect(() => {
+  //   const themeFromLS = getFromLS("theme");
+  //   dispatch(uiSetTheme(themeFromLS));
+  // }, []);
+
+  // useEffect(() => {
+  //   const body = document.getElementById("body");
+  //   switch (currentTheme as ThemeType) {
+  //     case ThemeType.DARK:
+  //       body && body.classList.add("theme-dark");
+  //       break;
+  //     case ThemeType.LIGHT:
+  //       body && body.classList.remove("theme-dark");
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }, [currentTheme]);
+
+  useEffect(() => {
+    const body = document.getElementById("body");
+    if (isModalActive) {
+      body && body.classList.add("open");
+    } else {
+      body && body.classList.remove("open");
+    }
+  }, [isModalActive]);
   //Check responsive viewport, apply setMobileView
   useEffect(() => {
-    const themeFromLS = getFromLS("theme");
-    dispatch(uiSetTheme(themeFromLS));
-
     const vw = Math.max(
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
@@ -48,25 +70,7 @@ function App() {
     if (vw < 768) {
       dispatch(uiSetMobileView(true));
     }
-
-    const body = document.getElementById("body");
-    if (isModalActive) {
-      body && body.classList.add("open");
-    } else {
-      body && body.classList.remove("open");
-    }
-
-    switch (currentTheme as ThemeType) {
-      case ThemeType.DARK:
-        body && body.classList.add("theme-dark");
-        break;
-      case ThemeType.LIGHT:
-        body && body.classList.remove("theme-dark");
-        break;
-      default:
-        break;
-    }
-  }, [dispatch, isModalActive, isActive, currentTheme]);
+  }, [dispatch, isActive]);
 
   const hideItemHandler = () => {
     dispatch(uiSetModalActive(false));
@@ -81,6 +85,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="reactjs/*" element={<ReactPage />} />
+          <Route path="playground" element={<PlayGround />} />
+          <Route path="redux" element={<ReduxPlayground />} />
+          <Route path="container" element={<ContainerPlayground />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
         <HireSection />

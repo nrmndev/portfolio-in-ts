@@ -20,13 +20,13 @@ export const isLengthGreaterThan = (value: string, length: number) =>
  */
 
 //const paragraph = "the quick brown fox jumps over the lazy dog. it barked.";
-type GetConditionsType = {
-  hasLowercase: boolean;
-  hasUppercase: boolean;
-  hasNumbers: boolean;
-  hasNonAlphaNumeric: boolean;
-  hasLengthValid: boolean;
-};
+// type GetConditionsType = {
+//   hasLowercase: boolean;
+//   hasUppercase: boolean;
+//   hasNumbers: boolean;
+//   hasNonAlphaNumeric: boolean;
+//   hasLengthValid: boolean;
+// };
 export const isPasswordStrong = (value: string, getConditions: any) => {
   const reg = {
     lowercase: /[a-z]/g,

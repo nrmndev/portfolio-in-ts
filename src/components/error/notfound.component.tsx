@@ -4,7 +4,7 @@ type NotFoundProps = {
   text: string;
 };
 const NotFound = ({ text }: NotFoundProps) => {
-  return <Text value={text} as={TEXT_VARIANTS.H4} />;
+  return <Text as={TEXT_VARIANTS.H4}>{text}</Text>;
 };
 
 export default NotFound;

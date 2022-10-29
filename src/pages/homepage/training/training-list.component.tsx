@@ -75,7 +75,7 @@ const TrainingList = (props: Props) => {
   }
 
   return (
-    <Container id="TrainingSection" fluid as="section" bg="#fafafa">
+    <Container id="TrainingSection" fluid as="section">
       <Container id="training_heading">
         <Row className="mb-5 z-2 pt-5">
           <Col xs={12} style={{ minHeight: "20vh" }}>

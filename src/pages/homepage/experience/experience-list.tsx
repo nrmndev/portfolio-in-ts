@@ -15,6 +15,10 @@ import Button, {
 } from "../../../components/button/button.component";
 import Card from "../../../components/card/card.component";
 import { ExperienceType } from "../../../store/data/data-types";
+import Text, {
+  TEXT_VARIANTS,
+} from "../../../components/typography/text.component";
+import FlexChildContainer from "../../../components/containers/flex-child-container.component";
 
 type ExperienceProps = {
   data: ExperienceType[];
@@ -26,25 +30,44 @@ const ExperienceList = ({ data }: ExperienceProps) => {
   );
   if (data.length > 1) {
     ExperienceJSX = data.map((experience: ExperienceType) => {
-      const { achievements, description, tasks, workURL, workURLText, id } =
-        experience;
+      const {
+        achievements,
+        description,
+        tasks,
+        workURL,
+        workURLText,
+        id,
+        company,
+      } = experience;
       return (
         <TimelineItem key={id}>
           <Card>
-            <Row>
-              <Col xs={12} sm={12} md={6}>
-                <CompanyContainer data={experience} />
-                <hr />
+            <Container
+              flex
+              bg="none"
+              style={{ alignItems: "center", textAlign: "center" }}
+            >
+              <CompanyContainer data={experience} />
+            </Container>
+            <hr />
+            <Container bg="none">
+              {description && (
+                <Text as={TEXT_VARIANTS.P} label={`About ${company}`}>
+                  {description}
+                </Text>
+              )}
+            </Container>
+            <Container flex bg="none" gap="1%">
+              <FlexChildContainer flexBasis="28%">
                 <List
                   listItems={achievements}
                   listTitle="Notable Achievements:"
                 />
-              </Col>
-              <Col xs={12} sm={12} md={6}>
-                {description && <p className="font__sm">{description}</p>}
+              </FlexChildContainer>
+              <FlexChildContainer flexBasis="68%">
                 {tasks && <List listItems={tasks} listTitle="Tasks:" />}
-              </Col>
-            </Row>
+              </FlexChildContainer>
+            </Container>
 
             <Button href={workURL} size="sm" variant={BUTTON_VARIANTS.inverted}>
               <span>
@@ -61,7 +84,7 @@ const ExperienceList = ({ data }: ExperienceProps) => {
 
   return (
     <Container id="WorksSection" fluid as="section">
-      <Container id="works_heading" style={{ minHeight: "20vh" }}>
+      <Container id="works_heading" bg="none">
         <div className="z-2">
           <SectionTitle
             title="Work Experience"

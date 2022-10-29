@@ -44,8 +44,10 @@ const TrainingListItem = (props: Props) => {
       <Col sm={12} md={6} lg={6} className="mb-4 mb-md-5" id={`training-${id}`}>
         <Card variant={CARD_VARIANTS.WITHSHADOW}>
           <Badge icon={badge} title={status} color="#43cea2" />
-          <Text value={title} as={TEXT_VARIANTS.H3} className="mt-5" />
-          <Text value={description} as={TEXT_VARIANTS.P} />
+          <Text as={TEXT_VARIANTS.H3} className="mt-5">
+            {title}
+          </Text>
+          <Text as={TEXT_VARIANTS.P}>{description}</Text>
           <Button
             onClick={props.onClick.bind(null, id)}
             variant={BUTTON_VARIANTS.icon}

@@ -1,7 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { scroller } from "react-scroll";
-import { uiSetCardBackdrop, uiSetMessage } from "../../store/ui/ui-actions";
+import {
+  uiClearMessage,
+  uiSetCardBackdrop,
+  uiUpdateMessage,
+} from "../../store/ui/ui-actions";
 import { MouseEventType } from "../../utils/interfaces/interfaces";
 import { StyledNavLink, StyledNavListItem } from "./side-nav-list-item.styles";
 
@@ -18,12 +22,12 @@ const NavListItem = (props: Props) => {
   ) => {
     switch (e.type) {
       case MouseEventType.MOUSE_ENTER:
-        dispatch(uiSetMessage(item));
+        dispatch(uiUpdateMessage(item));
         dispatch(uiSetCardBackdrop(true));
         break;
       case MouseEventType.MOUSE_LEAVE:
         dispatch(uiSetCardBackdrop(false));
-        dispatch(uiSetMessage(""));
+        dispatch(uiClearMessage());
         break;
       default:
         break;
@@ -31,11 +35,11 @@ const NavListItem = (props: Props) => {
   };
 
   const handleSetInactive = () => {
-    dispatch(uiSetMessage(""));
+    dispatch(uiClearMessage());
   };
   const handleSetActive = (message: string) => {
     setTimeout(() => {
-      dispatch(uiSetMessage(message));
+      dispatch(uiUpdateMessage(message));
     }, 150);
   };
 

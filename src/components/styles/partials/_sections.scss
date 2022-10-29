@@ -16,13 +16,6 @@ section.before.active:before {
   background: rgb(222 224 245 / 50%);
 }
 #WorksSection {
-  background: linear-gradient(
-      257deg,
-      rgb(255 255 255/ 90%) 0%,
-      rgb(255 255 255/ 50%)
-    ),
-    url("../../../assets/images/workbg_dark.jpg");
-  @include backgroundProp(fixed, no-repeat, center center, cover);
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;

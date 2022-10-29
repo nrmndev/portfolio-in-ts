@@ -1,18 +1,3 @@
-@font-face {
-  font-family: "Metrophobic";
-  src: url("../src/assets/fonts/metrophobic/Metrophobic-Regular.ttf");
-  /* src: local(--bs-font-sans-serif),
-    url("../src/assets/fonts/metrophobic/Metrophobic-Regular.ttf") format("ttf"); */
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MontserratBold";
-  src: url("../src/assets/fonts/montserrat/Montserrat-Bold.ttf");
-  /* src: local(--bs-font-sans-serif),
-    url("../src/assets/fonts/montserrat/Montserrat-ExtraBold.ttf") format("ttf"); */
-  font-display: swap;
-}
 * {
   box-sizing: border-box;
 }

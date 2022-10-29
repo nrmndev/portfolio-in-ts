@@ -24,9 +24,15 @@ const CompanyContainer = ({ data }: CompanyProps) => {
         height={107}
         variant={IMAGE_VARIANTS.BASE}
       />
-      <Text as={TEXT_VARIANTS.H4} value={company} label="Company" />
-      <Text as={TEXT_VARIANTS.H4} value={jobposition} label="Position" />
-      <Text as={TEXT_VARIANTS.H4} value={tenureship} label="Tenureship" />
+      <Text as={TEXT_VARIANTS.H4} label="Company">
+        {company}
+      </Text>
+      <Text as={TEXT_VARIANTS.H4} label="Position">
+        {jobposition}
+      </Text>
+      <Text as={TEXT_VARIANTS.H4} label="Tenureship">
+        {tenureship}
+      </Text>
     </>
   );
 };
