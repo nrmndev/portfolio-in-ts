@@ -13,6 +13,7 @@ type Props = {
   title: string;
   to: string;
   message: string;
+  icon: JSX.Element;
 };
 const NavListItem = (props: Props) => {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ const NavListItem = (props: Props) => {
         tabIndex={0}
         onKeyUp={handleKeyUp.bind(null, props.to)}
       >
+        {props.icon}
         <span>{props.title}</span>
       </StyledNavLink>
     </StyledNavListItem>

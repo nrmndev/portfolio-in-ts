@@ -1,9 +1,11 @@
 import { Col, Row } from "react-bootstrap";
 //import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
 import NotFound from "../../../components/error/notfound.component";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowRightShort } from "react-icons/bs";
 import List from "../../../components/list/list.component";
-import SectionTitle from "../../../components/section-titles/section-titles.components";
+import SectionTitle, {
+  TITLE_VARIANTS,
+} from "../../../components/section-titles/section-titles.components";
 import Container from "../../../components/containers/container.component";
 import CompanyContainer from "./list-item-company.component";
 import {
@@ -13,12 +15,15 @@ import {
 import Button, {
   BUTTON_VARIANTS,
 } from "../../../components/button/button.component";
-import Card from "../../../components/card/card.component";
+import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
 import { ExperienceType } from "../../../store/data/data-types";
 import Text, {
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";
 import FlexChildContainer from "../../../components/containers/flex-child-container.component";
+import GapSeparator, {
+  SEPARATOR_VARIANTS,
+} from "../../../components/gap/gap.components";
 
 type ExperienceProps = {
   data: ExperienceType[];
@@ -41,7 +46,7 @@ const ExperienceList = ({ data }: ExperienceProps) => {
       } = experience;
       return (
         <TimelineItem key={id}>
-          <Card>
+          <Card variant={CARD_VARIANTS.WITHSHADOW} bgGradientOnHover>
             <Container
               flex
               bg="none"
@@ -68,12 +73,15 @@ const ExperienceList = ({ data }: ExperienceProps) => {
                 {tasks && <List listItems={tasks} listTitle="Tasks:" />}
               </FlexChildContainer>
             </Container>
-
-            <Button href={workURL} size="sm" variant={BUTTON_VARIANTS.inverted}>
-              <span>
-                <BsArrowRight size={"1.5rem"} />
-              </span>
-              {workURLText}
+            <GapSeparator />
+            <Button
+              href={workURL}
+              size="lg"
+              className="mt-2"
+              variant={BUTTON_VARIANTS.gradient}
+              block
+            >
+              {workURLText} <BsArrowRight size={"1em"} />
             </Button>
           </Card>
         </TimelineItem>
@@ -85,10 +93,13 @@ const ExperienceList = ({ data }: ExperienceProps) => {
   return (
     <Container id="WorksSection" fluid as="section">
       <Container id="works_heading" bg="none">
+        <GapSeparator variant={SEPARATOR_VARIANTS.LINE} />
         <div className="z-2">
           <SectionTitle
             title="Work Experience"
             subTitle="Experiences That Made Me What I am Today"
+            subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
+            textAlign="left"
           />
           <TimelineContainer>{ExperienceJSX}</TimelineContainer>
         </div>

@@ -9,8 +9,16 @@ import Modal from "../../../components/modal/modal.component";
 import NotFound from "../../../components/error/notfound.component";
 import TrainingListItem from "./training-list-item.component";
 import TrainingListItemModal from "./training-list-item-modal.component";
-import SectionTitle from "../../../components/section-titles/section-titles.components";
+import SectionTitle, {
+  TITLE_VARIANTS,
+} from "../../../components/section-titles/section-titles.components";
 import Container from "../../../components/containers/container.component";
+import GapSeparator, {
+  SEPARATOR_VARIANTS,
+} from "../../../components/gap/gap.components";
+import Text, {
+  TEXT_VARIANTS,
+} from "../../../components/typography/text.component";
 //import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
 
 type Props = {
@@ -77,18 +85,19 @@ const TrainingList = (props: Props) => {
   return (
     <Container id="TrainingSection" fluid as="section">
       <Container id="training_heading">
-        <Row className="mb-5 z-2 pt-5">
-          <Col xs={12} style={{ minHeight: "20vh" }}>
-            <SectionTitle
-              title="Training Path"
-              subTitle="Keeping track of technology"
-              content="In a field that's constantly evolving, I'm always looking for
-                ways to improve"
-            />
-          </Col>
-        </Row>
+        <GapSeparator variant={SEPARATOR_VARIANTS.LINE} />
+        {/* <Text as={TEXT_VARIANTS.H4}>Keeping track of technology</Text>
+        <Text as={TEXT_VARIANTS.H3}>Training Path</Text> */}
+        <SectionTitle
+          title="Training Path"
+          subTitle="Keeping track of technology"
+          textAlign="left"
+          subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
+        />
 
-        <Row id="training_list">{TrainingJSX}</Row>
+        <Container flex childFlexBasis="48%" gap="4%">
+          {TrainingJSX}
+        </Container>
       </Container>
       <Modal show={modalShow} onClose={hideItemHandler}>
         <TrainingListItemModal data={dataInModal} />

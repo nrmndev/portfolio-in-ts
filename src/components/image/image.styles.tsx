@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { themedImageBackfaceBG } from "../theme-provider/theme-provider.styles";
 
 type StyledImageBaseProps = {
   width: number;
   height: number;
   align: string;
+  objectFit: boolean;
 };
 
 const handleAlign = (align: string) => {
@@ -22,6 +24,14 @@ export const StyledImageBase = styled.img<StyledImageBaseProps>`
   max-width: ${({ width }) => (width ? `${width}px` : `auto`)};
   max-height: ${({ height }) => (height ? `${height}px` : `auto`)};
   ${({ align }) => handleAlign(align)};
+  background: ${themedImageBackfaceBG};
+
+  ${({ objectFit }) =>
+    objectFit &&
+    `    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;`}
 `;
 
 export const StyledImageRounded = styled(StyledImageBase)`

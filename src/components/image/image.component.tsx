@@ -22,6 +22,7 @@ type ImageType = {
   height: number;
   variant?: IMAGE_VARIANTS;
   align?: IMAGE_ALIGN;
+  objectFit?: boolean;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
 const getImage = (variant = IMAGE_VARIANTS.BASE) =>
@@ -38,6 +39,8 @@ const Image = ({
   height,
   align = IMAGE_ALIGN.LEFT,
   alt = "",
+  objectFit = false,
+  ...rest
 }: ImageType) => {
   const CustomImage = getImage(variant);
   return (
@@ -47,6 +50,8 @@ const Image = ({
       src={src}
       alt={alt}
       align={align}
+      objectFit={objectFit}
+      {...rest}
     />
   );
 };

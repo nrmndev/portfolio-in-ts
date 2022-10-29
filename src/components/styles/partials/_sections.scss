@@ -1,7 +1,7 @@
-.section {
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
+// .section {
+//   border-top: 10px solid transparent;
+//   border-bottom: 10px solid transparent;
+// }
 
 section.before:before {
   content: "";
@@ -16,15 +16,13 @@ section.before.active:before {
   background: rgb(222 224 245 / 50%);
 }
 #WorksSection {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   position: relative;
 }
-#WorksSection:after {
-  content: "";
-  @include position(absolute, 0, 0, 100%, 100%);
-  @include backdropFilter(blur(20px));
-}
+// #WorksSection:after {
+//   content: "";
+//   @include position(absolute, 0, 0, 100%, 100%);
+//   @include backdropFilter(blur(20px));
+// }
 
 #WorksSection .animated {
   transform: scale(1.02);
@@ -55,9 +53,4 @@ section.before.active:before {
   border-image-slice: 1;
   z-index: 2;
   position: relative;
-}
-
-#SkillsSection {
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
 }

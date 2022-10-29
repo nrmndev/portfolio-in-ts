@@ -10,6 +10,7 @@ export type DataType<T> = {
   experiences: ExperienceType[];
   trainings: TrainingType[];
   skillTopics: SkillTopicsType[];
+  portfolio: PortfolioType[];
   editingState: T;
 };
 
@@ -18,9 +19,17 @@ export const DataInitialValueType = {
   skills: [{} as SkillsType],
   skillTopics: [{} as SkillTopicsType],
   trainings: [{} as TrainingType],
+  portfolio: [{} as PortfolioType],
   editingState: {} as any,
 };
 
+export type PortfolioType = {
+  id: string;
+  title: string;
+  portfolioURL: string;
+  tags: string[];
+  category: string;
+};
 export type SkillsType = {
   id: string;
   title: string;

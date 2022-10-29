@@ -1,6 +1,10 @@
 import { Row, Col } from "react-bootstrap";
-import SectionTitle from "../section-titles/section-titles.components";
-import Container from "../containers/container.component";
+import SectionTitle, {
+  TITLE_VARIANTS,
+} from "../section-titles/section-titles.components";
+import Container, {
+  CONTAINER_JUSTIFY,
+} from "../containers/container.component";
 import SocialIconSet from "./social-icon-set.component";
 import ContainerBoxed from "../containers/container-boxed.component";
 
@@ -19,13 +23,17 @@ const HireSection = () => {
         <SectionTitle
           title="I'm looking for a job"
           subTitle="Get in Touch"
-          variant="white"
+          titleVariant={TITLE_VARIANTS.WHITE}
+          subTitleVariant={TITLE_VARIANTS.WHITE}
         />
-        <Row className="pt-4">
-          <Col className="display__flex-center display__sm-block">
-            <SocialIconSet />
-          </Col>
-        </Row>
+        <Container
+          flex
+          childFlexBasis="15%"
+          bg="none"
+          justifyContent={CONTAINER_JUSTIFY.CENTER}
+        >
+          <SocialIconSet />
+        </Container>
       </ContainerBoxed>
     </Container>
   );

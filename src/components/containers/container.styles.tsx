@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   themedBackgroundColor,
+  themedBorderColor,
   themedGradientBackgroundColor,
 } from "../theme-provider/theme-provider.styles";
 
@@ -11,6 +12,7 @@ interface IStyledSection {
   readonly flex: boolean;
   readonly childFlexBasis: string;
   readonly gap: string;
+  readonly justifyContent: string;
 }
 
 const handleBG = (bg: string | undefined, img: string) => {
@@ -35,10 +37,11 @@ const handleFlexBasis = (str: string) => {
 
 export const StyledSection = styled.section<IStyledSection>`
   background: ${({ bg, img }) => handleBG(bg, img)};
+  justify-content: ${({ justifyContent }) => justifyContent};
   ${({ fluid }) =>
     fluid
-      ? ` padding-top: 5rem;
-    padding-bottom: 5rem;`
+      ? ` padding-top: 2rem;
+    padding-bottom: 2rem;`
       : `max-width: 1320px; margin-right: auto;
     margin-left: auto;  
     padding-right: 15px;

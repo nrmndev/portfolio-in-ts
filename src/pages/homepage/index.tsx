@@ -10,6 +10,8 @@ import SkillsList from "./skills/skills-list";
 import ExperienceList from "./experience/experience-list";
 
 import { dataGetData } from "../../store/data/data-selector";
+import PortfolioList from "./portfolio/portfolio-list";
+import AboutSection from "./about/about.component";
 //import { fetchSkillsData } from "../../store/data/data-actions";
 
 const HomePage = () => {
@@ -50,11 +52,17 @@ const HomePage = () => {
   ) : (
     <></>
   );
-
+  const portfolioJSX = dataState ? (
+    <PortfolioList data={dataState.portfolio} />
+  ) : (
+    <></>
+  );
   return (
     <>
-      <TopBanner />
+      {/* <TopBanner /> */}
+      <AboutSection />
       {skillJSX}
+      {portfolioJSX}
       {experienceJSX}
       {trainingJSX}
     </>

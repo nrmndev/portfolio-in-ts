@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { themedButtonTextColor } from "../theme-provider/theme-provider.styles";
+import {
+  themedBoxShadow,
+  themedButtonTextColor,
+  themedButtonTextColor2,
+  themedGradientBackgroundColor,
+  themedGradientBackgroundColor2,
+} from "../theme-provider/theme-provider.styles";
 interface StyledButtonProps {
   readonly size: string;
   readonly block: boolean | undefined;
@@ -39,20 +45,13 @@ export const StyledBaseButton = styled.button<StyledButtonProps>`
     background-color: #fff;
     color: ${({ color }) => color};
     border-color: black;
-    span {
-      -webkit-animation-duration: 0.75s;
-      animation-duration: 0.75s;
-      -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
-      animation-duration: calc(var(--animate-duration) * 0.75);
-      -webkit-animation-name: bounceIn;
-      animation-name: bounceIn;
-    }
   }
 `;
 
 export const StyledGoogleSignInButton = styled(StyledBaseButton)`
   background-color: #4285f4;
   color: white;
+
   &:hover {
     background-color: #357ae8;
   }
@@ -77,6 +76,7 @@ export const StyledButtonWithIcon = styled(StyledBaseButton)`
   justify-content: center;
   align-content: center;
   display: flex;
+  color: #fff;
   small {
     text-transform: capitalize;
     font-weight: normal;
@@ -103,5 +103,26 @@ export const StyledButtonWithIcon = styled(StyledBaseButton)`
       animation-duration: calc(var(--animate-duration) * 0.75);
       animation-name: bounceIn;
     }
+  }
+`;
+
+export const StyledGradientButton = styled.button<StyledButtonProps>`
+  background: ${themedGradientBackgroundColor};
+  box-shadow: ${themedBoxShadow};
+  padding: ${({ size }) => handleButtonSize(size)};
+  border: none;
+  width: ${({ block }) => (block ? `100%` : `inherit`)};
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  border-radius: 5px;
+  line-height: normal;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  color: ${themedButtonTextColor};
+  &:hover {
+    background: ${themedGradientBackgroundColor2};
+    color: ${themedButtonTextColor2};
   }
 `;

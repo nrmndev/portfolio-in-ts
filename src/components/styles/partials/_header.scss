@@ -88,63 +88,63 @@
   font-size: 10px;
 }
 
-.sideNav {
-  margin: 0;
-  padding: 0;
-  z-index: 20;
-  @include position(fixed, calc(50% - 50px));
-}
+// .sideNav {
+//   margin: 0;
+//   padding: 0;
+//   z-index: 20;
+//   @include position(fixed, calc(50% - 50px));
+// }
 
-.sideNav a {
-  list-style: none;
-  background-color: $offwhite;
-  text-decoration: none;
-  font-size: 12px;
-  text-align: right;
-  display: block;
-  color: #333 !important;
-  border-top-right-radius: 0.625rem;
-  padding: 3px 5px;
-  margin-top: 5px;
-  width: 70px;
-  position: relative;
-  border-left: 2px solid $offwhite;
-  @include transition(all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1));
-}
-.sideNav a:after {
-  z-index: -1;
-  content: "";
-  background-color: inherit;
-  @include position(absolute, 0, -10%, 22px, 100%, $top: true, $left: false);
-  @include transform(skewX(-30deg));
-}
-.sideNav a:focus-visible,
-.sideNav a:hover,
-.sideNav a.active {
-  width: 80px;
-  background: $bg_gradient2;
-  border-left: 2px solid #fff;
-  color: yellow !important;
-  cursor: pointer;
-  outline: none;
-}
-.sideNav a span {
-  position: relative;
-  display: block;
-}
+// .sideNav a {
+//   list-style: none;
+//   background-color: $offwhite;
+//   text-decoration: none;
+//   font-size: 12px;
+//   text-align: right;
+//   display: block;
+//   color: #333 !important;
+//   border-top-right-radius: 0.625rem;
+//   padding: 3px 5px;
+//   margin-top: 5px;
+//   width: 70px;
+//   position: relative;
+//   border-left: 2px solid $offwhite;
+//   @include transition(all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1));
+// }
+// .sideNav a:after {
+//   z-index: -1;
+//   content: "";
+//   background-color: inherit;
+//   @include position(absolute, 0, -10%, 22px, 100%, $top: true, $left: false);
+//   @include transform(skewX(-30deg));
+// }
+// .sideNav a:focus-visible,
+// .sideNav a:hover,
+// .sideNav a.active {
+//   width: 80px;
+//   background: $bg_gradient2;
+//   border-left: 2px solid #fff;
+//   color: yellow !important;
+//   cursor: pointer;
+//   outline: none;
+// }
+// .sideNav a span {
+//   position: relative;
+//   display: block;
+// }
 
-.sideNav a:focus-visible span:before,
-.sideNav a span:before,
-.sideNav a.active span:before {
-  content: "-";
-  @include position(absolute, 0, 0, 5px, 100%);
-}
+// .sideNav a:focus-visible span:before,
+// .sideNav a span:before,
+// .sideNav a.active span:before {
+//   content: "-";
+//   @include position(absolute, 0, 0, 5px, 100%);
+// }
 
-.sideNav a:focus-visible:after,
-.sideNav a.active:after,
-.sideNav a:hover:after {
-  background: $blue;
-}
+// .sideNav a:focus-visible:after,
+// .sideNav a.active:after,
+// .sideNav a:hover:after {
+//   background: $blue;
+// }
 
 @media (max-width: 768px) {
   .sideNav a {

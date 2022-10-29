@@ -29,7 +29,25 @@ const MainNavigation = () => {
         <Navbar.Toggle aria-controls="nav" />
         <StyledMainNavList>
           <StyledMainNavListItem>
-            <Link to="/reactjs">Skills</Link>
+            <Link
+              to="/"
+              onClick={onClickSetHistory.bind(null, "SkillsSection")}
+            >
+              Skills
+            </Link>
+          </StyledMainNavListItem>
+          <StyledMainNavListItem>
+            <Link
+              to="/"
+              onClick={onClickSetHistory.bind(null, "SkillsSection")}
+            >
+              Portfolio
+            </Link>
+          </StyledMainNavListItem>
+          <StyledMainNavListItem>
+            <Link to="/" onClick={onClickSetHistory.bind(null, "WorksSection")}>
+              Employment
+            </Link>
           </StyledMainNavListItem>
           <StyledMainNavListItem>
             <Link
@@ -39,11 +57,7 @@ const MainNavigation = () => {
               Training
             </Link>
           </StyledMainNavListItem>
-          <StyledMainNavListItem>
-            <Link to="/" onClick={onClickSetHistory.bind(null, "WorksSection")}>
-              Work
-            </Link>
-          </StyledMainNavListItem>
+
           <StyledMainNavListItem>
             <Link
               to="/"

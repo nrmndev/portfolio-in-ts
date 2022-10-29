@@ -18,12 +18,17 @@ const getCard = (variant = CARD_VARIANTS.BASE) =>
 type CardProps = {
   variant?: CARD_VARIANTS;
   children: React.ReactNode;
+  bgGradientOnHover?: boolean;
 };
 
-const Card = ({ variant = CARD_VARIANTS.BASE, children }: CardProps) => {
+const Card = ({
+  variant = CARD_VARIANTS.BASE,
+  children,
+  bgGradientOnHover = false,
+}: CardProps) => {
   const CustomCard = getCard(variant);
   return (
-    <CustomCard>
+    <CustomCard bgGradientOnHover={bgGradientOnHover}>
       <StyledCardContent>{children}</StyledCardContent>
     </CustomCard>
   );

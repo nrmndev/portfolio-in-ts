@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../store/hooks/typedhooks";
 import { uiIsMobile } from "../../store/ui/ui-selector";
-import SideNavList from "./header-side-nav.component";
+import SideNavDrawer from "./side-nav-drawer.component";
 import MainNavigation from "../navigation/main-navigation.component";
 import HeaderTopSettings from "./header-top-settings";
 let isInitial = true;
@@ -11,10 +11,11 @@ const Header = () => {
 
   useEffect(() => {
     const refRects = () => {
-      const curr = document.getElementById("SkillsSection");
-      if (curr) {
-        const currIsView = curr.getBoundingClientRect().top;
-        if (currIsView <= 300) {
+      //const curr = document.getElementById("SkillsSection");
+      const root = document.getElementById("root");
+      if (root) {
+        const currIsView = root.getBoundingClientRect().top;
+        if (currIsView <= -20) {
           setsideNavVisible(true);
         } else {
           setsideNavVisible(false);
@@ -37,7 +38,7 @@ const Header = () => {
 
   return (
     <>
-      {sideNavVisible && !isMobileView && <SideNavList />}
+      {sideNavVisible && !isMobileView && <SideNavDrawer />}
       <MainNavigation />
       <HeaderTopSettings />
     </>

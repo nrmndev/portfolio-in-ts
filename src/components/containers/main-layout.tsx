@@ -17,6 +17,7 @@ const MainLayout = (props: Props): JSX.Element => {
   const isMobile = useAppSelector(uiIsMobile);
   return (
     <StyledMain className="main">
+      <div id="top"></div>
       {props.children}
       {isActive && !isMobile && <NormonHTML />}
     </StyledMain>

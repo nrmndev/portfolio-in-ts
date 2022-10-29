@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 
 import { BsArrowRight } from "react-icons/bs";
-import SkillListItem from "./skills-list-item";
+import SkillListItem from "./portfolio-list-item";
 import Container from "../../../components/containers/container.component";
 import SectionTitle, {
   TITLE_VARIANTS,
@@ -10,37 +10,38 @@ import Button, {
   BUTTON_VARIANTS,
 } from "../../../components/button/button.component";
 import NotFound from "../../../components/error/notfound.component";
-import { SkillsType } from "../../../store/data/data-types";
+import { PortfolioType } from "../../../store/data/data-types";
+import PortfolioListItem from "./portfolio-list-item";
 
 type SkillsListProps = {
-  data: SkillsType[];
+  data: PortfolioType[];
 };
 
-const SkillsList = ({ data }: SkillsListProps) => {
+const PortfolioList = ({ data }: SkillsListProps) => {
   //const isSkillHeadingInView = useCheckInViewById("skill_heading");
   //const isReactInView = useCheckInViewById("skill_react");
-  let SkillListItemJSX: JSX.Element[] | JSX.Element = (
+  let PortfolioListItemJSX: JSX.Element[] | JSX.Element = (
     <NotFound text="No Skills List Found" />
   );
   if (data.length > 1) {
-    SkillListItemJSX = data.map((skill: SkillsType) => {
+    PortfolioListItemJSX = data.map((portfolio: PortfolioType) => {
       // console.log(skill.id);
-      return <SkillListItem data={skill} key={skill.id} />;
+      return <PortfolioListItem data={portfolio} key={portfolio.id} />;
     });
   }
 
   return (
-    <Container id="SkillsSection" as="section" fluid>
+    <Container id="PortfolioSection" as="section" fluid>
       <Container>
         <SectionTitle
-          title="Front End Development"
-          subTitle="My real world experiences below"
+          title="My Portfolio"
+          subTitle="Visit my portfolio and keep your feedback"
           subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
           textAlign="left"
         />
 
         <Container flex childFlexBasis="31.33%" gap="3%">
-          {SkillListItemJSX}
+          {PortfolioListItemJSX}
         </Container>
         <Row className="pt-5 text-center">
           <Col md={6} className="mt-3 mb-3">
@@ -69,4 +70,4 @@ const SkillsList = ({ data }: SkillsListProps) => {
   );
 };
 
-export default SkillsList;
+export default PortfolioList;

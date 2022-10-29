@@ -7,9 +7,11 @@ import "animate.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { fetchALLData } from "./store/data/data-slice";
-import { ThemeProvider } from "styled-components";
+
+import ReduxThemeProvider from "./components/theme-provider/theme-provider.component";
 
 store.dispatch(fetchALLData());
+//const theme = useAppSelector(uiTheme);
 const root: ReactDOM.Root = ReactDOM.createRoot(
   document.getElementById("root") as Element | DocumentFragment
 );
@@ -17,9 +19,9 @@ root.render(
   // <React.StrictMode>
   <Provider store={store}>
     <BrowserRouter>
-      <ThemeProvider theme={{ theme: store.getState().ui.theme }}>
+      <ReduxThemeProvider>
         <App />
-      </ThemeProvider>
+      </ReduxThemeProvider>
     </BrowserRouter>
   </Provider>
   // </React.StrictMode>

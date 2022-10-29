@@ -2,24 +2,24 @@
   @include position(fixed, 0, 0, 100%, 100vh);
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background: linear-gradient(
-      257deg,
-      rgb(255 255 255/ 90%) 0%,
-      rgb(255 255 255/ 50%)
-    ),
-    url("../../../assets/images/workbg_dark.jpg");
-  @include backgroundProp(fixed, no-repeat, right, cover);
+  // background: linear-gradient(
+  //     257deg,
+  //     rgb(255 255 255/ 90%) 0%,
+  //     rgb(255 255 255/ 50%)
+  //   ),
+  //   url("../../../assets/images/workbg_dark.jpg");
+  // @include backgroundProp(fixed, no-repeat, right, cover);
 }
 
-#AboutMeSection:after {
-  content: "";
-  @include position(absolute, 0, 0, 100%, 100%);
-  @include backdropFilter(blur(5px));
-}
-body.theme-dark #AboutMeSection {
-  background: linear-gradient(0deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 70%)),
-    url("../../../assets/images/workbg_dark.jpg");
-}
+// #AboutMeSection:after {
+//   content: "";
+//   @include position(absolute, 0, 0, 100%, 100%);
+//   @include backdropFilter(blur(5px));
+// }
+// body.theme-dark #AboutMeSection {
+//   background: linear-gradient(0deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 70%)),
+//     url("../../../assets/images/workbg_dark.jpg");
+// }
 
 .topBanner {
   min-height: 100vh;
@@ -136,7 +136,7 @@ body.theme-dark .navButton a span {
 @media (max-width: 991.98px) {
 }
 @media (max-width: 767.98px) {
-  .topBanner {
+  #AboutMeSection {
     position: relative !important;
     height: auto !important;
   }

@@ -1,4 +1,4 @@
-import TopBannerForm from "./topbanner-form";
+import TopBannerForm from "./typewriter";
 
 const TopBanner = () => {
   return (

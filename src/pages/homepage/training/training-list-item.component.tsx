@@ -41,24 +41,20 @@ const TrainingListItem = (props: Props) => {
 
   return (
     <>
-      <Col sm={12} md={6} lg={6} className="mb-4 mb-md-5" id={`training-${id}`}>
-        <Card variant={CARD_VARIANTS.WITHSHADOW}>
-          <Badge icon={badge} title={status} color="#43cea2" />
-          <Text as={TEXT_VARIANTS.H3} className="mt-5">
-            {title}
-          </Text>
-          <Text as={TEXT_VARIANTS.P}>{description}</Text>
-          <Button
-            onClick={props.onClick.bind(null, id)}
-            variant={BUTTON_VARIANTS.icon}
-          >
-            <span>
-              <BsArrowRight size={"1em"} />
-              See course outline
-            </span>
-          </Button>
-        </Card>
-      </Col>
+      <Card variant={CARD_VARIANTS.WITHSHADOW} bgGradientOnHover>
+        <Badge icon={badge} title={status} color="#43cea2" />
+        <Text as={TEXT_VARIANTS.H3} className="mt-5">
+          {title}
+        </Text>
+        <Text as={TEXT_VARIANTS.P}>{description}</Text>
+        <Button
+          onClick={props.onClick.bind(null, id)}
+          variant={BUTTON_VARIANTS.gradient}
+        >
+          See course outline
+          <BsArrowRight size={"1em"} />
+        </Button>
+      </Card>
     </>
   );
 };

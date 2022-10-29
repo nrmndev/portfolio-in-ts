@@ -1,6 +1,11 @@
 import React, { HTMLAttributes } from "react";
 import { StyledSection } from "./container.styles";
 
+export enum CONTAINER_JUSTIFY {
+  CENTER = "center",
+  FLEXSTART = "flex-start",
+  FLEXEND = "flex-end",
+}
 type ContainerProps = {
   children: React.ReactNode;
   bg?: string | undefined;
@@ -8,6 +13,7 @@ type ContainerProps = {
   as?: "div" | "section" | "article" | "aside";
   fluid?: boolean;
   flex?: boolean;
+  justifyContent?: CONTAINER_JUSTIFY;
   gap?: string;
   childFlexBasis?: string;
 } & HTMLAttributes<HTMLElement>;
@@ -22,6 +28,7 @@ const Container = (props: ContainerProps) => {
     flex = false,
     gap = "1rem",
     childFlexBasis = "25%",
+    justifyContent = CONTAINER_JUSTIFY.FLEXSTART,
     ...rest
   } = props;
   return (
@@ -33,6 +40,7 @@ const Container = (props: ContainerProps) => {
       as={as}
       flex={flex}
       childFlexBasis={childFlexBasis}
+      justifyContent={justifyContent}
       gap={gap}
     >
       {children}

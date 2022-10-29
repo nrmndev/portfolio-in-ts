@@ -72,7 +72,7 @@
       "jobposition": "Web Developer",
       "tenureship": "Nov 2021 - Mar 2022",
       "description": "AECOM is an American multinational infrastructure consulting firm. AECOM has approximately 51,000 employees, and is number 157 on the 2019 Fortune 500 list. The company's official name from 1990 to 2015 was AECOM Technology Corporation, and is now AECOM.",
-      "image": "IMG_AECOM.webp",
+      "image": "IMG_AECOM.png",
       "achievements": [
         "Developed AECOMViz Website",
         "Developed 360° Virtual Rooms for clients"
@@ -92,7 +92,7 @@
       "jobposition": "Software Developer II",
       "tenureship": "Sep 2018 - Nov 2021",
       "description": "Emerson Electric Co. is an American multinational corporation headquartered in Ferguson, Missouri. The Fortune 500 company manufactures products and provides engineering services for industrial, commercial, and consumer markets. Emerson's core values are Integrity, Safety & Quality, Support Our People, Customer Focus, Continuos Improvement, Collaboration & Innovation.",
-      "image": "IMG_EMERSON.webp",
+      "image": "IMG_EMERSON.png",
       "achievements": ["Customer Focus Award", "Collaboraton Award"],
       "workURL": "https://www.emerson.com/en-ph",
       "workURLText": "Visit Emerson",
@@ -109,7 +109,7 @@
       "jobposition": "Software Developer I",
       "tenureship": "Mar 2017 - Sep 2018",
       "description": "The SLI Consulting Management came together in 1987 to answer the demand for IT solutions in rise of the internet information age. We started the Philippine-based clients and eventually grew to include other clients from the Asia-Pacific Region and the United States. Through time we have been a trail blazer in innovation of I.T. training program such as TAP (Train Assist Program) that has been adopted in some of our client sites.",
-      "image": "IMG_SLI.webp",
+      "image": "IMG_SLI.png",
       "message": "SLI is the first company to hire me as a Web Developer. I am very grateful to work with them.",
       "workURL": "http://sliconsulting.com.ph/",
       "workURLText": "Visit SLI Consulting",
@@ -126,7 +126,7 @@
       "jobposition": "Web Developer",
       "tenureship": "Jan 2011 - Mar 2017",
       "description": "Upwork Global Inc., formerly Elance-oDesk, is an American freelancing platform headquartered in Santa Clara and San Francisco, California. The company was formed in 2013 as Elance-oDesk, after the merger of Elance Inc. and oDesk Corp.",
-      "image": "IMG_UPWORK.webp",
+      "image": "IMG_UPWORK.png",
       "message": "Freelancing is my starting point being a web developer! Work with a lot of different people and served them well!",
       "workURL": "https://www.upwork.com/freelancers/~01e2113d42404ef420",
       "workURLText": "Check me on upwork",
@@ -730,6 +730,43 @@
           "message": "Scheduled Jobs blurb here"
         }
       ]
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "P1",
+      "title": "Component Documentation",
+      "portfolioURL": "/someurl",
+      "tags": ["React", "Prism Renderer", "Styled Component", "Redux"],
+      "category": "Documentation"
+    },
+    {
+      "id": "P2",
+      "title": "React JS Codebase",
+      "portfolioURL": "/someurl",
+      "tags": ["React", "JavaScript", "Styled Component", "Redux"],
+      "category": "Documentation"
+    },
+    {
+      "id": "P3",
+      "title": "Sample Online Store",
+      "portfolioURL": "/someurl",
+      "tags": ["React", "Redux", "Router"],
+      "category": "Online Store"
+    },
+    {
+      "id": "P4",
+      "title": "Testing Documentation",
+      "portfolioURL": "/someurl",
+      "tags": ["React", "JEST", "React Testing Library"],
+      "category": "Documentation"
+    },
+    {
+      "id": "P5",
+      "title": "AECOMViz Website",
+      "portfolioURL": "/someurl",
+      "tags": ["WordPress"],
+      "category": "External Link"
     }
   ]
 }

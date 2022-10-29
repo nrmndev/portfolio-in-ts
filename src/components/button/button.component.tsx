@@ -4,6 +4,7 @@ import {
   StyledBaseButton,
   StyledButtonWithIcon,
   StyledGoogleSignInButton,
+  StyledGradientButton,
   StyledInvertedButton,
 } from "./button.styles";
 
@@ -12,6 +13,7 @@ export enum BUTTON_VARIANTS {
   google = "google-sign-in",
   inverted = "inverted",
   icon = "with-icon",
+  gradient = "gradient",
 }
 type ButtonBaseProps = {
   children?: React.ReactNode;
@@ -43,6 +45,7 @@ const getButton = (variant = BUTTON_VARIANTS.base) =>
     [BUTTON_VARIANTS.google]: StyledGoogleSignInButton,
     [BUTTON_VARIANTS.inverted]: StyledInvertedButton,
     [BUTTON_VARIANTS.icon]: StyledButtonWithIcon,
+    [BUTTON_VARIANTS.gradient]: StyledGradientButton,
   }[variant]);
 
 const Button = (
