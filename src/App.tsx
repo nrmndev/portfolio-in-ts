@@ -21,9 +21,10 @@ import Modal from "./components/modal/modal.component";
 import ContactUs from "./components/contact-form";
 //import Playground from "./pages/component-playground-page/playground";
 import HireSection from "./components/hire-section/hire-section.component";
-import PlayGround from "./pages/component-playground-page/playground";
+import PlayGround from "./pages/component-playground-page/form-playground";
 import ReduxPlayground from "./pages/redux-playground/redux";
 import ContainerPlayground from "./pages/component-playground-page/container-playground";
+import FormPlayGround from "./pages/component-playground-page/form-playground";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -39,19 +40,21 @@ function App() {
   //   dispatch(uiSetTheme(themeFromLS));
   // }, []);
 
-  // useEffect(() => {
-  //   const body = document.getElementById("body");
-  //   switch (currentTheme as ThemeType) {
-  //     case ThemeType.DARK:
-  //       body && body.classList.add("theme-dark");
-  //       break;
-  //     case ThemeType.LIGHT:
-  //       body && body.classList.remove("theme-dark");
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }, [currentTheme]);
+  useEffect(() => {
+    const body = document.getElementById("body");
+    switch (currentTheme as ThemeType) {
+      case ThemeType.DARK:
+        body && body.classList.add("dark");
+        body && body.classList.remove("light");
+        break;
+      case ThemeType.LIGHT:
+        body && body.classList.add("light");
+        body && body.classList.remove("dark");
+        break;
+      default:
+        break;
+    }
+  }, [currentTheme]);
 
   useEffect(() => {
     const body = document.getElementById("body");
@@ -88,6 +91,7 @@ function App() {
           <Route path="playground" element={<PlayGround />} />
           <Route path="redux" element={<ReduxPlayground />} />
           <Route path="container" element={<ContainerPlayground />} />
+          <Route path="form" element={<FormPlayGround />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
         <HireSection />
@@ -95,7 +99,7 @@ function App() {
       </MainLayout>
 
       <Modal show={isModalActive} onClose={hideItemHandler}>
-        <ContactUs />
+        <FormPlayGround />
       </Modal>
     </>
   );

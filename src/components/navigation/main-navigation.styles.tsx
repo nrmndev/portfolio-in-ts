@@ -7,7 +7,7 @@ import {
 } from "../theme-provider/theme-provider.styles";
 
 export const StyledMainNav = styled.header`
-  z-index: 99;
+  z-index: 25;
   position: absolute;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;

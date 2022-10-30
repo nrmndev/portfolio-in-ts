@@ -31,7 +31,7 @@ const SocialIconSet = () => {
         break;
       case MouseEventType.MOUSE_LEAVE:
         //dispatch(uiActions.setCardBackdrop(false));
-        dispatch(uiClearMessage());
+        //dispatch(uiClearMessage());
         break;
       default:
         break;
@@ -48,7 +48,7 @@ const SocialIconSet = () => {
         target="_blank"
         rel="noreferrer"
         variant={BUTTON_VARIANTS.icon}
-        onMouseLeave={onMouseEventHandler.bind(null, "")}
+        //onMouseLeave={onMouseEventHandler.bind(null, "")}
         onMouseEnter={onMouseEventHandler.bind(null, StaticMessages.RESUME)}
       >
         <BsFillFileEarmarkArrowDownFill title="Resume download link" />
@@ -63,7 +63,7 @@ const SocialIconSet = () => {
         target="_blank"
         rel="noreferrer"
         variant={BUTTON_VARIANTS.icon}
-        onMouseLeave={onMouseEventHandler.bind(null, "")}
+        //onMouseLeave={onMouseEventHandler.bind(null, "")}
         onMouseEnter={onMouseEventHandler.bind(null, StaticMessages.LINKEDIN)}
       >
         <BsLinkedin />

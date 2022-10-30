@@ -93,13 +93,12 @@ const ExperienceList = ({ data }: ExperienceProps) => {
   return (
     <Container id="WorksSection" fluid as="section">
       <Container id="works_heading" bg="none">
-        <GapSeparator variant={SEPARATOR_VARIANTS.LINE} />
+        <GapSeparator size="lg" variant={SEPARATOR_VARIANTS.LINE} />
         <div className="z-2">
           <SectionTitle
             title="Work Experience"
             subTitle="Experiences That Made Me What I am Today"
             subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
-            textAlign="left"
           />
           <TimelineContainer>{ExperienceJSX}</TimelineContainer>
         </div>

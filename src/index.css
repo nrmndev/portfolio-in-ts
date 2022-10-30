@@ -59,25 +59,37 @@ body.theme-dark .bg-1 {
   border-radius: 50% !important;
 }
 
-/* width */
-::-webkit-scrollbar {
+body .ph-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.img--animate img {
+  transform: scale(1);
+  transition: transform ease-in-out 0.4s;
+}
+.img--animate:hover img {
+  transform: scale(1.1);
+}
+
+/* ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
+
 ::-webkit-scrollbar-track {
   background: #f8f8f8;
 }
 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: #219ebc;
 }
 
-/* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
   background: #023047;
-}
+}  */
 
 .shadow-inset {
   box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;

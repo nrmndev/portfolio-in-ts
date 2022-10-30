@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Backdrop from "../portals/backdrop.component";
+
 import TransitionFadeInUpDown from "../transition-wrappers/transitionfade-in-out";
-import { StyledModalContainer, StyledModalContent } from "./modal.styles";
+import {
+  StyledModalContainer,
+  StyledModalContent,
+  StyledModalBackdrop,
+  StyledModalClose,
+} from "./modal.styles";
 
 type ModalProps = {
   onClose: () => void;
@@ -20,11 +25,12 @@ const Modal = ({ onClose, children, show }: ModalProps) => {
       {ReactDOM.createPortal(
         <>
           <TransitionFadeInUpDown in={show} type="fade">
-            <StyledModalContainer onClick={onCloseHandler}>
+            <StyledModalContainer>
+              <StyledModalClose onClick={onCloseHandler}>X</StyledModalClose>
               <StyledModalContent>{children}</StyledModalContent>
             </StyledModalContainer>
+            <StyledModalBackdrop onClick={onCloseHandler} />
           </TransitionFadeInUpDown>
-          <Backdrop onClick={onCloseHandler} />
         </>,
         portalElement
       )}

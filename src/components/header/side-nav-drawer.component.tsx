@@ -24,7 +24,7 @@ const SideNavDrawer = () => {
         <NavListItem
           title="Portfolio"
           to="PortfolioSection"
-          message={StaticMessages.SKILLS}
+          message={StaticMessages.PORTFOLIO}
           icon={<FaGlobe />}
         />
         <NavListItem
@@ -49,7 +49,7 @@ const SideNavDrawer = () => {
         <NavListItem
           title="To Top"
           to="top"
-          message={StaticMessages.CONTACT}
+          message={StaticMessages.BACK_TO_TOP}
           icon={<BsFillArrowUpCircleFill />}
         />
       </StyledSideNavDrawerList>

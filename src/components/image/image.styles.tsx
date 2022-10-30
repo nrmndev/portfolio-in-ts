@@ -1,11 +1,17 @@
+import { Sign } from "crypto";
 import styled from "styled-components";
 import { themedImageBackfaceBG } from "../theme-provider/theme-provider.styles";
 
 type StyledImageBaseProps = {
-  width: number;
-  height: number;
-  align: string;
-  objectFit: boolean;
+  readonly width: number;
+  readonly height: number;
+  readonly align: string;
+  readonly objectFit: boolean;
+  readonly borderSize: string | undefined;
+};
+
+type StyledDivBaseProps = {
+  readonly borderSize: string | undefined;
 };
 
 const handleAlign = (align: string) => {
@@ -24,6 +30,7 @@ export const StyledImageBase = styled.img<StyledImageBaseProps>`
   max-width: ${({ width }) => (width ? `${width}px` : `auto`)};
   max-height: ${({ height }) => (height ? `${height}px` : `auto`)};
   ${({ align }) => handleAlign(align)};
+  ${({ borderSize }) => borderSize && `border-radius:${borderSize}`};
   background: ${themedImageBackfaceBG};
 
   ${({ objectFit }) =>
@@ -40,4 +47,9 @@ export const StyledImageRounded = styled(StyledImageBase)`
 
 export const StyledImageBordered = styled(StyledImageBase)`
   border-radius: 10px;
+`;
+
+export const StyledImageWrapper = styled.div<StyledDivBaseProps>`
+  overflow: hidden;
+  ${({ borderSize }) => borderSize && `border-radius:${borderSize}`};
 `;

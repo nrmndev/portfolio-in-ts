@@ -85,13 +85,12 @@ const TrainingList = (props: Props) => {
   return (
     <Container id="TrainingSection" fluid as="section">
       <Container id="training_heading">
-        <GapSeparator variant={SEPARATOR_VARIANTS.LINE} />
+        <GapSeparator variant={SEPARATOR_VARIANTS.LINE} size="lg" />
         {/* <Text as={TEXT_VARIANTS.H4}>Keeping track of technology</Text>
         <Text as={TEXT_VARIANTS.H3}>Training Path</Text> */}
         <SectionTitle
           title="Training Path"
           subTitle="Keeping track of technology"
-          textAlign="left"
           subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
         />
 

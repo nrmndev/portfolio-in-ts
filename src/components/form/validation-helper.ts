@@ -9,7 +9,7 @@ export const isEmail = (value: string) =>
 //Check if length is greater than @length
 export const isLengthGreaterThan = (value: string, length: number) =>
   value.length > length;
-
+export const isLengthGreaterThan6 = (value: string) => value.length > 6;
 /***
  * Password you choose has to meet the following requirements:
  * 1) At least one lowercase alfabetic character.

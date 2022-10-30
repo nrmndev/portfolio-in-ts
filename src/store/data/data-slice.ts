@@ -13,15 +13,12 @@ export const dataSlice = createSlice({
   initialState: DataInitialValueType,
   reducers: dataReducers,
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchALLData.fulfilled, (state, action) => {
-        console.log("completed");
-        state = action.payload;
-        return state;
-      })
-      .addCase(fetchALLData.pending, (state, action) => {
-        console.log("loading");
-      });
+    builder.addCase(fetchALLData.fulfilled, (state, action) => {
+      state = action.payload;
+      return state;
+    });
+    // .addCase(fetchALLData.pending, (state, action) => {
+    // });
   },
 });
 

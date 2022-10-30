@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { BsFillStarFill } from "react-icons/bs";
-import Badge from "./badge.component";
+import Badge from "./badge-icon.component";
 import "jest-styled-components";
 
 describe("Badge Component", () => {

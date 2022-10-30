@@ -29,6 +29,7 @@ export type PortfolioType = {
   portfolioURL: string;
   tags: string[];
   category: string;
+  portfolioImage: string;
 };
 export type SkillsType = {
   id: string;

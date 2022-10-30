@@ -20,7 +20,6 @@ const NormonHTML = (): React.ReactPortal => {
               }) .25s 1 normal both`,
             }}
           >
-            <span>Normon:</span>
             {currentMessage}
           </p>
         </div>

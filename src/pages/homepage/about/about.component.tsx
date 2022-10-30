@@ -18,6 +18,9 @@ import { FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 import { BsFilePdf } from "react-icons/bs";
 import { GoDeviceMobile } from "react-icons/go";
 import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
+import { useAppDispatch } from "../../../store/hooks/typedhooks";
+import { uiSetModalActive } from "../../../store/ui/ui-actions";
+import SocialIconsList from "../../../social-icons/social-icons.component";
 
 const AboutSection = () => {
   const isSkillInView = useCheckInViewById("SkillsSection");
@@ -27,6 +30,10 @@ const AboutSection = () => {
   //     overlayRef.current?.classList.add();
   //   }
   // }, [isSkillInView]);
+  const dispatch = useAppDispatch();
+  const onClickShowEmailModal = () => {
+    dispatch(uiSetModalActive(true));
+  };
   return (
     <>
       <Container id="AboutMeSection" as="section" fluid>
@@ -39,50 +46,12 @@ const AboutSection = () => {
             <TopBannerForm />
             <hr />
             <Text as={TEXT_VARIANTS.P} sizeAs={TEXT_SIZE.H5}>
-              I use animation as a third dimension by which to simplify
-              experiences and kuiding thro each and every interaction. I&apos;m
-              not adding motion just to spruce things up, but doing it in ways
-              that.
+              I work well as both part of team and independently, and I am
+              seeking for a position as a Frontend Developer with ReactJS where
+              I can impart my skills and deliver effective solutions across
+              software development life cycles.
             </Text>
-            <GapSeparator size="lg" />
-            <Container>
-              <Text
-                as={TEXT_VARIANTS.H4}
-                textTransform={TEXT_TRANSFORM.UPPERCASE}
-              >
-                Connect With Me
-              </Text>
-              <Button
-                variant={BUTTON_VARIANTS.gradient}
-                href="fb.com/norman.silvestre"
-              >
-                <FiFacebook size={32} />
-              </Button>
-              <Button
-                variant={BUTTON_VARIANTS.gradient}
-                href="https://www.linkedin.com/in/ngsilvestre/"
-              >
-                <FaLinkedin size={32} />
-              </Button>
-              <Button
-                href={`${process.env.REACT_APP_ASSET_URL}/NormanSilvestre_Resume.pdf`}
-                variant={BUTTON_VARIANTS.gradient}
-              >
-                <BsFilePdf size={32} />
-              </Button>
-              <Button
-                href={`${process.env.REACT_APP_ASSET_URL}/NormanSilvestre_Resume.pdf`}
-                variant={BUTTON_VARIANTS.gradient}
-              >
-                <FaRegEnvelope size={32} />
-              </Button>
-              <Button
-                href={`${process.env.REACT_APP_ASSET_URL}/NormanSilvestre_Resume.pdf`}
-                variant={BUTTON_VARIANTS.gradient}
-              >
-                <GoDeviceMobile size={32} />
-              </Button>
-            </Container>
+            <SocialIconsList />
           </FlexChildContainer>
           <FlexChildContainer flexBasis="38%">
             <ThumbnailWrapper>

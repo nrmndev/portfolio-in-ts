@@ -1,6 +1,6 @@
 #normonAI {
   @include position(fixed, 0, 0, 100%, auto, false, true);
-  z-index: 52;
+  z-index: 30;
   .innerDiv {
     width: 100%;
     background: $bg_gradient1;
@@ -16,15 +16,12 @@
       min-height: 40px;
     }
     img {
-      @media (max-width: 768px) {
-        max-width: 70px;
-      }
-      max-width: 100px;
-      @include animation(
-        (MoveUpDown 2s cubic-bezier(0.17, 0.67, 0.83, 0.67) infinite)
-      );
+      max-width: 50px;
+      height: auto;
+      width: 100%;
+      display: block;
       position: absolute;
-      top: -25px;
+      top: -10px;
       left: 15px;
     }
     p {
@@ -49,10 +46,6 @@
         color: #fff;
         @include animation(blink 0.5s step-end infinite alternate);
       }
-      span {
-        color: yellow;
-        margin-right: 10px;
-      }
     }
   }
   .custom-switch {
@@ -61,5 +54,37 @@
     top: 5px;
     border-radius: 5px;
     line-height: normal;
+  }
+}
+
+body.dark {
+  #normonAI {
+    .innerDiv {
+      background: #212428;
+      p {
+        font-size: 0.9rem;
+        color: #fff;
+        span {
+          margin-right: 10px;
+          color: #43cea2;
+        }
+      }
+    }
+  }
+}
+
+body.light {
+  #normonAI {
+    .innerDiv {
+      background: #ecf0f3;
+      p {
+        color: #212428;
+        font-size: 0.9rem;
+        span {
+          color: #43cea2;
+          margin-right: 10px;
+        }
+      }
+    }
   }
 }

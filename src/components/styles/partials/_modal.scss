@@ -27,11 +27,6 @@
   overflow: hidden;
   border: 1px solid #dedede;
   border-radius: 20px;
-  @media (max-width: 767.98px) {
-    height: calc(100vh - 20px);
-    max-height: inherit;
-    width: calc(100% - 20px);
-  }
 }
 .custom-modal-button {
   @include position(absolute, 0, 5px, auto, auto, true, false);
@@ -97,29 +92,36 @@
   display: flex;
 }
 
-.buttonContainer {
-  display: inline-block;
-  background: #fafafa;
-  margin-left: 10px;
-  align-items: center;
-  justify-content: center;
-  display: inline-flex;
-}
+// .buttonContainer {
+//   display: inline-block;
+//   background: #fafafa;
+//   margin-left: 10px;
+//   align-items: center;
+//   justify-content: center;
+//   display: inline-flex;
+// }
 
 body.open #overlays {
-  display: flex;
+  display: block;
 }
 
 #overlays {
   position: fixed;
-  width: calc(100% - 80px);
+  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 999;
   align-items: center;
   justify-content: center;
   display: none;
-  margin-left: 40px;
-  margin-right: 40px;
+  overflow: auto;
+}
+
+body.dark #overlays {
+  background: #212428;
+}
+
+body.light #overlays {
+  background: #ecf0f3;
 }

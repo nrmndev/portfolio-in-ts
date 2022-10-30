@@ -5,7 +5,7 @@ import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
 import Button, {
   BUTTON_VARIANTS,
 } from "../../../components/button/button.component";
-import Badge from "../../../components/badge/badge.component";
+import Badge from "../../../components/badge/badge-icon.component";
 import Text, {
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";

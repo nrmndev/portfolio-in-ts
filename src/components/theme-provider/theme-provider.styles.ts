@@ -38,6 +38,20 @@ export const themedHeadingColor = theme("theme", {
   dark: "#fff",
 });
 
+export const themedFormBorder = theme("theme", {
+  light: "#dce1e4",
+  dark: "#191b1e",
+});
+//#dce1e4
+export const themedFormBackground = theme("theme", {
+  light: "#FFFFFF",
+  dark: "#191b1e",
+});
+export const themedFormBoxShadow = theme("theme", {
+  light: "none",
+  dark: "1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset,-1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset",
+});
+
 // export const themedGradientBackgroundColor = theme("theme", {
 //   light: "linear-gradient(165deg,#fff 50%,#edebeb 80%)",
 //   dark: "linear-gradient(145deg,#1e2024,#23272b)",

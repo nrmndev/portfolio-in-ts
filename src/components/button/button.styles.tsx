@@ -115,14 +115,23 @@ export const StyledGradientButton = styled.button<StyledButtonProps>`
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
-  border-radius: 5px;
+  border-radius: 20px;
   line-height: normal;
   display: inline-block;
   margin: 5px;
   text-align: center;
   color: ${themedButtonTextColor};
+  transition: transform 0.4s ease-in-out;
   &:hover {
     background: ${themedGradientBackgroundColor2};
     color: ${themedButtonTextColor2};
+    transform: translateY(-3px);
   }
+`;
+
+export const StyledRawButton = styled.button<StyledButtonProps>`
+  border: none;
+  background: none;
+  cursor: pointer;
+  background: none !important;
 `;

@@ -8,12 +8,14 @@ export type MouseEventActions = MouseEventType;
 
 // Enum for Message
 export enum StaticMessages {
-  RESUME = "Click that button to download Norman's Resume!",
-  LINKEDIN = "Check out Norman on LinkedIn!",
-  EMAIL = "Click that button to email Norman directly!",
-  CALL = "Have a quick call with Norman to discuss things!",
-  SKILLS = "Check out Norman's skills! You might find it useful!",
-  WORK = "Check out the past companies Norman have worked with!",
-  TRAINING = "Here's what Norman is currently taking up to, hot skills indeed!",
-  CONTACT = "Contact Norman whether you wanna connect or just say hello!",
+  RESUME = "Download the most recent copy of my resume",
+  LINKEDIN = "Check out my LinkedIn!",
+  EMAIL = "Email me and let's talk business",
+  CALL = "Let have a quick call to talk about opportunities",
+  SKILLS = "Check out my skills, I could be a right fit",
+  WORK = "5+ Years of experience, experiences that made me what I am today",
+  PORTFOLIO = "Check out my portfolio and keep your feedback",
+  TRAINING = "Keeping track of technology, knowledge is power",
+  CONTACT = "Let's talk business, I'm open to free lancing, collab or full time jobs",
+  BACK_TO_TOP = "Back to top",
 }

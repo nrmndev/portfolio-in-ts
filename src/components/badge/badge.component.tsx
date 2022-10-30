@@ -1,18 +1,19 @@
-import StyledBadge from "./badge.styles";
+import { StyledBadge } from "./badge.styles";
 
-type BadgeProps = {
-  icon: JSX.Element;
-  title?: string;
-  color?: string;
+export enum BADGE_VARIANT {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  SUCCESS = "success",
+  WARNING = "warning",
+  GRADIENT = "gradient",
+}
+
+type BadgeType = {
+  children: React.ReactNode;
+  variant?: BADGE_VARIANT;
 };
-
-const Badge = ({ icon, title = undefined, color = "#000" }: BadgeProps) => {
-  return (
-    <StyledBadge color={color}>
-      {icon}
-      {title && <span>{title}</span>}
-    </StyledBadge>
-  );
+const Badge = ({ children, variant = BADGE_VARIANT.PRIMARY }: BadgeType) => {
+  return <StyledBadge variant={variant}>{children}</StyledBadge>;
 };
 
 export default Badge;

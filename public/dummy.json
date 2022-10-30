@@ -738,35 +738,64 @@
       "title": "Component Documentation",
       "portfolioURL": "/someurl",
       "tags": ["React", "Prism Renderer", "Styled Component", "Redux"],
-      "category": "Documentation"
+      "category": "Documentation",
+      "portfolioImage": "Portfolio_AECOM.png"
     },
     {
       "id": "P2",
       "title": "React JS Codebase",
       "portfolioURL": "/someurl",
       "tags": ["React", "JavaScript", "Styled Component", "Redux"],
-      "category": "Documentation"
+      "category": "Documentation",
+      "portfolioImage": "Portfolio_PROCESS.png"
     },
     {
       "id": "P3",
       "title": "Sample Online Store",
       "portfolioURL": "/someurl",
       "tags": ["React", "Redux", "Router"],
-      "category": "Online Store"
+      "category": "Online Store",
+      "portfolioImage": "Portfolio_STORE.png"
     },
     {
       "id": "P4",
       "title": "Testing Documentation",
       "portfolioURL": "/someurl",
       "tags": ["React", "JEST", "React Testing Library"],
-      "category": "Documentation"
+      "category": "Documentation",
+      "portfolioImage": "Portfolio_PROCESS.png"
     },
     {
       "id": "P5",
       "title": "AECOMViz Website",
-      "portfolioURL": "/someurl",
+      "portfolioURL": "https://aecomviz.com/",
       "tags": ["WordPress"],
-      "category": "External Link"
+      "category": "External Link",
+      "portfolioImage": "Portfolio_AECOM.png"
+    },
+    {
+      "id": "P6",
+      "title": "Ajinomoto PH",
+      "portfolioURL": "https://www.ajinomoto.com.ph/",
+      "tags": ["WordPress"],
+      "category": "External Link",
+      "portfolioImage": "Portfolio_AJINOMOTO.png"
+    },
+    {
+      "id": "P7",
+      "title": "Toycon PH",
+      "portfolioURL": "http://toyconph.com/",
+      "tags": ["WordPress"],
+      "category": "External Link",
+      "portfolioImage": "Portfolio_TOYCON.png"
+    },
+    {
+      "id": "P8",
+      "title": "Colfax 360",
+      "portfolioURL": "https://aecomviz.com/Colfax360",
+      "tags": ["360 Virtual Rooms"],
+      "category": "External Link",
+      "portfolioImage": "Portfolio_COLFAX360.png"
     }
   ]
 }

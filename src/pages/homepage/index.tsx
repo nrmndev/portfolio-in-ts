@@ -1,5 +1,5 @@
 import {
-  uiClearMessage,
+  //uiClearMessage,
   uiSetCardBackdrop,
   uiUpdateMessage,
 } from "../../store/ui/ui-actions";
@@ -26,11 +26,11 @@ const HomePage = () => {
     switch (e.type) {
       case "mouseenter":
         dispatch(uiUpdateMessage(item));
-        dispatch(uiSetCardBackdrop(true));
+        //dispatch(uiSetCardBackdrop(true));
         break;
       case "mouseleave":
-        dispatch(uiClearMessage());
-        dispatch(uiSetCardBackdrop(false));
+        //dispatch(uiClearMessage());
+        //dispatch(uiSetCardBackdrop(false));
         break;
       default:
         break;

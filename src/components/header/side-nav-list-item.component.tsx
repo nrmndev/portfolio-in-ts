@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useCallback, useMemo, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { scroller } from "react-scroll";
+import { useAppDispatch, useAppSelector } from "../../store/hooks/typedhooks";
 import {
   uiClearMessage,
   uiSetCardBackdrop,
   uiUpdateMessage,
 } from "../../store/ui/ui-actions";
+import { uiMessage } from "../../store/ui/ui-selector";
 import { MouseEventType } from "../../utils/interfaces/interfaces";
 import { StyledNavLink, StyledNavListItem } from "./side-nav-list-item.styles";
 
@@ -17,27 +19,29 @@ type Props = {
 };
 const NavListItem = (props: Props) => {
   const dispatch = useDispatch();
-  const onMouseEventHandler = (
-    item: string,
-    e: React.MouseEvent<HTMLElement>
-  ) => {
-    switch (e.type) {
-      case MouseEventType.MOUSE_ENTER:
-        dispatch(uiUpdateMessage(item));
-        dispatch(uiSetCardBackdrop(true));
-        break;
-      case MouseEventType.MOUSE_LEAVE:
-        dispatch(uiSetCardBackdrop(false));
-        dispatch(uiClearMessage());
-        break;
-      default:
-        break;
-    }
-  };
+  const uiMessages = useAppSelector(uiMessage);
+  const [messageState, setMessageState] = useState<string>("");
+  // const updateMessageCallback = useCallback(
+  //   (item: string) => {
+  //     dispatch(uiUpdateMessage(item));
+  //   },
+  //   [item]
+  // );
 
-  const handleSetInactive = () => {
-    dispatch(uiClearMessage());
-  };
+  // const setStoreMessageCallback = useMemo(() => {
+  //   dispatch(uiUpdateMessage(messageState));
+  // }, [messageState]);
+
+  // const onMouseEventHandler = (item: string) => {
+  //   dispatch(uiUpdateMessage(item));
+  // };
+
+  // useEffect(() => {
+  //   setMessageState(uiMessages);
+  // }, [uiMessages]);
+  // const handleSetInactive = () => {
+  //   dispatch(uiClearMessage());
+  // };
   const handleSetActive = (message: string) => {
     setTimeout(() => {
       dispatch(uiUpdateMessage(message));
@@ -63,9 +67,9 @@ const NavListItem = (props: Props) => {
         duration={150}
         offset={-250}
         onSetActive={handleSetActive.bind(null, props.message)}
-        onSetInactive={handleSetInactive}
-        onMouseEnter={onMouseEventHandler.bind(null, props.message)}
-        onMouseLeave={onMouseEventHandler.bind(null, "")}
+        //onSetInactive={handleSetInactive}
+        //onMouseEnter={onMouseEventHandler.bind(null, props.message)}
+        //onMouseLeave={onMouseEventHandler.bind(null, "")}
         tabIndex={0}
         onKeyUp={handleKeyUp.bind(null, props.to)}
       >

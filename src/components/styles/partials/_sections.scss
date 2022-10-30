@@ -40,11 +40,11 @@ section.before.active:before {
 //   padding-bottom: 5rem;
 //   position: relative;
 // }
-#HireMeSection:after {
-  content: "";
-  @include position(absolute, 0, 0, 100%, 100%);
-  @include backdropFilter(blur(10px));
-}
+// #HireMeSection:after {
+//   content: "";
+//   @include position(absolute, 0, 0, 100%, 100%);
+//   @include backdropFilter(blur(10px));
+// }
 
 .hireme {
   width: 80%;
