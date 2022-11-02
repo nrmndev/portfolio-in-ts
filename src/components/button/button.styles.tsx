@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import {
-  themedBoxShadow,
-  themedButtonTextColor,
-  themedButtonTextColor2,
-  themedGradientBackgroundColor,
-  themedGradientBackgroundColor2,
-} from "../theme-provider/theme-provider.styles";
+
 interface StyledButtonProps {
   readonly size: string;
   readonly block: boolean | undefined;
@@ -23,13 +17,14 @@ const handleButtonSize = (size: string) => {
   }
 };
 
-export const StyledBaseButton = styled.button<StyledButtonProps>`
-  width: ${({ block }) => (block ? `100%` : `inherit`)};
-  background-color: ${({ color }) => color};
-  padding: ${({ size }) => handleButtonSize(size)};
+export const StyledBaseButton = styled.button<StyledButtonProps>(
+  ({ theme, block, color, size }) => `
+  width: ${block ? `100%` : `inherit`};
+  ${color && `background-color:${color};`}
+  padding: ${size && handleButtonSize(size)};
   letter-spacing: 0.5px;
   font-size: 1rem;
-  color: ${themedButtonTextColor};
+  color: ${theme.colorPrimary};
   text-transform: uppercase;
   font-weight: bolder;
   border-width: 1px;
@@ -37,37 +32,47 @@ export const StyledBaseButton = styled.button<StyledButtonProps>`
   border-color: transparent;
   cursor: pointer;
   text-decoration: none;
-  display: ${({ block }) => (block ? `block` : `inline-block`)};
+  display: ${block ? `block` : `inline-block`};
   span {
     margin-right: 5px;
   }
   &:hover {
     background-color: #fff;
-    color: ${({ color }) => color};
+    ${color && `color:${color};`}
     border-color: black;
   }
-`;
+
+  &:disabled,
+  &[disabled] {
+    background: rgb(239 239 239 / 30%);
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dedede;    cursor: not-allowed;
+  }
+`
+);
 
 export const StyledGoogleSignInButton = styled(StyledBaseButton)`
   background-color: #4285f4;
   color: white;
-
   &:hover {
     background-color: #357ae8;
   }
 `;
 
-export const StyledInvertedButton = styled(StyledBaseButton)`
+export const StyledInvertedButton = styled(StyledBaseButton)(
+  ({ theme, color }) => `
   background-color: white;
-  //color: ${({ color }) => color};
-  color: ${themedButtonTextColor};
-  border-color: ${({ color }) => color};
+  color: ${theme.colorPrimary};
+   ${color && `border-color:${color};`}
   &:hover {
-    background-color: ${({ color }) => color};
+     ${color && `background-color:${color};`}
     color: white;
     border: 1px solid transparent;
   }
-`;
+`
+);
 
 export const StyledButtonWithIcon = styled(StyledBaseButton)`
   background-color: transparent;
@@ -106,12 +111,13 @@ export const StyledButtonWithIcon = styled(StyledBaseButton)`
   }
 `;
 
-export const StyledGradientButton = styled.button<StyledButtonProps>`
-  background: ${themedGradientBackgroundColor};
-  box-shadow: ${themedBoxShadow};
-  padding: ${({ size }) => handleButtonSize(size)};
+export const StyledGradientButton = styled.button<StyledButtonProps>(
+  ({ theme, size, block }) => `
+  background: ${theme.backgroundColorGradient};
+  box-shadow: ${theme.boxShadow};
+  padding: ${size && handleButtonSize(size)};
   border: none;
-  width: ${({ block }) => (block ? `100%` : `inherit`)};
+  width: ${block ? `100%` : `inherit`};
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
@@ -120,14 +126,23 @@ export const StyledGradientButton = styled.button<StyledButtonProps>`
   display: inline-block;
   margin: 5px;
   text-align: center;
-  color: ${themedButtonTextColor};
+  color: ${theme.colorPrimary};
   transition: transform 0.4s ease-in-out;
   &:hover {
-    background: ${themedGradientBackgroundColor2};
-    color: ${themedButtonTextColor2};
+    background: ${theme.backgroundColorGradient};
+    color: ${theme.colorPrimary};
     transform: translateY(-3px);
   }
-`;
+  &:disabled,
+  &[disabled] {
+    background: rgb(239 239 239 / 30%);
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dedede;    cursor: not-allowed;
+  }
+`
+);
 
 export const StyledRawButton = styled.button<StyledButtonProps>`
   border: none;

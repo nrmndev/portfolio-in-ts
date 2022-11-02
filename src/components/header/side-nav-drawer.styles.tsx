@@ -21,6 +21,7 @@ export const StyledSideNavDrawerList = styled.ul`
   padding-left: 5px;
   padding-right: 5px;
   margin: 0;
+
   li:last-of-type {
     justify-content: flex-end;
   }
@@ -31,7 +32,8 @@ export const StyledSideNavDrawerList = styled.ul`
     transform: translateX(-150px);
     transition: 0.3s transform ease-in;
     display: flex;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
   }
   &:hover {
     span {

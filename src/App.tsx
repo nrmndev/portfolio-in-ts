@@ -18,13 +18,14 @@ import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage";
 import "./components/styles/main.scss";
 import Modal from "./components/modal/modal.component";
-import ContactUs from "./components/contact-form";
+
 //import Playground from "./pages/component-playground-page/playground";
 import HireSection from "./components/hire-section/hire-section.component";
 import PlayGround from "./pages/component-playground-page/form-playground";
 import ReduxPlayground from "./pages/redux-playground/redux";
 import ContainerPlayground from "./pages/component-playground-page/container-playground";
 import FormPlayGround from "./pages/component-playground-page/form-playground";
+import VideoWidget from "./components/video-widget/video-widget.component";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -96,6 +97,7 @@ function App() {
         </Routes>
         <HireSection />
         <Footer />
+        <VideoWidget />
       </MainLayout>
 
       <Modal show={isModalActive} onClose={hideItemHandler}>

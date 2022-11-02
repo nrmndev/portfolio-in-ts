@@ -2,21 +2,20 @@ import { useState } from "react";
 
 import { useAppDispatch } from "../../../store/hooks/typedhooks";
 import { uiActions } from "../../../store/ui/ui-slice";
-import { TrainingType } from "../../../store/data/data-types";
 
-import { Col, Row } from "react-bootstrap";
+import { TrainingType } from "../../../store/data/data-types";
+import { FONT_SIZE } from "../../../components/theme-provider/utilities/typography";
 import Modal from "../../../components/modal/modal.component";
 import NotFound from "../../../components/error/notfound.component";
 import TrainingListItem from "./training-list-item.component";
 import TrainingListItemModal from "./training-list-item-modal.component";
-import SectionTitle, {
-  TITLE_VARIANTS,
-} from "../../../components/section-titles/section-titles.components";
 import Container from "../../../components/containers/container.component";
 import GapSeparator, {
   SEPARATOR_VARIANTS,
 } from "../../../components/gap/gap.components";
 import Text, {
+  TEXT_COLOR,
+  TEXT_TRANSFORM,
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";
 //import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
@@ -86,13 +85,23 @@ const TrainingList = (props: Props) => {
     <Container id="TrainingSection" fluid as="section">
       <Container id="training_heading">
         <GapSeparator variant={SEPARATOR_VARIANTS.LINE} size="lg" />
-        {/* <Text as={TEXT_VARIANTS.H4}>Keeping track of technology</Text>
-        <Text as={TEXT_VARIANTS.H3}>Training Path</Text> */}
-        <SectionTitle
-          title="Training Path"
-          subTitle="Keeping track of technology"
-          subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
-        />
+        <Text
+          as={TEXT_VARIANTS.H4}
+          textColor={TEXT_COLOR.BACKGROUNDCLIP}
+          textAlign="center"
+          textTransform={TEXT_TRANSFORM.UPPERCASE}
+          fontSizeAs={FONT_SIZE.H5}
+        >
+          Keeping track of technology
+        </Text>
+        <Text
+          as={TEXT_VARIANTS.H2}
+          textColor={TEXT_COLOR.PRIMARY}
+          textAlign="center"
+          fontSizeAs={FONT_SIZE.H1}
+        >
+          Training Path
+        </Text>
 
         <Container flex childFlexBasis="48%" gap="4%">
           {TrainingJSX}

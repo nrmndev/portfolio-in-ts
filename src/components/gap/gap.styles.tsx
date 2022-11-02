@@ -1,8 +1,4 @@
 import styled from "styled-components";
-import {
-  themedBackgroundColor,
-  themedBorderColor,
-} from "../theme-provider/theme-provider.styles";
 
 interface IStyledGap {
   size: string;
@@ -20,11 +16,12 @@ const handleSize = (size: string) => {
       return `2rem 0`;
   }
 };
-export const StyledGap = styled.div<IStyledGap>`
-  padding: ${({ size }) => handleSize(size)};
+export const StyledGap = styled.div<IStyledGap>(
+  ({ theme, size, variant }) => `
+  padding: ${handleSize(size)};
   div {
     height: 1px;
-    background: ${({ variant }) =>
-      variant !== "base" ? themedBorderColor : `none`};
+    background: ${variant !== "base" ? theme.borderColor : `none`};
   }
-`;
+`
+);

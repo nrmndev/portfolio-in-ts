@@ -17,11 +17,15 @@ type UseInputProps = {
   block?: boolean;
   errorLabel: string;
   validators: (
-    | (() => { type: VALIDATOR_TYPE })
+    | { type: VALIDATOR_TYPE }
     | { type: VALIDATOR_TYPE; val: number }
   )[];
 } & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
 
+// validators: (
+//   | () => { type: VALIDATOR_TYPE }
+//   | { type: VALIDATOR_TYPE; val: number }
+// )[];
 //array of function    ()[]
 //arrow function (()=>{})
 //function with parameter ((val: number) => { type: VALIDATOR_TYPE; val: number })

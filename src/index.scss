@@ -1,0 +1,58 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  h1,
+  h2 {
+    font-family: "MontserratBold", sans-serif;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Metrophobic", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 575.99px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.99px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.99px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.99px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.99px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+}

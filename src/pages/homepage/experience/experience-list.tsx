@@ -1,11 +1,7 @@
-import { Col, Row } from "react-bootstrap";
 //import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
 import NotFound from "../../../components/error/notfound.component";
-import { BsArrowRight, BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 import List from "../../../components/list/list.component";
-import SectionTitle, {
-  TITLE_VARIANTS,
-} from "../../../components/section-titles/section-titles.components";
 import Container from "../../../components/containers/container.component";
 import CompanyContainer from "./list-item-company.component";
 import {
@@ -18,12 +14,18 @@ import Button, {
 import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
 import { ExperienceType } from "../../../store/data/data-types";
 import Text, {
+  TEXT_COLOR,
+  TEXT_TRANSFORM,
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";
 import FlexChildContainer from "../../../components/containers/flex-child-container.component";
 import GapSeparator, {
   SEPARATOR_VARIANTS,
 } from "../../../components/gap/gap.components";
+import {
+  FONT_SIZE,
+  HORIZONTAL_PADDING,
+} from "../../../components/theme-provider/theme-utilities";
 
 type ExperienceProps = {
   data: ExperienceType[];
@@ -64,13 +66,10 @@ const ExperienceList = ({ data }: ExperienceProps) => {
             </Container>
             <Container flex bg="none" gap="1%">
               <FlexChildContainer flexBasis="28%">
-                <List
-                  listItems={achievements}
-                  listTitle="Notable Achievements:"
-                />
+                <List listItems={achievements} />
               </FlexChildContainer>
               <FlexChildContainer flexBasis="68%">
-                {tasks && <List listItems={tasks} listTitle="Tasks:" />}
+                {tasks && <List listItems={tasks} />}
               </FlexChildContainer>
             </Container>
             <GapSeparator />
@@ -92,16 +91,27 @@ const ExperienceList = ({ data }: ExperienceProps) => {
 
   return (
     <Container id="WorksSection" fluid as="section">
-      <Container id="works_heading" bg="none">
-        <GapSeparator size="lg" variant={SEPARATOR_VARIANTS.LINE} />
-        <div className="z-2">
-          <SectionTitle
-            title="Work Experience"
-            subTitle="Experiences That Made Me What I am Today"
-            subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
-          />
-          <TimelineContainer>{ExperienceJSX}</TimelineContainer>
-        </div>
+      <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
+        <GapSeparator size="sm" variant={SEPARATOR_VARIANTS.LINE} />
+
+        <Text
+          as={TEXT_VARIANTS.H3}
+          textColor={TEXT_COLOR.BACKGROUNDCLIP}
+          textAlign="center"
+          textTransform={TEXT_TRANSFORM.UPPERCASE}
+          fontSizeAs={FONT_SIZE.H5}
+        >
+          Visit my portfolio and keep your feedback
+        </Text>
+        <Text
+          as={TEXT_VARIANTS.H2}
+          textColor={TEXT_COLOR.PRIMARY}
+          textAlign="center"
+          fontSizeAs={FONT_SIZE.H1}
+        >
+          My Portfolio
+        </Text>
+        <TimelineContainer>{ExperienceJSX}</TimelineContainer>
       </Container>
     </Container>
   );

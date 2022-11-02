@@ -1,10 +1,4 @@
 import styled from "styled-components";
-import {
-  themedBackgroundColor,
-  themedBoxShadow,
-  themedGradientBackgroundColor,
-  themedStaticPrimaryColor,
-} from "../theme-provider/theme-provider.styles";
 
 export const StyledModalContent = styled.div`
   // min-height: 70vh;
@@ -13,29 +7,34 @@ export const StyledModalContent = styled.div`
   //z-index: 51;
 `;
 
-export const StyledModalContainer = styled.div`
-  background-color: ${themedBackgroundColor};
+export const StyledModalContainer = styled.div(
+  ({ theme }) => `
+  background-color: ${theme.backgroundColor};
   padding: 1rem;
   border-radius: 14px;
-  box-shadow: ${themedBoxShadow};
+  box-shadow: ${theme.boxShadow};
   z-index: 50;
   margin: 50px auto;
   width: 100%;
   max-width: 1230px;
   position: relative;
-`;
+`
+);
 
-export const StyledModalBackdrop = styled.div`
+export const StyledModalBackdrop = styled.div(
+  ({ theme }) => `
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 22;
-  background: ${themedBackgroundColor};
+  background: ${theme.backgroundColor};
   top: 0;
   left: 0;
-`;
+`
+);
 
-export const StyledModalClose = styled.button`
+export const StyledModalClose = styled.button(
+  ({ theme }) => `
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -45,11 +44,12 @@ export const StyledModalClose = styled.button`
   position: absolute;
   top: 10px;
   z-index: 1;
-  background: ${themedGradientBackgroundColor};
-  box-shadow: ${themedBoxShadow};
-  color: ${themedStaticPrimaryColor};
+  background: ${theme.backgroundColorGradient};
+  box-shadow: ${theme.boxShadow};
+  color: ${theme.colorPrimary};
   border: none;
   border-radius: 100%;
   opacity: 1;
-`;
+`
+);
 export default StyledModalBackdrop;

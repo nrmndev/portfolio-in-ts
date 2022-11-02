@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { themedStaticPrimaryColor } from "../../../components/theme-provider/theme-provider.styles";
 
-export const StyledSpan = styled.span`
+export const StyledSpan = styled.span(
+  ({ theme }) => `
   width: 0;
   overflow: hidden;
   /* display: block; */
@@ -16,7 +16,7 @@ export const StyledSpan = styled.span`
     height: 100%;
     position: absolute;
     right: -5px;
-    border-right: 1px solid ${themedStaticPrimaryColor};
+    border-right: 1px solid ${theme.colorPrimary};
   }
   @keyframes typeWriter {
     from,
@@ -33,4 +33,5 @@ export const StyledSpan = styled.span`
       width: 0%;
     }
   }
-`;
+`
+);

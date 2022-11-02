@@ -1,9 +1,7 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-
-import { scroller } from "react-scroll";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import { scroller } from "react-scroll";
+
 import {
   StyledMainNav,
   StyledMainNavContainer,

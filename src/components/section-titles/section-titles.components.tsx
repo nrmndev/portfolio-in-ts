@@ -6,6 +6,7 @@ export enum TITLE_VARIANTS {
   BACKGROUNDCLIP = "background-clip",
   WHITE = "WHITE",
 }
+
 type SectionTitleProps = {
   title: string;
   titleVariant?: TITLE_VARIANTS;

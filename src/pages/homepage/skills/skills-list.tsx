@@ -1,16 +1,13 @@
-import { Col, Row } from "react-bootstrap";
-
-import { BsArrowRight } from "react-icons/bs";
 import SkillListItem from "./skills-list-item";
 import Container from "../../../components/containers/container.component";
-import SectionTitle, {
-  TITLE_VARIANTS,
-} from "../../../components/section-titles/section-titles.components";
-import Button, {
-  BUTTON_VARIANTS,
-} from "../../../components/button/button.component";
 import NotFound from "../../../components/error/notfound.component";
 import { SkillsType } from "../../../store/data/data-types";
+import Text, {
+  TEXT_COLOR,
+  TEXT_TRANSFORM,
+  TEXT_VARIANTS,
+} from "../../../components/typography/text.component";
+import { FONT_SIZE } from "../../../components/theme-provider/theme-utilities";
 
 type SkillsListProps = {
   data: SkillsType[];
@@ -32,12 +29,23 @@ const SkillsList = ({ data }: SkillsListProps) => {
   return (
     <Container id="SkillsSection" as="section" fluid>
       <Container>
-        <SectionTitle
-          title="Front End Development"
-          subTitle="My real world experiences below"
-          subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
-        />
-
+        <Text
+          as={TEXT_VARIANTS.H4}
+          textColor={TEXT_COLOR.BACKGROUNDCLIP}
+          textAlign="center"
+          textTransform={TEXT_TRANSFORM.UPPERCASE}
+          fontSizeAs={FONT_SIZE.H5}
+        >
+          My experiences as a
+        </Text>
+        <Text
+          as={TEXT_VARIANTS.H2}
+          textColor={TEXT_COLOR.PRIMARY}
+          textAlign="center"
+          fontSizeAs={FONT_SIZE.H1}
+        >
+          Front End Developer
+        </Text>
         <Container flex childFlexBasis="31.33%" gap="3%">
           {SkillListItemJSX}
         </Container>

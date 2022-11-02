@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import {
-  themedBoxShadow,
-  themedGradientBackgroundColor,
-} from "../theme-provider/theme-provider.styles";
 
-export const StyledThumbnailWrapper = styled.div`
+export const StyledThumbnailWrapper = styled.div(
+  ({ theme }) => `
   position: relative;
   z-index: 1;
   &:before {
@@ -18,8 +15,9 @@ export const StyledThumbnailWrapper = styled.div`
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    background: ${themedGradientBackgroundColor};
-    box-shadow: ${themedBoxShadow};
+    background: ${theme.backgroundColorGradient};
+    box-shadow: ${theme.boxShadow};
     border-radius: 6px;
   }
-`;
+`
+);

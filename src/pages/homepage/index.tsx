@@ -1,10 +1,6 @@
-import {
-  //uiClearMessage,
-  uiSetCardBackdrop,
-  uiUpdateMessage,
-} from "../../store/ui/ui-actions";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/typedhooks";
-import TopBanner from "./about/topbanner";
+
+import { uiUpdateMessage } from "../../store/ui/ui-actions";
 import TrainingList from "./training/training-list.component";
 import SkillsList from "./skills/skills-list";
 import ExperienceList from "./experience/experience-list";

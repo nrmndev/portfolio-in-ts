@@ -1,14 +1,6 @@
-import React, { useCallback, useMemo, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { scroller } from "react-scroll";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/typedhooks";
-import {
-  uiClearMessage,
-  uiSetCardBackdrop,
-  uiUpdateMessage,
-} from "../../store/ui/ui-actions";
-import { uiMessage } from "../../store/ui/ui-selector";
-import { MouseEventType } from "../../utils/interfaces/interfaces";
+import { uiUpdateMessage } from "../../store/ui/ui-actions";
 import { StyledNavLink, StyledNavListItem } from "./side-nav-list-item.styles";
 
 type Props = {
@@ -19,8 +11,8 @@ type Props = {
 };
 const NavListItem = (props: Props) => {
   const dispatch = useDispatch();
-  const uiMessages = useAppSelector(uiMessage);
-  const [messageState, setMessageState] = useState<string>("");
+  //const uiMessages = useAppSelector(uiMessage);
+  //const [messageState, setMessageState] = useState<string>("");
   // const updateMessageCallback = useCallback(
   //   (item: string) => {
   //     dispatch(uiUpdateMessage(item));

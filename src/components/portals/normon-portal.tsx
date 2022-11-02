@@ -11,7 +11,12 @@ const NormonHTML = (): React.ReactPortal => {
     normonJSX = (
       <>
         <div className="innerDiv show">
-          <img src={`/normon.png`} alt="" width={65} height={65} />
+          <img
+            src={`${process.env.REACT_APP_ASSET_URL}/images/avatar.png`}
+            alt=""
+            width={60}
+            height={60}
+          />
           <p
             className="line-1"
             style={{

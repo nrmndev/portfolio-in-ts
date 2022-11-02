@@ -1,10 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { Col, Form } from "react-bootstrap";
-import { scroller } from "react-scroll";
-import CSSTransitionWrapper from "../../../components/hooks/useCssTransition";
-import { AnimationTypes } from "../../../components/hooks/useCssTransition";
+import { useEffect, useState } from "react";
+import { FONT_SIZE } from "../../../components/theme-provider/theme-utilities";
 import Text, {
-  TEXT_SIZE,
   TEXT_VARIANTS,
 } from "../../../components/typography/text.component";
 import { StyledSpan } from "./typewriter-span.style";
@@ -64,7 +60,7 @@ const TopBannerForm = () => {
           <Text
             as={TEXT_VARIANTS.H1}
             key={index}
-            sizeAs={TEXT_SIZE.H2}
+            fontSizeAs={FONT_SIZE.H2}
             style={{ position: "relative" }}
           >
             {text1} <StyledSpan>{text2}</StyledSpan>

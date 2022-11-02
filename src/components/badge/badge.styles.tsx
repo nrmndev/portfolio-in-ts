@@ -1,25 +1,21 @@
-import styled from "styled-components";
-import {
-  themedGradientBackgroundColor,
-  themedHeadingColor,
-  themedStaticPrimaryColor,
-} from "../theme-provider/theme-provider.styles";
+import styled, { DefaultTheme } from "styled-components";
 import { BADGE_VARIANT } from "./badge.component";
 
 type BadgeProps = {
   readonly variant: BADGE_VARIANT;
 };
 
-const handleVariant = (variant: BADGE_VARIANT) => {
+const handleVariant = (variant: BADGE_VARIANT, theme: DefaultTheme) => {
   switch (variant) {
     case BADGE_VARIANT.PRIMARY:
     default:
-      return themedStaticPrimaryColor;
+      return theme.colorPrimary;
     case BADGE_VARIANT.GRADIENT:
-      return themedGradientBackgroundColor;
+      return theme.backgroundColorGradient;
   }
 };
-export const StyledBadge = styled.span<BadgeProps>`
+export const StyledBadge = styled.span<BadgeProps>(
+  ({ theme, variant }) => `
   font-size: 0.7rem;
   padding: 0.3rem 0.6rem;
   line-height: 1;
@@ -28,6 +24,7 @@ export const StyledBadge = styled.span<BadgeProps>`
   vertical-align: baseline;
   border-radius: 0.375rem;
   flex: 0;
-  background: ${({ variant }) => handleVariant(variant)};
-  color: ${themedHeadingColor};
-`;
+  background: ${variant && handleVariant(variant, theme)};
+  color: ${theme.colorWithContrast};
+`
+);

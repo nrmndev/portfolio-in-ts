@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import { forwardRef } from "react";
+import { Link, LinkProps } from "react-router-dom";
+
 import {
   StyledBaseButton,
   StyledButtonWithIcon,
@@ -9,37 +10,42 @@ import {
   StyledRawButton,
 } from "./button.styles";
 
+type ButtonPropsBasics = {
+  children?: React.ReactNode;
+  variant?: BUTTON_VARIANTS;
+  size?: "sm" | "md" | "lg";
+  block?: boolean;
+  color?: string;
+};
+
+// type ButtonProps = ButtonPropsBasics &
+//   (
+//     | (JSX.IntrinsicElements["a"] & { as?: "a" })
+//     | (JSX.IntrinsicElements["button"] & { as: "button" })
+//     | (Omit<LinkProps, keyof ButtonPropsBasics> & { as: "link" })
+//   );
+type ButtonProps = ButtonPropsBasics &
+  (
+    | (Omit<
+        React.AnchorHTMLAttributes<HTMLAnchorElement>,
+        keyof ButtonPropsBasics
+      > & { as?: "a" })
+    | (Omit<
+        React.ButtonHTMLAttributes<HTMLButtonElement>,
+        keyof ButtonPropsBasics
+      > & { as: "button" })
+    | (Omit<LinkProps, keyof ButtonPropsBasics> & { as: "link" })
+  );
+
 export enum BUTTON_VARIANTS {
   base = "base",
   google = "google-sign-in",
   inverted = "inverted",
   icon = "with-icon",
   gradient = "gradient",
+
   raw = "raw",
 }
-type ButtonBaseProps = {
-  children?: React.ReactNode;
-  variant?: BUTTON_VARIANTS;
-  size?: "sm" | "md" | "lg";
-  block?: boolean;
-  color?: string;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-type ButtonProps = {
-  type?: "button" | "submit" | "reset" | undefined;
-  to?: never;
-  href?: never;
-};
-
-type LinkProps = {
-  to?: string;
-  href?: never;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
-
-type AnchorProps = {
-  href?: string;
-  to?: never;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const getButton = (variant = BUTTON_VARIANTS.base) =>
   ({
@@ -51,70 +57,47 @@ const getButton = (variant = BUTTON_VARIANTS.base) =>
     [BUTTON_VARIANTS.raw]: StyledRawButton,
   }[variant]);
 
-const Button = (
-  props: ButtonBaseProps & (ButtonProps | LinkProps | AnchorProps)
-) => {
-  const CustomButton = getButton(props.variant);
-  if (props.to) {
-    const {
-      to,
-      size = "md",
-      block = false,
-      color = "#43cea2",
-      ...rest
-    } = props;
-    return (
-      <CustomButton
-        as={Link}
-        to={to}
-        size={size}
-        block={block ? block : undefined}
-        color={color}
-        {...rest}
-      >
-        {props.children}
-      </CustomButton>
-    );
-  }
-  if (props.href) {
-    const {
-      href,
-      size = "md",
-      block = false,
-      color = "#43cea2",
-      ...rest
-    } = props;
-    return (
-      <CustomButton
-        as="a"
-        href={href}
-        block={block ? block : undefined}
-        size={size}
-        color={color}
-        {...rest}
-      >
-        {props.children}
-      </CustomButton>
-    );
-  }
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  ButtonProps
+>(function ForwardedButton(props, ref) {
   const {
-    // href = [],
-    // to = [],
-    block = false,
-    size = "md",
+    children,
+    variant,
+    size = "lg",
+    block,
     color = "#43cea2",
+    as: Component = "a",
     ...rest
   } = props;
+  const CustomButton = getButton(variant);
+  //let StyledAs:React.ForwardRefExoticComponent<LinkProps & React.RefAttributes<HTMLAnchorElement>> ;
+  let StyledAs: any;
+  switch (Component) {
+    case "a":
+      StyledAs = "a";
+      break;
+    case "link":
+      StyledAs = Link;
+      break;
+    case "button":
+    default:
+      StyledAs = "button";
+      break;
+  }
   return (
     <CustomButton
-      size={size}
+      ref={ref as any}
       block={block ? block : undefined}
       color={color}
-      {...rest}
+      size={size}
+      {...(rest as any)}
+      as={StyledAs}
     >
-      {props.children}
+      {/* some other components here */}
+      {children}
     </CustomButton>
   );
-};
+});
 
 export default Button;

@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
+
 import {
-  themedBackgroundColor,
-  themedBorderColor,
-  themedGradientBackgroundColor,
-} from "../theme-provider/theme-provider.styles";
+  handleHorizontalPadding,
+  HORIZONTAL_PADDING,
+} from "../theme-provider/theme-utilities";
 
 interface IStyledSection {
   readonly bg: string | undefined;
@@ -13,9 +13,11 @@ interface IStyledSection {
   readonly childFlexBasis: string;
   readonly gap: string;
   readonly justifyContent: string;
+  readonly fixed: boolean;
+  readonly horizontalPadding: HORIZONTAL_PADDING;
 }
 
-const handleBG = (bg: string | undefined, img: string) => {
+const handleBG = (bg: string | undefined, img: string, theme: DefaultTheme) => {
   if (img.length > 0) {
     return `${bg && bg},url('${img}');     
     background-attachment: fixed !important;
@@ -26,7 +28,7 @@ const handleBG = (bg: string | undefined, img: string) => {
     if (bg) {
       return `${bg}`;
     } else {
-      return themedBackgroundColor;
+      return theme.backgroundColor;
     }
   }
 };
@@ -35,30 +37,69 @@ const handleFlexBasis = (str: string) => {
   return `flex-grow: 0; flex-shrink: 1; flex-basis: ${str}`;
 };
 
-export const StyledSection = styled.section<IStyledSection>`
-  background: ${({ bg, img }) => handleBG(bg, img)};
-  justify-content: ${({ justifyContent }) => justifyContent};
-  ${({ fluid }) =>
-    fluid
-      ? ` padding-top: 2rem;
-    padding-bottom: 2rem;`
-      : `max-width: 1320px; margin-right: auto;
-    margin-left: auto;  
-    padding-right: 15px;
-    padding-left: 15px;`};
+const handleFluid = (fluid: boolean) => {
+  if (fluid) {
+    return;
+  } else {
+    return `max-width: 1320px; margin-right: auto;
+    margin-left: auto;`;
+  }
+};
+
+const handleFixed = (fixed: boolean) => {
+  if (fixed) {
+    return `top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;`;
+  } else {
+    return;
+  }
+};
+
+export const StyledSection = styled.section<IStyledSection>(
+  ({
+    theme,
+    bg,
+    img,
+    justifyContent,
+    horizontalPadding,
+    fluid,
+    childFlexBasis,
+    gap,
+    fixed,
+    flex,
+  }) => `
+  background: ${handleBG(bg, img, theme)};
+  justify-content: ${justifyContent && justifyContent};
   position: relative;
-  ${({ flex, childFlexBasis, gap }) =>
+  ${horizontalPadding && handleHorizontalPadding(horizontalPadding)};
+  ${handleFluid(fluid)};
+
+  ${
     flex &&
     `display: flex;  flex-wrap: wrap;
     flex-direction: column;
     gap: ${gap};
 
     & > * {
-       ${handleFlexBasis(childFlexBasis)};    margin-top: calc(${gap}/2);
+       ${childFlexBasis && handleFlexBasis(childFlexBasis)};    
+       margin-top: calc(${gap}/2);
        margin-bottom: calc(${gap}/2);
-    };`}
+    };`
+  }
 
   @media(min-width: 768px) {
     flex-direction: row;
   }
+
+  ${fixed && handleFixed(fixed)}
+`
+);
+
+export const StyledFixedContainerOverlay = styled.div`
+  min-height: 100vh;
+  z-index: -1;
+  position: relative;
 `;

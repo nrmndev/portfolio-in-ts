@@ -1,20 +1,19 @@
-import { Col, Row } from "react-bootstrap";
-
-import { BsArrowRight } from "react-icons/bs";
-import SkillListItem from "./portfolio-list-item";
 import Container from "../../../components/containers/container.component";
-import SectionTitle, {
-  TITLE_VARIANTS,
-} from "../../../components/section-titles/section-titles.components";
-import Button, {
-  BUTTON_VARIANTS,
-} from "../../../components/button/button.component";
 import NotFound from "../../../components/error/notfound.component";
 import { PortfolioType } from "../../../store/data/data-types";
 import PortfolioListItem from "./portfolio-list-item";
 import GapSeparator, {
   SEPARATOR_VARIANTS,
 } from "../../../components/gap/gap.components";
+import {
+  FONT_SIZE,
+  HORIZONTAL_PADDING,
+} from "../../../components/theme-provider/theme-utilities";
+import Text, {
+  TEXT_COLOR,
+  TEXT_TRANSFORM,
+  TEXT_VARIANTS,
+} from "../../../components/typography/text.component";
 
 type SkillsListProps = {
   data: PortfolioType[];
@@ -35,14 +34,25 @@ const PortfolioList = ({ data }: SkillsListProps) => {
 
   return (
     <Container id="PortfolioSection" as="section" fluid>
-      <Container>
+      <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
         <GapSeparator size="lg" variant={SEPARATOR_VARIANTS.LINE} />
-        <SectionTitle
-          title="My Portfolio"
-          subTitle="Visit my portfolio and keep your feedback"
-          subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
-        />
-
+        <Text
+          as={TEXT_VARIANTS.H3}
+          textColor={TEXT_COLOR.BACKGROUNDCLIP}
+          textAlign="center"
+          textTransform={TEXT_TRANSFORM.UPPERCASE}
+          fontSizeAs={FONT_SIZE.H5}
+        >
+          Visit my portfolio and keep your feedback
+        </Text>
+        <Text
+          as={TEXT_VARIANTS.H2}
+          textColor={TEXT_COLOR.PRIMARY}
+          textAlign="center"
+          fontSizeAs={FONT_SIZE.H1}
+        >
+          My Portfolio
+        </Text>
         <Container flex childFlexBasis="31.33%" gap="3%">
           {PortfolioListItemJSX}
         </Container>

@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import {
-  themedFormBackground,
-  themedFormBorder,
-  themedFormBoxShadow,
-  themedParagraphColor,
-  themedStaticPrimaryColor,
-} from "../theme-provider/theme-provider.styles";
+
 type FormInputType = {
   readonly block: boolean;
   readonly minHeight: string;
@@ -24,7 +18,8 @@ export const StyledFormLabel = styled.label`
   letter-spacing: 0.125rem;
 `;
 
-export const StyledFormInput = styled.input<FormInputType>`
+export const StyledFormInput = styled.input<FormInputType>(
+  ({ theme, minHeight }) => `
   padding: 1.1rem;
   display: block;
   width: 100%;
@@ -36,21 +31,22 @@ export const StyledFormInput = styled.input<FormInputType>`
   &:focus,
   &:focus-visible,
   &:hover {
-    border-color: ${themedStaticPrimaryColor};
+    border-color: ${theme.colorPrimary};
   }
   transition: border 0.4s ease-in-out;
-  color: ${themedParagraphColor};
-  background: ${themedFormBackground};
-  border-color: ${themedFormBorder};
-  box-shadow: ${themedFormBoxShadow};
+  color: ${theme.colorWithContrast};
+  background: ${theme.backgroundColorFlat};
+  border-color: ${theme.colorContrast};
+  box-shadow: ${theme.boxShadowInset};
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    background: ${themedFormBackground} !important;
+    background: ${theme.backgroundColorFlat} !important;
   }
-  min-height: ${({ minHeight }) => minHeight && minHeight};
-`;
+   ${minHeight && `min-height:${minHeight};`}
+`
+);
 
 export const StyledFormTextarea = styled(StyledFormInput)`
   min-height: 216px;

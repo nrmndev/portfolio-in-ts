@@ -1,12 +1,4 @@
 import styled from "styled-components";
-import {
-  themedGradientBackgroundColor,
-  themedBoxShadow,
-  themedGradientBackgroundColor2,
-  themedButtonTextColor2,
-  themedStaticPrimaryColor,
-  themedBackgroundColor,
-} from "../theme-provider/theme-provider.styles";
 
 interface ICard {
   readonly bgGradientOnHover: boolean;
@@ -17,14 +9,14 @@ interface ICard {
 
 export const StyledCardContent = styled.div``;
 
-export const StyledCardBase = styled.div<ICard>`
+export const StyledCardBase = styled.div<ICard>(
+  ({ theme, padding, raw, bgGradientOnHover, animateOnHover }) => `
   border-radius: 10px;
-  padding: ${({ padding }) => padding};
-  background: ${({ raw }) =>
-    raw ? themedBackgroundColor : themedGradientBackgroundColor};
+  padding: ${padding && padding};
+  background: ${raw ? theme.backgroundColor : theme.backgroundColorGradient};
   transition: transform 0.5s ease-in-out;
   svg {
-    fill: ${themedStaticPrimaryColor};
+    fill: ${theme.colorPrimary};
   }
   &:hover {
     h1,
@@ -34,19 +26,19 @@ export const StyledCardBase = styled.div<ICard>`
     h5,
     h6,
     p,
+    span,
     li {
-      color: ${({ bgGradientOnHover }) => bgGradientOnHover && `#FFF`};
+      color: ${bgGradientOnHover && `#FFF`};
     }
     svg {
-      fill: ${({ bgGradientOnHover }) => bgGradientOnHover && `#FFF`};
+      fill: ${bgGradientOnHover && `#FFF`};
     }
     a,
     button {
-      background: ${({ bgGradientOnHover }) => bgGradientOnHover && `#fff`};
-      box-shadow: ${({ bgGradientOnHover }) => bgGradientOnHover && `none`};
+      background: ${bgGradientOnHover && `#fff`};
+      box-shadow: ${bgGradientOnHover && `none`};
       &:hover {
-        color: ${({ bgGradientOnHover }) =>
-          bgGradientOnHover && themedStaticPrimaryColor};
+        color: ${bgGradientOnHover && theme.colorPrimary};
       }
     }
     img {
@@ -61,20 +53,22 @@ export const StyledCardBase = styled.div<ICard>`
   z-index: 1;
   overflow: hidden;
 
-  ${({ animateOnHover }) =>
+  ${
     animateOnHover &&
     `${StyledCardContent} {
       transition: transform 0.5s ease-in-out;
       transform: translateY(10px);
     }
-  `}
-  ${({ animateOnHover }) =>
+  `
+  }
+  ${
     animateOnHover &&
     `&:hover ${StyledCardContent} {
       transform: translateY(0);
     }
     
-  `}
+  `
+  }
 
   //GRADIENT HOVER STYLE bgGradientOnHover: true
     &:before {
@@ -86,12 +80,14 @@ export const StyledCardBase = styled.div<ICard>`
     top: 0;
     left: 0;
     opacity: 0;
-    background: ${({ bgGradientOnHover }) =>
-      bgGradientOnHover && themedGradientBackgroundColor2};
+    background: ${bgGradientOnHover && theme.backgroundColorGradientAlt};
     z-index: -1;
   }
-`;
+`
+);
 
-export const StyledCardWithShadow = styled(StyledCardBase)`
-  box-shadow: ${themedBoxShadow};
-`;
+export const StyledCardWithShadow = styled(StyledCardBase)(
+  ({ theme }) => `
+  box-shadow: ${theme.boxShadow};
+`
+);

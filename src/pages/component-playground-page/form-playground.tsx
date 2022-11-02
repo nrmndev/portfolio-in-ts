@@ -1,32 +1,34 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
+
+//import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+import useInput from "../../components/form/useInputReducer";
+
 import Button, {
   BUTTON_VARIANTS,
 } from "../../components/button/button.component";
-import Container from "../../components/containers/container.component";
-
-import useInput from "../../components/form/useInputReducer";
 import { INPUT_TYPE } from "../../components/form/input.components";
-
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
 } from "../../components/form/validators";
 import GapSeparator from "../../components/gap/gap.components";
-//import { isNotEmpty } from "../../components/form/validation-helper";
-import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
-import Card, { CARD_VARIANTS } from "../../components/card/card.component";
+import Card from "../../components/card/card.component";
 import Text, {
+  TEXT_COLOR,
+  TEXT_TRANSFORM,
   TEXT_VARIANTS,
 } from "../../components/typography/text.component";
 import Preloader from "../../components/preloader/loading";
-import SectionTitle, {
-  TITLE_VARIANTS,
-} from "../../components/section-titles/section-titles.components";
+import {
+  FONT_SIZE,
+  HORIZONTAL_PADDING,
+} from "../../components/theme-provider/theme-utilities";
+import Container from "../../components/containers/container.component";
 
 const FormPlayGround = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [emailResponse, setEmailResponse] = useState<string>("");
-
+  const [isLoading] = useState<boolean>(false);
+  const [emailResponse] = useState<string>("");
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const {
     isValid: isEmailValid,
     Component: userNameInput,
@@ -36,8 +38,8 @@ const FormPlayGround = () => {
     label: "Email*",
     name: "user_email",
     errorLabel: "Please enter valid email",
-    id: "inputUsername",
-    validators: [VALIDATOR_EMAIL],
+    id: "formInputEmail",
+    validators: [VALIDATOR_EMAIL()],
   });
 
   const {
@@ -49,7 +51,7 @@ const FormPlayGround = () => {
     label: "Name*",
     name: "user_name",
     errorLabel: "Name cannot be empty",
-    id: "inputName",
+    id: "formInputName",
     validators: [VALIDATOR_MINLENGTH(1)],
   });
 
@@ -60,7 +62,7 @@ const FormPlayGround = () => {
   } = useInput({
     label: "Message*",
     errorLabel: "Message cannot be empty",
-    id: "inputMessage",
+    id: "formInputMessage",
     name: "message",
     as: INPUT_TYPE.TEXTAREA,
     validators: [VALIDATOR_MINLENGTH(1)],
@@ -70,6 +72,7 @@ const FormPlayGround = () => {
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     //setIsLoading(true);
+
     if (isNameValid && isEmailValid && isMessageValid) {
       nameReset();
       emailReset();
@@ -95,16 +98,41 @@ const FormPlayGround = () => {
     //     setIsLoading(false);
     //   });
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (buttonRef.current) {
+        if (isNameValid && isEmailValid && isMessageValid) {
+          buttonRef.current.disabled = false;
+        } else {
+          buttonRef.current.disabled = true;
+        }
+      }
+    }, 500);
 
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isNameValid, isEmailValid, isMessageValid]);
   return (
-    <Container>
-      <SectionTitle
-        title="Contact"
-        subTitle="Ask Me Anything"
-        textAlign="left"
-        subTitleVariant={TITLE_VARIANTS.BACKGROUNDCLIP}
-        className="pb-0"
-      />
+    <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
+      <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
+        <Text
+          as={TEXT_VARIANTS.H4}
+          fontSizeAs={FONT_SIZE.P}
+          textAlign="center"
+          textTransform={TEXT_TRANSFORM.UPPERCASE}
+          textColor={TEXT_COLOR.BACKGROUNDCLIP}
+        >
+          Ask Me Anything
+        </Text>
+        <Text
+          as={TEXT_VARIANTS.H2}
+          fontSizeAs={FONT_SIZE.H1}
+          textAlign="center"
+        >
+          Contact
+        </Text>
+      </Container>
       <Card animateOnHover={false} raw>
         <form onSubmit={onSubmitHandler}>
           {userNameInput}
@@ -123,10 +151,12 @@ const FormPlayGround = () => {
             </Text>
           )}
           <Button
+            as="button"
             type="submit"
             block
             variant={BUTTON_VARIANTS.gradient}
             size="lg"
+            ref={buttonRef}
           >
             Submit
           </Button>

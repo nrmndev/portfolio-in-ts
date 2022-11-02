@@ -1,0 +1,56 @@
+import { useDispatch } from "react-redux";
+
+import { useAppSelector } from "../../store/hooks/typedhooks";
+import { setToLS } from "../../utils/localstorage";
+import { useCallback } from "react";
+import { uiIsMobile, uiTheme } from "../../store/ui/ui-selector";
+import { uiSetTheme, uiSetToggleMessage } from "../../store/ui/ui-actions";
+
+const HeaderTopSettings = () => {
+  const isMobileView = useAppSelector(uiIsMobile);
+  const currentTheme = useAppSelector(uiTheme);
+  const dispatch = useDispatch();
+  const onClickHandler = useCallback(
+    (e: React.MouseEvent<HTMLInputElement>) => {
+      dispatch(uiSetToggleMessage(e.currentTarget.checked));
+    },
+    [dispatch]
+  );
+
+  const onClickSetTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setToLS("theme", event.target.checked ? "dark" : "light");
+    dispatch(uiSetTheme(event.target.checked ? "dark" : "light"));
+  };
+
+  return (
+    <div className="ui-control">
+      <div className="custom-control custom-switch_ui mb-2">
+        <input
+          type="checkbox"
+         
+          id="customSwitch2"
+          onChange={onClickSetTheme}
+          checked={currentTheme === "light" ? false : true}
+        />
+        <label className="custom-control-label" htmlFor="customSwitch2"></label>
+      </div>
+      {!isMobileView && (
+        <div className="custom-control custom-switch_ai">
+          <input
+            type="checkbox"
+            className="custom-control-input"
+            id="customSwitch1"
+            onClick={onClickHandler}
+            defaultChecked
+          />
+          <label
+            className="custom-control-label"
+            htmlFor="customSwitch1"
+          ></label>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default HeaderTopSettings;

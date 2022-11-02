@@ -4,7 +4,6 @@ import {
   StyledFormLabel,
   StyledFormGroup,
   StyledFormText,
-  StyledFormTextarea,
   StyledErrorLabel,
 } from "./input.styles";
 

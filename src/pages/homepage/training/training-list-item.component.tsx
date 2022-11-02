@@ -1,4 +1,3 @@
-import { Col } from "react-bootstrap";
 import { FaAward } from "react-icons/fa";
 import { BsArrowRight, BsJournalCheck, BsPencil } from "react-icons/bs";
 import Card, { CARD_VARIANTS } from "../../../components/card/card.component";

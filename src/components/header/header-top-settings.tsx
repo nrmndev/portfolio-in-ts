@@ -3,12 +3,24 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../store/hooks/typedhooks";
 import { setToLS } from "../../utils/localstorage";
 import { useCallback } from "react";
-import { uiIsMobile, uiTheme } from "../../store/ui/ui-selector";
+import {
+  uiIsMessageActive,
+  uiIsMobile,
+  uiTheme,
+} from "../../store/ui/ui-selector";
 import { uiSetTheme, uiSetToggleMessage } from "../../store/ui/ui-actions";
+import { FaRobot } from "react-icons/fa";
+import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
+import {
+  StyledSettingsCheckbox,
+  StyledSettingsContainer,
+  StyledSettingsLabel,
+} from "./control-settings.styles";
 
 const HeaderTopSettings = () => {
   const isMobileView = useAppSelector(uiIsMobile);
   const currentTheme = useAppSelector(uiTheme);
+  const isMessageActive = useAppSelector(uiIsMessageActive);
   const dispatch = useDispatch();
   const onClickHandler = useCallback(
     (e: React.MouseEvent<HTMLInputElement>) => {
@@ -23,33 +35,32 @@ const HeaderTopSettings = () => {
   };
 
   return (
-    <div className="ui-control">
-      <div className="custom-control custom-switch_ui mb-2">
-        <input
-          type="checkbox"
-          className="custom-control-input"
-          id="customSwitch2"
-          onChange={onClickSetTheme}
-          checked={currentTheme === "light" ? false : true}
-        />
-        <label className="custom-control-label" htmlFor="customSwitch2"></label>
-      </div>
+    <StyledSettingsContainer>
+      <StyledSettingsCheckbox
+        type="checkbox"
+        id="customSwitch2"
+        onChange={onClickSetTheme}
+        checked={currentTheme === "light" ? false : true}
+      />
+      <StyledSettingsLabel htmlFor="customSwitch2" active={false}>
+        {currentTheme === "light" ? <BsFillMoonStarsFill /> : <BsSun />}
+        <span>Theme UI</span>
+      </StyledSettingsLabel>
       {!isMobileView && (
-        <div className="custom-control custom-switch_ai">
-          <input
+        <>
+          <StyledSettingsCheckbox
             type="checkbox"
-            className="custom-control-input"
             id="customSwitch1"
             onClick={onClickHandler}
             defaultChecked
           />
-          <label
-            className="custom-control-label"
-            htmlFor="customSwitch1"
-          ></label>
-        </div>
+          <StyledSettingsLabel htmlFor="customSwitch1" active={isMessageActive}>
+            <FaRobot />
+            <span>Message UI</span>
+          </StyledSettingsLabel>
+        </>
       )}
-    </div>
+    </StyledSettingsContainer>
   );
 };
 

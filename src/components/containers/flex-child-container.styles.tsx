@@ -4,6 +4,8 @@ interface IContainerProps {
   readonly flexBasis: string | undefined;
 }
 
-export const StyledFlexChildContainer = styled.div<IContainerProps>`
-  flex-basis: ${({ flexBasis }) => (flexBasis ? flexBasis : "100%")};
-`;
+export const StyledFlexChildContainer = styled.div<IContainerProps>(
+  ({ flexBasis }) => `
+  flex-basis: ${flexBasis ? flexBasis : `100%`};
+`
+);

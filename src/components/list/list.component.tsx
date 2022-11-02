@@ -1,19 +1,13 @@
 import { BiCheckDouble } from "react-icons/bi";
-import { StyledList, StyleListTitle } from "./list.styles";
+import { StyledList } from "./list.styles";
 
 type ListProps = {
   listItems: string[];
   listStyle?: JSX.Element;
-  listTitle?: string;
 };
-const List = ({
-  listItems,
-  listStyle = <BiCheckDouble />,
-  listTitle,
-}: ListProps) => {
+const List = ({ listItems, listStyle = <BiCheckDouble /> }: ListProps) => {
   return (
     <>
-      {listTitle && <StyleListTitle>{listTitle}</StyleListTitle>}
       {listItems && (
         <StyledList>
           {listItems.map((listItem: string, i: number) => (

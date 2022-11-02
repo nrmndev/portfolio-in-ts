@@ -1,11 +1,13 @@
 import React, { HTMLAttributes } from "react";
-import { StyledSection } from "./container.styles";
+import { HORIZONTAL_PADDING } from "../theme-provider/theme-utilities";
+import { StyledFixedContainerOverlay, StyledSection } from "./container.styles";
 
 export enum CONTAINER_JUSTIFY {
   CENTER = "center",
   FLEXSTART = "flex-start",
   FLEXEND = "flex-end",
 }
+
 type ContainerProps = {
   children: React.ReactNode;
   bg?: string | undefined;
@@ -16,6 +18,8 @@ type ContainerProps = {
   justifyContent?: CONTAINER_JUSTIFY;
   gap?: string;
   childFlexBasis?: string;
+  fixed?: boolean;
+  horizontalPadding?: HORIZONTAL_PADDING;
 } & HTMLAttributes<HTMLElement>;
 
 const Container = (props: ContainerProps) => {
@@ -28,23 +32,30 @@ const Container = (props: ContainerProps) => {
     flex = false,
     gap = "1rem",
     childFlexBasis = "25%",
+    fixed = false,
     justifyContent = CONTAINER_JUSTIFY.FLEXSTART,
+    horizontalPadding = HORIZONTAL_PADDING.NONE,
     ...rest
   } = props;
   return (
-    <StyledSection
-      bg={bg}
-      img={img}
-      fluid={fluid}
-      {...rest}
-      as={as}
-      flex={flex}
-      childFlexBasis={childFlexBasis}
-      justifyContent={justifyContent}
-      gap={gap}
-    >
-      {children}
-    </StyledSection>
+    <>
+      <StyledSection
+        bg={bg}
+        img={img}
+        fluid={fluid}
+        fixed={fixed}
+        {...rest}
+        as={as}
+        flex={flex}
+        childFlexBasis={childFlexBasis}
+        justifyContent={justifyContent}
+        gap={gap}
+        horizontalPadding={horizontalPadding}
+      >
+        {children}
+      </StyledSection>
+      {fixed && <StyledFixedContainerOverlay />}
+    </>
   );
 };
 
