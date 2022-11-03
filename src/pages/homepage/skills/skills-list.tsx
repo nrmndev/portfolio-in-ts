@@ -2,12 +2,15 @@ import SkillListItem from "./skills-list-item";
 import Container from "../../../components/containers/container.component";
 import NotFound from "../../../components/error/notfound.component";
 import { SkillsType } from "../../../store/data/data-types";
-import Text, {
+import Text from "../../../components/typography/text.component";
+import {
+  FONT_SIZE_AS,
   TEXT_COLOR,
+  H_PADDING,
+  TEXT_AS,
   TEXT_TRANSFORM,
-  TEXT_VARIANTS,
-} from "../../../components/typography/text.component";
-import { FONT_SIZE } from "../../../components/theme-provider/theme-utilities";
+  TEXT_ALIGN,
+} from "../../../components/theme-provider/utilities";
 
 type SkillsListProps = {
   data: SkillsType[];
@@ -28,21 +31,20 @@ const SkillsList = ({ data }: SkillsListProps) => {
 
   return (
     <Container id="SkillsSection" as="section" fluid>
-      <Container>
+      <Container hPadding={H_PADDING.LG}>
         <Text
-          as={TEXT_VARIANTS.H4}
+          as={TEXT_AS.H4}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
-          textAlign="center"
+          textAlign={TEXT_ALIGN.CENTER}
           textTransform={TEXT_TRANSFORM.UPPERCASE}
-          fontSizeAs={FONT_SIZE.H5}
+          fontSizeAs={FONT_SIZE_AS.H5}
         >
           My experiences as a
         </Text>
         <Text
-          as={TEXT_VARIANTS.H2}
-          textColor={TEXT_COLOR.PRIMARY}
-          textAlign="center"
-          fontSizeAs={FONT_SIZE.H1}
+          as={TEXT_AS.H2}
+          textAlign={TEXT_ALIGN.CENTER}
+          fontSizeAs={FONT_SIZE_AS.H1}
         >
           Front End Developer
         </Text>
@@ -62,7 +64,7 @@ export default SkillsList;
     href="http://store.ngsilvestre.com"
     target="_blank"
     rel="noreferrer"
-    variant={BUTTON_VARIANTS.inverted}
+    variant={BUTTON_VARIANT.inverted}
   >
     <span>
       <BsArrowRight size={"2em"} />
@@ -71,7 +73,7 @@ export default SkillsList;
   </Button>
 </Col>
 <Col md={6} className="mt-3 mb-3">
-  <Button to="/reactjs" variant={BUTTON_VARIANTS.inverted}>
+  <Button to="/reactjs" variant={BUTTON_VARIANT.inverted}>
     <span>
       <BsArrowRight size={"2em"} /> View ReactJS Skills Processes
     </span>

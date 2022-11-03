@@ -1,19 +1,19 @@
 import styled, { DefaultTheme } from "styled-components";
 
-import { TITLE_VARIANTS } from "./section-titles.components";
+import { TITLE_VARIANT } from "./section-titles.components";
 
 interface StyledSectionTitleProps {
   readonly textAlign: string;
-  readonly titleVariant: TITLE_VARIANTS;
-  readonly subTitleVariant: TITLE_VARIANTS;
+  readonly titleVariant: TITLE_VARIANT;
+  readonly subTitleVariant: TITLE_VARIANT;
 }
 
 const handleVariant = (variant: string, theme: DefaultTheme) => {
   switch (variant) {
-    case TITLE_VARIANTS.PRIMARY:
+    case TITLE_VARIANT.PRIMARY:
       return theme.colorWithContrast;
 
-    case TITLE_VARIANTS.WHITE:
+    case TITLE_VARIANT.WHITE:
       return `#FFFFFF;`;
   }
 };
@@ -31,7 +31,7 @@ const StyledSectionTitle = styled.div<StyledSectionTitleProps>(
     font-size: 4rem;
     font-family: "MontserratBold", sans-serif;
     ${
-      titleVariant === TITLE_VARIANTS.BACKGROUNDCLIP &&
+      titleVariant === TITLE_VARIANT.BACKGROUNDCLIP &&
       `background: ${theme.colorAsGradientClip};
       background-clip: text;
     -webkit-background-clip: text;
@@ -42,7 +42,7 @@ const StyledSectionTitle = styled.div<StyledSectionTitleProps>(
   h4 {
     text-transform: uppercase;
     ${
-      subTitleVariant === TITLE_VARIANTS.BACKGROUNDCLIP &&
+      subTitleVariant === TITLE_VARIANT.BACKGROUNDCLIP &&
       `background: ${theme.colorAsGradientClip};
       background-clip: text;
     -webkit-background-clip: text;
@@ -54,7 +54,7 @@ const StyledSectionTitle = styled.div<StyledSectionTitleProps>(
 );
 export default StyledSectionTitle;
 
-// case TITLE_VARIANTS.BACKGROUNDCLIP:
+// case TITLE_VARIANT.BACKGROUNDCLIP:
 //   return `background-clip: text;
 // -webkit-background-clip: text;
 // -webkit-text-fill-color: transparent;

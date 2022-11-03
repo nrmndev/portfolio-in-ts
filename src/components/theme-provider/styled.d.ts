@@ -16,11 +16,22 @@ declare module "styled-components" {
     boxShadow: string;
     boxShadowInset: string;
     color: string;
+    colorAlt: string;
     colorAsGradientClip: string;
     colorPrimary: string;
     colorWithContrast: string;
     colorContrast: string;
     colorPallete1: string;
+
+    colorSecondary: string;
+    colorDanger: string;
+    colorWarning: string;
+    colorPrimaryAndWhite: string;
+    bgPrimary: string;
+    bgSecondary: string;
+    gradientPrimary: string;
+    gradientSecondary: string;
+    gradientClip: string;
   }
 }
 // borderRadius: string;

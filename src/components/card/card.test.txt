@@ -1,12 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
-import Card, { CARD_VARIANTS } from "./card.component";
+import Card from "./card.component";
+import { CARD_VARIANT } from "../theme-provider/utilities";
 
 describe("Card Component", () => {
   test("snapshot", () => {
     const card = render(
-      <Card variant={CARD_VARIANTS.WITHSHADOW}>Some items</Card>
+      <Card variant={CARD_VARIANT.WITHSHADOW}>Some items</Card>
     );
     expect(card).toMatchSnapshot();
   });
@@ -22,7 +23,7 @@ describe("Card Component", () => {
   test("renders card StyledCardWithShadow", () => {
     //render(<Card>Some item</Card>);
     const tree = renderer
-      .create(<Card variant={CARD_VARIANTS.WITHSHADOW}>Some item</Card>)
+      .create(<Card variant={CARD_VARIANT.WITHSHADOW}>Some item</Card>)
       .toJSON();
     expect(tree).toHaveStyleRule(`box-shadow: 2px 2px 15px #d8d5d5;`);
   });

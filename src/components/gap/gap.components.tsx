@@ -1,17 +1,13 @@
+import { GAP_SEPARATOR_VARIANT } from "../theme-provider/utilities";
 import { StyledGap } from "./gap.styles";
-
-export enum SEPARATOR_VARIANTS {
-  BASE = "base",
-  LINE = "line",
-}
 
 type GapSeparatorProps = {
   size?: "sm" | "md" | "lg";
-  variant?: SEPARATOR_VARIANTS;
+  variant?: GAP_SEPARATOR_VARIANT;
 };
 const GapSeparator = ({
   size = "sm",
-  variant = SEPARATOR_VARIANTS.BASE,
+  variant = GAP_SEPARATOR_VARIANT.RAW,
 }: GapSeparatorProps) => {
   return (
     <StyledGap size={size} variant={variant}>

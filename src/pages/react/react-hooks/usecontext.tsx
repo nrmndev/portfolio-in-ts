@@ -2,7 +2,7 @@ import { useState } from "react";
 import AuthContext from "../../../context/auth-context";
 import LoginForm from "../../../context/loginform";
 import Navigation from "../../../context/navigation";
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -20,7 +20,6 @@ return (
       {isLoggedIn && <Navigation />}
       {!isLoggedIn && <LoginForm onSubmit={onSubmit} />}
     </AuthContext.Provider>
-    <WithLineNumbers code={exampleCode} language="jsx" />
   </>
 );
 `.trim();
@@ -73,9 +72,9 @@ const AuthContextProvider = () => {
         {!isLoggedIn && <LoginForm onSubmit={onSubmit} />}
       </AuthContext.Provider>
       <p>Wrapped Component inside Provider</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>Your Provider</p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
     </>
   );
 };

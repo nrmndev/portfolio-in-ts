@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import Button, { BUTTON_VARIANTS } from "../button/button.component";
+import Button from "../button/button.component";
 
 import useInput from "../form/useInputReducer";
-import { INPUT_TYPE } from "../form/input.components";
 
 import {
   VALIDATOR_EMAIL,
@@ -12,24 +11,27 @@ import {
 } from "../form/validators";
 import GapSeparator from "../gap/gap.components";
 
-//import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+import emailjs /* EmailJSResponseStatus*/ from "@emailjs/browser";
 import Card from "../card/card.component";
-import Text, {
-  TEXT_COLOR,
-  TEXT_TRANSFORM,
-  TEXT_VARIANTS,
-} from "../typography/text.component";
-import Preloader from "../preloader/loading";
+import Text from "../typography/text.component";
+//import Preloader from "../preloader/loading";
 
 import {
-  FONT_SIZE,
-  HORIZONTAL_PADDING,
-} from "../theme-provider/theme-utilities";
+  FONT_SIZE_AS,
+  TEXT_COLOR,
+  BUTTON_VARIANT,
+  TEXT_AS,
+  TEXT_TRANSFORM,
+  TEXT_ALIGN,
+  BUTTON_SIZE,
+  INPUT_TYPE,
+} from "../theme-provider/utilities";
 import Container from "../containers/container.component";
+import { LoadingSkeletonPage } from "../preloader/loading-skeleton.component.";
 
 const ContactForm = () => {
-  const [isLoading] = useState<boolean>(false);
-  const [emailResponse] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [emailResponse, setEmailResponse] = useState<string>("");
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const {
@@ -108,24 +110,20 @@ const ContactForm = () => {
       messageReset();
     }
 
-    // emailjs
-    //   .sendForm(
-    //     "service_00n4mma",
-    //     "template_um8bcq9",
-    //     e.currentTarget,
-    //     "y-A5oTBqJYSORbCyA"
-    //   )
-    //   .then(
-    //     (result: EmailJSResponseStatus) => {
-    //       setEmailResponse("Success");
-    //     },
-    //     (error: EmailJSResponseStatus) => {
-    //       setEmailResponse("Error");
-    //     }
-    //   )
-    //   .finally(() => {
-    //     setIsLoading(false);
-    //   });
+    emailjs
+      .sendForm(
+        "service_00n4mma",
+        "template_um8bcq9",
+        e.currentTarget,
+        "y-A5oTBqJYSORbCyA"
+      )
+      .then(
+        (): void => setEmailResponse("Success"),
+        (): void => setEmailResponse("Error")
+      )
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -144,21 +142,21 @@ const ContactForm = () => {
   }, [isNameValid, isEmailValid, isMessageValid]);
 
   return (
-    <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
-      <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
+    <Container>
+      <Container>
         <Text
-          as={TEXT_VARIANTS.H4}
-          fontSizeAs={FONT_SIZE.P}
-          textAlign="center"
+          as={TEXT_AS.H4}
+          fontSizeAs={FONT_SIZE_AS.P}
+          textAlign={TEXT_ALIGN.CENTER}
           textTransform={TEXT_TRANSFORM.UPPERCASE}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
         >
           Ask Me Anything
         </Text>
         <Text
-          as={TEXT_VARIANTS.H2}
-          fontSizeAs={FONT_SIZE.H1}
-          textAlign="center"
+          as={TEXT_AS.H2}
+          fontSizeAs={FONT_SIZE_AS.H1}
+          textAlign={TEXT_ALIGN.CENTER}
         >
           Contact
         </Text>
@@ -169,14 +167,14 @@ const ContactForm = () => {
           {inputEmail}
           {inputMessage}
           <GapSeparator size="md" />
-          {isLoading && <Preloader />}
+          {isLoading && <LoadingSkeletonPage />}
           {emailResponse === "Success" && (
-            <Text as={TEXT_VARIANTS.P}>
+            <Text as={TEXT_AS.P}>
               Thanks for contacting me, I&apos;ll get back to you the soonest!
             </Text>
           )}
           {emailResponse === "Error" && (
-            <Text as={TEXT_VARIANTS.P}>
+            <Text as={TEXT_AS.P}>
               Something went wrong, please try again later
             </Text>
           )}
@@ -187,8 +185,8 @@ const ContactForm = () => {
             as="button"
             type="submit"
             block
-            variant={BUTTON_VARIANTS.gradient}
-            size="lg"
+            variant={BUTTON_VARIANT.gradient}
+            size={BUTTON_SIZE.LG}
             ref={buttonRef}
           >
             Submit

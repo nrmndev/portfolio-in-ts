@@ -1,7 +1,9 @@
-import Button, {
-  BUTTON_VARIANTS,
-} from "../../../components/button/button.component";
-import List from "../../../components/list/list.component";
+import Button from "../../../components/button/button.component";
+import List, { ListItem } from "../../../components/list/list.component";
+import {
+  BUTTON_SIZE,
+  BUTTON_VARIANT,
+} from "../../../components/theme-provider/utilities";
 import { TrainingType } from "../../../store/data/data-types";
 //import { TrainingData } from "./training-list-item.component";
 
@@ -22,8 +24,8 @@ const TrainingListItemModal = ({ data }: TrainingListItemModalProps) => {
             href={linkToCertificate}
             target="_blank"
             rel="noreferrer"
-            size="sm"
-            variant={BUTTON_VARIANTS.inverted}
+            size={BUTTON_SIZE.SM}
+            variant={BUTTON_VARIANT.inverted}
           >
             View Certificate
           </Button>
@@ -32,7 +34,12 @@ const TrainingListItemModal = ({ data }: TrainingListItemModalProps) => {
 
       <hr />
       <h4 className="h5">Course Outline</h4>
-      <List listItems={courseHighlights} />
+
+      <List>
+        {courseHighlights.map((highlight) => {
+          return <ListItem key={highlight}>{highlight}</ListItem>;
+        })}
+      </List>
     </>
   );
 };

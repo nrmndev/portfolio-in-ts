@@ -1,13 +1,9 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { InputHTMLAttributes } from "react";
+import { INPUT_TYPE } from "../theme-provider/utilities";
 //import { FormGroup, FormLabel } from "react-bootstrap";
-import {
-  FormInput,
-  FormGroup,
-  FormLabel,
-  INPUT_TYPE,
-} from "./input.components";
-import { isEmail, isNotEmpty } from "./validation-helper";
+import { FormInput, FormGroup, FormLabel } from "./input.components";
+
 import { validate } from "./validators";
 
 type UseInputProps = {

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { FONT_SIZE } from "../../../components/theme-provider/theme-utilities";
-import Text, {
-  TEXT_VARIANTS,
-} from "../../../components/typography/text.component";
+import {
+  FONT_SIZE_AS,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import Text from "../../../components/typography/text.component";
 import { StyledSpan } from "./typewriter-span.style";
 
 const TopBannerForm = () => {
@@ -58,9 +59,9 @@ const TopBannerForm = () => {
       {skillsTypewritten.map(({ text1, text2 }, index) => {
         return (
           <Text
-            as={TEXT_VARIANTS.H1}
+            as={TEXT_AS.H1}
             key={index}
-            fontSizeAs={FONT_SIZE.H2}
+            fontSizeAs={FONT_SIZE_AS.H2}
             style={{ position: "relative" }}
           >
             {text1} <StyledSpan>{text2}</StyledSpan>

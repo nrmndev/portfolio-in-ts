@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { handleTextColor, TEXT_COLOR } from "../theme-provider/utilities";
 
 interface IStyledBadge {
-  readonly color: string;
+  readonly color: TEXT_COLOR;
 }
 const StyledBadgeIcon = styled.span<IStyledBadge>(
   ({ color }) => `
-  color: ${color ? color : `#000`};
+  ${handleTextColor(color)}
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
   span {
     margin-left: 10px;
   }

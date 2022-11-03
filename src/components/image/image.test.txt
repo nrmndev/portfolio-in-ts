@@ -1,7 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
-import Image, { IMAGE_ALIGN, IMAGE_VARIANTS } from "./image.component";
+import Image, { IMAGE_ALIGN } from "./image.component";
+import { IMAGE_VARIANT } from "../theme-provider/utilities";
 
 describe("Image Component", () => {
   test("renders img src", () => {
@@ -54,7 +55,7 @@ describe("Image Component", () => {
           src={"http://somelink/someimg.jpg"}
           width={200}
           height={200}
-          variant={IMAGE_VARIANTS.BASE}
+          variant={IMAGE_VARIANT.BASE}
         />
       )
       .toJSON();
@@ -70,7 +71,7 @@ describe("Image Component", () => {
           src={"http://somelink/someimg.jpg"}
           width={200}
           height={200}
-          variant={IMAGE_VARIANTS.BORDERED}
+          variant={IMAGE_VARIANT.BORDERED}
         />
       )
       .toJSON();
@@ -85,7 +86,7 @@ describe("Image Component", () => {
           src={"http://somelink/someimg.jpg"}
           width={200}
           height={200}
-          variant={IMAGE_VARIANTS.ROUNDED}
+          variant={IMAGE_VARIANT.ROUNDED}
         />
       )
       .toJSON();

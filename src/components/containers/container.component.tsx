@@ -1,5 +1,10 @@
 import React, { HTMLAttributes } from "react";
-import { HORIZONTAL_PADDING } from "../theme-provider/theme-utilities";
+import {
+  PaddingTypes,
+  V_PADDING,
+  H_PADDING,
+  PADDING,
+} from "../theme-provider/utilities";
 import { StyledFixedContainerOverlay, StyledSection } from "./container.styles";
 
 export enum CONTAINER_JUSTIFY {
@@ -19,8 +24,8 @@ type ContainerProps = {
   gap?: string;
   childFlexBasis?: string;
   fixed?: boolean;
-  horizontalPadding?: HORIZONTAL_PADDING;
-} & HTMLAttributes<HTMLElement>;
+} & PaddingTypes &
+  HTMLAttributes<HTMLElement>;
 
 const Container = (props: ContainerProps) => {
   const {
@@ -30,11 +35,13 @@ const Container = (props: ContainerProps) => {
     children,
     fluid = false,
     flex = false,
-    gap = "1rem",
+    gap = "0",
     childFlexBasis = "25%",
     fixed = false,
     justifyContent = CONTAINER_JUSTIFY.FLEXSTART,
-    horizontalPadding = HORIZONTAL_PADDING.NONE,
+    hPadding = H_PADDING.NONE,
+    vPadding = V_PADDING.NONE,
+    padding = PADDING.NONE,
     ...rest
   } = props;
   return (
@@ -44,13 +51,15 @@ const Container = (props: ContainerProps) => {
         img={img}
         fluid={fluid}
         fixed={fixed}
-        {...rest}
         as={as}
         flex={flex}
         childFlexBasis={childFlexBasis}
         justifyContent={justifyContent}
         gap={gap}
-        horizontalPadding={horizontalPadding}
+        hPadding={hPadding}
+        vPadding={vPadding}
+        padding={padding}
+        {...rest}
       >
         {children}
       </StyledSection>

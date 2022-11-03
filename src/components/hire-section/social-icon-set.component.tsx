@@ -6,7 +6,7 @@ import {
   BsLinkedin,
   BsTelephoneInboundFill,
 } from "react-icons/bs";
-import Button, { BUTTON_VARIANTS } from "../button/button.component";
+import Button from "../button/button.component";
 import { MouseEventType } from "../../interface";
 
 import { StaticMessages } from "../../utils/interfaces/interfaces";
@@ -15,6 +15,7 @@ import {
   uiSetModalActive,
   uiUpdateMessage,
 } from "../../store/ui/ui-actions";
+import { BUTTON_VARIANT } from "../theme-provider/utilities";
 
 const SocialIconSet = () => {
   const dispatch = useAppDispatch();
@@ -47,7 +48,7 @@ const SocialIconSet = () => {
         href="./assets/NormanSilvestre_Resume.pdf"
         target="_blank"
         rel="noreferrer"
-        variant={BUTTON_VARIANTS.icon}
+        variant={BUTTON_VARIANT.icon}
         //onMouseLeave={onMouseEventHandler.bind(null, "")}
         onMouseEnter={onMouseEventHandler.bind(null, StaticMessages.RESUME)}
       >
@@ -62,7 +63,7 @@ const SocialIconSet = () => {
         href="https://www.linkedin.com/in/ngsilvestre"
         target="_blank"
         rel="noreferrer"
-        variant={BUTTON_VARIANTS.icon}
+        variant={BUTTON_VARIANT.icon}
         //onMouseLeave={onMouseEventHandler.bind(null, "")}
         onMouseEnter={onMouseEventHandler.bind(null, StaticMessages.LINKEDIN)}
       >
@@ -75,7 +76,7 @@ const SocialIconSet = () => {
       </Button>
 
       <Button
-        variant={BUTTON_VARIANTS.icon}
+        variant={BUTTON_VARIANT.icon}
         onMouseLeave={onMouseEventHandler.bind(null, "")}
         onMouseEnter={onMouseEventHandler.bind(null, StaticMessages.EMAIL)}
         onClick={onClickShowEmailModal}
@@ -92,7 +93,7 @@ const SocialIconSet = () => {
         href="tel:0420871015"
         target="_blank"
         rel="noreferrer"
-        variant={BUTTON_VARIANTS.icon}
+        variant={BUTTON_VARIANT.icon}
         onMouseLeave={onMouseEventHandler.bind(null, "")}
         onMouseEnter={onMouseEventHandler.bind(null, StaticMessages.CALL)}
       >

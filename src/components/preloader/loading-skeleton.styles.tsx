@@ -1,19 +1,20 @@
 import styled from "styled-components";
+import { LOADING_SKELETON_TYPE } from "../theme-provider/utilities";
 
 interface StyledLoadingSkeletonProps {
   readonly displayWidth: string;
-  readonly displayType: string;
+  readonly displayType: LOADING_SKELETON_TYPE;
   readonly gap: number;
 }
 
-const handleType = (type: string) => {
+const handleType = (type: LOADING_SKELETON_TYPE) => {
   switch (type) {
-    case "line":
+    case LOADING_SKELETON_TYPE.LINE:
     default:
       return `height: 3rem`;
-    case "box":
+    case LOADING_SKELETON_TYPE.BOX:
       return `height: 8rem;`;
-    case "circle":
+    case LOADING_SKELETON_TYPE.CIRCLE:
       return `border-radius: 50%; height: 7rem; width: 7rem`;
   }
 };

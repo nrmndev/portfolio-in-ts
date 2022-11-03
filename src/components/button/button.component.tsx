@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { Link, LinkProps } from "react-router-dom";
+import { BUTTON_SIZE, BUTTON_VARIANT } from "../theme-provider/utilities";
 
 import {
   StyledBaseButton,
@@ -12,8 +13,8 @@ import {
 
 type ButtonPropsBasics = {
   children?: React.ReactNode;
-  variant?: BUTTON_VARIANTS;
-  size?: "sm" | "md" | "lg";
+  variant?: BUTTON_VARIANT;
+  size?: BUTTON_SIZE;
   block?: boolean;
   color?: string;
 };
@@ -37,24 +38,14 @@ type ButtonProps = ButtonPropsBasics &
     | (Omit<LinkProps, keyof ButtonPropsBasics> & { as: "link" })
   );
 
-export enum BUTTON_VARIANTS {
-  base = "base",
-  google = "google-sign-in",
-  inverted = "inverted",
-  icon = "with-icon",
-  gradient = "gradient",
-
-  raw = "raw",
-}
-
-const getButton = (variant = BUTTON_VARIANTS.base) =>
+const getButton = (variant = BUTTON_VARIANT.base) =>
   ({
-    [BUTTON_VARIANTS.base]: StyledBaseButton,
-    [BUTTON_VARIANTS.google]: StyledGoogleSignInButton,
-    [BUTTON_VARIANTS.inverted]: StyledInvertedButton,
-    [BUTTON_VARIANTS.icon]: StyledButtonWithIcon,
-    [BUTTON_VARIANTS.gradient]: StyledGradientButton,
-    [BUTTON_VARIANTS.raw]: StyledRawButton,
+    [BUTTON_VARIANT.base]: StyledBaseButton,
+    [BUTTON_VARIANT.google]: StyledGoogleSignInButton,
+    [BUTTON_VARIANT.inverted]: StyledInvertedButton,
+    [BUTTON_VARIANT.icon]: StyledButtonWithIcon,
+    [BUTTON_VARIANT.gradient]: StyledGradientButton,
+    [BUTTON_VARIANT.raw]: StyledRawButton,
   }[variant]);
 
 export const Button = forwardRef<
@@ -64,7 +55,7 @@ export const Button = forwardRef<
   const {
     children,
     variant,
-    size = "lg",
+    size = BUTTON_SIZE.MD,
     block,
     color = "#43cea2",
     as: Component = "a",
@@ -85,6 +76,7 @@ export const Button = forwardRef<
       StyledAs = "button";
       break;
   }
+
   return (
     <CustomButton
       ref={ref as any}

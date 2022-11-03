@@ -1,4 +1,4 @@
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 import "./theming.scss";
 
 const exampleCode = `
@@ -78,9 +78,9 @@ const CSSThemingSASS = () => {
         for your styles
       </p>
       <p>In this example, body has a class of &quot;theme-dark&quot;:</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>Sample SCSS mixin:</p>
-      <WithLineNumbers code={exampleCode3} language="jsx" />
+      <RenderCode code={exampleCode3} language="jsx" />
       <p>
         The mixin &quot;themable&quot; accepts 6 parameters, ( $theme-name,
         $container-bg, $left-bg, $right-bg, $innertext, $button-bg) then assign
@@ -92,7 +92,7 @@ const CSSThemingSASS = () => {
         classes especially on large projects that requires to be themable.
       </p>
       <p>Your component:</p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
       <p>Result:</p>
       <div className="container">
         <div className="left">

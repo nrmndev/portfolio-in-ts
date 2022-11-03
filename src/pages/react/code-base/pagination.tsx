@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import Preloader from "../../../components/preloader/loading";
+import { LoadingSkeletonPage } from "../../../components/preloader/loading-skeleton.component.";
+//import Preloader from "../../../components/preloader/loading";
 import Paginations from "../../../utils/pagination";
 import useHttp from "../../../utils/usehttp";
 
@@ -48,8 +49,8 @@ const CodebasePagination = () => {
       <h3>Data Pagination</h3>
       <p>Detailed explanation to follow</p>
       <hr />
-      {isLoading && <Preloader />}
-      {error && <Preloader />}
+      {isLoading && <LoadingSkeletonPage />}
+      {error && <LoadingSkeletonPage />}
       {newArray && JSON.stringify(newArray)}
       <Paginations length={23} itemsPerPage={5} onClick={onClickHandler} />
     </>

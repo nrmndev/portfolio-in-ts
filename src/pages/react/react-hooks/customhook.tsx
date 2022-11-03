@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 import useHttp from "../../../components/hooks/usehttp";
 
 const exampleCode = `
@@ -174,12 +174,12 @@ const ReactHooksCustomHook = () => {
         </li>
       </ul>
 
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>
         Parent Component can then destructure the return tuples,
         [loading,error,callbackFunction]
       </p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
     </div>
   );
 };

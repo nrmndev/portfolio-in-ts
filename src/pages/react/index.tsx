@@ -2,11 +2,21 @@ import { useCallback, useEffect, useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks/typedhooks";
 
+import Container from "../../components/containers/container.component";
 import useHttp from "../../components/hooks/usehttp";
-import { Container, Row } from "react-bootstrap";
-import { BiChevronRight } from "react-icons/bi";
+
 import ReactIntroduction from "./introduction";
 import TopicComponent from "./topic-component";
+import Text from "../../components/typography/text.component";
+import {
+  FONT_SIZE_AS,
+  TEXT_COLOR,
+  H_PADDING,
+  TEXT_AS,
+} from "../../components/theme-provider/utilities";
+import GapSeparator from "../../components/gap/gap.components";
+import List, { ListItem } from "../../components/list/list.component";
+import FlexChildContainer from "../../components/containers/flex-child-container.component";
 
 type TopicsType = {
   id: string;
@@ -49,20 +59,25 @@ const ReactPage = () => {
     reactProcess.map((e: TopicsType) => {
       return (
         <li key={e.id}>
-          <h3 className="h4 mt-2">{e.title}</h3>
-          <ul>
+          <Text
+            as={TEXT_AS.H3}
+            fontSizeAs={FONT_SIZE_AS.H5}
+            textColor={TEXT_COLOR.PRIMARY}
+          >
+            {e.title}
+          </Text>
+          <List>
             {e.topics &&
               e.topics.map((topicItem) => {
                 return (
-                  <li key={topicItem.topic_id}>
+                  <ListItem key={topicItem.topic_id}>
                     <NavLink to={topicItem.path}>
-                      <BiChevronRight />
                       {topicItem.topicTitle}
                     </NavLink>
-                  </li>
+                  </ListItem>
                 );
               })}
-          </ul>
+          </List>
         </li>
       );
     });
@@ -93,13 +108,11 @@ const ReactPage = () => {
   console.log(validLinks);
   return (
     <>
-      {
-        <Container className="pt-5 pb-5">
-          <h2 className="color_filled text__center font__h1 pt-5">
-            ReactJS Skills Process
-          </h2>
-          <Row>
-            <article className="col-xs-12 col-sm-8">
+      <GapSeparator size={"lg"} />
+      <Container fluid hPadding={H_PADDING.SM} flex>
+        <FlexChildContainer flexBasis="68%">
+          <Container as="article" flex gap="10%" childFlexBasis="80%">
+            <Container>
               <Routes>
                 <Route path="/" element={<ReactIntroduction />} />
                 <Route
@@ -107,13 +120,15 @@ const ReactPage = () => {
                   element={<TopicComponent links={validLinks} />}
                 />
               </Routes>
-            </article>
-            <aside className="col-xs-12 col-sm-4 scroll-y">
-              <ul className="nav d-block">{links}</ul>
-            </aside>
-          </Row>
-        </Container>
-      }
+            </Container>
+          </Container>
+        </FlexChildContainer>
+        <FlexChildContainer flexBasis="29%">
+          <Container as="article">
+            <List>{links}</List>
+          </Container>
+        </FlexChildContainer>
+      </Container>
     </>
   );
 };

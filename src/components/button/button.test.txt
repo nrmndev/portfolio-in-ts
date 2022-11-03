@@ -2,8 +2,9 @@ import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 
 import "jest-styled-components";
-import Button, { BUTTON_VARIANTS } from "./button.component";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import Button from "./button.component";
+import { BrowserRouter } from "react-router-dom";
+import { BUTTON_SIZE, BUTTON_VARIANT } from "../theme-provider/utilities";
 
 describe("Button Component", () => {
   test("renders button children using props.children", () => {
@@ -61,7 +62,7 @@ describe("Button Component", () => {
 
   test("renders button as base variant using props.variant", () => {
     const tree = renderer
-      .create(<Button variant={BUTTON_VARIANTS.base}>Some text</Button>)
+      .create(<Button variant={BUTTON_VARIANT.base}>Some text</Button>)
       .toJSON();
     expect(tree).toHaveStyleRule(`letter-spacing: 0.5px;
     font-size: 1rem;
@@ -77,21 +78,21 @@ describe("Button Component", () => {
 
   test("renders button as google variant using props.variant", () => {
     const tree = renderer
-      .create(<Button variant={BUTTON_VARIANTS.google}>Some text</Button>)
+      .create(<Button variant={BUTTON_VARIANT.google}>Some text</Button>)
       .toJSON();
     expect(tree).toHaveStyleRule("background-color: #4285f4;");
   });
 
   test("renders button as inverted variant using props.variant", () => {
     const tree = renderer
-      .create(<Button variant={BUTTON_VARIANTS.inverted}>Some text</Button>)
+      .create(<Button variant={BUTTON_VARIANT.inverted}>Some text</Button>)
       .toJSON();
     expect(tree).toHaveStyleRule("background-color: white;");
   });
 
   test("renders button as icon variant using props.variant", () => {
     const tree = renderer
-      .create(<Button variant={BUTTON_VARIANTS.icon}>Some text</Button>)
+      .create(<Button variant={BUTTON_VARIANT.icon}>Some text</Button>)
       .toJSON();
     expect(tree).toHaveStyleRule(`background-color: transparent;
     border-color: transparent;
@@ -104,7 +105,7 @@ describe("Button Component", () => {
   test("renders button as block using props.block", () => {
     const tree = renderer
       .create(
-        <Button variant={BUTTON_VARIANTS.icon} block>
+        <Button variant={BUTTON_VARIANT.icon} block>
           Some text
         </Button>
       )
@@ -113,17 +114,23 @@ describe("Button Component", () => {
   });
 
   test("renders button as size SM props.size", () => {
-    const tree = renderer.create(<Button size="sm">Some text</Button>).toJSON();
+    const tree = renderer
+      .create(<Button size={BUTTON_SIZE.SM}>Some text</Button>)
+      .toJSON();
     expect(tree).toHaveStyleRule(`padding: .4rem .8rem`);
   });
 
   test("renders button as size MD `default` props.size", () => {
-    const tree = renderer.create(<Button size="md">Some text</Button>).toJSON();
+    const tree = renderer
+      .create(<Button size={BUTTON_SIZE.MD}>Some text</Button>)
+      .toJSON();
     expect(tree).toHaveStyleRule(`padding: .7rem 1.4rem`);
   });
 
   test("renders button as size LG using props.size", () => {
-    const tree = renderer.create(<Button size="lg">Some text</Button>).toJSON();
+    const tree = renderer
+      .create(<Button size={BUTTON_SIZE.LG}>Some text</Button>)
+      .toJSON();
     expect(tree).toHaveStyleRule(`padding: 1.2rem 2.4rem`);
   });
 

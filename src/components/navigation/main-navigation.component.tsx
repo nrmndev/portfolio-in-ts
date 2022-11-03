@@ -24,7 +24,6 @@ const MainNavigation = () => {
         <Navbar.Brand>
           <Link to="/">NGSilvestre</Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="nav" />
         <StyledMainNavList>
           <StyledMainNavListItem>
             <Link

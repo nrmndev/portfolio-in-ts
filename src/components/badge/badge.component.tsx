@@ -1,12 +1,5 @@
+import { BADGE_VARIANT } from "../theme-provider/utilities";
 import { StyledBadge } from "./badge.styles";
-
-export enum BADGE_VARIANT {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  SUCCESS = "success",
-  WARNING = "warning",
-  GRADIENT = "gradient",
-}
 
 type BadgeType = {
   children: React.ReactNode;

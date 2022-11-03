@@ -1,6 +1,5 @@
 import React from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
-
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
@@ -34,11 +33,11 @@ const ReduxUseDispatch = () => {
       <div>
         Custom hook useTypedSelector for typescript useSelector convenience
       </div>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <div>
         Your component can now listen to the store by using useTypedSelector
       </div>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
     </>
   );
 };

@@ -1,9 +1,9 @@
-import Image, {
-  IMAGE_VARIANTS,
-} from "../../../components/image/image.component";
-import Text, {
-  TEXT_VARIANTS,
-} from "../../../components/typography/text.component";
+import Image from "../../../components/image/image.component";
+import {
+  TEXT_AS,
+  IMAGE_VARIANT,
+} from "../../../components/theme-provider/utilities";
+import Text from "../../../components/typography/text.component";
 
 type CompanyProps = {
   data: {
@@ -22,15 +22,15 @@ const CompanyContainer = ({ data }: CompanyProps) => {
         src={`${process.env.REACT_APP_ASSET_URL}/images/${image}`}
         width={225}
         height={107}
-        variant={IMAGE_VARIANTS.BASE}
+        variant={IMAGE_VARIANT.BASE}
       />
-      <Text as={TEXT_VARIANTS.H4} label="Company">
+      <Text as={TEXT_AS.H4} label="Company">
         {company}
       </Text>
-      <Text as={TEXT_VARIANTS.H4} label="Position">
+      <Text as={TEXT_AS.H4} label="Position">
         {jobposition}
       </Text>
-      <Text as={TEXT_VARIANTS.H4} label="Tenureship">
+      <Text as={TEXT_AS.H4} label="Tenureship">
         {tenureship}
       </Text>
     </>

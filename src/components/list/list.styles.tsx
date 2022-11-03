@@ -1,20 +1,24 @@
 import styled from "styled-components";
 
-export const StyledList = styled.ul(
-  ({ theme }) => `
+export const StyledList = styled.ul`
   padding-left: 0;
+  list-style: none;
+`;
+
+export const StyledListItem = styled.li(
+  ({ theme }) => `
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  li {
-    list-style: none;
+  color: ${theme.colorWithContrast};
     margin-bottom: 5px;
     position: relative;
-    color: ${theme.colorWithContrast};
-  }
-  svg {
-    margin-right: 12px;
-    color: #43cea2;
-  }
-`
+    svg {
+      margin-right: 5px;
+    }
+    a,
+    svg {
+      color: ${theme.color};
+    }
+  `
 );

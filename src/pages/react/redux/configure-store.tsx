@@ -1,5 +1,4 @@
-import WithLineNumbers from "../../../utils/code-highlighter";
-
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 export interface trainingType {
   id: string;
@@ -56,11 +55,11 @@ const ReduxConfigureStore = () => {
   return (
     <>
       <p>Your Slice component/file</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>Your Store</p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
       <p>Your Dispatch Action</p>
-      <WithLineNumbers code={exampleCode3} language="jsx" />
+      <RenderCode code={exampleCode3} language="jsx" />
     </>
   );
 };

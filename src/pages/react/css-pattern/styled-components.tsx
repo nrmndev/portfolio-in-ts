@@ -1,5 +1,4 @@
-import WithLineNumbers from "../../../utils/code-highlighter";
-
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 import React, { useEffect } from "react";
 
@@ -24,7 +23,7 @@ const CSSStyledComponents = () => {
   return (
     <>
       <p className="color_1">useEffect implementation with Typescript</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>
         On the example above, you tell React to change the document title. It
         will change everytime you click the button because we learned that when

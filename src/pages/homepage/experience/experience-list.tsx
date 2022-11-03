@@ -1,31 +1,30 @@
 //import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
 import NotFound from "../../../components/error/notfound.component";
 import { BsArrowRight } from "react-icons/bs";
-import List from "../../../components/list/list.component";
+import List, { ListItem } from "../../../components/list/list.component";
 import Container from "../../../components/containers/container.component";
 import CompanyContainer from "./list-item-company.component";
 import {
   TimelineContainer,
   TimelineItem,
 } from "../../../components/timeline/timeline.component";
-import Button, {
-  BUTTON_VARIANTS,
-} from "../../../components/button/button.component";
-import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
+import Button from "../../../components/button/button.component";
+import Card from "../../../components/card/card.component";
 import { ExperienceType } from "../../../store/data/data-types";
-import Text, {
-  TEXT_COLOR,
-  TEXT_TRANSFORM,
-  TEXT_VARIANTS,
-} from "../../../components/typography/text.component";
+import Text from "../../../components/typography/text.component";
 import FlexChildContainer from "../../../components/containers/flex-child-container.component";
-import GapSeparator, {
-  SEPARATOR_VARIANTS,
-} from "../../../components/gap/gap.components";
+import GapSeparator from "../../../components/gap/gap.components";
 import {
-  FONT_SIZE,
-  HORIZONTAL_PADDING,
-} from "../../../components/theme-provider/theme-utilities";
+  TEXT_COLOR,
+  FONT_SIZE_AS,
+  BUTTON_VARIANT,
+  TEXT_AS,
+  CARD_VARIANT,
+  TEXT_TRANSFORM,
+  BUTTON_SIZE,
+  GAP_SEPARATOR_VARIANT,
+  TEXT_ALIGN,
+} from "../../../components/theme-provider/utilities";
 
 type ExperienceProps = {
   data: ExperienceType[];
@@ -48,7 +47,7 @@ const ExperienceList = ({ data }: ExperienceProps) => {
       } = experience;
       return (
         <TimelineItem key={id}>
-          <Card variant={CARD_VARIANTS.WITHSHADOW} bgGradientOnHover>
+          <Card variant={CARD_VARIANT.WITHSHADOW} bgGradientOnHover>
             <Container
               flex
               bg="none"
@@ -59,25 +58,35 @@ const ExperienceList = ({ data }: ExperienceProps) => {
             <hr />
             <Container bg="none">
               {description && (
-                <Text as={TEXT_VARIANTS.P} label={`About ${company}`}>
+                <Text as={TEXT_AS.P} label={`About ${company}`}>
                   {description}
                 </Text>
               )}
             </Container>
             <Container flex bg="none" gap="1%">
               <FlexChildContainer flexBasis="28%">
-                <List listItems={achievements} />
+                <List>
+                  {achievements.map((achievement) => (
+                    <ListItem key={achievement}>{achievement}</ListItem>
+                  ))}
+                </List>
               </FlexChildContainer>
               <FlexChildContainer flexBasis="68%">
-                {tasks && <List listItems={tasks} />}
+                {tasks && (
+                  <List>
+                    {tasks.map((task) => (
+                      <ListItem key={task}>{task}</ListItem>
+                    ))}
+                  </List>
+                )}
               </FlexChildContainer>
             </Container>
             <GapSeparator />
             <Button
               href={workURL}
-              size="lg"
+              size={BUTTON_SIZE.LG}
               className="mt-2"
-              variant={BUTTON_VARIANTS.gradient}
+              variant={BUTTON_VARIANT.gradient}
               block
             >
               {workURLText} <BsArrowRight size={"1em"} />
@@ -91,23 +100,22 @@ const ExperienceList = ({ data }: ExperienceProps) => {
 
   return (
     <Container id="WorksSection" fluid as="section">
-      <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
-        <GapSeparator size="sm" variant={SEPARATOR_VARIANTS.LINE} />
+      <Container>
+        <GapSeparator size="sm" variant={GAP_SEPARATOR_VARIANT.LINE} />
 
         <Text
-          as={TEXT_VARIANTS.H3}
+          as={TEXT_AS.H3}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
-          textAlign="center"
+          textAlign={TEXT_ALIGN.CENTER}
           textTransform={TEXT_TRANSFORM.UPPERCASE}
-          fontSizeAs={FONT_SIZE.H5}
+          fontSizeAs={FONT_SIZE_AS.H5}
         >
           Visit my portfolio and keep your feedback
         </Text>
         <Text
-          as={TEXT_VARIANTS.H2}
-          textColor={TEXT_COLOR.PRIMARY}
-          textAlign="center"
-          fontSizeAs={FONT_SIZE.H1}
+          as={TEXT_AS.H2}
+          textAlign={TEXT_ALIGN.CENTER}
+          fontSizeAs={FONT_SIZE_AS.H1}
         >
           My Portfolio
         </Text>

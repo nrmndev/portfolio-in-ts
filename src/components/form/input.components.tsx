@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+import { INPUT_TYPE } from "../theme-provider/utilities";
 import {
   StyledFormInput,
   StyledFormLabel,
@@ -28,11 +29,6 @@ export const FormLabel = ({ htmlFor, children }: FormLabelProps) => {
 export const FormErrorLabel = ({ children }: FormGroupProps) => {
   return <StyledErrorLabel>({children})</StyledErrorLabel>;
 };
-
-export enum INPUT_TYPE {
-  INPUT = "input",
-  TEXTAREA = "textarea",
-}
 
 //Input Type
 type FormInputProps = {

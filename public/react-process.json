@@ -78,7 +78,7 @@
       {
         "topic_id": "RR1",
         "topicTitle": "Configure Store",
-        "path": "redux/configure-estore"
+        "path": "redux/configure-store"
       },
       {
         "topic_id": "RR2",

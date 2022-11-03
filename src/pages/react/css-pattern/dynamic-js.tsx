@@ -1,5 +1,5 @@
 import { useState } from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 
 const exampleCode = `
 import { useState } from "react";
@@ -27,7 +27,7 @@ const CSSDynamicJS = () => {
         see that the styles and className is conditionally applied based on the
         value of &apos;error&apos; state
       </p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p style={{ color: error ? "red" : "black" }}>
         The style of this paragraph is dynamic to the value of state
         &apos;error&apos;

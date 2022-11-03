@@ -734,44 +734,32 @@
   ],
   "portfolio": [
     {
-      "id": "P1",
-      "title": "Component Documentation",
-      "portfolioURL": "/someurl",
-      "tags": ["React", "Prism Renderer", "Styled Component", "Redux"],
-      "category": "Documentation",
-      "portfolioImage": "portfolio_aecom.png"
-    },
-    {
       "id": "P2",
       "title": "React Cheatsheet",
-      "portfolioURL": "/someurl",
+      "portfolioURL": "/reactjs",
       "tags": ["React", "JavaScript", "Styled Component", "Redux", "Router"],
       "category": "Documentation",
-      "portfolioImage": "portfolio_process.png"
+      "portfolioImage": "portfolio_process.png",
+      "target": "_self"
     },
     {
       "id": "P3",
       "title": "Sample Online Store",
-      "portfolioURL": "/someurl",
+      "portfolioURL": "http://store.ngsilvestre.com",
       "tags": ["React", "Redux", "Router"],
       "category": "Online Store",
-      "portfolioImage": "portfolio_store.png"
+      "portfolioImage": "portfolio_store.png",
+      "target": "_blank"
     },
-    {
-      "id": "P4",
-      "title": "Testing Documentation",
-      "portfolioURL": "/someurl",
-      "tags": ["React", "JEST", "React Testing Library"],
-      "category": "Documentation",
-      "portfolioImage": "portfolio_process.png"
-    },
+
     {
       "id": "P5",
       "title": "AECOMViz Website",
       "portfolioURL": "https://aecomviz.com/",
       "tags": ["WordPress"],
       "category": "External Link",
-      "portfolioImage": "portfolio_aecom.png"
+      "portfolioImage": "portfolio_aecom.png",
+      "target": "_blank"
     },
     {
       "id": "P6",
@@ -779,7 +767,8 @@
       "portfolioURL": "https://www.ajinomoto.com.ph/",
       "tags": ["WordPress"],
       "category": "External Link",
-      "portfolioImage": "portfolio_ajinomoto.png"
+      "portfolioImage": "portfolio_ajinomoto.png",
+      "target": "_blank"
     },
     {
       "id": "P7",
@@ -787,7 +776,8 @@
       "portfolioURL": "http://toyconph.com/",
       "tags": ["WordPress"],
       "category": "External Link",
-      "portfolioImage": "portfolio_toycon.png"
+      "portfolioImage": "portfolio_toycon.png",
+      "target": "_blank"
     },
     {
       "id": "P8",
@@ -795,7 +785,8 @@
       "portfolioURL": "https://aecomviz.com/Colfax360",
       "tags": ["360 Virtual Rooms"],
       "category": "External Link",
-      "portfolioImage": "portfolio_colfax360.png"
+      "portfolioImage": "portfolio_colfax360.png",
+      "target": "_blank"
     },
     {
       "id": "P9",
@@ -803,7 +794,8 @@
       "portfolioURL": "https://www.unitedneon.com/",
       "tags": ["WordPress"],
       "category": "External Link",
-      "portfolioImage": "portfolio_unitedneon.png"
+      "portfolioImage": "portfolio_unitedneon.png",
+      "target": "_blank"
     }
   ]
 }

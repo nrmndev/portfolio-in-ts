@@ -1,10 +1,10 @@
 import { useReducer } from "react";
 import { InputHTMLAttributes } from "react";
+import { INPUT_TYPE } from "../theme-provider/utilities";
 import {
   FormInput,
   FormGroup,
   FormLabel,
-  INPUT_TYPE,
   FormErrorLabel,
 } from "./input.components";
 import { validate, VALIDATOR_TYPE } from "./validators";

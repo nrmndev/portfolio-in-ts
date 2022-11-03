@@ -1,9 +1,11 @@
 import styled, { DefaultTheme } from "styled-components";
 
 import {
-  handleHorizontalPadding,
-  HORIZONTAL_PADDING,
-} from "../theme-provider/theme-utilities";
+  handlePadding,
+  H_PADDING,
+  V_PADDING,
+  PADDING,
+} from "../theme-provider/utilities";
 
 interface IStyledSection {
   readonly bg: string | undefined;
@@ -14,7 +16,9 @@ interface IStyledSection {
   readonly gap: string;
   readonly justifyContent: string;
   readonly fixed: boolean;
-  readonly horizontalPadding: HORIZONTAL_PADDING;
+  readonly hPadding: H_PADDING;
+  readonly vPadding: V_PADDING;
+  readonly padding: PADDING;
 }
 
 const handleBG = (bg: string | undefined, img: string, theme: DefaultTheme) => {
@@ -64,7 +68,9 @@ export const StyledSection = styled.section<IStyledSection>(
     bg,
     img,
     justifyContent,
-    horizontalPadding,
+    padding,
+    hPadding,
+    vPadding,
     fluid,
     childFlexBasis,
     gap,
@@ -74,7 +80,7 @@ export const StyledSection = styled.section<IStyledSection>(
   background: ${handleBG(bg, img, theme)};
   justify-content: ${justifyContent && justifyContent};
   position: relative;
-  ${horizontalPadding && handleHorizontalPadding(horizontalPadding)};
+  ${handlePadding(padding, hPadding, vPadding)};
   ${handleFluid(fluid)};
 
   ${

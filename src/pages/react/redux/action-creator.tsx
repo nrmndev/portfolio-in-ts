@@ -2,7 +2,7 @@ const ReduxActionCreator = () => {
   return (
     <>
       <p>Content to follow</p>
-      {/* <WithLineNumbers code={exampleCode} language="jsx" /> */}
+      {/* <RenderCode code={exampleCode} language="jsx" /> */}
     </>
   );
 };

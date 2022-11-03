@@ -1,28 +1,18 @@
+import { CARD_PADDING, CARD_VARIANT } from "../theme-provider/utilities";
 import {
   StyledCardBase,
   StyledCardWithShadow,
   StyledCardContent,
 } from "./card.styles";
 
-export enum CARD_VARIANTS {
-  BASE = "base",
-  WITHSHADOW = "withShadow",
-}
-
-export enum CARD_PADDING {
-  SM = "1.5rem",
-  MD = "2rem",
-  LG = "2.5rem",
-  XL = "3rem",
-}
-const getCard = (variant = CARD_VARIANTS.BASE) =>
+const getCard = (variant = CARD_VARIANT.BASE) =>
   ({
-    [CARD_VARIANTS.BASE]: StyledCardBase,
-    [CARD_VARIANTS.WITHSHADOW]: StyledCardWithShadow,
+    [CARD_VARIANT.BASE]: StyledCardBase,
+    [CARD_VARIANT.WITHSHADOW]: StyledCardWithShadow,
   }[variant]);
 
 type CardProps = {
-  variant?: CARD_VARIANTS;
+  variant?: CARD_VARIANT;
   children: React.ReactNode;
   bgGradientOnHover?: boolean;
   padding?: CARD_PADDING;
@@ -31,7 +21,7 @@ type CardProps = {
 };
 
 const Card = ({
-  variant = CARD_VARIANTS.BASE,
+  variant = CARD_VARIANT.BASE,
   children,
   bgGradientOnHover = false,
   padding = CARD_PADDING.MD,

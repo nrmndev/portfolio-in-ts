@@ -1,4 +1,4 @@
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 import { useState, useCallback } from "react";
 const exampleCode = `
 import React, { useState, useCallback } from "react";
@@ -28,7 +28,7 @@ const ReactHooksUseCallback = () => {
   return (
     <>
       <p className="color_1">useCallback</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <div>
         {showParagraph && (
           <p>Hello I am visibile when showParagraph is set to true</p>

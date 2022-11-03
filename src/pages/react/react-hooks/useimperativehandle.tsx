@@ -1,7 +1,6 @@
 import { useRef } from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
 import TestImperative from "./testImperative";
-
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 import React, { useState } from "react";
 
@@ -63,11 +62,11 @@ const ReactHooksUseImperative = () => {
       <p className="color_1">
         Child Component that has imperative handle function &quot;focus&quot;
       </p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p className="color_1">
         Parent Component can now call the ref function &quot;focus&quot;
       </p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
     </>
   );
 };

@@ -1,19 +1,15 @@
-import { Row, Col } from "react-bootstrap";
-import Text, { TEXT_VARIANTS } from "../typography/text.component";
-import StyledFetchErrorContainer from "./fetch-error.styles";
+import Container from "../containers/container.component";
+import { TEXT_AS } from "../theme-provider/utilities";
+import Text from "../typography/text.component";
 
 type Props = {
   error: string;
 };
 const FetchError = ({ error = "Not Found" }: Props) => {
   return (
-    <StyledFetchErrorContainer fluid>
-      <Row>
-        <Col className="flex__center">
-          <Text as={TEXT_VARIANTS.H3}>{error}</Text>
-        </Col>
-      </Row>
-    </StyledFetchErrorContainer>
+    <Container fluid>
+      <Text as={TEXT_AS.H3}>{error}</Text>
+    </Container>
   );
 };
 

@@ -1,14 +1,16 @@
 import { FaAward } from "react-icons/fa";
 import { BsArrowRight, BsJournalCheck, BsPencil } from "react-icons/bs";
-import Card, { CARD_VARIANTS } from "../../../components/card/card.component";
-import Button, {
-  BUTTON_VARIANTS,
-} from "../../../components/button/button.component";
+import Card from "../../../components/card/card.component";
+import Button from "../../../components/button/button.component";
 import Badge from "../../../components/badge/badge-icon.component";
-import Text, {
-  TEXT_VARIANTS,
-} from "../../../components/typography/text.component";
+import Text from "../../../components/typography/text.component";
 import { TrainingType } from "../../../store/data/data-types";
+import {
+  BUTTON_VARIANT,
+  TEXT_AS,
+  CARD_VARIANT,
+  TEXT_COLOR,
+} from "../../../components/theme-provider/utilities";
 
 type Props = {
   data: TrainingType;
@@ -40,15 +42,15 @@ const TrainingListItem = (props: Props) => {
 
   return (
     <>
-      <Card variant={CARD_VARIANTS.WITHSHADOW} bgGradientOnHover>
-        <Badge icon={badge} title={status} color="#43cea2" />
-        <Text as={TEXT_VARIANTS.H3} className="mt-5">
+      <Card variant={CARD_VARIANT.WITHSHADOW} bgGradientOnHover>
+        <Badge icon={badge} title={status} color={TEXT_COLOR.PRIMARY} />
+        <Text as={TEXT_AS.H3} className="mt-5">
           {title}
         </Text>
-        <Text as={TEXT_VARIANTS.P}>{description}</Text>
+        <Text as={TEXT_AS.P}>{description}</Text>
         <Button
           onClick={props.onClick.bind(null, id)}
-          variant={BUTTON_VARIANTS.gradient}
+          variant={BUTTON_VARIANT.gradient}
         >
           See course outline
           <BsArrowRight size={"1em"} />
@@ -68,7 +70,7 @@ export default TrainingListItem;
 // >
 //   <Button
 //     onClick={props.onClick.bind(null, id)}
-//     variant={BUTTON_VARIANTS.icon}
+//     variant={BUTTON_VARIANT.icon}
 //   >
 //     <span>
 //       <BsArrowRight size={"1em"} />

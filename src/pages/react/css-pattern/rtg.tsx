@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./rtg.scss";
-import WithLineNumbers from "../../../utils/code-highlighter";
+
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 
 const exampleCode = `
 import { useState } from "react";
@@ -125,9 +126,9 @@ const CSSReactTransitionGroup = () => {
       </div>
       <hr />
       <p>Your Component (ClassNames Approach):</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>SCSS:</p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
     </>
   );
 };

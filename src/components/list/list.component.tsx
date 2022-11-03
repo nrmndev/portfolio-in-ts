@@ -1,24 +1,27 @@
 import { BiCheckDouble } from "react-icons/bi";
-import { StyledList } from "./list.styles";
+import { StyledList, StyledListItem } from "./list.styles";
 
 type ListProps = {
-  listItems: string[];
+  children: React.ReactNode;
+};
+const List = ({ children }: ListProps) => {
+  return <StyledList>{children}</StyledList>;
+};
+
+type ListItemProps = {
+  children: React.ReactNode;
   listStyle?: JSX.Element;
 };
-const List = ({ listItems, listStyle = <BiCheckDouble /> }: ListProps) => {
+
+export const ListItem = ({
+  children,
+  listStyle = <BiCheckDouble />,
+}: ListItemProps) => {
   return (
-    <>
-      {listItems && (
-        <StyledList>
-          {listItems.map((listItem: string, i: number) => (
-            <li key={i}>
-              {listStyle}
-              {listItem}
-            </li>
-          ))}
-        </StyledList>
-      )}
-    </>
+    <StyledListItem>
+      {listStyle}
+      {children}
+    </StyledListItem>
   );
 };
 

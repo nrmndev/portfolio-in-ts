@@ -4,7 +4,7 @@ import usePasswordHelperHTML from "../../../components/hooks/usePasswordHelper";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import { useState } from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 
 const exampleCode = `
 import React, { useEffect, useReducer } from "react";
@@ -467,10 +467,10 @@ const InputValidateWithInterfaceV4 = () => {
         </p>
 
         <p>Sample Component</p>
-        <WithLineNumbers code={exampleCode} language="jsx" />
+        <RenderCode code={exampleCode} language="jsx" />
 
         <p>Input Validation Custom Hook</p>
-        <WithLineNumbers code={exampleCode2} language="jsx" />
+        <RenderCode code={exampleCode2} language="jsx" />
       </Container>
     </>
   );

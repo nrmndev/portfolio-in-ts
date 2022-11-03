@@ -1,5 +1,5 @@
-import WithLineNumbers from "../../../utils/code-highlighter";
 //import useSortList from "./usememo-sample";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 import { useMemo } from "react";
 
@@ -35,10 +35,10 @@ const ReactHooksUseMemo = () => {
         run when needed
       </p>
 
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>Your Parent Component</p>
 
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
       <p>Result</p>
       {sampleData && <p>{sampleData}</p>}
     </>

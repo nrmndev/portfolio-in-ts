@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 import { useRef } from "react";
 const exampleCode = `
 import React, { useRef } from "react";
@@ -50,9 +50,9 @@ const ReactHooksUseRef = () => {
   return (
     <>
       <div>Sample use of Ref on HTMLElements</div>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <div>Sample use of Ref on Functions</div>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
     </>
   );
 };

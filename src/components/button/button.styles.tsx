@@ -1,30 +1,29 @@
 import styled from "styled-components";
+import {
+  BACKGROUND_COLOR,
+  BOX_SHADOW,
+  BUTTON_SIZE,
+  handleBackgroundColor,
+  handleBoxShadow,
+  handleButtonSize,
+  handleTextColor,
+  TEXT_COLOR,
+} from "../theme-provider/utilities";
 
 interface StyledButtonProps {
-  readonly size: string;
+  readonly size: BUTTON_SIZE;
   readonly block: boolean | undefined;
   readonly color: string;
 }
-const handleButtonSize = (size: string) => {
-  switch (size) {
-    case "sm":
-      return ".4rem .8rem";
-    case "md":
-    default:
-      return ".7rem 1.4rem";
-    case "lg":
-      return "1.2rem 2.4rem";
-  }
-};
 
 export const StyledBaseButton = styled.button<StyledButtonProps>(
   ({ theme, block, color, size }) => `
   width: ${block ? `100%` : `inherit`};
   ${color && `background-color:${color};`}
-  padding: ${size && handleButtonSize(size)};
+  ${handleButtonSize(size)}
   letter-spacing: 0.5px;
   font-size: 1rem;
-  color: ${theme.colorPrimary};
+  ${handleTextColor(TEXT_COLOR.PRIMARY)};
   text-transform: uppercase;
   font-weight: bolder;
   border-width: 1px;
@@ -38,7 +37,7 @@ export const StyledBaseButton = styled.button<StyledButtonProps>(
   }
   &:hover {
     background-color: #fff;
-    ${color && `color:${color};`}
+    ${handleTextColor(TEXT_COLOR.PRIMARY)};
     border-color: black;
   }
 
@@ -64,7 +63,7 @@ export const StyledGoogleSignInButton = styled(StyledBaseButton)`
 export const StyledInvertedButton = styled(StyledBaseButton)(
   ({ theme, color }) => `
   background-color: white;
-  color: ${theme.colorPrimary};
+  ${handleTextColor(TEXT_COLOR.PRIMARY)};
    ${color && `border-color:${color};`}
   &:hover {
      ${color && `background-color:${color};`}
@@ -112,10 +111,11 @@ export const StyledButtonWithIcon = styled(StyledBaseButton)`
 `;
 
 export const StyledGradientButton = styled.button<StyledButtonProps>(
-  ({ theme, size, block }) => `
-  background: ${theme.backgroundColorGradient};
-  box-shadow: ${theme.boxShadow};
-  padding: ${size && handleButtonSize(size)};
+  ({ size, block }) => `
+  ${handleBackgroundColor(BACKGROUND_COLOR.GRADIENT)}
+  ${handleBoxShadow(BOX_SHADOW.PRIMARY)}
+  ${handleButtonSize(size)}
+  ${handleTextColor(TEXT_COLOR.PRIMARY)}
   border: none;
   width: ${block ? `100%` : `inherit`};
   text-transform: uppercase;
@@ -126,11 +126,8 @@ export const StyledGradientButton = styled.button<StyledButtonProps>(
   display: inline-block;
   margin: 5px;
   text-align: center;
-  color: ${theme.colorPrimary};
   transition: transform 0.4s ease-in-out;
   &:hover {
-    background: ${theme.backgroundColorGradient};
-    color: ${theme.colorPrimary};
     transform: translateY(-3px);
   }
   &:disabled,

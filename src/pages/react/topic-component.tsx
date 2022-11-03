@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
+import { LoadingSkeletonPage } from "../../components/preloader/loading-skeleton.component.";
 //import FetchError from "../../components/error/fetch-error";
-import Preloader from "../../components/preloader/loading";
+//import Preloader from "../../components/preloader/loading";
 
 type Props = {
   links: string[] | undefined;
@@ -23,7 +24,7 @@ const TopicComponent = ({ links }: Props) => {
   //   return resp;
   // });
   return (
-    <Suspense fallback={<Preloader />}>
+    <Suspense fallback={<LoadingSkeletonPage />}>
       <HTMLRender error="Topic not found" />
     </Suspense>
   );

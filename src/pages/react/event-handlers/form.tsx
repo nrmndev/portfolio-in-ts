@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import WithLineNumbers from "../../../utils/code-highlighter";
-
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 const exampleCode = `
 const Sample = () => {
   const [validationText, setValidationText] = useState<string>("");
@@ -169,7 +168,7 @@ const EventHandlersFormEvent = () => {
         </div>
       </form>
 
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
     </>
   );
 };

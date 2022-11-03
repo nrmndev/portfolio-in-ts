@@ -4,20 +4,22 @@ import { useAppDispatch } from "../../../store/hooks/typedhooks";
 import { uiActions } from "../../../store/ui/ui-slice";
 
 import { TrainingType } from "../../../store/data/data-types";
-import { FONT_SIZE } from "../../../components/theme-provider/utilities/typography";
 import Modal from "../../../components/modal/modal.component";
 import NotFound from "../../../components/error/notfound.component";
 import TrainingListItem from "./training-list-item.component";
 import TrainingListItemModal from "./training-list-item-modal.component";
 import Container from "../../../components/containers/container.component";
-import GapSeparator, {
-  SEPARATOR_VARIANTS,
-} from "../../../components/gap/gap.components";
-import Text, {
+import GapSeparator from "../../../components/gap/gap.components";
+import Text from "../../../components/typography/text.component";
+import {
+  FONT_SIZE_AS,
+  H_PADDING,
+  TEXT_AS,
   TEXT_COLOR,
   TEXT_TRANSFORM,
-  TEXT_VARIANTS,
-} from "../../../components/typography/text.component";
+  GAP_SEPARATOR_VARIANT,
+  TEXT_ALIGN,
+} from "../../../components/theme-provider/utilities";
 //import useCheckInViewById from "../../../components/hooks/useCheckInViewById";
 
 type Props = {
@@ -82,23 +84,22 @@ const TrainingList = (props: Props) => {
   }
 
   return (
-    <Container id="TrainingSection" fluid as="section">
+    <Container id="TrainingSection" fluid as="section" hPadding={H_PADDING.LG}>
       <Container id="training_heading">
-        <GapSeparator variant={SEPARATOR_VARIANTS.LINE} size="lg" />
+        <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} size="lg" />
         <Text
-          as={TEXT_VARIANTS.H4}
+          as={TEXT_AS.H4}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
-          textAlign="center"
+          textAlign={TEXT_ALIGN.CENTER}
           textTransform={TEXT_TRANSFORM.UPPERCASE}
-          fontSizeAs={FONT_SIZE.H5}
+          fontSizeAs={FONT_SIZE_AS.H5}
         >
           Keeping track of technology
         </Text>
         <Text
-          as={TEXT_VARIANTS.H2}
-          textColor={TEXT_COLOR.PRIMARY}
-          textAlign="center"
-          fontSizeAs={FONT_SIZE.H1}
+          as={TEXT_AS.H2}
+          textAlign={TEXT_ALIGN.CENTER}
+          fontSizeAs={FONT_SIZE_AS.H1}
         >
           Training Path
         </Text>

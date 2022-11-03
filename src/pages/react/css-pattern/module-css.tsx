@@ -1,4 +1,4 @@
-import WithLineNumbers from "../../../utils/code-highlighter";
+import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 import styles from "./custom.module.css";
 const exampleCode = `
 import styles from "./custom.module.css";
@@ -57,9 +57,9 @@ const CSSModuleCSS = () => {
         compiler generates unique string suffixes on your class, simply to make
         it, unique.
       </p>
-      <WithLineNumbers code={exampleCode2} language="jsx" />
+      <RenderCode code={exampleCode2} language="jsx" />
       <p>Your component</p>
-      <WithLineNumbers code={exampleCode} language="jsx" />
+      <RenderCode code={exampleCode} language="jsx" />
       <p>Result:</p>
       <p className={`${styles.primary} ${styles.underline} pt-2`}>
         This paragraph element is being styled using module css

@@ -1,0 +1,74 @@
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
+import { BsFillStarFill } from "react-icons/bs";
+import Badge from "./badge-icon.component";
+import "jest-styled-components";
+import ReduxThemeProvider from "../theme-provider/theme-provider.component";
+import { TEXT_COLOR } from "../theme-provider/utilities";
+import { renderWithProviders } from "../../utils/test/test-utils";
+import { setupStore } from "../../store";
+import { ThemeProvider } from "styled-components";
+
+describe("Badge Component", () => {
+  test("renders icon as Img", () => {
+    <Badge icon={<img data-testid="svg-element" />} />;
+
+    const img = screen.queryByTestId("svg-element");
+    expect(img).toBeInTheDocument();
+  });
+
+  test("renders icon as SVG", () => {
+    const store = setupStore();
+    renderWithProviders(
+      <ReduxThemeProvider>
+        <Badge icon={<svg data-testid="svg-element"></svg>} />
+      </ReduxThemeProvider>,
+      {
+        store,
+      }
+    );
+    const svg = screen.queryByTestId("svg-element");
+    expect(svg).toBeInTheDocument();
+  });
+
+  test("renders title props", () => {
+    const store = setupStore();
+    renderWithProviders(
+      <ReduxThemeProvider>
+        <Badge
+          icon={<BsFillStarFill />}
+          title="HELLO"
+          color={TEXT_COLOR.PRIMARY}
+        />
+      </ReduxThemeProvider>,
+      {
+        store,
+      }
+    );
+
+    const outputElement = screen.getByText("HELLO");
+    expect(outputElement).toBeTruthy();
+  });
+
+  test("renders title and color props", () => {
+    const tree = renderer
+      .create(
+        <ReduxThemeProvider>
+          <Badge
+            icon={<BsFillStarFill />}
+            title="HELLO"
+            color={TEXT_COLOR.PRIMARY}
+          />
+        </ReduxThemeProvider>
+      )
+      .toJSON();
+    render(
+      <ReduxThemeProvider>
+        <Badge icon={<BsFillStarFill />} title="HELLO" />
+      </ReduxThemeProvider>
+    );
+    const title = screen.getByText("HELLO");
+    expect(title).toBeTruthy();
+    expect(tree).toHaveStyleRule("color", "red");
+  });
+});

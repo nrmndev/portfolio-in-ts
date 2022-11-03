@@ -1,7 +1,7 @@
 import StyledSectionTitle from "./section-titles.styles";
 import { HTMLAttributes } from "react";
 
-export enum TITLE_VARIANTS {
+export enum TITLE_VARIANT {
   PRIMARY = "primary",
   BACKGROUNDCLIP = "background-clip",
   WHITE = "WHITE",
@@ -9,9 +9,9 @@ export enum TITLE_VARIANTS {
 
 type SectionTitleProps = {
   title: string;
-  titleVariant?: TITLE_VARIANTS;
+  titleVariant?: TITLE_VARIANT;
   subTitle?: string;
-  subTitleVariant?: TITLE_VARIANTS;
+  subTitleVariant?: TITLE_VARIANT;
   content?: string;
   textAlign?: "left" | "center" | "right";
 } & HTMLAttributes<HTMLHeadingElement | HTMLParagraphElement>;
@@ -20,8 +20,8 @@ const SectionTitle = ({
   title,
   subTitle,
   textAlign = "center",
-  titleVariant = TITLE_VARIANTS.PRIMARY,
-  subTitleVariant = TITLE_VARIANTS.PRIMARY,
+  titleVariant = TITLE_VARIANT.PRIMARY,
+  subTitleVariant = TITLE_VARIANT.PRIMARY,
   ...rest
 }: SectionTitleProps) => {
   return (

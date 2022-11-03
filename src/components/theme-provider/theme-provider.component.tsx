@@ -20,3 +20,18 @@ const ReduxThemeProvider = ({ children }: ReduxThemeProviderProps) => {
 };
 
 export default ReduxThemeProvider;
+
+export const ThemeProviderTestWrapper = ({
+  children,
+}: ReduxThemeProviderProps) => {
+  const theme = "dark";
+  let restTheme: DefaultTheme;
+  if (theme === "dark") {
+    restTheme = { ...themeDark, theme: theme };
+  } else {
+    restTheme = { ...themeLight, theme: theme };
+  }
+  // restTheme = { ...restTheme, ...themeUtilities };
+  //console.log(restTheme);
+  return <ThemeProvider theme={restTheme}>{children}</ThemeProvider>;
+};

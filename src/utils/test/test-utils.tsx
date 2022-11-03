@@ -10,6 +10,7 @@ import { uiActions, uiSlice } from "../../store/ui/ui-slice";
 import { dataSlice } from "../../store/data/data-slice";
 import { UiInitialValueType } from "../../store/ui/ui-types";
 import { DataInitialValueType } from "../../store/data/data-types";
+import ReduxThemeProvider from "../../components/theme-provider/theme-provider.component";
 // As a basic setup, import your same slice reducers
 //import userReducer from "../features/users/userSlice";
 
@@ -33,7 +34,11 @@ export function renderWithProviders(
   }: ExtendedRenderOptions = {}
 ) {
   function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
-    return <Provider store={store}>{children}</Provider>;
+    return (
+      <Provider store={store}>
+        <ReduxThemeProvider>{children}</ReduxThemeProvider>
+      </Provider>
+    );
   }
 
   // Return an object with the store and all of RTL's query functions

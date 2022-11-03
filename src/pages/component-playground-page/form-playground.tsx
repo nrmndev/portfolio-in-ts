@@ -3,27 +3,27 @@ import { useRef, useState, useEffect } from "react";
 //import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import useInput from "../../components/form/useInputReducer";
 
-import Button, {
-  BUTTON_VARIANTS,
-} from "../../components/button/button.component";
-import { INPUT_TYPE } from "../../components/form/input.components";
+import Button from "../../components/button/button.component";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
 } from "../../components/form/validators";
 import GapSeparator from "../../components/gap/gap.components";
 import Card from "../../components/card/card.component";
-import Text, {
-  TEXT_COLOR,
-  TEXT_TRANSFORM,
-  TEXT_VARIANTS,
-} from "../../components/typography/text.component";
-import Preloader from "../../components/preloader/loading";
+import Text from "../../components/typography/text.component";
+//import Preloader from "../../components/preloader/loading";
 import {
-  FONT_SIZE,
-  HORIZONTAL_PADDING,
-} from "../../components/theme-provider/theme-utilities";
+  TEXT_COLOR,
+  FONT_SIZE_AS,
+  BUTTON_VARIANT,
+  TEXT_AS,
+  TEXT_TRANSFORM,
+  BUTTON_SIZE,
+  INPUT_TYPE,
+  TEXT_ALIGN,
+} from "../../components/theme-provider/utilities";
 import Container from "../../components/containers/container.component";
+import { LoadingSkeletonPage } from "../../components/preloader/loading-skeleton.component.";
 
 const FormPlayGround = () => {
   const [isLoading] = useState<boolean>(false);
@@ -114,21 +114,21 @@ const FormPlayGround = () => {
     };
   }, [isNameValid, isEmailValid, isMessageValid]);
   return (
-    <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
-      <Container horizontalPadding={HORIZONTAL_PADDING.NONE}>
+    <Container fluid>
+      <Container>
         <Text
-          as={TEXT_VARIANTS.H4}
-          fontSizeAs={FONT_SIZE.P}
-          textAlign="center"
+          as={TEXT_AS.H4}
+          fontSizeAs={FONT_SIZE_AS.P}
+          textAlign={TEXT_ALIGN.CENTER}
           textTransform={TEXT_TRANSFORM.UPPERCASE}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
         >
           Ask Me Anything
         </Text>
         <Text
-          as={TEXT_VARIANTS.H2}
-          fontSizeAs={FONT_SIZE.H1}
-          textAlign="center"
+          as={TEXT_AS.H2}
+          fontSizeAs={FONT_SIZE_AS.H1}
+          textAlign={TEXT_ALIGN.CENTER}
         >
           Contact
         </Text>
@@ -139,14 +139,14 @@ const FormPlayGround = () => {
           {passwordInput}
           {messageInput}
           <GapSeparator size="md" />
-          {isLoading && <Preloader />}
+          {isLoading && <LoadingSkeletonPage />}
           {emailResponse === "Success" && (
-            <Text as={TEXT_VARIANTS.P}>
+            <Text as={TEXT_AS.P}>
               Thanks for contacting me, I&apos;ll get back to you the soonest!
             </Text>
           )}
           {emailResponse === "Error" && (
-            <Text as={TEXT_VARIANTS.P}>
+            <Text as={TEXT_AS.P}>
               Something went wrong, please try again later
             </Text>
           )}
@@ -154,8 +154,8 @@ const FormPlayGround = () => {
             as="button"
             type="submit"
             block
-            variant={BUTTON_VARIANTS.gradient}
-            size="lg"
+            variant={BUTTON_VARIANT.gradient}
+            size={BUTTON_SIZE.LG}
             ref={buttonRef}
           >
             Submit
