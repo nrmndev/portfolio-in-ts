@@ -6,7 +6,6 @@ import { ThemeProviderTestWrapper } from "../theme-provider/theme-provider.compo
 import { BADGE_VARIANT } from "../theme-provider/utilities";
 import { renderWithProviders } from "../../utils/test/test-utils";
 import { useStore } from "react-redux";
-import * as axios from "axios";
 
 describe("Badge Component", () => {
   jest.mock("axios");
