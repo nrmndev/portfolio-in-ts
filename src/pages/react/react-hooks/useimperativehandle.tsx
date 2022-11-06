@@ -1,6 +1,12 @@
 import { useRef } from "react";
 import TestImperative from "./testImperative";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
+import Text from "../../../components/typography/text.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import GapSeparator from "../../../components/gap/gap.components";
 const exampleCode = `
 import React, { useState } from "react";
 
@@ -58,15 +64,17 @@ const ReactHooksUseImperative = () => {
   inputRef.current?.focus();
   return (
     <>
+      <Text as={TEXT_AS.H2}>useImperativeHandle</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
       <TestImperative placeholder="Enter your name" ref={inputRef} />
-      <p className="color_1">
+      <Text>
         Child Component that has imperative handle function &quot;focus&quot;
-      </p>
-      <RenderCode code={exampleCode} language="jsx" />
-      <p className="color_1">
+      </Text>
+      <RenderCode code={exampleCode} language="tsx" />
+      <Text>
         Parent Component can now call the ref function &quot;focus&quot;
-      </p>
-      <RenderCode code={exampleCode2} language="jsx" />
+      </Text>
+      <RenderCode code={exampleCode2} language="tsx" />
     </>
   );
 };

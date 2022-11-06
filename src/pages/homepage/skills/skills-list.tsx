@@ -6,7 +6,7 @@ import Text from "../../../components/typography/text.component";
 import {
   FONT_SIZE_AS,
   TEXT_COLOR,
-  H_PADDING,
+  PADDING,
   TEXT_AS,
   TEXT_TRANSFORM,
   TEXT_ALIGN,
@@ -30,8 +30,8 @@ const SkillsList = ({ data }: SkillsListProps) => {
   }
 
   return (
-    <Container id="SkillsSection" as="section" fluid>
-      <Container hPadding={H_PADDING.LG}>
+    <Container id="SkillsSection" as="section" fluid hPadding={PADDING.MD}>
+      <Container hPadding={PADDING.LG}>
         <Text
           as={TEXT_AS.H4}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
@@ -48,7 +48,7 @@ const SkillsList = ({ data }: SkillsListProps) => {
         >
           Front End Developer
         </Text>
-        <Container flex childFlexBasis="31.33%" gap="3%">
+        <Container flex lg={4} md={6} sm={12} gap="1.5%" padding={PADDING.SM}>
           {SkillListItemJSX}
         </Container>
       </Container>

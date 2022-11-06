@@ -11,7 +11,7 @@ import Text from "../../components/typography/text.component";
 import {
   FONT_SIZE_AS,
   TEXT_COLOR,
-  H_PADDING,
+  PADDING,
   TEXT_AS,
 } from "../../components/theme-provider/utilities";
 import GapSeparator from "../../components/gap/gap.components";
@@ -109,7 +109,7 @@ const ReactPage = () => {
   return (
     <>
       <GapSeparator size={"lg"} />
-      <Container fluid hPadding={H_PADDING.SM} flex>
+      <Container fluid hPadding={PADDING.SM} flex>
         <FlexChildContainer flexBasis="68%">
           <Container as="article" flex gap="10%" childFlexBasis="80%">
             <Container>

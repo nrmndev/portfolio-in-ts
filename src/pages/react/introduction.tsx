@@ -15,15 +15,15 @@ const ReactIntroduction = () => {
       >
         ReactJS Cheat Sheet
       </Text>
-      <h3>Getting Started</h3>
-      <p>
+      <Text as={TEXT_AS.H3}>Getting Started</Text>
+      <Text>
         This page is an overview of all my skills process implemented using
         React and related resources.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Feel free to take a look at other provided topics that you might find
         useful.
-      </p>
+      </Text>
     </>
   );
 };

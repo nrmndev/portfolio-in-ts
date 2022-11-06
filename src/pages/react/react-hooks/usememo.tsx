@@ -1,5 +1,11 @@
 //import useSortList from "./usememo-sample";
+import GapSeparator from "../../../components/gap/gap.components";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import Text from "../../../components/typography/text.component";
 const exampleCode = `
 import { useMemo } from "react";
 
@@ -30,16 +36,18 @@ const ReactHooksUseMemo = () => {
   //const sortedSampleData = useSortList(sampleData);
   return (
     <>
-      <p>
+      <Text as={TEXT_AS.H2}>Context API</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
+      <Text>
         Custom Hook with Memoized function, This will cause the function to only
         run when needed
-      </p>
+      </Text>
 
-      <RenderCode code={exampleCode} language="jsx" />
-      <p>Your Parent Component</p>
+      <RenderCode code={exampleCode} language="tsx" />
+      <Text>Your Parent Component</Text>
 
-      <RenderCode code={exampleCode2} language="jsx" />
-      <p>Result</p>
+      <RenderCode code={exampleCode2} language="tsx" />
+      <Text>Result</Text>
       {sampleData && <p>{sampleData}</p>}
     </>
   );

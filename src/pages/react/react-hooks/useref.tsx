@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
 import { useRef } from "react";
+import Text from "../../../components/typography/text.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import GapSeparator from "../../../components/gap/gap.components";
 const exampleCode = `
 import React, { useRef } from "react";
 
@@ -49,10 +55,12 @@ const ReactHooksUseRef = () => {
   });
   return (
     <>
-      <div>Sample use of Ref on HTMLElements</div>
-      <RenderCode code={exampleCode} language="jsx" />
-      <div>Sample use of Ref on Functions</div>
-      <RenderCode code={exampleCode2} language="jsx" />
+      <Text as={TEXT_AS.H2}>useReducer</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
+      <Text>Sample use of Ref on HTMLElements</Text>
+      <RenderCode code={exampleCode} language="tsx" />
+      <Text>Sample use of Ref on Functions</Text>
+      <RenderCode code={exampleCode2} language="tsx" />
     </>
   );
 };

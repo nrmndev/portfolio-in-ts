@@ -4,6 +4,8 @@ import {
   BUTTON_SIZE,
   BUTTON_VARIANT,
 } from "../../../components/theme-provider/utilities";
+import { UTIL_TEXT_AS } from "../../../components/theme-provider/utilities/typography";
+import Text from "../../../components/typography/text.component";
 import { TrainingType } from "../../../store/data/data-types";
 //import { TrainingData } from "./training-list-item.component";
 
@@ -15,25 +17,26 @@ const TrainingListItemModal = ({ data }: TrainingListItemModalProps) => {
     data;
   return (
     <>
-      <h3 className="color__primary">{title}</h3>
-      <p className="mb-0 mt-0">{description}</p>
-      <p>Status: {status}</p>
-      <p>
+      <Text as={UTIL_TEXT_AS.H3}>{title}</Text>
+      <Text>{description}</Text>
+      <Text>Status: {status}</Text>
+      <Text>
         {status === "Completed" && (
           <Button
+            as="a"
             href={linkToCertificate}
             target="_blank"
             rel="noreferrer"
             size={BUTTON_SIZE.SM}
-            variant={BUTTON_VARIANT.inverted}
+            variant={BUTTON_VARIANT.gradient}
           >
             View Certificate
           </Button>
         )}
-      </p>
+      </Text>
 
       <hr />
-      <h4 className="h5">Course Outline</h4>
+      <Text as={UTIL_TEXT_AS.H4}>Course Outline</Text>
 
       <List>
         {courseHighlights.map((highlight) => {

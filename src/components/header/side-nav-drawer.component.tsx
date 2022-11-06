@@ -1,4 +1,4 @@
-import { StaticMessages } from "../../utils/interfaces/interfaces";
+import { StaticMessages } from "../../interface";
 import {
   StyledSideNavDrawer,
   StyledSideNavDrawerList,

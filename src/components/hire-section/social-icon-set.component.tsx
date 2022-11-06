@@ -7,9 +7,8 @@ import {
   BsTelephoneInboundFill,
 } from "react-icons/bs";
 import Button from "../button/button.component";
-import { MouseEventType } from "../../interface";
+import { MouseEventType, StaticMessages } from "../../interface";
 
-import { StaticMessages } from "../../utils/interfaces/interfaces";
 import {
   uiClearMessage,
   uiSetModalActive,

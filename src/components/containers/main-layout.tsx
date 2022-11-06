@@ -4,7 +4,7 @@ import {
   uiIsMobile,
   //uiTheme,
 } from "../../store/ui/ui-selector";
-import NormonHTML from "../portals/normon-portal";
+import MessageOverlay from "../portals/messages.component";
 import { StyledMain } from "./main-layout.styles";
 
 type Props = {
@@ -19,7 +19,7 @@ const MainLayout = (props: Props): JSX.Element => {
     <StyledMain className="main">
       <div id="top"></div>
       {props.children}
-      {isActive && !isMobile && <NormonHTML />}
+      {isActive && !isMobile && <MessageOverlay />}
     </StyledMain>
   );
 };

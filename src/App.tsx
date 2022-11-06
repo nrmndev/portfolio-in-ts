@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./store/hooks/typedhooks";
-import { ThemeType } from "./utils/interfaces/theme";
+
 import { Routes, Route } from "react-router-dom";
 import {
   uiIsMessageActive,
@@ -26,6 +26,7 @@ import ReduxPlayground from "./pages/redux-playground/redux";
 import ContainerPlayground from "./pages/component-playground-page/container-playground";
 import FormPlayGround from "./pages/component-playground-page/form-playground";
 import VideoWidget from "./components/video-widget/video-widget.component";
+import { THEMETYPE } from "./components/theme-provider/theme";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -43,12 +44,12 @@ function App() {
 
   useEffect(() => {
     const body = document.getElementById("body");
-    switch (currentTheme as ThemeType) {
-      case ThemeType.DARK:
+    switch (currentTheme as THEMETYPE) {
+      case THEMETYPE.DARK:
         body && body.classList.add("dark");
         body && body.classList.remove("light");
         break;
-      case ThemeType.LIGHT:
+      case THEMETYPE.LIGHT:
         body && body.classList.add("light");
         body && body.classList.remove("dark");
         break;

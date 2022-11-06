@@ -24,6 +24,7 @@ import {
   BUTTON_SIZE,
   GAP_SEPARATOR_VARIANT,
   TEXT_ALIGN,
+  PADDING,
 } from "../../../components/theme-provider/utilities";
 
 type ExperienceProps = {
@@ -48,13 +49,8 @@ const ExperienceList = ({ data }: ExperienceProps) => {
       return (
         <TimelineItem key={id}>
           <Card variant={CARD_VARIANT.WITHSHADOW} bgGradientOnHover>
-            <Container
-              flex
-              bg="none"
-              style={{ alignItems: "center", textAlign: "center" }}
-            >
-              <CompanyContainer data={experience} />
-            </Container>
+            <CompanyContainer data={experience} />
+
             <hr />
             <Container bg="none">
               {description && (
@@ -100,7 +96,7 @@ const ExperienceList = ({ data }: ExperienceProps) => {
 
   return (
     <Container id="WorksSection" fluid as="section">
-      <Container>
+      <Container vPadding={PADDING.MD}>
         <GapSeparator size="sm" variant={GAP_SEPARATOR_VARIANT.LINE} />
 
         <Text
@@ -110,14 +106,14 @@ const ExperienceList = ({ data }: ExperienceProps) => {
           textTransform={TEXT_TRANSFORM.UPPERCASE}
           fontSizeAs={FONT_SIZE_AS.H5}
         >
-          Visit my portfolio and keep your feedback
+          Experiences that made who I am today
         </Text>
         <Text
           as={TEXT_AS.H2}
           textAlign={TEXT_ALIGN.CENTER}
           fontSizeAs={FONT_SIZE_AS.H1}
         >
-          My Portfolio
+          Work Experience
         </Text>
         <TimelineContainer>{ExperienceJSX}</TimelineContainer>
       </Container>

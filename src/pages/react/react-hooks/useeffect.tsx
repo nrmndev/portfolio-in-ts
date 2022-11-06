@@ -1,5 +1,11 @@
 import React from "react";
+import GapSeparator from "../../../components/gap/gap.components";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import Text from "../../../components/typography/text.component";
 const exampleCode = `
 import React, { useEffect } from "react";
 
@@ -23,7 +29,8 @@ const Example = () => {
 const ReactHooksUseEffect = () => {
   return (
     <>
-      <p className="color_1">useEffect implementation with Typescript</p>
+      <Text as={TEXT_AS.H2}>useEffect</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
       <RenderCode code={exampleCode} language="jsx" />
       <p>
         On the example above, you tell React to change the document title. It

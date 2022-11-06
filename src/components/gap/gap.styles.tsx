@@ -1,5 +1,8 @@
 import styled, { DefaultTheme } from "styled-components";
-import { GAP_SEPARATOR_VARIANT } from "../theme-provider/utilities";
+import {
+  GAP_SEPARATOR_VARIANT,
+  handleGapSeparatorVariant,
+} from "../theme-provider/utilities";
 
 interface IStyledGap {
   size: string;
@@ -18,23 +21,11 @@ const handleSize = (size: string) => {
   }
 };
 
-const handleGapSeparatorVariant = (
-  variant: GAP_SEPARATOR_VARIANT,
-  theme: DefaultTheme
-) => {
-  switch (variant) {
-    case GAP_SEPARATOR_VARIANT.RAW:
-    default:
-      return;
-    case GAP_SEPARATOR_VARIANT.LINE:
-      return `background: ${theme.borderColor}`;
-  }
-};
 export const StyledGap = styled.div<IStyledGap>(
-  ({ theme, size, variant }) => `
+  ({ size, variant }) => `
   padding: ${handleSize(size)};
-  ${handleGapSeparatorVariant(variant, theme)}
   div {
+    ${handleGapSeparatorVariant(variant)}
     height: 1px;
   }
 `

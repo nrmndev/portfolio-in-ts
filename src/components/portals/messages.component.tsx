@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom";
 import { useAppSelector } from "../../store/hooks/typedhooks";
 import { uiMessage } from "../../store/ui/ui-selector";
+import { StyledMessageContainer } from "./messages.styled";
 
-const NormonHTML = (): React.ReactPortal => {
+const MessageOverlay = (): React.ReactPortal => {
   const currentMessage = useAppSelector(uiMessage);
 
   let normonJSX: JSX.Element[] | JSX.Element = <></>;
@@ -10,7 +11,7 @@ const NormonHTML = (): React.ReactPortal => {
   if (currentMessage) {
     normonJSX = (
       <>
-        <div className="innerDiv show">
+        <StyledMessageContainer className="">
           <img
             src={`${process.env.REACT_APP_ASSET_URL}/images/avatar.png`}
             alt=""
@@ -27,7 +28,7 @@ const NormonHTML = (): React.ReactPortal => {
           >
             {currentMessage}
           </p>
-        </div>
+        </StyledMessageContainer>
       </>
     );
   }
@@ -36,4 +37,4 @@ const NormonHTML = (): React.ReactPortal => {
     document.getElementById("normonAI") as HTMLElement
   );
 };
-export default NormonHTML;
+export default MessageOverlay;

@@ -9,6 +9,7 @@ import {
   TEXT_COLOR,
   TEXT_TRANSFORM,
 } from "../theme-provider/utilities";
+import { handleFontSizeAs } from "../theme-provider/utilities/typography";
 
 type StyledLabeledProps = {
   readonly textColor: TEXT_COLOR;
@@ -22,7 +23,6 @@ export const StyledText = styled.p<StyledLabeledProps>(
   ${handleTextColor(textColor)}
   ${handleTextAlign(textAlign)}
   ${handleTextTransform(textTransform)}
-  ${handleFontSize(fontSizeAs)}
 
   font-weight: normal;
   span.text-label {
@@ -32,10 +32,47 @@ export const StyledText = styled.p<StyledLabeledProps>(
     font-weight: normal;
     background: rgb(255 229 99 / 50%);
     ${handleTextColor(TEXT_COLOR.PRIMARYANDWHITE)}
-    padding: 2px 3px;
+    padding: 1px;
   }
   span {
     ${handleTextColor(TEXT_COLOR.PRIMARY)}
   }
+`
+);
+
+export const StyledH1 = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+  ${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.H1}
+`
+);
+export const StyledH2 = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+  ${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.H2}
+`
+);
+export const StyledH3 = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.H3}
+`
+);
+export const StyledH4 = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.H4}
+`
+);
+export const StyledH5 = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.H5}
+`
+);
+export const StyledH6 = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.H6}
+`
+);
+export const StyledP = styled(StyledText)<StyledLabeledProps>(
+  ({ fontSizeAs }) => `
+${fontSizeAs ? handleFontSizeAs(fontSizeAs) : FONT_SIZE_AS.P}
+line-height: 1.4rem;
 `
 );

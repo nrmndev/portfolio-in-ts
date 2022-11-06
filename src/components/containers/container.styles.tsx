@@ -1,70 +1,42 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 
 import {
   handlePadding,
-  H_PADDING,
-  V_PADDING,
+  handleHPadding,
+  handleVPadding,
   PADDING,
+  handleFlex,
+  handleFluid,
+  handleFixed,
+  handleJustifyContent,
+  JUSTIFY_CONTENT,
+  handleAlignItems,
+  handleBackground,
+  handleColumn,
+  ALIGN_ITEMS,
 } from "../theme-provider/utilities";
 
 interface IStyledSection {
   readonly bg: string | undefined;
-  readonly img: string;
+  readonly img: string | undefined;
   readonly fluid: boolean;
   readonly flex: boolean;
   readonly childFlexBasis: string;
   readonly gap: string;
-  readonly justifyContent: string;
+  readonly justifyContent: JUSTIFY_CONTENT | undefined;
+  readonly alignItems: ALIGN_ITEMS;
   readonly fixed: boolean;
-  readonly hPadding: H_PADDING;
-  readonly vPadding: V_PADDING;
+  readonly hPadding: PADDING;
+  readonly vPadding: PADDING;
   readonly padding: PADDING;
+  readonly xs: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  readonly sm: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  readonly md: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  readonly lg: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 }
-
-const handleBG = (bg: string | undefined, img: string, theme: DefaultTheme) => {
-  if (img.length > 0) {
-    return `${bg && bg},url('${img}');     
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-size: cover !important;`;
-  } else {
-    if (bg) {
-      return `${bg}`;
-    } else {
-      return theme.backgroundColor;
-    }
-  }
-};
-
-const handleFlexBasis = (str: string) => {
-  return `flex-grow: 0; flex-shrink: 1; flex-basis: ${str}`;
-};
-
-const handleFluid = (fluid: boolean) => {
-  if (fluid) {
-    return;
-  } else {
-    return `max-width: 1320px; margin-right: auto;
-    margin-left: auto;`;
-  }
-};
-
-const handleFixed = (fixed: boolean) => {
-  if (fixed) {
-    return `top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;`;
-  } else {
-    return;
-  }
-};
 
 export const StyledSection = styled.section<IStyledSection>(
   ({
-    theme,
     bg,
     img,
     justifyContent,
@@ -72,35 +44,41 @@ export const StyledSection = styled.section<IStyledSection>(
     hPadding,
     vPadding,
     fluid,
-    childFlexBasis,
     gap,
     fixed,
     flex,
+    xs,
+    sm,
+    md,
+    lg,
+    alignItems,
   }) => `
-  background: ${handleBG(bg, img, theme)};
-  justify-content: ${justifyContent && justifyContent};
   position: relative;
-  ${handlePadding(padding, hPadding, vPadding)};
-  ${handleFluid(fluid)};
+  ${handleBackground(bg, img)}
+  ${handleFlex(flex)}
+  ${handleFluid(fluid)}
+  ${handleFixed(fixed)}
+  ${handleJustifyContent(justifyContent)}
+  ${gap && `gap: ${gap};`}
 
   ${
-    flex &&
-    `display: flex;  flex-wrap: wrap;
-    flex-direction: column;
-    gap: ${gap};
-
-    & > * {
-       ${childFlexBasis && handleFlexBasis(childFlexBasis)};    
-       margin-top: calc(${gap}/2);
-       margin-bottom: calc(${gap}/2);
-    };`
+    flex
+      ? `& > * {
+        ${handleColumn(xs, sm, md, lg, gap)}   
+        margin-top: ${gap};
+        margin-bottom: ${gap};    
+      }`
+      : `margin-left: auto; margin-right: auto;`
   }
-
+ 
+  ${handlePadding(padding)}
+  ${handleHPadding(hPadding)}
+  ${handleVPadding(vPadding)}
+  ${handleAlignItems(alignItems)}
   @media(min-width: 768px) {
     flex-direction: row;
   }
 
-  ${fixed && handleFixed(fixed)}
 `
 );
 

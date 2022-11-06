@@ -32,6 +32,8 @@ declare module "styled-components" {
     gradientPrimary: string;
     gradientSecondary: string;
     gradientClip: string;
+
+    colorWhite_Color4: string;
   }
 }
 // borderRadius: string;

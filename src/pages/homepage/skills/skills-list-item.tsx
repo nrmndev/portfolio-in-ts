@@ -5,7 +5,9 @@ import Text from "../../../components/typography/text.component";
 import {
   TEXT_AS,
   CARD_VARIANT,
+  FONT_SIZE_AS,
 } from "../../../components/theme-provider/utilities";
+import { UTIL_FONT_SIZE_AS } from "../../../components/theme-provider/utilities/typography";
 
 type SkillListItem = {
   data: SkillsType;
@@ -15,7 +17,7 @@ const SkillListItem = (props: SkillListItem) => {
   return (
     <Card variant={CARD_VARIANT.WITHSHADOW} bgGradientOnHover>
       <SVGIcon icon={svgIcon} />
-      <Text as={TEXT_AS.H3} className="mt-3 mb-3">
+      <Text as={TEXT_AS.H3} fontSizeAs={FONT_SIZE_AS.H4} className="mt-3 mb-3">
         {title}
       </Text>
       <Text as={TEXT_AS.P}>{description}</Text>

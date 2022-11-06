@@ -13,6 +13,7 @@ import {
   CARD_VARIANT,
   BADGE_VARIANT,
   BORDER_WIDTH,
+  JUSTIFY_CONTENT,
 } from "../../../components/theme-provider/utilities";
 
 type PortfoliolistItemType = {
@@ -35,13 +36,12 @@ const PortfolioListItem = (props: PortfoliolistItemType) => {
       <Text as={TEXT_AS.H3} fontSizeAs={FONT_SIZE_AS.H5} className="mt-3 mb-3">
         {title}
       </Text>
-      <Container flex gap="1%" className="ph-0" bg="none">
-        {tags.map((tag, index) => (
-          <Badge key={index} variant={BADGE_VARIANT.GRADIENT}>
-            {tag}
-          </Badge>
-        ))}
-      </Container>
+
+      {tags.map((tag, index) => (
+        <Badge key={index} variant={BADGE_VARIANT.GRADIENT}>
+          {tag}
+        </Badge>
+      ))}
     </Card>
   );
   switch (target) {

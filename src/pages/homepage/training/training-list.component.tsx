@@ -13,7 +13,7 @@ import GapSeparator from "../../../components/gap/gap.components";
 import Text from "../../../components/typography/text.component";
 import {
   FONT_SIZE_AS,
-  H_PADDING,
+  PADDING,
   TEXT_AS,
   TEXT_COLOR,
   TEXT_TRANSFORM,
@@ -84,7 +84,7 @@ const TrainingList = (props: Props) => {
   }
 
   return (
-    <Container id="TrainingSection" fluid as="section" hPadding={H_PADDING.LG}>
+    <Container id="TrainingSection" fluid as="section" padding={PADDING.MD}>
       <Container id="training_heading">
         <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} size="lg" />
         <Text
@@ -104,7 +104,7 @@ const TrainingList = (props: Props) => {
           Training Path
         </Text>
 
-        <Container flex childFlexBasis="48%" gap="4%">
+        <Container flex lg={6} sm={12} gap="15px">
           {TrainingJSX}
         </Container>
       </Container>

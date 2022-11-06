@@ -6,11 +6,12 @@ import GapSeparator from "../../../components/gap/gap.components";
 import {
   TEXT_COLOR,
   FONT_SIZE_AS,
-  H_PADDING,
+  PADDING,
   TEXT_AS,
   TEXT_TRANSFORM,
   GAP_SEPARATOR_VARIANT,
   TEXT_ALIGN,
+  ALIGN_ITEMS,
 } from "../../../components/theme-provider/utilities";
 import Text from "../../../components/typography/text.component";
 
@@ -32,9 +33,9 @@ const PortfolioList = ({ data }: SkillsListProps) => {
   }
 
   return (
-    <Container id="PortfolioSection" as="section" fluid hPadding={H_PADDING.LG}>
-      <Container hPadding={H_PADDING.LG}>
-        <GapSeparator size="lg" variant={GAP_SEPARATOR_VARIANT.LINE} />
+    <Container id="PortfolioSection" as="section" fluid vPadding={PADDING.MD}>
+      <Container hPadding={PADDING.SM}>
+        <GapSeparator size="sm" variant={GAP_SEPARATOR_VARIANT.LINE} />
         <Text
           as={TEXT_AS.H3}
           textColor={TEXT_COLOR.BACKGROUNDCLIP}
@@ -51,7 +52,14 @@ const PortfolioList = ({ data }: SkillsListProps) => {
         >
           My Portfolio
         </Text>
-        <Container flex childFlexBasis="31.33%" gap="3%">
+        <Container
+          flex
+          lg={4}
+          md={6}
+          sm={12}
+          xs={12}
+          alignItems={ALIGN_ITEMS.CENTER}
+        >
           {PortfolioListItemJSX}
         </Container>
       </Container>

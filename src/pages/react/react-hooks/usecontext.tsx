@@ -3,6 +3,12 @@ import AuthContext from "../../../context/auth-context";
 import LoginForm from "../../../context/loginform";
 import Navigation from "../../../context/navigation";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
+import Text from "../../../components/typography/text.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import GapSeparator from "../../../components/gap/gap.components";
 const exampleCode = `
 const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -61,8 +67,9 @@ const AuthContextProvider = () => {
   };
   return (
     <>
-      <h2>Context API</h2>
-      <p>Detailed explanation to follow</p>
+      <Text as={TEXT_AS.H2}>Context API</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
+      <Text>Detailed explanation to follow</Text>
       <hr />
 
       <AuthContext.Provider
@@ -71,10 +78,10 @@ const AuthContextProvider = () => {
         {isLoggedIn && <Navigation />}
         {!isLoggedIn && <LoginForm onSubmit={onSubmit} />}
       </AuthContext.Provider>
-      <p>Wrapped Component inside Provider</p>
-      <RenderCode code={exampleCode} language="jsx" />
-      <p>Your Provider</p>
-      <RenderCode code={exampleCode2} language="jsx" />
+      <Text>Wrapped Component inside Provider</Text>
+      <RenderCode code={exampleCode} language="tsx" />
+      <Text>Your Provider</Text>
+      <RenderCode code={exampleCode2} language="tsx" />
     </>
   );
 };

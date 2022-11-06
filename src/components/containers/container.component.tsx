@@ -1,47 +1,49 @@
 import React, { HTMLAttributes } from "react";
 import {
   PaddingTypes,
-  V_PADDING,
-  H_PADDING,
   PADDING,
+  JUSTIFY_CONTENT,
+  ALIGN_ITEMS,
 } from "../theme-provider/utilities";
+import { ColumnSizes } from "../theme-provider/utilities/column";
 import { StyledFixedContainerOverlay, StyledSection } from "./container.styles";
-
-export enum CONTAINER_JUSTIFY {
-  CENTER = "center",
-  FLEXSTART = "flex-start",
-  FLEXEND = "flex-end",
-}
 
 type ContainerProps = {
   children: React.ReactNode;
   bg?: string | undefined;
-  img?: string;
+  img?: string | undefined;
   as?: "div" | "section" | "article" | "aside";
   fluid?: boolean;
   flex?: boolean;
-  justifyContent?: CONTAINER_JUSTIFY;
+  justifyContent?: JUSTIFY_CONTENT;
+  alignItems?: ALIGN_ITEMS;
   gap?: string;
   childFlexBasis?: string;
   fixed?: boolean;
 } & PaddingTypes &
+  ColumnSizes &
   HTMLAttributes<HTMLElement>;
 
 const Container = (props: ContainerProps) => {
   const {
     bg,
-    img = "",
+    img,
     as = "div",
     children,
     fluid = false,
     flex = false,
-    gap = "0",
+    gap = "2%",
     childFlexBasis = "25%",
     fixed = false,
-    justifyContent = CONTAINER_JUSTIFY.FLEXSTART,
-    hPadding = H_PADDING.NONE,
-    vPadding = V_PADDING.NONE,
+    justifyContent = JUSTIFY_CONTENT.SPACEBETWEEN,
+    alignItems = ALIGN_ITEMS.FLEXSTART,
+    hPadding = PADDING.NONE,
+    vPadding = PADDING.NONE,
     padding = PADDING.NONE,
+    xs = 12,
+    sm = 12,
+    lg = 12,
+    md = 12,
     ...rest
   } = props;
   return (
@@ -59,6 +61,11 @@ const Container = (props: ContainerProps) => {
         hPadding={hPadding}
         vPadding={vPadding}
         padding={padding}
+        alignItems={alignItems}
+        xs={xs}
+        sm={sm}
+        md={md}
+        lg={lg}
         {...rest}
       >
         {children}

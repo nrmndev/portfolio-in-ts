@@ -1,4 +1,10 @@
+import GapSeparator from "../../../components/gap/gap.components";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import Text from "../../../components/typography/text.component";
 const exampleCode = `
 export interface trainingType {
   id: string;
@@ -54,12 +60,14 @@ const onClickHandler = (
 const ReduxConfigureStore = () => {
   return (
     <>
-      <p>Your Slice component/file</p>
-      <RenderCode code={exampleCode} language="jsx" />
-      <p>Your Store</p>
-      <RenderCode code={exampleCode2} language="jsx" />
-      <p>Your Dispatch Action</p>
-      <RenderCode code={exampleCode3} language="jsx" />
+      <Text as={TEXT_AS.H2}>Configure Store</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
+      <Text>Your Slice component/file</Text>
+      <RenderCode code={exampleCode} language="tsx" />
+      <Text>Your Store</Text>
+      <RenderCode code={exampleCode2} language="tsx" />
+      <Text>Your Dispatch Action</Text>
+      <RenderCode code={exampleCode3} language="tsx" />
     </>
   );
 };

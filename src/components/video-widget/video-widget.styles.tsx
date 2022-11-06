@@ -6,7 +6,7 @@ type VideoWidgetType = {
 export const StyledVideoWidget = styled.div<VideoWidgetType>(
   ({ theme, fullScreen }) => `
   max-width: ${fullScreen ? `160px` : `95px`};
-  bottom: 15px;
+  bottom: 35px;
   right: 15px;
   position: fixed;
   z-index: 50;

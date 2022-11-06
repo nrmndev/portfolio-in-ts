@@ -1,5 +1,11 @@
 import React from "react";
+import GapSeparator from "../../../components/gap/gap.components";
 import RenderCode from "../../../components/prism-renderer/prism-renderer.component";
+import {
+  GAP_SEPARATOR_VARIANT,
+  TEXT_AS,
+} from "../../../components/theme-provider/utilities";
+import Text from "../../../components/typography/text.component";
 const exampleCode = `
 import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
@@ -30,14 +36,16 @@ const Sample = () => {
 const ReduxSlice = () => {
   return (
     <>
-      <div>
+      <Text as={TEXT_AS.H2}>Typed Selectors</Text>
+      <GapSeparator variant={GAP_SEPARATOR_VARIANT.LINE} />
+      <Text>
         Custom hook useTypedSelector for typescript useSelector convenience
-      </div>
-      <RenderCode code={exampleCode} language="jsx" />
-      <div>
+      </Text>
+      <RenderCode code={exampleCode} language="tsx" />
+      <Text>
         Your component can now listen to the store by using useTypedSelector
-      </div>
-      <RenderCode code={exampleCode2} language="jsx" />
+      </Text>
+      <RenderCode code={exampleCode2} language="tsx" />
     </>
   );
 };

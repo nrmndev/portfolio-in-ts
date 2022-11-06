@@ -1,3 +1,4 @@
+import Container from "../../../components/containers/container.component";
 import Image, { IMAGE_ALIGN } from "../../../components/image/image.component";
 import {
   IMAGE_VARIANT,
@@ -17,7 +18,7 @@ type CompanyProps = {
 const CompanyContainer = ({ data }: CompanyProps) => {
   const { image, company, tenureship, jobposition } = data;
   return (
-    <>
+    <Container flex lg={3} md={3} sm={12} bg="none">
       <Image
         src={`${process.env.REACT_APP_ASSET_URL}/images/${image}`}
         width={225}
@@ -34,7 +35,7 @@ const CompanyContainer = ({ data }: CompanyProps) => {
       <Text as={TEXT_AS.H4} label="Tenureship">
         {tenureship}
       </Text>
-    </>
+    </Container>
   );
 };
 

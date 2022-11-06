@@ -142,7 +142,7 @@ const ContactForm = () => {
   }, [isNameValid, isEmailValid, isMessageValid]);
 
   return (
-    <Container>
+    <Container fluid>
       <Container>
         <Text
           as={TEXT_AS.H4}

@@ -7,8 +7,9 @@ import TopBannerForm from "./typewriter";
 
 import SocialIconsList from "../../../components/social-icons/social-icons.component";
 import {
+  ALIGN_ITEMS,
   FONT_SIZE_AS,
-  H_PADDING,
+  PADDING,
   TEXT_AS,
   TEXT_TRANSFORM,
 } from "../../../components/theme-provider/utilities";
@@ -25,10 +26,10 @@ const AboutSection = () => {
         as="section"
         fluid
         fixed
-        hPadding={H_PADDING.LG}
+        padding={PADDING.LG}
       >
-        <Container flex hPadding={H_PADDING.LG}>
-          <FlexChildContainer flexBasis="59%">
+        <Container flex lg={6} alignItems={ALIGN_ITEMS.CENTER}>
+          <Container>
             <Text as={TEXT_AS.P} textTransform={TEXT_TRANSFORM.UPPERCASE}>
               Welcome to my world
             </Text>
@@ -42,8 +43,8 @@ const AboutSection = () => {
               software development life cycles.
             </Text>
             <SocialIconsList />
-          </FlexChildContainer>
-          <FlexChildContainer flexBasis="38%">
+          </Container>
+          <Container>
             <ThumbnailWrapper>
               <Image
                 src={`${process.env.REACT_APP_ASSET_URL}/images/about_image.png`}
@@ -53,7 +54,7 @@ const AboutSection = () => {
                 style={{ background: "none" }}
               />
             </ThumbnailWrapper>
-          </FlexChildContainer>
+          </Container>
         </Container>
       </Container>
       <div

@@ -24,4 +24,6 @@ export enum StaticMessages {
   WORK = "Check out the past companies Norman have worked with!",
   TRAINING = "Here's what Norman is currently taking up to, hot skills indeed!",
   CONTACT = "Contact Norman whether you wanna connect or just say hello!",
+  BACK_TO_TOP = "Back to top",
+  PORTFOLIO = "Check out the projects that I've done",
 }

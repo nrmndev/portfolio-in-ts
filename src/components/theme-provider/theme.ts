@@ -1,8 +1,10 @@
 // theme.ts
-
+export enum THEMETYPE {
+  DARK = "dark",
+  LIGHT = "light",
+}
 export const themeLight = {
   backgroundColor: "#ECF0F3",
-
   backgroundColorFlat: "#FFFFFF",
   backgroundColorFlatAlt: "none",
   backgroundColorGradient: "linear-gradient(145deg, #e2e8ec, #ffffff)",
@@ -29,6 +31,7 @@ export const themeLight = {
   gradientSecondary: "linear-gradient(221deg, #43cea2 0%, #185a9d)",
   gradientClip:
     "linear-gradient(30deg, rgb(67, 206, 162) 0%, rgb(24, 90, 157))",
+  colorWhite_Color4: `#fff`,
 };
 
 export const themeDark = {
@@ -61,4 +64,5 @@ export const themeDark = {
   gradientSecondary: "linear-gradient(to right bottom, #212428, #16181c)",
   gradientClip:
     "linear-gradient(30deg, rgb(67, 206, 162) 0%, rgb(24, 90, 157))",
+  colorWhite_Color4: `#212428`,
 };
