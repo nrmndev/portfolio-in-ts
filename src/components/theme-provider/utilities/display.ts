@@ -35,9 +35,12 @@ export const handleFixed = (fixed: boolean) => {
 
 export enum UTIL_JUSTIFY_CONTENT {
   CENTER = "center",
-  FLEXSTART = "flex-start",
+  END = "end",
   FLEXEND = "flex-end",
+  FLEXSTART = "flex-start",
   SPACEBETWEEN = "space-between",
+  SELFEND = "self-end",
+  START = "start"
 }
 
 export const handleJustifyContent = (

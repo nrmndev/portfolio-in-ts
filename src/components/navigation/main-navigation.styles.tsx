@@ -11,10 +11,15 @@ export const StyledMainNav = styled.header(
   width: 100%;
   box-shadow: ${theme.boxShadow};
   background: ${theme.backgroundColor};
+  flex-direction: column;
   @media (min-width: 992px) .navbar-expand-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
+  @media (max-width: 992px) {
+    text-align:center;
+  }
+
 `
 );
 
@@ -23,6 +28,10 @@ export const StyledMainNavContainer = styled.nav`
   margin: 0 auto;
   display: flex;
   gap: 2rem;
+  flex-direction: column;
+  @media (min-width: 991.99px) {
+    flex-direction: row;
+  }
 `;
 
 export const StyledMainNavList = styled.ul`
@@ -34,6 +43,10 @@ export const StyledMainNavList = styled.ul`
   gap: 2rem;
   width: 100%;
   justify-content: flex-end;
+  flex-direction: column;
+  @media (min-width: 991.99px) {
+    flex-direction: row;
+  }
 `;
 export const StyledMainNavListItem = styled.li(
   ({ theme }) => `
@@ -62,3 +75,12 @@ export const StyledMainNavListItem = styled.li(
   }
 `
 );
+
+export const StyledMainNavButton = styled.button`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background: none;
+  font-size: 24px;
+`;

@@ -7,7 +7,7 @@ import GapSeparator from "../gap/gap.components";
 import Card from "../card/card.component";
 import Image from "../image/image.component";
 import SocialIconsList from "../social-icons/social-icons.component";
-import FlexChildContainer from "../containers/flex-child-container.component";
+
 import Text from "../typography/text.component";
 import {
   PADDING,

@@ -17,7 +17,7 @@ interface StyledButtonProps {
 }
 
 export const StyledBaseButton = styled.button<StyledButtonProps>(
-  ({ theme, block, color, size }) => `
+  ({ block, color, size }) => `
   width: ${block ? `100%` : `inherit`};
   ${color && `background-color:${color};`}
   ${handleButtonSize(size)}
@@ -61,7 +61,7 @@ export const StyledGoogleSignInButton = styled(StyledBaseButton)`
 `;
 
 export const StyledInvertedButton = styled(StyledBaseButton)(
-  ({ theme, color }) => `
+  ({ color }) => `
   background-color: white;
   ${handleTextColor(TEXT_COLOR.PRIMARY)};
    ${color && `border-color:${color};`}

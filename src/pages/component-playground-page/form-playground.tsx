@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 //import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
-import useInput from "../../components/form/useInputReducer";
+import useInput from "../../components/form/useInput";
 
 import Button from "../../components/button/button.component";
 import {

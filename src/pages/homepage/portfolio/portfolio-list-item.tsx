@@ -1,7 +1,7 @@
 import Card from "../../../components/card/card.component";
 //import { SkillDataType } from "./skills-list";
 import { PortfolioType } from "../../../store/data/data-types";
-import Container from "../../../components/containers/container.component";
+
 import Text from "../../../components/typography/text.component";
 import Image from "../../../components/image/image.component";
 import Button from "../../../components/button/button.component";
@@ -13,7 +13,6 @@ import {
   CARD_VARIANT,
   BADGE_VARIANT,
   BORDER_WIDTH,
-  JUSTIFY_CONTENT,
 } from "../../../components/theme-provider/utilities";
 
 type PortfoliolistItemType = {

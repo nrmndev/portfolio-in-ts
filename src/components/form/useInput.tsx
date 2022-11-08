@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useReducer } from "react";
 import { InputHTMLAttributes } from "react";
 import { INPUT_TYPE } from "../theme-provider/utilities";
-//import { FormGroup, FormLabel } from "react-bootstrap";
-import { FormInput, FormGroup, FormLabel } from "./input.components";
-
-import { validate } from "./validators";
+import {
+  FormInput,
+  FormGroup,
+  FormLabel,
+  FormErrorLabel,
+} from "./input.components";
+import { validate, VALIDATOR_TYPE } from "./validators";
 
 type UseInputProps = {
   type?: string;
@@ -13,8 +16,72 @@ type UseInputProps = {
   id: string;
   block?: boolean;
   errorLabel: string;
-  validator: any;
+  validators: (
+    | { type: VALIDATOR_TYPE }
+    | { type: VALIDATOR_TYPE; val: number }
+  )[];
 } & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
+
+// validators: (
+//   | () => { type: VALIDATOR_TYPE }
+//   | { type: VALIDATOR_TYPE; val: number }
+// )[];
+//array of function    ()[]
+//arrow function (()=>{})
+//function with parameter ((val: number) => { type: VALIDATOR_TYPE; val: number })
+//typescript infered to as { type: VALIDATOR_TYPE; val: number; }
+
+type ChangeAction = {
+  type: "CHANGE";
+  val: string;
+  validators: any;
+};
+
+type TouchAction = {
+  type: "TOUCH";
+};
+type ResetAction = {
+  type: "RESET";
+};
+
+type Action = ChangeAction | TouchAction | ResetAction;
+
+const inputReducer = (state: initialValueType, action: Action) => {
+  switch (action.type) {
+    case "CHANGE":
+      return {
+        ...state,
+        value: action.val,
+        isValid: validate(action.val, action.validators),
+      };
+    case "TOUCH": {
+      return {
+        ...state,
+        isTouched: true,
+      };
+    }
+    case "RESET": {
+      return {
+        value: "",
+        isTouched: false,
+        isValid: false,
+      };
+    }
+    default:
+      return state;
+  }
+};
+
+type initialValueType = {
+  value: string;
+  isTouched: boolean;
+  isValid: boolean;
+};
+const initialValue = {
+  value: "",
+  isTouched: false,
+  isValid: false,
+};
 
 const useInput = ({
   type = "text",
@@ -22,43 +89,60 @@ const useInput = ({
   errorLabel = "Error Label",
   id,
   as = INPUT_TYPE.INPUT,
-  validator,
+  validators,
+  ...rest
 }: UseInputProps) => {
-  const [state, setState] = useState<string>("");
-  const [isValid, setIsValid] = useState<boolean>(false);
+  const [inputState, dispatch] = useReducer(inputReducer, initialValue);
 
-  //const validatorCallback = useCallback(() => {},[]);
-
-  useEffect(() => {
-    alert(isValid);
-  }, [isValid]);
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setState(e.currentTarget.value);
-    setIsValid(validate(state, validator));
+  const changeHandler = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    dispatch({
+      type: "CHANGE",
+      val: event.target.value,
+      validators: validators,
+    });
   };
 
-  const onReset = () => {
-    setState("");
+  const touchHandler = () => {
+    dispatch({
+      type: "TOUCH",
+    });
   };
 
-  let InputComponent;
+  const resetHandler = () => {
+    dispatch({
+      type: "RESET",
+    });
+  };
+
   const Component = (
     <FormGroup>
       <FormLabel htmlFor={id}>
-        {label} {!isValid && <small>({errorLabel})</small>}
+        {label}
+        {!inputState.isValid && inputState.isTouched && (
+          <FormErrorLabel>{errorLabel}</FormErrorLabel>
+        )}
       </FormLabel>
 
       <FormInput
         id={id}
         type={type}
-        value={state}
-        onChange={onChangeHandler}
+        value={inputState.value}
+        onChange={changeHandler}
+        onBlur={touchHandler}
         as={as}
+        {...rest}
       />
     </FormGroup>
   );
 
-  return { state, isValid, Component, onReset };
+  return {
+    value: inputState.value,
+    isValid: inputState.isValid,
+    Component,
+    onReset: resetHandler,
+  };
 };
 
 export default useInput;

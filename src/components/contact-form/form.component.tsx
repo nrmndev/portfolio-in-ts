@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "../button/button.component";
 
-import useInput from "../form/useInputReducer";
+import useInput from "../form/useInput";
 
 import {
   VALIDATOR_EMAIL,

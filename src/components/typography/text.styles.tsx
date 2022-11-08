@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {
   FONT_SIZE_AS,
-  handleFontSize,
   handleTextAlign,
   handleTextColor,
   handleTextTransform,
@@ -19,7 +18,7 @@ type StyledLabeledProps = {
 };
 
 export const StyledText = styled.p<StyledLabeledProps>(
-  ({ textAlign, textTransform, textColor, fontSizeAs }) => `
+  ({ textAlign, textTransform, textColor }) => `
   ${handleTextColor(textColor)}
   ${handleTextAlign(textAlign)}
   ${handleTextTransform(textTransform)}

@@ -736,11 +736,11 @@
     {
       "id": "P2",
       "title": "React Cheatsheet",
-      "portfolioURL": "/reactjs",
+      "portfolioURL": "http://react-cheatsheet.ngsilvestre.com",
       "tags": ["React", "JavaScript", "Styled Component", "Redux", "Router"],
       "category": "Documentation",
       "portfolioImage": "portfolio_process.png",
-      "target": "_self"
+      "target": "_blank"
     },
     {
       "id": "P3",

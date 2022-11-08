@@ -1,4 +1,4 @@
-import { Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { LOADING_SKELETON_TYPE } from "../theme-provider/utilities";
 import { StyledLoadingSkeleton } from "./loading-skeleton.styles";
 

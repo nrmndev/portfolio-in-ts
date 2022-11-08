@@ -14,7 +14,6 @@ import {
   StyledH5,
   StyledH6,
   StyledP,
-  StyledText,
 } from "./text.styles";
 
 type LabeledTypoProps = {

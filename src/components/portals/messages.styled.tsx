@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { handleBackground } from "../theme-provider/utilities";
 
 export const StyledMessageContainer = styled.div(
   ({ theme }) => `

@@ -7,7 +7,6 @@ import {
   CARD_VARIANT,
   FONT_SIZE_AS,
 } from "../../../components/theme-provider/utilities";
-import { UTIL_FONT_SIZE_AS } from "../../../components/theme-provider/utilities/typography";
 
 type SkillListItem = {
   data: SkillsType;

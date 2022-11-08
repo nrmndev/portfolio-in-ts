@@ -1,5 +1,5 @@
 import Container from "../../../components/containers/container.component";
-import FlexChildContainer from "../../../components/containers/flex-child-container.component";
+
 import ThumbnailWrapper from "../../../components/containers/thumbnail-wrapper.component";
 import Image from "../../../components/image/image.component";
 import Text from "../../../components/typography/text.component";
